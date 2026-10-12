@@ -1,0 +1,22 @@
+[
+  {
+    "id": "tech-1",
+    "title": "Quantum Computing Breakthrough",
+    "description": "New stable qubits developed for scalable quantum processors.",
+    "content": [
+      { "type": "intro", "text": "Researchers have achieved a major milestone in quantum error correction, paving the way for fault-tolerant quantum computers." },
+      { "type": "detail", "label": "Key Finding", "text": "The new method reduces qubit decoherence by 40% using a topological approach.", "highlight": true },
+      { "type": "detail", "label": "Impact", "text": "This could accelerate drug discovery and materials science by decades." }
+    ]
+  },
+  {
+    "id": "tech-2",
+    "title": "AI Regulations in 2026",
+    "description": "Global summit establishes new safety standards for AGI development.",
+    "content": [
+      { "type": "intro", "text": "The Global AI Safety Summit has released a comprehensive framework for monitoring advanced AI systems." },
+      { "type": "detail", "label": "The Framework", "text": "Mandatory third-party auditing for models exceeding 10^26 FLOPs.", "highlight": true },
+      { "type": "detail", "label": "Timeline", "text": "Implementation begins Q1 2027 across G20 nations." }
+    ]
+  }
+]

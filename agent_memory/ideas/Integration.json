@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Integration_1",
+    "title": "Vector Bridge 1",
+    "description": "New approach to Integration.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_2",
+    "title": "Signal Filter 2",
+    "description": "New approach to Integration.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Signal Filter 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Signal Filter 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Signal Filter 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_3",
+    "title": "Recursive Agent 3",
+    "description": "AI-driven Integration system.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Recursive Agent 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Recursive Agent 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Recursive Agent 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_4",
+    "title": "Insight Miner 4",
+    "description": "Optimizing Integration metrics.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_5",
+    "title": "Adaptive Pipeline 5",
+    "description": "New approach to Integration.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Integration."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Adaptive Pipeline 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Adaptive Pipeline 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Adaptive Pipeline 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_6",
+    "title": "Cognitive Flow 6",
+    "description": "AI-driven Integration system.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_7",
+    "title": "Signal Filter 7",
+    "description": "Enhancing Integration efficiency.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Integration infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Signal Filter 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Signal Filter 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Signal Filter 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_8",
+    "title": "Semantic Mapper 8",
+    "description": "Enhancing Integration efficiency.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Integration."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_9",
+    "title": "Recursive Agent 9",
+    "description": "Enhancing Integration efficiency.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Integration infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Recursive Agent 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Recursive Agent 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Recursive Agent 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_10",
+    "title": "Recursive Agent 10",
+    "description": "Optimizing Integration metrics.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Integration bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Recursive Agent 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Recursive Agent 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Recursive Agent 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Integration_11",
+    "title": "Adaptive Pipeline 11",
+    "description": "Automating the Integration flow.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Integration."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Adaptive Pipeline 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Adaptive Pipeline 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Adaptive Pipeline 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

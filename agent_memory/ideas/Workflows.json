@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Workflows_1",
+    "title": "Cognitive Flow 1",
+    "description": "Streamlining Workflows assets.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Workflows."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_2",
+    "title": "Semantic Mapper 2",
+    "description": "New approach to Workflows.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Workflows."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_3",
+    "title": "Metric Optimizer 3",
+    "description": "Enhancing Workflows efficiency.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Workflows infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_4",
+    "title": "Neural Sync 4",
+    "description": "Streamlining Workflows assets.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Workflows."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_5",
+    "title": "Metric Optimizer 5",
+    "description": "Optimizing Workflows metrics.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Workflows bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_6",
+    "title": "Context Engine 6",
+    "description": "Optimizing Workflows metrics.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Workflows."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Context Engine 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Context Engine 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Context Engine 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_7",
+    "title": "Signal Filter 7",
+    "description": "Optimizing Workflows metrics.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Workflows bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Signal Filter 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Signal Filter 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Signal Filter 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_8",
+    "title": "Logic Weaver 8",
+    "description": "Enhancing Workflows efficiency.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Workflows infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Logic Weaver 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Logic Weaver 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Logic Weaver 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_9",
+    "title": "Signal Filter 9",
+    "description": "Optimizing Workflows metrics.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Workflows bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Signal Filter 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Signal Filter 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Signal Filter 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_10",
+    "title": "Context Engine 10",
+    "description": "Enhancing Workflows efficiency.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Workflows."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Context Engine 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Context Engine 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Context Engine 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Workflows_11",
+    "title": "Context Engine 11",
+    "description": "New approach to Workflows.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Workflows bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Context Engine 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Context Engine 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Context Engine 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

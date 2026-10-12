@@ -1,0 +1,12 @@
+[
+  {
+    "id": "glob-1",
+    "title": "Arctic Green Initiative",
+    "description": "International treaty signed to protect 30% of Arctic waters by 2030.",
+    "content": [
+      { "type": "intro", "text": "A landmark agreement was reached in Oslo to create vast marine protected areas in the Arctic." },
+      { "type": "detail", "label": "The Goal", "text": "Complete prohibition of commercial fishing in the designated zones.", "highlight": true },
+      { "type": "detail", "label": "Monitoring", "text": "Use of satellite-AI surveillance to enforce the treaty in real-time." }
+    ]
+  }
+]

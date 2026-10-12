@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Content_1",
+    "title": "Cognitive Flow 1",
+    "description": "Streamlining Content assets.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Content infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_2",
+    "title": "Logic Weaver 2",
+    "description": "Automating the Content flow.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Content infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Logic Weaver 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Logic Weaver 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Logic Weaver 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_3",
+    "title": "Vector Bridge 3",
+    "description": "Optimizing Content metrics.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Content bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_4",
+    "title": "Metric Optimizer 4",
+    "description": "AI-driven Content system.",
+    "status": "Implemented",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_5",
+    "title": "Semantic Mapper 5",
+    "description": "AI-driven Content system.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_6",
+    "title": "Signal Filter 6",
+    "description": "AI-driven Content system.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Signal Filter 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Signal Filter 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Signal Filter 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_7",
+    "title": "Metric Optimizer 7",
+    "description": "New approach to Content.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_8",
+    "title": "Neural Sync 8",
+    "description": "Optimizing Content metrics.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_9",
+    "title": "Semantic Mapper 9",
+    "description": "AI-driven Content system.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Content."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_10",
+    "title": "Insight Miner 10",
+    "description": "Automating the Content flow.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Content bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Content_11",
+    "title": "Neural Sync 11",
+    "description": "AI-driven Content system.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Content infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

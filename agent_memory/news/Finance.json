@@ -1,0 +1,12 @@
+[
+  {
+    "id": "fin-1",
+    "title": "Digital Currency Shift",
+    "description": "Major central banks announce pilot for interoperable CBDCs.",
+    "content": [
+      { "type": "intro", "text": "The move towards Central Bank Digital Currencies (CBDCs) is accelerating with a new focus on cross-border interoperability." },
+      { "type": "detail", "label": "The Pilot", "text": "A consortium of 5 central banks will test a shared ledger for instant settlements.", "highlight": true },
+      { "type": "detail", "label": "Benefit", "text": "Reduction of settlement times from 3 days to 3 seconds." }
+    ]
+  }
+]

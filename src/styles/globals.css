@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #0a0a0a;
+  --bg-surface: #231E1E;
+  --bg-layer: #463A3A;
+  --bg-layer2: #332A2A;
+  --bg-layer3: #5D5252;
+  --bg-sharp: #6CEC17;
+  --bg-elevated: #161616;
+  --text-primary: #ededed;
+  --text-muted: #8a8a8a;
+  --border-subtle: #1f1f1f;
+  --accent: #7cf6c0;
+  --accent-dim: #2a4a3d;
+}
+
+@theme {
+  /* Update an existing breakpoint */
+  --breakpoint-bp6: 600px; 
+  --breakpoint-bp7: 728px; 
+  --breakpoint-bp8: 800px; 
+  --breakpoint-bp9: 900px; 
+  --breakpoint-bp10: 1000px; 
+}
+
+@theme inline {
+  --color-background: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-layer: var(--bg-layer);
+  --color-layer2: var(--bg-layer2);
+  --color-layer3: var(--bg-layer3);
+  --color-sharp: var(--bg-sharp);
+  --color-elevated: var(--bg-elevated);
+  --color-foreground: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.bg-grid {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(31, 31, 31, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 31, 31, 0.2) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar for Dashboard Elements */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+.custom-scrollbar2::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-layer2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bg-layer);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-layer3);
+}

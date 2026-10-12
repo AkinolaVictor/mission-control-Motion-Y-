@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Analytics_1",
+    "title": "Adaptive Pipeline 1",
+    "description": "Streamlining Analytics assets.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Analytics bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Adaptive Pipeline 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Adaptive Pipeline 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Adaptive Pipeline 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_2",
+    "title": "Context Engine 2",
+    "description": "Automating the Analytics flow.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Analytics infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Context Engine 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Context Engine 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Context Engine 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_3",
+    "title": "Insight Miner 3",
+    "description": "Automating the Analytics flow.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Analytics."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_4",
+    "title": "Neural Sync 4",
+    "description": "Streamlining Analytics assets.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Analytics infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_5",
+    "title": "Insight Miner 5",
+    "description": "New approach to Analytics.",
+    "status": "Implemented",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Analytics bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_6",
+    "title": "Adaptive Pipeline 6",
+    "description": "Optimizing Analytics metrics.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Analytics bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Adaptive Pipeline 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Adaptive Pipeline 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Adaptive Pipeline 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_7",
+    "title": "Insight Miner 7",
+    "description": "Streamlining Analytics assets.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Analytics bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_8",
+    "title": "Semantic Mapper 8",
+    "description": "Enhancing Analytics efficiency.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Analytics."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_9",
+    "title": "Vector Bridge 9",
+    "description": "Automating the Analytics flow.",
+    "status": "Implemented",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Analytics bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_10",
+    "title": "Adaptive Pipeline 10",
+    "description": "Streamlining Analytics assets.",
+    "status": "Implemented",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Analytics."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Adaptive Pipeline 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Adaptive Pipeline 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Adaptive Pipeline 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Analytics_11",
+    "title": "Cognitive Flow 11",
+    "description": "New approach to Analytics.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Analytics infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

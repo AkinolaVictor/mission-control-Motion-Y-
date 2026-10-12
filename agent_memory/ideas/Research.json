@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Research_1",
+    "title": "Vector Bridge 1",
+    "description": "Enhancing Research efficiency.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Research infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_2",
+    "title": "Logic Weaver 2",
+    "description": "Automating the Research flow.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Research bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Logic Weaver 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Logic Weaver 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Logic Weaver 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_3",
+    "title": "Vector Bridge 3",
+    "description": "Optimizing Research metrics.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Research bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_4",
+    "title": "Vector Bridge 4",
+    "description": "Automating the Research flow.",
+    "status": "Draft",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Research bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_5",
+    "title": "Neural Sync 5",
+    "description": "Optimizing Research metrics.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Research."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_6",
+    "title": "Vector Bridge 6",
+    "description": "AI-driven Research system.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Research infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_7",
+    "title": "Metric Optimizer 7",
+    "description": "AI-driven Research system.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Research infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_8",
+    "title": "Metric Optimizer 8",
+    "description": "AI-driven Research system.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Research bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_9",
+    "title": "Recursive Agent 9",
+    "description": "AI-driven Research system.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Research."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Recursive Agent 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Recursive Agent 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Recursive Agent 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_10",
+    "title": "Cognitive Flow 10",
+    "description": "New approach to Research.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Research bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Research_11",
+    "title": "Neural Sync 11",
+    "description": "Automating the Research flow.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Research."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Neural Sync 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Neural Sync 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Neural Sync 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

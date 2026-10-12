@@ -1,0 +1,12 @@
+[
+  {
+    "id": "health-1",
+    "title": "CRISPR 2.0 in Clinicals",
+    "description": "Next-gen gene editing shows success in reversing hereditary blindness.",
+    "content": [
+      { "type": "intro", "text": "Clinical trials for a new prime-editing technique have shown significant recovery in patients with LCA10." },
+      { "type": "detail", "label": "The Result", "text": "70% of participants reported improved light perception.", "highlight": true },
+      { "type": "detail", "label": "Safety", "text": "No off-target mutations were detected in the treated retinal cells." }
+    ]
+  }
+]

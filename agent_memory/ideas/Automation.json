@@ -1,0 +1,309 @@
+[  {
+    "id": "IDEA_Automation_1",
+    "title": "Insight Miner 1",
+    "description": "Automating the Automation flow.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Automation infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 1 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 1 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 1.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_2",
+    "title": "Logic Weaver 2",
+    "description": "New approach to Automation.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Logic Weaver 2 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Logic Weaver 2 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Logic Weaver 2.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_3",
+    "title": "Vector Bridge 3",
+    "description": "Optimizing Automation metrics.",
+    "status": "Draft",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Vector Bridge 3 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Vector Bridge 3 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Vector Bridge 3.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_4",
+    "title": "Insight Miner 4",
+    "description": "AI-driven Automation system.",
+    "status": "Implemented",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 4 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 4 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 4.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_5",
+    "title": "Recursive Agent 5",
+    "description": "Optimizing Automation metrics.",
+    "status": "Implemented",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Recursive Agent 5 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Recursive Agent 5 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Recursive Agent 5.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_6",
+    "title": "Logic Weaver 6",
+    "description": "Optimizing Automation metrics.",
+    "status": "Draft",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Logic Weaver 6 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Logic Weaver 6 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Logic Weaver 6.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_7",
+    "title": "Cognitive Flow 7",
+    "description": "Automating the Automation flow.",
+    "status": "In-Review",
+    "color": "bg-zinc-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 7 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 7 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 7.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_8",
+    "title": "Cognitive Flow 8",
+    "description": "Automating the Automation flow.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Cognitive Flow 8 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Cognitive Flow 8 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Cognitive Flow 8.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_9",
+    "title": "Metric Optimizer 9",
+    "description": "New approach to Automation.",
+    "status": "In-Review",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "A comprehensive system designed to overhaul how we handle Automation."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Metric Optimizer 9 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Metric Optimizer 9 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Metric Optimizer 9.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_10",
+    "title": "Semantic Mapper 10",
+    "description": "New approach to Automation.",
+    "status": "Implemented",
+    "color": "bg-green-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "This concept leverages multi-agent coordination to solve Automation bottlenecks."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Semantic Mapper 10 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Semantic Mapper 10 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Semantic Mapper 10.",
+        "highlight": false
+      }
+    ]
+  },
+  {
+    "id": "IDEA_Automation_11",
+    "title": "Insight Miner 11",
+    "description": "Automating the Automation flow.",
+    "status": "In-Review",
+    "color": "bg-yellow-500",
+    "content": [
+      {
+        "type": "intro",
+        "text": "An agentic approach to optimizing the existing Automation infrastructure."
+      },
+      {
+        "label": "Primary Metric",
+        "text": "Tracking the core performance of Insight Miner 11 through real-time telemetry.",
+        "highlight": true
+      },
+      {
+        "label": "Secondary Metric",
+        "text": "Evaluating the impact of Insight Miner 11 on general system stability.",
+        "highlight": false
+      },
+      {
+        "label": "Resource Cost",
+        "text": "Analyzing the token usage and latency overhead for Insight Miner 11.",
+        "highlight": false
+      }
+    ]
+  }
+]

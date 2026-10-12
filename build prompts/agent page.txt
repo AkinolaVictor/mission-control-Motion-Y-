@@ -1,0 +1,52 @@
+i copied out the full chat components of a project (frontend section)
+all the components to build out this chat section are stored in @sample_chat\
+i want you to check through it all for better understanding
+make sure to properly understand it very well
+
+
+
+
+
+i want you to build out the complete chat architectural UI into this project
+build the entire chat system in an separate folder inside the components\ folder
+import the central chat window inside line 225 of the [agentSlug].js file 
+where it would be displayed to screen, and interacted with
+this is the chat component that allows the user to interact with each agent
+
+just focus on the UI and basic interaction 
+you don't need to build a highly polished and complete chat system
+just focus on the heml, css, and any part of the js that help with the UI experience
+
+before you start, do you have any question?
+i insist that you let me see your plan before working it out
+
+
+
+
+
+
+i already updated the files in the @simple_chat\ folder, read and understand it better
+
+also, there are some errors i am geting in the task you just completed
+1. Module not found: Can't resolve '../../utils/cn'
+2. ./src/components/AgentChat/AgentChatWindow.jsx || Error: Global CSS cannot be imported from files other than your Custom <App>.
+Due to the Global nature of stylesheets, and to avoid conflicts, Please move all first-party global CSS imports to pages/_app.js. Or convert the import to Component-Level CSS (CSS Modules).
+Location: src/components/AgentChat/AgentChatWindow.jsx
+Import path: ./AgentChat.css
+
+
+
+when i click the button in line 297 of the [agentSlug].js file,
+it should show a modal that contains the newly built chat window (the AgentChatWindow component)
+
+
+
+
+
+
+
+
+
+
+
+
