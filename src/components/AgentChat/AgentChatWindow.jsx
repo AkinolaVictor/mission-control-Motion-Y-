@@ -91,6 +91,7 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   };
 
   const handleSend = async (text) => {
+    setView('active');
     const userMsg = { role: 'user', content: text };
     const newMsgs = [...messages, userMsg];
     setMessages(newMsgs);

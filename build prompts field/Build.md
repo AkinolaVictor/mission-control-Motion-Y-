@@ -138,16 +138,19 @@ i want to see your plan before starting
 
 
 Updates to the Agent Chat system
-DO NOT EDIT THE DESIGN SYSTEM, I LIKE HOW IT LOOKS
+DO NOT EDIT THE DESIGN SYSTEM (CSS/TAILWIND), I LIKE HOW IT LOOKS
 -on the header, instead of the hardcoded "AI Agent", let it always show the name of the agent being chatted with (receive the name of the agent as a prop, to ensure the chat system is dynamic)
 
 let the chat history be functional so that a user can continue existing chats, and start a new chat
 store each chat in the @agent_memory/chats/agent_name/chat_1_date_and_time.txt file
+and ensure to always update each file for further chat sessions
 
-a user should be able to preview the list of all chat history, select anyone to continue a chat.
+a user should be able to preview the list of all chat history per agent, select anyone to continue a chat.
 the agent should read the chat txt file, and return it as an array of chat data that can be passed into the LLM for chat continuity
 
 there should be no unified chat history for all agents, each agent has it's own (list of chat history)
+let me see your plan before starting
+
 there should be an icon on each chat that allows us to delete a specific chat history
 
 Updates to the Agent Chat system
