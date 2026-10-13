@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Trash2 } from 'lucide-react';
+import axios from 'axios';
 import cn from "../../utils/cn";
 
-export default function ChatHistory({ isOpen, onClose, onLoadChat, onClearHistory, onDeleteChat }) {
-  if (!isOpen) return null;
+export default function ChatHistory({ isOpen, onClose, onLoadChat, onClearHistory, onDeleteChat, agentId }) {
+  const [entries, setEntries] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const history = JSON.parse(localStorage.getItem("motion_y_chat_history") || "{}");
-  const entries = Object.entries(history).sort((a, b) =>
-    new Date(b[1].timestamp) - new Date(a[1].timestamp)
-  );
+  useEffect(() => {
+    async function fetchHistory() {
+      if (!isOpen || !agentId) return;
+
+      setIsLoading(true);
+      try {
+        const response = await axios.get(`/api/agent/gethistory?agent=${agentId}`);
+        const data = response.data;
+
+        if (data.chats && Array.isArray(data.chats)) {
+          // Sort by timestamp descending
+          const sorted = [...data.chats].sort((a, b) => {
+            const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+            const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+            return timeB - timeA;
+          });
+          setEntries(sorted);
+        }
+      } catch (error) {
+        console.error('Error fetching agent history:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchHistory();
+  }, [isOpen, agentId]);
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[70] flex justify-end animate-in fade-in duration-300">
@@ -33,35 +60,40 @@ export default function ChatHistory({ isOpen, onClose, onLoadChat, onClearHistor
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-3 chat-scrollbar">
-          {entries.map(([id, chat]) => (
-            <div
-              key={id}
-              className="group flex items-center justify-between p-4 rounded-xl bg-layer3 border border-border-subtle transition-all duration-200 hover:border-accent"
-            >
-              <button
-                onClick={() => onLoadChat(id)}
-                className="flex-1 text-left truncate mr-2"
-              >
-                <div className="text-sm text-white truncate font-medium">
-                  {chat.title}
-                </div>
-                <div className="text-[11px] text-text-secondary opacity-60">
-                  {new Date(chat.timestamp).toLocaleString()}
-                </div>
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDeleteChat(id);
-                }}
-                className="p-2 rounded-lg text-text-secondary hover:text-red-400 hover:bg-red-400/10 transition-all duration-200 opacity-0 group-hover:opacity-100"
-                title="Delete conversation"
-              >
-                <Trash2 size={14} />
-              </button>
+          {isLoading ? (
+            <div className="flex justify-center items-center h-full text-sm text-text-secondary opacity-50">
+              Loading history...
             </div>
-          )).reverse()}
-          {entries.length === 0 && (
+          ) : entries.length > 0 ? (
+            entries.map((chat) => (
+              <div
+                key={chat.chatId}
+                className="group flex items-center justify-between p-4 rounded-xl bg-layer3 border border-border-subtle transition-all duration-200 hover:border-accent"
+              >
+                <button
+                  onClick={() => onLoadChat(chat.chatId)}
+                  className="flex-1 text-left truncate mr-2"
+                >
+                  <div className="text-sm text-white truncate font-medium">
+                    {chat.chatId.split('_')[0]}
+                  </div>
+                  <div className="text-[11px] text-text-secondary opacity-60">
+                    {chat.timestamp ? new Date(chat.timestamp).toLocaleString() : 'Unknown date'}
+                  </div>
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onDeleteChat(chat.chatId);
+                  }}
+                  className="p-2 rounded-lg text-text-secondary hover:text-red-400 hover:bg-red-400/10 transition-all duration-200 opacity-0 group-hover:opacity-100"
+                  title="Delete conversation"
+                >
+                  <Trash2 size={14} />
+                </button>
+              </div>
+            ))
+          ) : (
             <div className="text-center text-sm text-text-secondary py-10 opacity-50">
               No previous chats found.
             </div>

@@ -65,10 +65,11 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
     loadRecentChat();
   }, [agentId]);
 
-  const saveChatToHistory = async (msgs) => {
+  const saveChatToHistory = async (msgs, overrideChatId = null) => {
     try {
+      const chatIdToUse = overrideChatId || currentChatId;
       const response = await axios.post(`/api/agent/savehistory?agent=${agentId || 'orchestrator'}`, {
-        chatId: currentChatId,
+        chatId: chatIdToUse,
         messages: msgs
       });
       const data = response.data;
@@ -124,12 +125,20 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
 
   const handleSend = async (text) => {
     setView('active');
+
+    // If this is a new chat, generate a unique ID immediately to prevent duplicate files
+    let activeChatId = currentChatId;
+    if (!activeChatId) {
+      activeChatId = `${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      setCurrentChatId(activeChatId);
+    }
+
     const userMsg = { role: 'user', content: text };
     const newMsgs = [...messages, userMsg];
     setMessages(newMsgs);
 
-    // Sync user message immediately to history
-    await saveChatToHistory(newMsgs);
+    // Sync user message immediately to history using the guaranteed ID
+    await saveChatToHistory(newMsgs, activeChatId);
 
     setIsTyping(true);
 
@@ -145,15 +154,15 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
       const updatedMsgs = [...newMsgs, { role: 'assistant', content: data.content }];
       setMessages(updatedMsgs);
 
-      // Sync agent response to history
-      await saveChatToHistory(updatedMsgs);
+      // Sync agent response to history using the guaranteed ID
+      await saveChatToHistory(updatedMsgs, activeChatId);
     } catch (err) {
       const errorMsgs = [...newMsgs, {
         role: 'assistant',
         content: `I'm having trouble connecting to the ${agentName || 'orchestrator'} agent. Please try again.`
       }];
       setMessages(errorMsgs);
-      await saveChatToHistory(errorMsgs);
+      await saveChatToHistory(errorMsgs, activeChatId);
     } finally {
       setIsTyping(false);
     }
@@ -192,6 +201,7 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
         onLoadChat={handleLoadChat}
         onDeleteChat={handleDeleteChat}
         onClearHistory={handleClearHistory}
+        agentId={agentId}
       />
     </div>
   );

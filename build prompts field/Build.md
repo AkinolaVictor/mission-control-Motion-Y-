@@ -160,8 +160,24 @@ let me see your plan before starting
 <!-- each time an agent is opened, it should always show the last  -->
 
 
-when a user clicks the chat history, they should see all the previous chats with that particular agent listed in the chat history section. Don't read the items from a locastorage.get, read it from the agent chat history files through /api/agent/gethistory api route and let it be displayed in the chatHistory.jsx file
+when a user clicks the chat history, they should see all the previous chats with that particular agent listed in the chat history section. Don't read the items from a locastorage.get, read it from the agent chat history files through /api/agent/gethistory api route and let it be displayed in the chatHistory.jsx file,
 
+user should be able to click on any listed history chat and continue the chat with the agent
+
+each time a new chat history is to be saved, i notices that the /api/agent/savehistory route is called twice, and because of this, every new chat is saved twice, so instead of having a single history file for that chat, we have two, meanwhile, only one of the two initiallized files gets the updates on the chat. fix this so that only one files is created and also updated
+
+what is the problem causing this
+let me see your plan for fixing it
+
+now i want you to save all chat history as a json file, instead of a txt file.
+the json file should contain all the necessary information
+-title of chat (brief/short description of the chat)
+-time of chat initialization
+-messages (content of the chat)
+-agent
+-any other necessary information
+
+make sure to update the logic in the savehistory and gethistory api route (since the we're switching from .txt to .json file)
 
 
 
