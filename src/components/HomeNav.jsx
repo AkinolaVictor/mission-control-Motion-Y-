@@ -126,7 +126,7 @@ function HomeNav({
           ))}
 
           {
-            where === "Agents"?
+            where === "Agents" && activePill!=="New Agent"?
             (
               <Link href="/agents/newAgent" className={`ml-auto`}>
                 <div className={`w-auto h-auto px-4 py-2 rounded-full ${activePill!=="New Agent"?"bg-surface":"bg-layer3"} flex justify-center items-center cursor-pointer`}>

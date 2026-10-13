@@ -264,6 +264,28 @@ for now, let's focus on the UI (HTML AND CSS) alone
 
 when the Create button is clicked, to submit (ensure to validate the input)
 
+when a user clicks the button in line 25 of newAgent.js file,
+it should show a modal containing all the list of ollama models like in line 241 of [agentSlug].js
+when a model is selected, it should be displayed in line 36 of newAgent.js
+ensure consistency of design
+study [agentSlug].js for better understanding,
+let me see your plan before starting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 set a new property in the metadata.json file (called model: gemma4:31b-cloud)
 every agent should have a default model to interact with.

@@ -43,7 +43,7 @@ useEffect(() => {
                             <textarea
                                 value={agentDescription}
                                 onChange={(e) => setAgentDescription(e.target.value)}
-                                className='w-full bg-layer3 text-[12px] opacity-70 p-2 rounded-[15px] min-h-[180px] outline-none border border-border-subtle'
+                                className='w-full bg-layer3 text-[12px] opacity-70 p-2 rounded-[15px] min-h-[170px] outline-none border border-border-subtle'
                             />
                             <div
                                 // onClick={handleSaveSystemFile}
