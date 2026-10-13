@@ -3,7 +3,7 @@ import path from 'path';
 
 /**
  * Agent History GET Route
- * Fetches persistent chat history from agent_memory/chats/[agent_name]/
+ * Fetches persistent chat history from agent_memory/chats/[agent_name]/.json files
  */
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -25,28 +25,32 @@ export default async function handler(req, res) {
 
     if (chatId) {
       // Case 1: Fetch specific chat content
-      const filePath = path.join(baseDir, `${chatId}.txt`);
+      const filePath = path.join(baseDir, `${chatId}.json`);
       if (!fs.existsSync(filePath)) {
         return res.status(404).json({ error: 'Chat not found.' });
       }
       const content = fs.readFileSync(filePath, 'utf8');
+      const chatData = JSON.parse(content);
       return res.status(200).json({
-          messages: JSON.parse(content),
-          chatId: chatId
+          messages: chatData.messages,
+          chatId: chatId,
+          title: chatData.title,
+          timestamp: chatData.timestamp
       });
     }
 
     // Case 2: List all chats for this agent
     const files = fs.readdirSync(baseDir);
     const chatHistory = files
-      .filter(file => file.endsWith('.txt'))
+      .filter(file => file.endsWith('.json'))
       .map(file => {
-        const name = file.replace('.txt', '');
-        const parts = name.split('_');
+        const name = file.replace('.json', '');
+        const chatData = JSON.parse(fs.readFileSync(path.join(baseDir, file), 'utf8'));
         return {
           chatId: name,
-          timestamp: parts.length > 1 ? parts.slice(1).join('_') : 'Unknown',
-          id: parts[0]
+          title: chatData.title || 'Untitled Chat',
+          timestamp: chatData.timestamp || new Date().toISOString(),
+          id: name.split('_')[0]
         };
       });
 

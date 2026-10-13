@@ -3,7 +3,7 @@ import path from 'path';
 
 /**
  * Agent History SAVE Route
- * Updates persistent chat history in agent_memory/chats/[agent_name]/
+ * Updates persistent chat history in agent_memory/chats/[agent_name]/.json files
  */
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -31,10 +31,18 @@ export default async function handler(req, res) {
 
     // If no chatId provided, generate one with timestamp
     const finalChatId = chatId || `${Date.now()}_${new Date().toISOString().replace(/[:.]/g, '-')}`;
-    const filePath = path.join(baseDir, `${finalChatId}.txt`);
+    const filePath = path.join(baseDir, `${finalChatId}.json`);
 
-    // Store as JSON string in a text file
-    fs.writeFileSync(filePath, JSON.stringify(messages, null, 2), 'utf8');
+    // Create a comprehensive chat object
+    const chatObject = {
+      title: messages[0]?.content?.substring(0, 50) + (messages[0]?.content?.length > 50 ? '...' : '') || 'Untitled Chat',
+      timestamp: new Date().toISOString(),
+      agent: agent,
+      messages: messages
+    };
+
+    // Store as JSON string in a .json file
+    fs.writeFileSync(filePath, JSON.stringify(chatObject, null, 2), 'utf8');
 
     return res.status(200).json({ success: true, chatId: finalChatId });
   } catch (error) {

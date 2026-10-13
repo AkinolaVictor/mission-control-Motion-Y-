@@ -1,6 +1,0 @@
-[
-  {
-    "role": "user",
-    "content": "Tell me more about Motion-Y"
-  }
-]

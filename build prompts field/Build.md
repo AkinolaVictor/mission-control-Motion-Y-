@@ -177,8 +177,12 @@ the json file should contain all the necessary information
 -agent
 -any other necessary information
 
+delete all currently existing .txt file, so new upcoming history can be saved as [chat_id_time_date].json
 make sure to update the logic in the savehistory and gethistory api route (since the we're switching from .txt to .json file)
 
+when a user clicks the delete icon in the chat history, it should delete the json file of that chat history
+create a /api/agent/deletehistory api route to handle the delete logic, and wire it to the delete icon in the chathistory so the exact history to be deleted is the only one deleted
+also remember to update the chat history list in the front end (on success). if the chathistory to be deleted is the one in focus (currently opened by the user), automatically open a new chat for them to start again
 
 
 
