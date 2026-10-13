@@ -136,65 +136,66 @@ export default function AgentSlug() {
                   <p className='text-[12px] opacity-70'>{activeAgent.description}</p>
               </div>
             </div>
+
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
-                <div className='bg-surface w-full h-auto p-3 rounded-[13px] mb-4'>
-                    <p className='px-3s mb-2'>Model</p>
-                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2'>
-                        <p>Gemma4-31b-cloud</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                </div>
+              <div className='bg-surface w-full h-auto p-3 rounded-[13px] mb-4'>
+                  <p className='px-3s mb-2'>Model</p>
+                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2'>
+                      <p>gemma4:31b-cloud</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                  </div>
+              </div>
 
-                <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
-                    <div className='flex justify-between items-center'>
-                        <p className='px-3s'>Instruction Documents</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
-                        <p>Identity</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
-                    </div>
-                    <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
-                        <div className='mt-3s'>
-                            <div className='flex justify-between items-center mb-3'>
-                                <h1 className='font-semibold text-[12px]'>Agent Identity</h1>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
+              <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
+                  <div className='flex justify-between items-center'>
+                      <p className='px-3s'>Instruction Documents</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                  </div>
+                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
+                      <p>Identity</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+                  </div>
+                  <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
+                      <div className='mt-3s'>
+                          <div className='flex justify-between items-center mb-3'>
+                              <h1 className='font-semibold text-[12px]'>Agent Identity</h1>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
+                          </div>
+                          <p className='text-[12px] opacity-70'>
+                              {activeAgent.role}
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
+                  <div className='flex justify-between items-center'>
+                      <p className='px-3s'>Tasks</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                  </div>
+                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
+                      <p>Ongoing Tasks</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                  </div>
+                  <div className='mt-3'>
+                      {
+                        Array(12).fill(0).map((item, index)=>{
+                          return (
+                            <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
+                                <div className='flex justify-between items-center mb-3'>
+                                    <h1 className='font-semibold text-[12px]'>Title of this task</h1>
+                                    <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
+                                </div>
+                                <p className='text-[12px] opacity-70'>
+                                    Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
+                                    Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
+                                </p>
                             </div>
-                            <p className='text-[12px] opacity-70'>
-                                {activeAgent.role}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
-                    <div className='flex justify-between items-center'>
-                        <p className='px-3s'>Tasks</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
-                        <p>Ongoing Tasks</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                    <div className='mt-3'>
-                        {
-                          Array(12).fill(0).map((item, index)=>{
-                            return (
-                              <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
-                                  <div className='flex justify-between items-center mb-3'>
-                                      <h1 className='font-semibold text-[12px]'>Title of this task</h1>
-                                      <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
-                                  </div>
-                                  <p className='text-[12px] opacity-70'>
-                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
-                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
-                                  </p>
-                              </div>
-                            )
-                          })
-                        }
-                    </div>
-                </div>
+                          )
+                        })
+                      }
+                  </div>
+              </div>
             </div>
           </div>
 

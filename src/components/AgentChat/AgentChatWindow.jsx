@@ -45,6 +45,11 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
 
   useEffect(() => {
     async function loadRecentChat() {
+      // Reset state immediately when agent changes to prevent previous agent's messages from showing
+      setMessages([]);
+      setCurrentChatId(null);
+      setView('new');
+
       try {
         const response = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}`);
         const data = response.data;

@@ -188,23 +188,6 @@ also remember to update the chat history list in the front end (on success). if 
 
 i noticed that when the user switches from one agent to another, the chat being held with the previous agent is being displayed in the new agent (only the agent name changes on the header). i don't like this behaviour
 whenever user switch agent or open any agen, it should instead seaarch the agent chat history, and show the most recent chat in the agent's chat history so they could continue chatting
-chch
-
-
-
-Create agents
-when a user clicks on the "New Agent" button, it should take them to a new /createagent page
-
-the page should enable them to select a model (drop down)
-the default model should always be gemma4:31b-cloud
-there should be a textfield where they can expressly talk about the new agent they want to create
-and a "Create" button to submit
-
-(Create the UI to accomodate these)
-
-when the Create button is clicked, to submit (ensure to validate the input)
-
-
 
 
 
@@ -267,7 +250,31 @@ also don't forget to update this logic at the AgentChatWIndow.jsx
 
 
 
+Create agents
+when a user clicks on the "New Agent" button, it should take them to a new /createagent page
+
+the page should enable them to select a model (drop down)
+the default model should always be gemma4:31b-cloud
+there should be a textfield where they can expressly talk about the new agent they want to create
+and a "Create" button to submit
+
+(Create the UI to accomodate these)
+
+when the Create button is clicked, to submit (ensure to validate the input)
+
+
+set a new property in the metadata.json file (called model: gemma4:31b-cloud)
+every agent should have a default model to interact with.
+every section of the code that require a model to interact with the agent must first read the agent's metadata.json file, to get the model to be used for the current interaction. NO HARD CODED MODEL
+i want you to search through the codebase to let me know all the files that are concerned about this new changes
+let me see your plan first before working
 
 
 
+when a user clicks the line 143 in [agentSlug].js, it should show a modal of all available models in ollama (both local and cloud). a user should be able to select a model from the list to set it as the default model of the currently selected agent (model: newly_selected_model).
+let this be done through an api route /api/agent/update_agent this route would be responsible for implementing any updates being made to the agent:
+-change model,
+-update system files (identity, soul, user, heartbeat, etc...)
+-and MANY MANY more to come
+also don't forget to update it on the frontend when a new model is selected and the metadata.json file of the agent has been updated,
 

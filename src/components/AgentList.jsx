@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 function AgentList(props) {
     const [agents, setAgents] = useState([]);
     const [loading, setLoading] = useState(true);
+    const path = usePathname()
+    // console.log(path)
 
     useEffect(() => {
         async function fetchAgents() {
@@ -34,14 +37,14 @@ function AgentList(props) {
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
               <div className='mb-2'>
                 <Link href={`/agents`} className='w-full flex justify-start items-center gap-2'>
-                    <div className={`w-full h-auto rounded-[7px] cursor-pointer hover:bg-layer3 px-3 py-2 my-1 transition-all duration-200`}>
-                    <div className='w-full flex justify-start items-center gap-2'>
-                        <div className='w-7 h-7 rounded-full bg-layerd3 flex items-center justify-center text-lg text-white'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-kanban preview-icon"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>
+                    <div className={`w-full h-auto rounded-[7px] cursor-pointer hover:bg-layer3 ${path=="/agents"?"bg-layer3":""} px-3 py-2 my-1 transition-all duration-200`}>
+                        <div className='w-full flex justify-start items-center gap-2'>
+                            <div className='w-7 h-7 rounded-full bg-layerd3 flex items-center justify-center text-lg text-white'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-kanban preview-icon"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>
+                            </div>
+                            <h3 className='text-[13px] font-semibold text-white tracking-tight'>Agents Board</h3>
                         </div>
-                        <h3 className='text-[13px] font-semibold text-white tracking-tight'>Agents Board</h3>
-                    </div>
-                    <p className='text-[11px] text-text-secondary ml-9'>All agents activities overview</p>
+                        <p className='text-[11px] text-text-secondary ml-9'>All agents activities overview</p>
                     </div>
                 </Link>
               </div>
@@ -58,7 +61,7 @@ function AgentList(props) {
                 agents.map((agent, index) => (
                     <Link key={agent.id} href={`/agents/${agent.id}`} className='w-full flex justify-start items-center gap-2'>
                         <div
-                            className={`w-full h-auto rounded-[7px] cursor-pointer ${index === 0 ? "bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-2 my-1 transition-all duration-200`}
+                            className={`w-full h-auto rounded-[7px] cursor-pointer ${path===`/agents/${agent.id}`?"bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-2 my-1 transition-all duration-200`}
                         >
                             <div className='w-full flex justify-start items-center gap-2'>
                                 <div className='w-7 h-7 rounded-full bg-layerd3 flex items-center justify-center text-lg text-white'>
