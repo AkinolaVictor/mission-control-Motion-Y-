@@ -304,5 +304,13 @@ instead of using the /api/agent/update_agent api route, create a new /api/agent/
 ensure to read through and understand well
 let me see your plan before starting
 
+everything worked fine, but whenever i try to save the changes made to any file, i get this error: Failed to save system file.
+fix it
+
+instead of having a single api route /api/agent/update_agent_system, let us have 2
+1. /api/agent/get_agent_system to only read any (selected) agent system file
+2. /api/agent/edit_agent_system to update any (selected) agent system file
+
+make sure to update any frontend files that are tied to the /api/agent/update_agent_system route based on the new logic
 
 

@@ -16,7 +16,8 @@ export default function AgentSlug() {
   const { navHeight, selectedCategory, selectedIdeaId } = useSelector((state) => state.general);
   const [activeAgent, setActiveAgent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isChatModalOpen, setIsChatModalOpen] = useState(false);
+  const [showSystemSelector, setShowSystemSelector] = useState(false);
+  const [showSystemSelector2, setShowSystemSelector2] = useState(false);
   const [modalType, setModalType] = useState('category'); // 'category' or 'idea'
   const [categories, setCategories] = useState([]);
   const [ideas, setIdeas] = useState([]);
@@ -26,6 +27,14 @@ export default function AgentSlug() {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
   const [availableModels, setAvailableModels] = useState([]);
   const [isLoadingModels, setIsLoadingModels] = useState(false);
+
+  // System File state
+  const [isSystemModalOpen, setIsSystemModalOpen] = useState(false);
+  const [systemFiles, setSystemFiles] = useState([]);
+  const [selectedSystemFile, setSelectedSystemFile] = useState(null);
+  const [systemFileContent, setSystemFileContent] = useState('');
+  const [isEditingSystem, setIsEditingSystem] = useState(false);
+  const [editedContent, setEditedContent] = useState('');
 
   useEffect(() => {
     if (agentSlug) {
@@ -110,16 +119,55 @@ export default function AgentSlug() {
     }
   };
 
-  // Find the selected idea for the right pane
-  const selectedIdea = ideas.find(idea => idea.id === selectedIdeaId);
+  // System File handlers
+  const handleOpenSystemSelector = async () => {
+    setIsSystemModalOpen(true);
+    try {
+      const response = await axios.get(`/api/agent/get_agent_system?agentId=${activeAgent.id}&action=list`);
+      setSystemFiles(response.data.files || []);
+    } catch (error) {
+      console.error('Error fetching system files:', error);
+    }
+  };
+
+  const handleSelectSystemFile = async (fileName) => {
+    try {
+      const response = await axios.get(`/api/agent/get_agent_system?agentId=${activeAgent.id}&file=${fileName}`);
+      setSystemFileContent(response.data.content);
+      setEditedContent(response.data.content);
+      setSelectedSystemFile(fileName);
+      setIsSystemModalOpen(false);
+    } catch (error) {
+      console.error('Error reading system file:', error);
+    }
+  };
+
+  const handleSaveSystemFile = async () => {
+    try {
+      const response = await axios.post('/api/agent/edit_agent_system', {
+        agentId: activeAgent.id,
+        fileName: selectedSystemFile,
+        content: editedContent
+      });
+
+      if (response.data.success) {
+        setSystemFileContent(editedContent);
+        setIsEditingSystem(false);
+      }
+    } catch (error) {
+      console.error('Error saving system file:', error);
+      alert('Failed to save system file.');
+    }
+  };
+
 
   if (!activeAgent) {
     return (
-        <DashboardLayout activePill="Agents" where="Agents">
-            <div className="flex items-center justify-center h-full">
-                <p className="text-text-secondary">Loading agent or agent not found...</p>
-            </div>
-        </DashboardLayout>
+      <DashboardLayout activePill="Agents" where="Agents">
+          <div className="flex items-center justify-center h-full">
+              <p className="text-text-secondary">Loading agent or agent not found...</p>
+          </div>
+      </DashboardLayout>
     );
   }
 
@@ -188,65 +236,101 @@ export default function AgentSlug() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </div>
                 </div>
-
+                
                 <div className='bg-surface w-full h-auto rounded-[13px] mb-4 p-3'>
-                    <div className='flex justify-between items-center'>
+                    <div onClick={() => setShowSystemSelector(!showSystemSelector)} className='cursor-pointer flex justify-between items-center'>
                         <p className='px-3s'>Agent System</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                        {
+                          !showSystemSelector?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>:
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up preview-icon"><path d="m18 15-6-6-6 6"/></svg>
+                        }
                     </div>
-                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
-                        <p>IDENTITY.md</p>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>  
-                        </div>
-                    </div>
-                    <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
-                        <div className='mt-3s'>
-                            <div className='flex justify-between items-center mb-3'>
-                                <h1 className='font-semibold text-[12px]'>Agent Identity</h1>
-                                <div>{
-                                  true?
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>:
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                                }</div>
-                            </div>
+                    {
+                      showSystemSelector?
+                      <>
+                        <div
+                          onClick={handleOpenSystemSelector}
+                          className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'
+                        >
+                            <p>{selectedSystemFile || "Select System File"}</p>
                             <div>
-                              <p className='text-[12px] opacity-70'>{activeAgent.role}</p>
-                            </div>
-                            <div className={`w-full py-2 cursor-pointer flex justify-center ${!true?"hidden":""} items-center mt-3 bg-layer rounded-[9px]`}>
-                              <p className='text-[13px] opacity-90'>Update</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
                             </div>
                         </div>
-                    </div>
+                        <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
+                            <div className='mt-3s'>
+                                <div className='flex justify-between items-center mb-3'>
+                                    <h1 className='font-semibold text-[12px]'>{selectedSystemFile || "Agent Identity"}</h1>
+                                    <div onClick={() => setIsEditingSystem(!isEditingSystem)} className='cursor-pointer'>
+                                      {
+                                        !isEditingSystem ?
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>:
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                      }
+                                    </div>
+                                </div>
+                                <div className='w-full'>
+                                  {isEditingSystem ? (
+                                    <textarea
+                                      value={editedContent}
+                                      onChange={(e) => setEditedContent(e.target.value)}
+                                      className='w-full bg-layer3 text-[12px] opacity-70 p-2 rounded-[7px] min-h-[230px] outline-none border border-border-subtle'
+                                    />
+                                  ) : (
+                                    <p className='text-[12px] opacity-70 whitespace-pre-wrap'>{systemFileContent || activeAgent.role}</p>
+                                  )}
+                                </div>
+                                <div
+                                  onClick={handleSaveSystemFile}
+                                  className={`w-full py-2 cursor-pointer flex justify-center ${!isEditingSystem ? "hidden" : ""} items-center mt-3 bg-layer rounded-[9px] hover:bg-layer3 transition-colors`}
+                                >
+                                  <p className='text-[13px] opacity-90'>Update</p>
+                                </div>
+                            </div>
+                        </div>
+                      </>:
+                      null
+                    }
                 </div>
 
                 <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
-                    <div className='flex justify-between items-center'>
+                    <div onClick={()=>{setShowSystemSelector2(!showSystemSelector2)}} className='flex justify-between items-center'>
                         <p className='px-3s'>Tasks</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
-                        <p>Ongoing Tasks</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                    </div>
-                    <div className='mt-3'>
                         {
-                          Array(12).fill(0).map((item, index)=>{
-                            return (
-                              <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
-                                  <div className='flex justify-between items-center mb-3'>
-                                      <h1 className='font-semibold text-[12px]'>Title of this task</h1>
-                                      <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
-                                  </div>
-                                  <p className='text-[12px] opacity-70'>
-                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
-                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
-                                  </p>
-                               </div>
-                            )
-                          })
+                          !showSystemSelector2?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>:
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up preview-icon"><path d="m18 15-6-6-6 6"/></svg>
                         }
                     </div>
+                    {
+                      showSystemSelector2?
+                      <>
+                        <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
+                            <p>Ongoing Tasks</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div className='mt-3'>
+                            {
+                              Array(12).fill(0).map((item, index)=>{
+                                return (
+                                  <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
+                                      <div className='flex justify-between items-center mb-3'>
+                                          <h1 className='font-semibold text-[12px]'>Title of this task</h1>
+                                          <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
+                                      </div>
+                                      <p className='text-[12px] opacity-70'>
+                                          Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
+                                          Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
+                                      </p>
+                                  </div>
+                                )
+                              })
+                            }
+                        </div>
+                      </>:
+                      null
+                    }
                 </div>
             </div>
           </div>
@@ -392,6 +476,44 @@ export default function AgentSlug() {
           </div>
         ) : null
       }
+
+      {isSystemModalOpen && (
+        <div className='fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4'>
+          <div className='bg-layer2 border border-border-subtle rounded-2xl w-full max-w-[400px] max-h-[80vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-200'>
+            <div className='p-4 border-b border-border-subtle flex justify-between items-center'>
+              <h2 className='text-sm font-semibold text-white'>Agent System Files</h2>
+              <button
+                onClick={() => setIsSystemModalOpen(false)}
+                className='text-text-secondary hover:text-white transition-colors'
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6L6 18" /><path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className='p-2 overflow-y-auto flex-1 custom-scrollbar'>
+              {systemFiles.length > 0 ? (
+                systemFiles.map((file, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => handleSelectSystemFile(file)}
+                    className={`w-full h-auto rounded-[7px] cursor-pointer ${selectedSystemFile === file ? "bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-3 my-1 transition-all duration-200 flex justify-between items-center`}
+                  >
+                    <span className='text-sm text-white font-medium'>{file}</span>
+                    {selectedSystemFile === file && (
+                      <div className='w-2 h-2 rounded-full bg-accent' />
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div className='text-center py-10 text-sm text-text-secondary opacity-50'>
+                  No system files found.
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
     </DashboardLayout>
   );
