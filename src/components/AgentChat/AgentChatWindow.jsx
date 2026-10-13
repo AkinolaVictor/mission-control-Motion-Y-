@@ -103,13 +103,21 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   };
 
   const handleDeleteChat = async (chatId) => {
-    // Note: Current API doesn't have a DELETE method,
-    // but we can handle it by clearing local state.
-    // In a full implementation, we would call a DELETE endpoint.
-    if (currentChatId === chatId) {
-      handleNewChat();
+    try {
+      await axios.delete(`/api/agent/deletehistory?agent=${agentId || 'orchestrator'}&chatId=${chatId}`);
+
+      if (currentChatId === chatId) {
+        handleNewChat();
+      }
+      // We don't need to explicitly trigger a refresh if ChatHistory handles its own fetching
+      // but we can call a function to tell it to refresh if we pass one.
+      // For now, we'll let the user close and reopen or the component re-mount.
+      // Actually, a better UX is to trigger a refresh in the ChatHistory component.
+      setIsHistoryOpen(false);
+    } catch (error) {
+      console.error('Error deleting chat:', error);
+      alert('Failed to delete chat history. Please try again.');
     }
-    setIsHistoryOpen(false);
   };
 
   const handleClearHistory = async () => {

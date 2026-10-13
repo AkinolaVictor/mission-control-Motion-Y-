@@ -7,31 +7,30 @@ export default function ChatHistory({ isOpen, onClose, onLoadChat, onClearHistor
   const [entries, setEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    async function fetchHistory() {
-      if (!isOpen || !agentId) return;
+  const fetchHistory = async () => {
+    if (!isOpen || !agentId) return;
 
-      setIsLoading(true);
-      try {
-        const response = await axios.get(`/api/agent/gethistory?agent=${agentId}`);
-        const data = response.data;
+    setIsLoading(true);
+    try {
+      const response = await axios.get(`/api/agent/gethistory?agent=${agentId}`);
+      const data = response.data;
 
-        if (data.chats && Array.isArray(data.chats)) {
-          // Sort by timestamp descending
-          const sorted = [...data.chats].sort((a, b) => {
-            const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
-            const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
-            return timeB - timeA;
-          });
-          setEntries(sorted);
-        }
-      } catch (error) {
-        console.error('Error fetching agent history:', error);
-      } finally {
-        setIsLoading(false);
+      if (data.chats && Array.isArray(data.chats)) {
+        const sorted = [...data.chats].sort((a, b) => {
+          const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+          const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+          return timeB - timeA;
+        });
+        setEntries(sorted);
       }
+    } catch (error) {
+      console.error('Error fetching agent history:', error);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
+  useEffect(() => {
     fetchHistory();
   }, [isOpen, agentId]);
 
@@ -75,16 +74,18 @@ export default function ChatHistory({ isOpen, onClose, onLoadChat, onClearHistor
                   className="flex-1 text-left truncate mr-2"
                 >
                   <div className="text-sm text-white truncate font-medium">
-                    {chat.chatId.split('_')[0]}
+                    {chat.title}
                   </div>
                   <div className="text-[11px] text-text-secondary opacity-60">
                     {chat.timestamp ? new Date(chat.timestamp).toLocaleString() : 'Unknown date'}
                   </div>
                 </button>
                 <button
-                  onClick={(e) => {
+                  onClick={async (e) => {
                     e.stopPropagation();
-                    onDeleteChat(chat.chatId);
+                    await onDeleteChat(chat.chatId);
+                    // Refresh list after deletion
+                    await fetchHistory();
                   }}
                   className="p-2 rounded-lg text-text-secondary hover:text-red-400 hover:bg-red-400/10 transition-all duration-200 opacity-0 group-hover:opacity-100"
                   title="Delete conversation"
