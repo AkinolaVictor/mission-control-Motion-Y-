@@ -188,7 +188,7 @@ also remember to update the chat history list in the front end (on success). if 
 
 i noticed that when the user switches from one agent to another, the chat being held with the previous agent is being displayed in the new agent (only the agent name changes on the header). i don't like this behaviour
 whenever user switch agent or open any agen, it should instead seaarch the agent chat history, and show the most recent chat in the agent's chat history so they could continue chatting
-
+chch
 
 
 
