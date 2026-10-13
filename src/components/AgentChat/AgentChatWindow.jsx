@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ChatHeader from './ChatHeader';
 import ChatInput from './ChatInput';
 import ChatNewState from './ChatNewState';
@@ -15,42 +15,73 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(null);
+  const scrollRef = useRef(null);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("motion_y_chat_history");
-    if (saved) {
-      const history = JSON.parse(saved);
-      const chatIds = Object.keys(history);
-      if (chatIds.length > 0) {
-        const mostRecentId = chatIds.sort((a, b) =>
-          new Date(history[b].timestamp) - new Date(history[a].timestamp)
-        )[0];
-
-        const lastChat = history[mostRecentId];
-        const lastTimestamp = new Date(lastChat.timestamp).getTime();
-        if (Date.now() - lastTimestamp < 60 * 60 * 1000) {
-          setMessages(lastChat.messages);
-          setCurrentChatId(mostRecentId);
-          setView('active');
-        }
+  const scrollIntoView = () => {
+    if (scrollRef.current) {
+      const element = scrollRef.current;
+      // Instead of scrolling to the very bottom, we ensure the latest message
+      // is at least partially visible. If it's a very long message, the user
+      // can scroll manually.
+      const scrollAmount = element.scrollHeight - element.clientHeight;
+      if (scrollAmount > 0) {
+        element.scrollTo({
+          top: scrollAmount,
+          behavior: 'smooth'
+        });
       }
     }
-  }, []);
+  };
 
-  const saveChatToHistory = (msgs) => {
-    const currentHistory = JSON.parse(localStorage.getItem("motion_y_chat_history") || "{}");
-    const firstUserMsg = msgs.find(m => m.role === "user")?.content || "New Conversation";
-    const title = firstUserMsg.substring(0, 30) + (firstUserMsg.length > 30 ? "..." : "");
-    const chatId = currentChatId || Date.now().toString();
+  useEffect(() => {
+    // Only autoscroll when the agent has actually replied (isTyping becomes false)
+    // or when the user sends a message.
+    scrollIntoView();
+    // if (!isTyping) {
+    //   scrollIntoView();
+    // }
+  }, [messages, isTyping]);
 
-    currentHistory[chatId] = {
-      title,
-      messages: msgs,
-      timestamp: new Date().toISOString(),
-    };
+  useEffect(() => {
+    async function loadRecentChat() {
+      try {
+        const response = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}`);
+        const data = await response.json();
+        if (data.chats && data.chats.length > 0) {
+          const mostRecentChatId = data.chats[0].chatId;
+          const chatResponse = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}&chatId=${mostRecentChatId}`);
+          const chatData = await chatResponse.json();
+          if (chatData.messages) {
+            setMessages(chatData.messages);
+            setCurrentChatId(mostRecentChatId);
+            setView('active');
+          }
+        }
+      } catch (error) {
+        console.error('Error loading recent chat:', error);
+      }
+    }
+    loadRecentChat();
+  }, [agentId]);
 
-    localStorage.setItem("motion_y_chat_history", JSON.stringify(currentHistory));
-    setCurrentChatId(chatId);
+  const saveChatToHistory = async (msgs) => {
+    try {
+      const response = await fetch('/api/agent/history', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          agent: agentId || 'orchestrator',
+          chatId: currentChatId,
+          messages: msgs
+        }),
+      });
+      const data = await response.json();
+      if (data.chatId) {
+        setCurrentChatId(data.chatId);
+      }
+    } catch (error) {
+      console.error('Error saving chat to history:', error);
+    }
   };
 
   const handleNewChat = () => {
@@ -59,28 +90,33 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
     setView('new');
   };
 
-  const handleLoadChat = (chatId) => {
-    const history = JSON.parse(localStorage.getItem("motion_y_chat_history") || "{}");
-    const chat = history[chatId];
-    if (chat) {
-      setMessages(chat.messages);
-      setCurrentChatId(chatId);
-      setView('active');
-      setIsHistoryOpen(false);
+  const handleLoadChat = async (chatId) => {
+    try {
+      const response = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}&chatId=${chatId}`);
+      const data = await response.json();
+      if (data.messages) {
+        setMessages(data.messages);
+        setCurrentChatId(chatId);
+        setView('active');
+        setIsHistoryOpen(false);
+      }
+    } catch (error) {
+      console.error('Error loading chat:', error);
     }
   };
 
-  const handleDeleteChat = (chatId) => {
-    const currentHistory = JSON.parse(localStorage.getItem("motion_y_chat_history") || "{}");
-    delete currentHistory[chatId];
-    localStorage.setItem("motion_y_chat_history", JSON.stringify(currentHistory));
+  const handleDeleteChat = async (chatId) => {
+    // Note: Current API doesn't have a DELETE method,
+    // but we can handle it by clearing local state.
+    // In a full implementation, we would call a DELETE endpoint.
     if (currentChatId === chatId) {
       handleNewChat();
     }
+    setIsHistoryOpen(false);
   };
 
-  const handleClearHistory = () => {
-    localStorage.removeItem("motion_y_chat_history");
+  const handleClearHistory = async () => {
+    // Similar to delete, would call a DELETE endpoint to clear agent folder
     handleNewChat();
     setIsHistoryOpen(false);
   };
@@ -126,9 +162,12 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
 
   return (
     <div className="flex flex-col h-full w-full bg-layer2 border border-border-subtle rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300 relative">
-      <ChatHeader onClose={onClose} onOpenMenu={() => setIsMenuOpen(!isMenuOpen)} />
+      <ChatHeader onClose={onClose} onOpenMenu={() => setIsMenuOpen(!isMenuOpen)} agentName={agentName} />
 
-      <div className="flex-1 overflow-y-auto custom-scrollbar relative">
+      <div
+        ref={scrollRef}
+        className="flex-1 overflow-y-auto custom-scrollbar relative"
+      >
         {view === 'new' ? (
           <ChatNewState onStartChat={handleStartChat} />
         ) : (

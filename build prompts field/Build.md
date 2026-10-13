@@ -209,3 +209,23 @@ then you insert it into the agents array
 i believe it would be much easier to maintain and manage
 i want you to show me your plan before starting
 
+
+
+instead of using this agent_memory/chats/[agent_id]/[chat_id]_[timestamp].txt, i want you to use agent_memory/chats/[agent_name]/[chat_id]_[timestamp].txt
+
+each time i enter a message or the agent replys in the chat, i want line 141 in AgentChatWindow.jsx to autoscroll
+Autoscroll behaviour:
+it should simply auto scroll the new message to view, it should not over scroll the top (starting texts) out of view, if the message is too long, it should only scroll part of it to view, the user will scroll in the rest manually, but if the message can fit in the screen completely, let it scroll all to view
+
+
+the chat history is not working
+i want you to update each chat history per messages sent in each chat so it cann totally be in sync
+for every message sent by the user and responded by the agent, the agent chat history must be updated
+show me your plan first
+
+
+
+
+
+
+
