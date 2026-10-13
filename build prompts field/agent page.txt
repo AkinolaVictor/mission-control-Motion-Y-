@@ -44,7 +44,10 @@ this code keeps reporting a syntax error, can you fix it for me?
 
 
 
-
+now everything works fine, i just need a few update for the mobile experience
+when a user clicks on line 189 of the [agentSlug].js file, it should show a modal containing everything in the AgentList.jsx file
+the user should be able to click on any of the available links, and navigate accordingly
+also, the text in line
 
 
 

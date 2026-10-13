@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
-function AgentList(props) {
+function AgentList({env, closeModal}) {
     const [agents, setAgents] = useState([]);
     const [loading, setLoading] = useState(true);
     const path = usePathname()
@@ -25,18 +25,28 @@ function AgentList(props) {
         fetchAgents();
     }, []);
 
+    function ifOnModal(){
+        if(env=="modal" && closeModal){
+            closeModal()
+        }
+    }
+
     return (
         <>
-            <div className='flex justify-left p-4 items-center w-full gap-3'>
-              <div className='w-10 h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
-              </div>
-              <h2 className='text-[13px] font-semibold text-white tracking-tight'>Agents and Activities</h2>
-            </div>
+            {
+                env=="modal"?
+                null:
+                <div className='flex justify-left p-4 items-center w-full gap-3'>
+                <div className='w-10 h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+                </div>
+                <h2 className='text-[13px] font-semibold text-white tracking-tight'>Agents and Activities</h2>
+                </div>
+            }
 
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
               <div className='mb-2'>
-                <Link href={`/agents`} className='w-full flex justify-start items-center gap-2'>
+                <Link href={`/agents`} onClick={ifOnModal} className='w-full flex justify-start items-center gap-2'>
                     <div className={`w-full h-auto rounded-[7px] cursor-pointer hover:bg-layer3 ${path=="/agents"?"bg-layer3":""} px-3 py-2 my-1 transition-all duration-200`}>
                         <div className='w-full flex justify-start items-center gap-2'>
                             <div className='w-7 h-7 rounded-full bg-layerd3 flex items-center justify-center text-lg text-white'>
@@ -59,7 +69,7 @@ function AgentList(props) {
                 </div>
               ) : (
                 agents.map((agent, index) => (
-                    <Link key={agent.id} href={`/agents/${agent.id}`} className='w-full flex justify-start items-center gap-2'>
+                    <Link key={agent.id} onClick={ifOnModal} href={`/agents/${agent.id}`} className='w-full flex justify-start items-center gap-2'>
                         <div
                             className={`w-full h-auto rounded-[7px] cursor-pointer ${path===`/agents/${agent.id}`?"bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-2 my-1 transition-all duration-200`}
                         >

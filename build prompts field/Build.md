@@ -251,12 +251,14 @@ also don't forget to update this logic at the AgentChatWIndow.jsx
 
 
 Create agents
-when a user clicks on the "New Agent" button, it should take them to a new /createagent page
+when a user clicks on the "New Agent" button in line 131 of the HomeNav.jsx component,
+it should take them to a new /agents/createagent url page
 
-the page should enable them to select a model (drop down)
+the page should enable them to select a model (drop down) exactly like in line 241 of [agentSlug].jsx
 the default model should always be gemma4:31b-cloud
 there should be a textfield where they can expressly talk about the new agent they want to create
 and a "Create" button to submit
+for now, let's focus on the UI (HTML AND CSS) alone
 
 (Create the UI to accomodate these)
 

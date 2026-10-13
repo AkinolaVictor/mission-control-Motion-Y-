@@ -128,10 +128,12 @@ function HomeNav({
           {
             where === "Agents"?
             (
-            <div className='w-auto h-auto px-4 py-2 rounded-full bg-surface flex justify-center items-center ml-auto cursor-pointer'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus preview-icon"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                <p className='text-xs text-foreground ml-2'>New Agent</p>
-            </div>
+              <Link href="/agents/newAgent" className={`ml-auto`}>
+                <div className={`w-auto h-auto px-4 py-2 rounded-full ${activePill!=="New Agent"?"bg-surface":"bg-layer3"} flex justify-center items-center cursor-pointer`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus preview-icon"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    <p className='text-xs text-foreground ml-2'>New Agent</p>
+                </div>
+              </Link>
             ): 
             null
           }
