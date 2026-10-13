@@ -1,0 +1,15 @@
+{
+  "title": "What's the pricing for your automation service",
+  "timestamp": "2026-10-13T17:05:20.796Z",
+  "agent": "motion_dev",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What's the pricing for your automation service"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the motion_dev agent. Please try again."
+    }
+  ]
+}
