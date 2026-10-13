@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import ChatHeader from './ChatHeader';
 import ChatInput from './ChatInput';
 import ChatNewState from './ChatNewState';
@@ -45,12 +46,12 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   useEffect(() => {
     async function loadRecentChat() {
       try {
-        const response = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}`);
-        const data = await response.json();
+        const response = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}`);
+        const data = response.data;
         if (data.chats && data.chats.length > 0) {
           const mostRecentChatId = data.chats[0].chatId;
-          const chatResponse = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}&chatId=${mostRecentChatId}`);
-          const chatData = await chatResponse.json();
+          const chatResponse = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}&chatId=${mostRecentChatId}`);
+          const chatData = chatResponse.data;
           if (chatData.messages) {
             setMessages(chatData.messages);
             setCurrentChatId(mostRecentChatId);
@@ -66,16 +67,11 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
 
   const saveChatToHistory = async (msgs) => {
     try {
-      const response = await fetch('/api/agent/history', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          agent: agentId || 'orchestrator',
-          chatId: currentChatId,
-          messages: msgs
-        }),
+      const response = await axios.post(`/api/agent/savehistory?agent=${agentId || 'orchestrator'}`, {
+        chatId: currentChatId,
+        messages: msgs
       });
-      const data = await response.json();
+      const data = response.data;
       if (data.chatId) {
         setCurrentChatId(data.chatId);
       }
@@ -92,8 +88,8 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
 
   const handleLoadChat = async (chatId) => {
     try {
-      const response = await fetch(`/api/agent/history?agent=${agentId || 'orchestrator'}&chatId=${chatId}`);
-      const data = await response.json();
+      const response = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}&chatId=${chatId}`);
+      const data = response.data;
       if (data.messages) {
         setMessages(data.messages);
         setCurrentChatId(chatId);
@@ -131,30 +127,33 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
     const userMsg = { role: 'user', content: text };
     const newMsgs = [...messages, userMsg];
     setMessages(newMsgs);
+
+    // Sync user message immediately to history
+    await saveChatToHistory(newMsgs);
+
     setIsTyping(true);
 
     try {
-      const response = await fetch('/api/agent/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          agent: agentId || 'orchestrator',
-          model: 'gemma4:31b-cloud',
-          messages: newMsgs
-        }),
+      const response = await axios.post('/api/agent/chat', {
+        agent: agentId || 'orchestrator',
+        model: 'gemma4:31b-cloud',
+        messages: newMsgs
       });
 
-      if (!response.ok) throw new Error('API Error');
-      const data = await response.json();
+      const data = response.data;
 
       const updatedMsgs = [...newMsgs, { role: 'assistant', content: data.content }];
       setMessages(updatedMsgs);
-      saveChatToHistory(updatedMsgs);
+
+      // Sync agent response to history
+      await saveChatToHistory(updatedMsgs);
     } catch (err) {
-      setMessages(prev => [...prev, {
+      const errorMsgs = [...newMsgs, {
         role: 'assistant',
         content: `I'm having trouble connecting to the ${agentName || 'orchestrator'} agent. Please try again.`
-      }]);
+      }];
+      setMessages(errorMsgs);
+      await saveChatToHistory(errorMsgs);
     } finally {
       setIsTyping(false);
     }

@@ -6,20 +6,24 @@ import path from 'path';
  * Manages persistent chat history using file storage in agent_memory/chats/[agent_name]/
  */
 export default async function handler(req, res) {
+  console.log("Got here.....")
   const { agent, chatId } = req.query;
-
+  
   if (!agent) {
     return res.status(400).json({ error: 'Agent name is required.' });
   }
 
+  // Use process.cwd() to ensure we are in the project root
   const baseDir = path.join(process.cwd(), 'agent_memory', 'chats', agent);
-
-  // Ensure agent directory exists
-  if (!fs.existsSync(baseDir)) {
-    fs.mkdirSync(baseDir, { recursive: true });
-  }
-
+  
   try {
+    // Ensure agent directory exists
+    console.log("Got here 2")
+    if (!fs.existsSync(baseDir)) {
+      fs.mkdirSync(baseDir, { recursive: true });
+    }
+    
+    console.log("Got here 3")
     if (req.method === 'GET') {
       // Case 1: Fetch specific chat content
       if (chatId) {
@@ -40,26 +44,37 @@ export default async function handler(req, res) {
         .filter(file => file.endsWith('.txt'))
         .map(file => {
           const name = file.replace('.txt', '');
-          const [id, timestamp] = name.split('_');
+          const parts = name.split('_');
           return {
             chatId: name,
-            timestamp: timestamp,
-            id: id
+            timestamp: parts.length > 1 ? parts.slice(1).join('_') : 'Unknown',
+            id: parts[0]
           };
         });
-
+      console.log("Getting History")
       return res.status(200).json({ chats: chatHistory });
     }
+    console.log("Got here 4")
 
     if (req.method === 'POST') {
+      // Log request for debugging
+      console.log(`[History API] POST request for agent: ${agent}, body:`, req.body);
+
       const { chatId, messages } = req.body;
+      console.log(messages)
+
+      if (!messages || !Array.isArray(messages)) {
+        return res.status(400).json({ error: 'Messages array is required.' });
+      }
 
       // If no chatId provided, generate one with timestamp
       const finalChatId = chatId || `${Date.now()}_${new Date().toISOString().replace(/[:.]/g, '-')}`;
       const filePath = path.join(baseDir, `${finalChatId}.txt`);
 
-      // Store as JSON string in a text file for easy reading/parsing
+      // Store as JSON string in a text file
       fs.writeFileSync(filePath, JSON.stringify(messages, null, 2), 'utf8');
+
+      console.log(`[History API] Successfully saved chat to: ${filePath}`);
 
       return res.status(200).json({ success: true, chatId: finalChatId });
     }

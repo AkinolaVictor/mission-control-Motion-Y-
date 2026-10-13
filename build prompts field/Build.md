@@ -160,6 +160,9 @@ let me see your plan before starting
 <!-- each time an agent is opened, it should always show the last  -->
 
 
+when a user clicks the chat history, they should see all the previous chats with that particular agent listed in the chat history section. Don't read the items from a locastorage.get, read it from the agent chat history files through /api/agent/gethistory api route and let it be displayed in the chatHistory.jsx file
+
+
 
 
 
@@ -222,6 +225,20 @@ the chat history is not working
 i want you to update each chat history per messages sent in each chat so it cann totally be in sync
 for every message sent by the user and responded by the agent, the agent chat history must be updated
 show me your plan first
+
+i want you to use axios instead of fetch for all API calls,
+inspect all the api calls to the history route, ans ensure the right route is passed in
+each time the /api/agent/history route is called, i keep getting a 400 error showing the agent name is not passed. or some payload is missiong
+check through and fix this so the history route can work properly
+
+
+instead of having one single route /api/agent/history that handles both get and post
+lets have two route
+1. /api/agent/gethistory route to get saved history chats (both single and all history)
+2. /api/agent/savehistory route to update the history and keep each history in sync with its chat
+also don't forget to update this logic at the AgentChatWIndow.jsx
+
+
 
 
 
