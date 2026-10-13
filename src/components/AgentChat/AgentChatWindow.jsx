@@ -56,7 +56,8 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
         const response = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}`);
         const data = response.data;
         if (data.chats && data.chats.length > 0) {
-          const mostRecentChatId = data.chats[0].chatId;
+          const lastChatIndex = data.chats.length - 1;
+          const mostRecentChatId = data.chats[lastChatIndex].chatId;
           const chatResponse = await axios.get(`/api/agent/gethistory?agent=${agentId || 'orchestrator'}&chatId=${mostRecentChatId}`);
           const chatData = chatResponse.data;
           if (chatData.messages) {

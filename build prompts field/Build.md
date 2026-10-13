@@ -278,3 +278,31 @@ let this be done through an api route /api/agent/update_agent this route would b
 -and MANY MANY more to come
 also don't forget to update it on the frontend when a new model is selected and the metadata.json file of the agent has been updated,
 
+keep in mind that the models available in ollama must not be static or hardcoded into the system.
+each time the user clicks that specified button, it must always fetch and show all updated models on ollama,
+do you understand me now?
+
+
+When a user clicks on line 197 of [agentSlug].js it should show a list of all files in the @agents/[current_agent_name]/system in a modal
+user should be able to click on any of them to preview and possibly edit them
+any file clicked upon shold be shown in the line 213 of [agentSlug].js file.
+
+when a user clicks on line 207 (the edit icon), 
+-the texts in line 213 should be edittable
+-the button in line 216 should be toggled (revealed/hidden)
+-the icon inside line 207 should toggle edit/x icon
+
+when the user is done editting the currently selected system file,
+they should save the changes to the actual agent system file (@agents/[current_agent_name]/system/[FILE].md) by clicking on line 216 (update)
+
+after the file has been updated,
+- the text in line 213 should be view only (not edditable)
+- the button in line 216 should be toggled back to hidden
+- the icon in line 207 should toggle back from X to edit icon
+
+instead of using the /api/agent/update_agent api route, create a new /api/agent/update_agent_system api route to handle this operation
+ensure to read through and understand well
+let me see your plan before starting
+
+
+

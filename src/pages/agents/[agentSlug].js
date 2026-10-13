@@ -7,6 +7,7 @@ import { agent_config } from '../../../agents/config';
 import AgentChatWindow from "../../components/AgentChat/AgentChatWindow";
 import Link from 'next/link';
 import AgentList from '@/components/AgentList';
+import axios from 'axios';
 
 export default function AgentSlug() {
   const router = useRouter();
@@ -20,6 +21,11 @@ export default function AgentSlug() {
   const [categories, setCategories] = useState([]);
   const [ideas, setIdeas] = useState([]);
   const [h, useH] = useState(0);
+
+  // Model selection state
+  const [isModelModalOpen, setIsModelModalOpen] = useState(false);
+  const [availableModels, setAvailableModels] = useState([]);
+  const [isLoadingModels, setIsLoadingModels] = useState(false);
 
   useEffect(() => {
     if (agentSlug) {
@@ -68,6 +74,42 @@ export default function AgentSlug() {
     fetchIdeas();
   }, [selectedCategory]);
 
+  // Fetch models from Ollama via proxy API
+  const handleOpenModelSelector = async () => {
+    setIsModelModalOpen(true);
+    setIsLoadingModels(true);
+    try {
+      const response = await axios.get('/api/agent/get_models');
+      setAvailableModels(response.data.models || []);
+    } catch (error) {
+      console.error('Error fetching models:', error);
+    } finally {
+      setIsLoadingModels(false);
+    }
+  };
+
+  const handleSelectModel = async (modelName) => {
+    try {
+      const response = await axios.post('/api/agent/update_agent', {
+        agentId: activeAgent.id,
+        updates: { model: modelName }
+      });
+
+      if (response.data.success) {
+        // Update local state to reflect the change immediately
+        setActiveAgent({
+          ...activeAgent,
+          model: modelName
+        });
+      }
+    } catch (error) {
+      console.error('Error updating agent model:', error);
+      alert('Failed to update agent model.');
+    } finally {
+      setIsModelModalOpen(false);
+    }
+  };
+
   // Find the selected idea for the right pane
   const selectedIdea = ideas.find(idea => idea.id === selectedIdeaId);
 
@@ -83,12 +125,12 @@ export default function AgentSlug() {
 
   return (
     <DashboardLayout activePill="Agents" where="Agents">
-      <div>
+      <div className="relative">
 
         <div className='mb-4 bp9:hidden'>
           <div className='mb-1 py-0 flex items-center gap-3'>
             <div className='w-10 h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0,0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
             </div>
             <h1 className='text-[15px] font-semibold tracking-tight'>Agents and Activities</h1>
           </div>
@@ -112,7 +154,6 @@ export default function AgentSlug() {
         </div>
 
         <div
-          // style={{minHeight: `calc(100% - ${navHeight}px)`}}
           className={`w-full flex gap-3 justify-center items-center h-[calc(100%-${navHeight}px)]`}
         >
 
@@ -129,73 +170,84 @@ export default function AgentSlug() {
           >
             <div className='flex justify-left p-4 items-center w-full gap-3'>
               <div className='w-10 h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0,0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
               </div>
               <div>
                   <h2 className='text-[13px] font-semibold text-white tracking-tight'>{activeAgent.name}</h2>
                   <p className='text-[12px] opacity-70'>{activeAgent.description}</p>
               </div>
             </div>
-
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
-              <div className='bg-surface w-full h-auto p-3 rounded-[13px] mb-4'>
-                  <p className='px-3s mb-2'>Model</p>
-                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2'>
-                      <p>gemma4:31b-cloud</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-              </div>
+                <div className='bg-surface w-full h-auto p-3 rounded-[13px] mb-4'>
+                    <p className='px-3s mb-2'>Model</p>
+                    <div
+                      onClick={handleOpenModelSelector}
+                      className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 hover:bg-layer3 transition-colors'
+                    >
+                        <p>{activeAgent.model || "Not set"}</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                </div>
 
-              <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
-                  <div className='flex justify-between items-center'>
-                      <p className='px-3s'>Instruction Documents</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
-                      <p>Identity</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
-                  </div>
-                  <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
-                      <div className='mt-3s'>
-                          <div className='flex justify-between items-center mb-3'>
-                              <h1 className='font-semibold text-[12px]'>Agent Identity</h1>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
-                          </div>
-                          <p className='text-[12px] opacity-70'>
-                              {activeAgent.role}
-                          </p>
-                      </div>
-                  </div>
-              </div>
-
-              <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
-                  <div className='flex justify-between items-center'>
-                      <p className='px-3s'>Tasks</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-                  <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items center p-3 py-2 mt-3'>
-                      <p>Ongoing Tasks</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-                  <div className='mt-3'>
-                      {
-                        Array(12).fill(0).map((item, index)=>{
-                          return (
-                            <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
-                                <div className='flex justify-between items-center mb-3'>
-                                    <h1 className='font-semibold text-[12px]'>Title of this task</h1>
-                                    <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
-                                </div>
-                                <p className='text-[12px] opacity-70'>
-                                    Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
-                                    Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
-                                </p>
+                <div className='bg-surface w-full h-auto rounded-[13px] mb-4 p-3'>
+                    <div className='flex justify-between items-center'>
+                        <p className='px-3s'>Agent System</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
+                        <p>IDENTITY.md</p>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>  
+                        </div>
+                    </div>
+                    <div className='w-full bg-layer2 rounded-[12px] p-3 mt-3'>
+                        <div className='mt-3s'>
+                            <div className='flex justify-between items-center mb-3'>
+                                <h1 className='font-semibold text-[12px]'>Agent Identity</h1>
+                                <div>{
+                                  true?
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>:
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                }</div>
                             </div>
-                          )
-                        })
-                      }
-                  </div>
-              </div>
+                            <div>
+                              <p className='text-[12px] opacity-70'>{activeAgent.role}</p>
+                            </div>
+                            <div className={`w-full py-2 cursor-pointer flex justify-center ${!true?"hidden":""} items-center mt-3 bg-layer rounded-[9px]`}>
+                              <p className='text-[13px] opacity-90'>Update</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='bg-surface w-full h-auto rounded-[13px] mb-4 cursor-pointer p-3'>
+                    <div className='flex justify-between items-center'>
+                        <p className='px-3s'>Tasks</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
+                        <p>Ongoing Tasks</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    <div className='mt-3'>
+                        {
+                          Array(12).fill(0).map((item, index)=>{
+                            return (
+                              <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
+                                  <div className='flex justify-between items-center mb-3'>
+                                      <h1 className='font-semibold text-[12px]'>Title of this task</h1>
+                                      <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
+                                  </div>
+                                  <p className='text-[12px] opacity-70'>
+                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
+                                      Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
+                                  </p>
+                               </div>
+                            )
+                          })
+                        }
+                    </div>
+                </div>
             </div>
           </div>
 
@@ -209,6 +261,55 @@ export default function AgentSlug() {
           </div>
         </div>
       </div>
+
+      {isModelModalOpen && (
+        <div className='fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4'>
+          <div className='bg-layer2 border border-border-subtle rounded-2xl w-full max-w-[400px] max-h-[80vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-200'>
+            <div className='p-4 border-b border-border-subtle flex justify-between items-center'>
+              <h2 className='text-sm font-semibold text-white'>Select Agent Model</h2>
+              <button
+                onClick={() => setIsModelModalOpen(false)}
+                className='text-text-secondary hover:text-white transition-colors'
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6L6 18" /><path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className='p-2 overflow-y-auto flex-1 custom-scrollbar'>
+              {isLoadingModels ? (
+                <div className='flex justify-center items-center py-10 text-sm text-text-secondary opacity-50'>
+                  Loading models from Ollama...
+                </div>
+              ) : availableModels.length > 0 ? (
+                availableModels.map((model, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => handleSelectModel(model.name)}
+                    className={`w-full h-auto rounded-[7px] cursor-pointer ${activeAgent.model === model.name ? "bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-3 my-1 transition-all duration-200 flex justify-between items-center`}
+                  >
+                    <div className='flex flex-col'>
+                      <span className='text-sm text-white font-medium'>{model.name}</span>
+                      {model.details && (
+                        <span className='text-[10px] text-text-secondary opacity-60'>
+                          {model.details.parameter_size} | {model.details.quantization_level}
+                        </span>
+                      )}
+                    </div>
+                    {activeAgent.model === model.name && (
+                      <div className='w-2 h-2 rounded-full bg-accent' />
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div className='text-center py-10 text-sm text-text-secondary opacity-50'>
+                  No models found on Ollama.
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {
         isModalOpen ? (
@@ -227,7 +328,7 @@ export default function AgentSlug() {
                   </svg>
                 </button>
               </div>
-              
+
               <div className='p-2 overflow-y-auto flex-1 custom-scrollbar'>
                 {modalType === 'category' ? (
                   <>
@@ -267,12 +368,10 @@ export default function AgentSlug() {
                               dispatch(setSelectedIdeaId(idea.id));
                               setIsModalOpen(false);
                             }}
-                            // FIXED: Changed 'cat' to 'idea.id' (assuming you have a selectedIdeaId state)
                             className={`w-full h-auto rounded-[7px] cursor-pointer ${selectedIdeaId === idea.id ? "bg-layer3 border border-border-subtle" : "hover:bg-layer3"} px-3 py-2 my-1 transition-all duration-200`}
                           >
                             <div className='w-full flex justify-start items-center gap-2 mb-1'>
                               <div className='text-white text-sm'>
-                                {/* FIXED: Changed stroke-width to strokeWidth, stroke-linecap to strokeLinecap, etc. */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb preview-icon">
                                   <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
                                   <path d="M9 18h6" />
@@ -288,7 +387,7 @@ export default function AgentSlug() {
                     )}
                   </>
                 )}
-              </div> {/* FIXED: Added this missing closing div for the body container */}
+              </div>
             </div>
           </div>
         ) : null
