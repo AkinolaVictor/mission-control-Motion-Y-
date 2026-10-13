@@ -7,7 +7,7 @@ import ChatActiveState from './ChatActiveState';
 import ChatMenu from './ChatMenu';
 import ChatHistory from './ChatHistory';
 import styles from './AgentChat.module.css';
-
+import { agent_config } from '../../../agents/config';
 
 export default function AgentChatWindow({ onClose, agentId, agentName }) {
   const [view, setView] = useState('new'); // 'new' | 'active'
@@ -17,6 +17,8 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(null);
   const scrollRef = useRef(null);
+
+  const activeAgentMetadata = agent_config.agents.find(a => a.id === agentId) || { model: 'gemma4:31b-cloud' };
 
   const scrollIntoView = () => {
     if (scrollRef.current) {
@@ -158,7 +160,7 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
     try {
       const response = await axios.post('/api/agent/chat', {
         agent: agentId || 'orchestrator',
-        model: 'gemma4:31b-cloud',
+        model: activeAgentMetadata.model,
         messages: newMsgs
       });
 

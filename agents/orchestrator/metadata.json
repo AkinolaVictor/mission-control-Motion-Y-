@@ -1,5 +1,6 @@
 {
     "name": "orchestrator",
     "description": "Central Intelligence Control",
-    "role": "The orchestrator agent is the central intelligence control that manages and coordinates the activities of other agents. It is responsible for overseeing the overall system, making high-level decisions, and ensuring that all agents work together effectively to achieve the desired outcomes."
+    "role": "The orchestrator agent is the central intelligence control that manages and coordinates the activities of other agents. It is responsible for overseeing the overall system, making high-level decisions, and ensuring that all agents work together effectively to achieve the desired outcomes.",
+    "model": "gemma4:31b-cloud"
 }

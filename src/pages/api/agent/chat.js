@@ -1,5 +1,6 @@
 import { chatWithOrchestrator } from './../../../../agents/orchestrator/functions/orchestrator_chat';
 import { chatWithMotionDev } from './../../../../agents/motion_dev/functions/motion_dev_chat';
+import { agent_config } from './../../../../agents/config';
 
 /**
  * Agent Chat Gateway API Route
@@ -22,15 +23,10 @@ export default async function handler(req, res) {
     }
 
     // 2. Agent Routing Registry
-    // As new agents are added, their chat functions are imported and added here.
     const agentRegistry = {
       orchestrator: chatWithOrchestrator,
       motion_dev: chatWithMotionDev,
     };
-
-    // const chatFunction = agentRegistry[agent];
-      // researcher: chatWithResearcher, // Example for future agents
-    // };
 
     const chatFunction = agentRegistry[agent];
 
@@ -38,15 +34,20 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: `Agent "${agent}" not found or not configured.` });
     }
 
-    // 3. Execute Agent Chat
+    // 3. Resolve Model
+    // Priority: Request Body -> Agent Metadata -> Global Default
+    const agentMetadata = agent_config.agents.find(a => a.id === agent);
+    const resolvedModel = model || agentMetadata?.model || 'gemma4:31b-cloud';
+
+    // 4. Execute Agent Chat
     const payload = {
       messages,
-      model: model || 'gemma4:31b-cloud', // Default model if not provided
+      model: resolvedModel,
     };
 
     const result = await chatFunction(payload);
 
-    // 4. Return response
+    // 5. Return response
     return res.status(200).json(result);
 
   } catch (error) {
