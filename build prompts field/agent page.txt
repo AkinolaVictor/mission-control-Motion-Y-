@@ -39,6 +39,8 @@ Import path: ./AgentChat.css
 when i click the button in line 297 of the [agentSlug].js file,
 it should show a modal that contains the newly built chat window (the AgentChatWindow component)
 
+this code keeps reporting a syntax error, can you fix it for me?
+
 
 
 

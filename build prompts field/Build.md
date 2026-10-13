@@ -147,7 +147,12 @@ store each chat in the @agent_memory/chats/agent_name/chat_1_date_and_time.txt f
 a user should be able to preview the list of all chat history, select anyone to continue a chat.
 the agent should read the chat txt file, and return it as an array of chat data that can be passed into the LLM for chat continuity
 
-there should be a bin icon on each chat that allows us to delete a specific chat history
+there should be no unified chat history for all agents, each agent has it's own (list of chat history)
+there should be an icon on each chat that allows us to delete a specific chat history
+
+Updates to the Agent Chat system
+also when i begin in an empty chat, it should show my starting message directly, i don't have to click on the default mesage to start a conversation. once i enter my starting message in the input field, it should automatically work
+let me see your plan before starting
 
 <!-- each time an agent is opened, it should always show the last  -->
 

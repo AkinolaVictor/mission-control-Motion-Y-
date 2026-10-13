@@ -28,9 +28,9 @@ export default async function handler(req, res) {
       motion_dev: chatWithMotionDev,
     };
 
-    const chatFunction = agentRegistry[agent];
+    // const chatFunction = agentRegistry[agent];
       // researcher: chatWithResearcher, // Example for future agents
-    };
+    // };
 
     const chatFunction = agentRegistry[agent];
 

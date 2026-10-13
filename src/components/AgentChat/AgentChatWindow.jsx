@@ -8,7 +8,7 @@ import ChatHistory from './ChatHistory';
 import styles from './AgentChat.module.css';
 
 
-export default function AgentChatWindow({ onClose }) {
+export default function AgentChatWindow({ onClose, agentId, agentName }) {
   const [view, setView] = useState('new'); // 'new' | 'active'
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -101,7 +101,7 @@ export default function AgentChatWindow({ onClose }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          agent: 'orchestrator',
+          agent: agentId || 'orchestrator',
           model: 'gemma4:31b-cloud',
           messages: newMsgs
         }),
@@ -116,7 +116,7 @@ export default function AgentChatWindow({ onClose }) {
     } catch (err) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: "I'm having trouble connecting to the orchestrator. Please try again."
+        content: `I'm having trouble connecting to the ${agentName || 'orchestrator'} agent. Please try again.`
       }]);
     } finally {
       setIsTyping(false);
@@ -127,7 +127,7 @@ export default function AgentChatWindow({ onClose }) {
     <div className="flex flex-col h-full w-full bg-layer2 border border-border-subtle rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300 relative">
       <ChatHeader onClose={onClose} onOpenMenu={() => setIsMenuOpen(!isMenuOpen)} />
 
-      <div className="flex-1 overflow-hidden relative">
+      <div className="flex-1 overflow-y-auto custom-scrollbar relative">
         {view === 'new' ? (
           <ChatNewState onStartChat={handleStartChat} />
         ) : (
