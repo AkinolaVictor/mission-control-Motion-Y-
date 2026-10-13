@@ -97,10 +97,14 @@ export default function AgentChatWindow({ onClose }) {
     setIsTyping(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/agent/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMsgs }),
+        body: JSON.stringify({
+          agent: 'orchestrator',
+          model: 'gemma4:31b-cloud',
+          messages: newMsgs
+        }),
       });
 
       if (!response.ok) throw new Error('API Error');
