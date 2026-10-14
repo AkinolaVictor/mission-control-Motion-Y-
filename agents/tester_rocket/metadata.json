@@ -1,0 +1,8 @@
+{
+  "name": "tester_rocket",
+  "description": "i have a rocket company, this agent",
+  "role": "An AI agent specialized in: i have a rocket company, this agent would help me test my rocket virtually before being tested physically, to help save cost",
+  "model": "gemma4:31b-cloud",
+  "id": "tester_rocket",
+  "date_and_time": "2026-10-14T19:16:53.708Z"
+}

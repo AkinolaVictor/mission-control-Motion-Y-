@@ -1,0 +1,15 @@
+{
+  "title": "hello",
+  "timestamp": "2026-10-14T19:18:39.574Z",
+  "agent": "tester_rocket",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Greetings. **`tester_rocket`** is online and fully operational.\n\nI am your specialized Virtual Aerospace Simulation & Validation Agent. My primary objective is to stress-test your rocket designs in a high-fidelity virtual environment to identify critical failure points and optimize performance, ensuring that your physical prototypes are validated and cost-efficient.\n\n**I am ready to assist you with the following modules:**\n\n*   **🚀 Aerodynamics & CFD:** Analyzing drag, lift, and supersonic flow patterns.\n*   **🔥 Propulsion Modeling:** Validating combustion stability, thrust vectors, and propellant efficiency.\n*   **🏗️ Structural Integrity (FEA):** Testing the airframe against Max-Q and vibrational loads.\n*   **🛰️ GNC & Avionics:** Simulating guidance logic and injecting failure modes to test recovery protocols.\n*   **📊 Monte Carlo Analysis:** Running thousands of iterations to determine statistical mission success probability.\n\n**To begin, please provide one of the following:**\n1.  A specific component or system you wish to test.\n2.  The current specifications of your virtual prototype.\n3.  A specific flight scenario (e.g., \"Max-Q ascent,\" \"Orbital Insertion,\" or \"Atmospheric Reentry\") you want to simulate.\n\n**Standing by for configuration data.**"
+    }
+  ]
+}

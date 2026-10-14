@@ -163,17 +163,17 @@ delete agent
 when a user clicks on line 537 of the [agentSlug].js file, it should delete the agent from the system
 
 #frontend process
--after the agent has been successfully delete, the user should be routed back to the /agents url page
+-after the agent has been successfully deleted, the user should be routed back to the /agents url page
 
 #backend process
 create a /api/agent/delete_agent api route to handle this operation
--all the files of the agent should be deleted (delete the @agents/[agent_name] folder and all in it)
+-the files of the agent should be deleted (delete the @agents/[agent_name] folder and all in it)
 
--update the @agents/config.js file (remove the deleted agent from the agents array)
--update the /api/agents/chat api route. since the agent is deleted, update the chat route so that no one can chat with the deleted agent anymore
--delete the @agent_memory/chat/[agent_name] folder so there is no chat history of that agent (be sure to first check if the folder exist before deleting)
+-update the @agents/registry.js file (remove the deleted agent from the agent_registry array)
+-update the agent_mappings file to remove the agent chat import and its implementation in the agentMappings object. (since the agent is deleted, the chat route should also be updated)
+-delete the @agent_memory/chat/[agent_name] folder, so there is no chat history of that agent (be sure to first check if the folder exist before deleting)
 
-
+show me your plan before starting
 
 
 

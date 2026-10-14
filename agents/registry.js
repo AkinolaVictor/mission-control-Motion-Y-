@@ -7,4 +7,5 @@ export const agent_registry = [
     require("./more_dev_tests/metadata.json"),
     require("./read_and_document/metadata.json"),
     require("./deleter/metadata.json"),
+    require("./tester_rocket/metadata.json"),
 ]
