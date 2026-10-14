@@ -1,0 +1,58 @@
+[
+  {
+    "name": "orchestrator",
+    "description": "Central Intelligence Control",
+    "role": "The orchestrator agent is the central intelligence control that manages and coordinates the activities of other agents. It is responsible for overseeing the overall system, making high-level decisions, and ensuring that all agents work together effectively to achieve the desired outcomes.",
+    "model": "gpt-oss:120b-cloud",
+    "id": "orchestrator"
+  },
+  {
+    "name": "live_scores",
+    "description": "an agent to help me check livescore updates every monday wednesday and saturday by 9pm each day",
+    "role": "An AI agent specialized in: an agent to help me check livescore updates every monday wednesday and saturday by 9pm each day",
+    "model": "gpt-oss:120b-cloud",
+    "id": "live_scores"
+  },
+  {
+    "name": "motion_dev",
+    "description": "The central developer agent",
+    "role": "The motion_dev agent is the central developer agent that manages and coordinates the activities of other agents. It is responsible for overseeing the overall system, making high-level decisions, and ensuring that all agents work together effectively to achieve the desired outcomes.",
+    "model": "gemma4:31b-cloud",
+    "id": "motion_dev"
+  },
+  {
+    "name": "report_scrapper",
+    "description": "i want to create an agent that helps me search the internet for the latest news on politics, technology, medicine, education, and other major aspect.\n\nThis agent must always make a deep and detailed search from genuine source to make sure to have accurate information on the report to be created\n\nit must always fact check every details and know which one is more important to have and which is false\n\nevery morning by 9am it must always create a [report_name].md file containing the report based on the research it has made.",
+    "role": "An AI agent specialized in: i want to create an agent that helps me search the internet for the latest news on politics, technology, medicine, education, and other major aspect.\n\nThis agent must always make a deep and detailed search from genuine source to make sure to have accurate information on the report to be created\n\nit must always fact check every details and know which one is more important to have and which is false\n\nevery morning by 9am it must always create a [report_name].md file containing the report based on the research it has made.",
+    "model": "gemma4:31b-cloud",
+    "id": "report_scrapper"
+  },
+  {
+    "name": "technical_writter",
+    "description": "a technical writter to help write out the contents to be posted to other social media",
+    "role": "An AI agent specialized in: a technical writter to help write out the contents to be posted to other social media",
+    "model": "gpt-oss:20b-cloud",
+    "id": "technical_writter"
+  },
+  {
+    "name": "waower",
+    "description": "waow me always with new tech updates",
+    "role": "An AI agent specialized in: waow me always with new tech updates",
+    "model": "gpt-oss:20b-cloud",
+    "id": "waower"
+  },
+  {
+    "name": "scrapper_2",
+    "description": "i want to create an agent that",
+    "role": "An AI agent specialized in: i want to create an agent that helps me search the internet for the latest news on politics, technology, medicine, education, and other major aspect. This agent must always make a deep and detailed search from genuine source to make sure to have accurate information on the report to be created it must always fact check every details and know which one is more important to have and which is false every morning by 9am it must always create a [report_name].md file containing the report based on the research it has made.",
+    "model": "gpt-oss:120b-cloud",
+    "id": "scrapper_2"
+  },
+  {
+    "name": "jom_jom",
+    "description": "an agent ready to do any thing",
+    "role": "An AI agent specialized in: an agent ready to do any thing i say",
+    "model": "gemma4:31b-cloud",
+    "id": "jom_jom"
+  }
+]

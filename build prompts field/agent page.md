@@ -106,9 +106,27 @@ write a function for the orchestrator in @agents/orchestrator/functions/generate
 so instead of having a hard-coded template in line 66 of the create_agent.js api file, let it be a generated one by the orchestrator
 let me see your plan before starting
 
+TO BE DONE
+
 in the @agent/config.js file, the orchestrator agent must always be at the top of the array, 
 new agents coming should be added to the bottom of the array,
 also please ensure that the creation progress update works fine and is updated also (in the frontend) at line 116 of the newAgent.js file
+let me see your plan before starting
+
+
+
+
+Also, instead of directly inputing into agent's metadata.json file the agent description the user inputted at the front end (don't do that),
+instead, write a compressed 3-7 words that best describe the agent, and insert this compressed version into the description in metadata.json
+
+everytime i create a new agent, the @agent/config.js file is always misformatted,
+please ensure that the newly created agents object (with id) are correctly added as the last element in the "agents" array property of the @agent/config.js (javascript) file,
+
+also ensure that the new agent's metadata.json file is correctly imported (and rightly written) into the top level of the @agent/config.js file,
+
+make sure to run proper test that this is working fine
+
+let me see your plan before starting
 
 
 problem: unable to chat with new agents
@@ -117,8 +135,19 @@ after creating the chat function for the new agent, next ,
 update the chat (/api/agent/chat) api route to be able to chat with new agent,
 import the newly created chat function, and rewire the /api/agent/chat api route so that interactions are possible with new route
 
-also, instead of directly inputing into agent's metadata.json file, the agent description the user inputted at the front end (don't do that),
-instead, write a compressed 3-7 words that best describe the agent, and insert this compressed version into the description metadata.json
+
+instead lets do it this way, instead of having the path to the metadata.json of each agent in the registry.json file, write the raw data of the all metadata.json into the registry.json file, but make sure to delete all the metadata.json files, also don't forget to inform the creation process (create_agent api) to stop creating metadata.json files, but instead update the registry.json file directly.
+
+also remember to update the @agens/config.js file simply import the registry.json file
+
+let me see your plan before starting
+
+
+
+
+
+
+
 
 delete agent
 when a user clicks on line 537 of the [agentSlug].js file, it should delete the agent from the system

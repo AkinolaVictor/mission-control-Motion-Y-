@@ -59,10 +59,21 @@ function createAgent(props) {
         const { value, done } = await reader.read();
         if (done) break;
 
-        const chunk = decoder.decode(value);
-        const lines = chunk.split('\\n\\n');
+        const chunk = decoder.decode(value, { stream: true });
+        let buffer = chunk;
 
-        for (const line of lines) {
+        // Split by SSE delimiter and handle fragmented chunks
+        const lines = buffer.split('\\n\\n');
+
+        // If the last line is not empty, it might be a fragmented JSON
+        // We keep it in a state variable if we were using a class/hook,
+        // but here we can just process the complete ones.
+        // For a more robust solution, we'd use a buffer outside the loop.
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (!line) continue;
+
           if (line.startsWith('data: ')) {
             try {
               const data = JSON.parse(line.replace('data: ', ''));
@@ -74,7 +85,9 @@ function createAgent(props) {
 
               if (data.percentage === 100) {
                 setTimeout(() => {
-                  window.location.href = `/agents/${agentName.toLowerCase().replace(/\\s+/g, '_').replace(/[^a-z0-9_]/g, '')}`;
+                //   window.location.href = `/agents/${agentName.toLowerCase().replace(/\\s+/g, '_').replace(/[^a-z0-9_]/g, '')}`;
+                  window.location.href = `/agents/${agentName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}`;
+                //   window.location.href = `/agents`;
                 }, 1000);
               }
             } catch (e) {
@@ -158,7 +171,7 @@ function createAgent(props) {
                                 value={agentName}
                                 onChange={(e) => setAgentName(e.target.value)}
                                 placeholder='Name of agent'
-                                className='w-full bg-layer3 text-[13px] opacity-70 p-4 rounded-[11px] h-[40px] outline-none border border-border-subtle'
+                                className='w-full bg-layer3 text-[13px]  p-4 rounded-[11px] h-[40px] outline-none border border-border-subtle'
                             />
                         </div>
 
@@ -168,7 +181,7 @@ function createAgent(props) {
                                 value={agentDescription}
                                 onChange={(e) => setAgentDescription(e.target.value)}
                                 placeholder='Give a desription of who and what this age is and is to do'
-                                className='w-full bg-layer3 text-[13px] opacity-70 p-4 rounded-[15px] min-h-[200px] outline-none border border-border-subtle'
+                                className='w-full bg-layer3 text-[13px]  p-4 rounded-[15px] min-h-[200px] outline-none border border-border-subtle'
                             />
                         </div>
                     </div>

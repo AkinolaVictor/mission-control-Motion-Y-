@@ -42,6 +42,12 @@ export default async function handler(req, res) {
     // Phase 1: Workspace Setup (0-20%)
     sendProgress(10, 'preparing agent workspace', 'creating folders and metadata');
 
+    // Compress description to 3-7 words for the registry
+    const compressedDescription = agentDescription
+      .split(/\s+/)
+      .slice(0, 7)
+      .join(' ');
+
     const agentRoot = path.join(agentsDir, sanitizedName);
     const folders = ['functions', 'system', 'workspace'];
 
@@ -52,11 +58,12 @@ export default async function handler(req, res) {
 
     const metadata = {
       name: sanitizedName,
-      description: agentDescription,
+      description: compressedDescription,
       role: `An AI agent specialized in: ${agentDescription}`,
       model: selectedModel
     };
-    fs.writeFileSync(path.join(agentRoot, 'metadata.json'), JSON.stringify(metadata, null, 2));
+    // STOP creating metadata.json file on disk
+
 
     // Phase 2: Dynamic System Prompt Generation (20-70%)
     sendProgress(25, 'architecting agent identity', 'Orchestrator is generating system files...');
@@ -151,25 +158,18 @@ module.exports = { chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedNa
     fs.writeFileSync(path.join(agentRoot, 'functions', `${sanitizedName}_chat.js`), chatFunctionContent, 'utf8');
 
     // Phase 4: Registry Update (90-100%)
-    sendProgress(95, 'updating agent system', 'adding new agent to config.js file');
+    sendProgress(95, 'updating agent system', 'adding new agent to registry');
 
-    const configPath = path.join(agentsDir, 'config.js');
-    let configContent = fs.readFileSync(configPath, 'utf8');
+    const registryPath = path.join(agentsDir, 'registry.json');
+    const registryData = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
 
-    // Add import
-    const importLine = `const ${sanitizedName}_config = require('./${sanitizedName}/metadata.json');\\n`;
-    const lines = configContent.split('\\n');
+    // Append full metadata object to the end of the array
+    registryData.push({
+      ...metadata,
+      id: sanitizedName
+    });
 
-    // Find the first index of "export const agent_config"
-    const exportIndex = lines.findIndex(line => line.includes('export const agent_config'));
-    lines.splice(exportIndex - 1, 0, importLine);
-
-    // Add to agents array
-    const agentEntry = `        {\\n            ...${sanitizedName}_config,\\n            "id": "${sanitizedName}"\\n        },`;
-    const arrayStartIndex = lines.findIndex(line => line.includes('"agents": ['));
-    lines.splice(arrayStartIndex + 1, 0, agentEntry);
-
-    fs.writeFileSync(configPath, lines.join('\\n'), 'utf8');
+    fs.writeFileSync(registryPath, JSON.stringify(registryData, null, 2), 'utf8');
 
     sendProgress(100, 'completed', 'Agent created successfully');
     res.end();
