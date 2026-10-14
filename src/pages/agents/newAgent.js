@@ -127,15 +127,15 @@ function createAgent(props) {
                 {
                     isCreating ? (
                         <div className='w-full max-w-120 flex flex-col items-center justify-center my-4 p-4 bg-layer2 rounded-[13px] border border-border-subtle animate-in fade-in slide-in-from-top-2 duration-300'>
+                            <p className='text-[13px] font-semibold text-white'>{progress}% completed</p>
+                            <p className='text-[11px] opacity-60 text-center mt-1'>{progressStatus}</p>
+                            <p className='text-[11px] opacity-40 text-center'>{progressDetail}</p>
                             <div className='w-full bg-layer3 rounded-full h-2 mb-3 overflow-hidden'>
                                 <div
                                     className='bg-accent h-full transition-all duration-300 ease-out'
                                     style={{ width: `${progress}%` }}
                                 />
                             </div>
-                            <p className='text-[13px] font-semibold text-white'>{progress}% completed</p>
-                            <p className='text-[11px] opacity-60 text-center mt-1'>{progressStatus}</p>
-                            <p className='text-[11px] opacity-40 text-center'>{progressDetail}</p>
                         </div>
                     ):
                     <div />

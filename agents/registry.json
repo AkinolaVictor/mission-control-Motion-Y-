@@ -54,5 +54,82 @@
     "role": "An AI agent specialized in: an agent ready to do any thing i say",
     "model": "gemma4:31b-cloud",
     "id": "jom_jom"
+  },
+  {
+    "name": "test_chat",
+    "description": "hey, always tell me jokes",
+    "role": "An AI agent specialized in: hey, always tell me jokes",
+    "model": "gemma4:31b-cloud",
+    "id": "test_chat"
+  },
+  {
+    "name": "ddse",
+    "description": "anything",
+    "role": "An AI agent specialized in: anything",
+    "model": "gemma4:31b-cloud",
+    "id": "ddse"
+  },
+  {
+    "name": "helloworld",
+    "description": "just say hello world",
+    "role": "An AI agent specialized in: just say hello world",
+    "model": "gemma4:31b-cloud",
+    "id": "helloworld"
+  },
+  {
+    "name": "test3",
+    "description": "hdaklms",
+    "role": "An AI agent specialized in: hdaklms",
+    "model": "gemma4:31b-cloud",
+    "id": "test3"
+  },
+  {
+    "name": "trying_to_know",
+    "description": "testing if agent import works",
+    "role": "An AI agent specialized in: testing if agent import works",
+    "model": "gemma4:31b-cloud",
+    "id": "trying_to_know"
+  },
+  {
+    "name": "vve",
+    "description": "wqdqwd",
+    "role": "An AI agent specialized in: wqdqwd",
+    "model": "gemma4:31b-cloud",
+    "id": "vve"
+  },
+  {
+    "name": "ddr",
+    "description": "ssvd",
+    "role": "An AI agent specialized in: ssvd",
+    "model": "gemma4:31b-cloud",
+    "id": "ddr"
+  },
+  {
+    "name": "dwas_gr",
+    "description": "aadsw",
+    "role": "An AI agent specialized in: aadsw",
+    "model": "gemma4:31b-cloud",
+    "id": "dwas_gr"
+  },
+  {
+    "name": "sddq",
+    "description": "dsd",
+    "role": "An AI agent specialized in: dsd",
+    "model": "gemma4:31b-cloud",
+    "id": "sddq"
+  },
+  {
+    "name": "gdrere",
+    "description": "erdfb gfgd",
+    "role": "An AI agent specialized in: erdfb gfgd",
+    "model": "gemma4:31b-cloud",
+    "id": "gdrere"
+  },
+  {
+    "name": "swqd",
+    "description": "zzzcf",
+    "role": "An AI agent specialized in: zzzcf",
+    "model": "gemma4:31b-cloud",
+    "id": "swqd"
   }
 ]

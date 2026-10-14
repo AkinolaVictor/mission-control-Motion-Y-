@@ -132,9 +132,10 @@ let me see your plan before starting
 problem: unable to chat with new agents
 update the create_agent api route to also allow the user to chat with new agents
 after creating the chat function for the new agent, next ,
-update the chat (/api/agent/chat) api route to be able to chat with new agent,
-import the newly created chat function, and rewire the /api/agent/chat api route so that interactions are possible with new route
+update the chat (/api/agent/chat) api route to be able to chat with new agent (import new chat function of new agents and let it work),
+import the newly created chat function, and rewire the /api/agent/chat api route so that interactions are possible with new agent
 
+let me see your plan before starting
 
 instead lets do it this way, instead of having the path to the metadata.json of each agent in the registry.json file, write the raw data of the all metadata.json into the registry.json file, but make sure to delete all the metadata.json files, also don't forget to inform the creation process (create_agent api) to stop creating metadata.json files, but instead update the registry.json file directly.
 
@@ -143,6 +144,15 @@ also remember to update the @agens/config.js file simply import the registry.jso
 let me see your plan before starting
 
 
+
+
+here's the error i get: Module not found: Can't resolve './ROOT/agents' <dynamic> '/functions' <dynamic> '_chat.js'
+./src/pages/api/agent
+
+Error: Module not found: Can't resolve './ROOT/agents' <dynamic> '/functions' <dynamic> '_chat.js'
+server relative imports are not implemented yet. Please try an import relative to the file you are importing from.
+
+https://nextjs.org/docs/messages/module-not-found
 
 
 
@@ -161,3 +171,8 @@ create a /api/agent/delete_agent api route to handle this operation
 -update the @agents/config.js file (remove the deleted agent from the agents array)
 -update the /api/agents/chat api route. since the agent is deleted, update the chat route so that no one can chat with the deleted agent anymore
 -delete the @agent_memory/chat/[agent_name] folder so there is no chat history of that agent (be sure to first check if the folder exist before deleting)
+
+
+
+
+

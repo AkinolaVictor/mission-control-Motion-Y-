@@ -1,10 +1,9 @@
-import { chatWithOrchestrator } from './../../../../agents/orchestrator/functions/orchestrator_chat';
-import { chatWithMotionDev } from './../../../../agents/motion_dev/functions/motion_dev_chat';
 import { agent_config } from './../../../../agents/config';
+import { agentMappings } from './chat_modules/agent_mappings';
 
 /**
  * Agent Chat Gateway API Route
- * Routes chat requests to the appropriate agent function based on the payload.
+ * Routes chat requests to the appropriate agent function using a static mapping.
  */
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -22,20 +21,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'The "messages" field is required and must be an array.' });
     }
 
-    // 2. Agent Routing Registry
-    const agentRegistry = {
-      orchestrator: chatWithOrchestrator,
-      motion_dev: chatWithMotionDev,
-    };
-
-    const chatFunction = agentRegistry[agent];
+    // 2. Route to Agent function via Mapping
+    const chatFunction = agentMappings[agent];
 
     if (!chatFunction) {
-      return res.status(404).json({ error: `Agent "${agent}" not found or not configured.` });
+      return res.status(404).json({ error: `Agent "${agent}" not found in chat mappings.` });
     }
 
     // 3. Resolve Model
-    // Priority: Request Body -> Agent Metadata -> Global Default
     const agentMetadata = agent_config.agents.find(a => a.id === agent);
     const resolvedModel = model || agentMetadata?.model || 'gemma4:31b-cloud';
 
@@ -53,9 +46,8 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Agent API Route Error:', error);
 
-    // Handle specific Ollama connectivity errors
     if (error.message.includes('ECONNREFUSED') || error.message.includes('fetch failed')) {
-      return res.status(503).json({ error: 'LLM Service (Ollama) is currently unavailable. Please ensure it is running locally.' });
+      return res.status(503).json({ error: 'LLM Service (Ollama) is currently unavailable.' });
     }
 
     return res.status(500).json({ error: 'Internal Server Error', details: error.message });

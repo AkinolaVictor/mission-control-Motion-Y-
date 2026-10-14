@@ -80,15 +80,15 @@ export default async function handler(req, res) {
 
     // Phase 3: Function Generation (70-90%)
     sendProgress(80, 'creating chat function', `assembling logic for ${sanitizedName}_chat.js`);
-
+    const process_name = sanitizedName.charAt(0).toUpperCase() + sanitizedName.slice(1)
     const chatFunctionContent = `const fs = require('fs');
 const path = require('path');
 
 /**
- * ${sanitizedName.charAt(0).toUpperCase() + sanitizedName.slice(1)} Chat Function
+ * ${process_name} Chat Function
  * Handles system prompt assembly and interaction with the Ollama LLM.
  */
-async function chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedName.slice(1)}(payload) {
+async function chatWith${process_name}(payload) {
   const { messages, model = '${selectedModel}' } = payload;
 
   const coreRules = \`
@@ -153,7 +153,7 @@ async function chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedName.s
   }
 }
 
-module.exports = { chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedName.slice(1)} };
+module.exports = { chatWith${process_name} };
 `;
     fs.writeFileSync(path.join(agentRoot, 'functions', `${sanitizedName}_chat.js`), chatFunctionContent, 'utf8');
 
@@ -170,6 +170,23 @@ module.exports = { chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedNa
     });
 
     fs.writeFileSync(registryPath, JSON.stringify(registryData, null, 2), 'utf8');
+
+    // Update Chat Mappings to allow chatting with the new agent
+    const mappingPath = path.join(process.cwd(), 'src', 'pages', 'api', 'agent', 'chat_modules', 'agent_mappings.js');
+    
+    // 1. Add import statement at the top
+    let mappingContent = fs.readFileSync(mappingPath, 'utf8');
+    const importStatement = `import { chatWith${process_name} } from './../../../../../agents/${sanitizedName}/functions/${sanitizedName}_chat';`;
+    fs.writeFileSync(mappingPath, `${importStatement}\n${mappingContent}`)
+    
+    // const mappingPath2 = path.join(process.cwd(), 'src', 'pages', 'api', 'agent', 'chat_modules', 'agent_mappings.js');
+    let mappingContentUpdated = fs.readFileSync(mappingPath, 'utf8');
+    const agentEntry = `${sanitizedName}: chatWith${process_name},`;
+    mappingContentUpdated = mappingContentUpdated.replace(
+      /(export const agentMappings = \{\n)/,
+      `$1  ${agentEntry}\n`
+    )
+    fs.writeFileSync(mappingPath, mappingContentUpdated);
 
     sendProgress(100, 'completed', 'Agent created successfully');
     res.end();
