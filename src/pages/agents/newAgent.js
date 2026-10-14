@@ -15,10 +15,79 @@ function createAgent(props) {
   const [isLoadingModels, setIsLoadingModels] = useState(false);
   const [selectedModel, setSelectedModel] = useState("gemma4:31b-cloud");
 
+  const [isCreating, setIsCreating] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [progressStatus, setProgressStatus] = useState("");
+  const [progressDetail, setProgressDetail] = useState("");
+
   useEffect(() => {
     const hd = innerHeight - navHeight - 55;
     useH(hd);
   }, [navHeight]);
+
+  const handleCreateAgent = async () => {
+    if (!agentName || !agentDescription || !selectedModel) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    setIsCreating(true);
+    setProgress(0);
+    setProgressStatus("");
+    setProgressDetail("");
+
+    try {
+      const response = await fetch('/api/agent/create_agent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          agentName,
+          agentDescription,
+          selectedModel
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to create agent");
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\\n\\n');
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.replace('data: ', ''));
+              if (data.error) throw new Error(data.error);
+
+              setProgress(data.percentage);
+              setProgressStatus(data.status);
+              setProgressDetail(data.detail);
+
+              if (data.percentage === 100) {
+                setTimeout(() => {
+                  window.location.href = `/agents/${agentName.toLowerCase().replace(/\\s+/g, '_').replace(/[^a-z0-9_]/g, '')}`;
+                }, 1000);
+              }
+            } catch (e) {
+              console.error("Error parsing progress chunk", e);
+            }
+          }
+        }
+      }
+    } catch (error) {
+      alert(error.message);
+      setIsCreating(false);
+    }
+  };
 
   const handleOpenModelSelector = async () => {
     setIsModelModalOpen(true);
@@ -89,11 +158,26 @@ function createAgent(props) {
                     </div>
 
                     <div className='px-4 w-full'>
-                        <div
-                            className={`w-full py-2 cursor-pointer flex justify-center items-center mt-3 bg-layer rounded-[9px] hover:bg-layer3 transition-colors`}
-                        >
-                            <p className='text-[13px] opacity-90'>Create</p>
-                        </div>
+                        {isCreating ? (
+                            <div className='w-full flex flex-col items-center justify-center mt-3 p-4 bg-layer2 rounded-[13px] border border-border-subtle'>
+                                <div className='w-full bg-layer3 rounded-full h-2 mb-3 overflow-hidden'>
+                                    <div
+                                        className='bg-accent h-full transition-all duration-300 ease-out'
+                                        style={{ width: `${progress}%` }}
+                                    />
+                                </div>
+                                <p className='text-[13px] font-semibold text-white'>{progress}% completed</p>
+                                <p className='text-[11px] opacity-60 text-center mt-1'>{progressStatus}</p>
+                                <p className='text-[11px] opacity-40 text-center'>{progressDetail}</p>
+                            </div>
+                        ) : (
+                            <div
+                                onClick={handleCreateAgent}
+                                className={`w-full py-2 cursor-pointer flex justify-center items-center mt-3 bg-layer rounded-[9px] hover:bg-layer3 transition-colors`}
+                            >
+                                <p className='text-[13px] opacity-90'>Create</p>
+                            </div>
+                        )}
                     </div>
 
                 </div>

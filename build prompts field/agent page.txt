@@ -54,12 +54,19 @@ also, the text in line
 
 
 Creating a new Agent
-
 -Frontend creation process:
 when a user clicks on line 92 (create button) of the newAgent.js file, 
 -it should validate the user data to ensure the name of this agent is unique (no name clash)
 -make sure the name, model and the description in not left empty
 -if all is clear, it should sent the data to the Backend for creation
+-after the user sends the request, instead of having a loader that simply just spins throughout, 
+replace it with a percentage progress (like: 36% done) bar that increases as the creation process progresses at the backend
+-and under the progressing process percentage, write the current work being done at the back end.
+Here's are examples:
+- 10% completed \\n preparing agent workspace \\n creating folders and metadata
+- 20% completed \\n creating system file \\n generating and creating IDENTITY.md file
+- 34% completed \\n creating system file \\n generating and creating SOUL.md file
+- 87% completed \\n updating agent system \\n adding new agent to config.js file
 
 
 -Backend Creation Process:
@@ -93,3 +100,8 @@ here are things that must be done
 -then you update the @agent/config.js file (to insert the new agent at the agents section)
 
 let me see your plan before getting this done.
+
+here's the error i got:
+handleOpenModelSelector is not defined
+
+src/pages/agents/newAgent.js (113:33) @ createAgent
