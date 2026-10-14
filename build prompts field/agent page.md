@@ -160,6 +160,7 @@ https://nextjs.org/docs/messages/module-not-found
 
 
 delete agent
+keep in mind that this is only to make sure the agent is successfully deleted
 when a user clicks on line 537 of the [agentSlug].js file, it should delete the agent from the system
 
 #frontend process
@@ -174,6 +175,7 @@ create a /api/agent/delete_agent api route to handle this operation
 -delete the @agent_memory/chat/[agent_name] folder, so there is no chat history of that agent (be sure to first check if the folder exist before deleting)
 
 show me your plan before starting
+io
 
 
 
