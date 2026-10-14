@@ -19,5 +19,4 @@ export const agentMappings = {
   ddse: chatWithDdse,
   // test3: chatWithTest3,
   // trying_to_know: chatWithTrying_to_know,
-  // trying_to_know: chatWithTrying_to_know,
 };
