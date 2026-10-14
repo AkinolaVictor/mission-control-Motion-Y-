@@ -1,8 +1,0 @@
-{
-  "name": "deleter",
-  "description": "Unwanted File Deletion Utility",
-  "role": "An AI agent specialized in: helps to delete any unwanted file in the system",
-  "model": "gemma4:31b-cloud",
-  "id": "deleter",
-  "date_and_time": "2026-10-14T19:01:34.259Z"
-}

@@ -229,7 +229,7 @@ export default function AgentSlug() {
           >
             <div className='flex justify-left p-4 items-center w-full gap-3'>
               <div className='flex gap-3'>
-                <div className='min-w-10 min-h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
+                <div className='min-w-10 max-w-10 min-h-10 max-h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0,0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
                 </div>
                 <div>
@@ -534,7 +534,22 @@ export default function AgentSlug() {
               <div className='p-2 flex flex-col'>
                 <p className='text-center'>Are you sure you want to delete this agent ({activeAgent.name})?</p>
                 <div className='flex justify-evenly items-center mt-5'>
-                  <div className='center py-1.5 cursor-pointer px-7 bg-layer3 rounded-full'>
+                  <div
+                    onClick={async () => {
+                      try {
+                        const response = await axios.post('/api/agent/delete_agent', {
+                          agentId: activeAgent.id
+                        });
+                        if (response.data.success) {
+                          router.push('/agents');
+                        }
+                      } catch (error) {
+                        console.error('Error deleting agent:', error);
+                        alert('Failed to delete agent.');
+                      }
+                    }}
+                    className='center py-1.5 cursor-pointer px-7 bg-layer3 rounded-full'
+                  >
                     <p>Yes</p>
                   </div>
 
