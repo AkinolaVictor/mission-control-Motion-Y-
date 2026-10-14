@@ -179,6 +179,7 @@ create a /api/agent/delete_agent api route to handle this operation
 
 
 instead of using the @agents/registry.json approach, lets use a registry.js file approach
+
 when creating a new agent, after creating all the folders, and system files, in the @agents/[agent_name] folder
 create a metadata.json file at the @agents/[agent_name], and populate it with the necessary data {name, description, role, model, id, date_and_time}
 
@@ -188,6 +189,12 @@ let the orchestrator agent rewrite a summarized description of the agent (not mo
 after all this is done, update the registry.js file: simply insert (push) require("./[agent_name]/metadata.json") into the agent_registry array
 
 then update the agent chat api route (already working, no need to change)
+
+i already created and implemented a registry.js file and implemented in in the config.js file
+i want you to learn from it, and follow the pattern already created
+
+show me your plan before starting
+
 
 
 

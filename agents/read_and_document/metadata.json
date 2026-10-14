@@ -1,0 +1,8 @@
+{
+  "name": "read_and_document",
+  "description": "Research Update Analyst",
+  "role": "An AI agent specialized in: reads and document new research updates",
+  "model": "gemma4:31b-cloud",
+  "id": "read_and_document",
+  "date_and_time": "2026-10-14T18:56:25.012Z"
+}

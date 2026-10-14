@@ -42,12 +42,6 @@ export default async function handler(req, res) {
     // Phase 1: Workspace Setup (0-20%)
     sendProgress(10, 'preparing agent workspace', 'creating folders and metadata');
 
-    // Compress description to 3-7 words for the registry
-    const compressedDescription = agentDescription
-      .split(/\s+/)
-      .slice(0, 7)
-      .join(' ');
-
     const agentRoot = path.join(agentsDir, sanitizedName);
     const folders = ['functions', 'system', 'workspace'];
 
@@ -56,13 +50,38 @@ export default async function handler(req, res) {
       fs.mkdirSync(path.join(agentRoot, folder), { recursive: true });
     });
 
+    // Use the Orchestrator to generate a summarized description (max 7 words)
+    // Since generateAgentSystemFiles already uses the Orchestrator, we can extract a summary
+    // or call a specific summary function. For now, we'll perform a specialized LLM call
+    // to ensure the description is high-quality and strictly under 7 words.
+    const summaryResponse = await fetch('http://localhost:11434/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'gpt-oss:120b-cloud', // Using the orchestrator's model
+        prompt: `Summarize the following agent description into a professional, concise phrase of 3 to 7 words.
+                Return ONLY the summarized phrase, nothing else.
+                Description: ${agentDescription}`,
+        stream: false,
+      }),
+    });
+
+    if (!summaryResponse.ok) {
+      console.error('Failed to generate summarized description');
+    }
+
+    const summaryData = await summaryResponse.json();
+    const summarizedDescription = summaryData.response?.trim() || agentDescription.split(/\s+/).slice(0, 7).join(' ');
+
     const metadata = {
       name: sanitizedName,
-      description: compressedDescription,
+      description: summarizedDescription,
       role: `An AI agent specialized in: ${agentDescription}`,
-      model: selectedModel
+      model: selectedModel,
+      id: sanitizedName,
+      date_and_time: new Date().toISOString()
     };
-    // STOP creating metadata.json file on disk
+    fs.writeFileSync(path.join(agentRoot, 'metadata.json'), JSON.stringify(metadata, null, 2));
 
 
     // Phase 2: Dynamic System Prompt Generation (20-70%)
@@ -160,16 +179,33 @@ module.exports = { chatWith${process_name} };
     // Phase 4: Registry Update (90-100%)
     sendProgress(95, 'updating agent system', 'adding new agent to registry');
 
-    const registryPath = path.join(agentsDir, 'registry.json');
-    const registryData = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+    const registryPath = path.join(agentsDir, 'registry.js');
+    let registryContent = fs.readFileSync(registryPath, 'utf8');
 
-    // Append full metadata object to the end of the array
-    registryData.push({
-      ...metadata,
-      id: sanitizedName
-    });
+    // 1. Add the variable declaration at the top
+    // const varName = sanitizedName.charAt(0).toUpperCase() + sanitizedName.slice(1);
+    // const varDeclaration = `const ${varName} = require("./${sanitizedName}/metadata.json")\n`;
 
-    fs.writeFileSync(registryPath, JSON.stringify(registryData, null, 2), 'utf8');
+    // Insert at the top, but after any existing imports if there were any
+    // registryContent = varDeclaration + registryContent;
+
+    // 2. Append the require statement to the agent_registry array
+    const agentEntry2 = `    require("./${sanitizedName}/metadata.json"),`;
+    const arrayStartIndex = registryContent.indexOf('export const agent_registry = [');
+    const arrayEndIndex = registryContent.indexOf(']', arrayStartIndex);
+
+    // `\n${agentEntry2}\n` +
+    if (arrayEndIndex !== -1) {
+      registryContent =
+        registryContent.slice(0, arrayEndIndex) +
+        `${agentEntry2}\n` +
+        registryContent.slice(arrayEndIndex);
+    } else {
+      // Fallback if array not found
+      registryContent += `\nexport const agent_registry = [require("./${sanitizedName}/metadata.json")];`;
+    }
+
+    fs.writeFileSync(registryPath, registryContent, 'utf8');
 
     // Update Chat Mappings to allow chatting with the new agent
     const mappingPath = path.join(process.cwd(), 'src', 'pages', 'api', 'agent', 'chat_modules', 'agent_mappings.js');

@@ -1,0 +1,8 @@
+{
+  "name": "rews",
+  "description": "tells me jokes always",
+  "role": "An AI agent specialized in: tells me jokes always",
+  "model": "gpt-oss:120b-cloud",
+  "id": "rews",
+  "date_and_time": "2026-10-14T18:42:34.426Z"
+}
