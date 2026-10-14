@@ -1,1 +1,0 @@
-# AGENTS.md\nGenerated based on: ssvd

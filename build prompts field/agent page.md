@@ -168,9 +168,26 @@ when a user clicks on line 537 of the [agentSlug].js file, it should delete the 
 #backend process
 create a /api/agent/delete_agent api route to handle this operation
 -all the files of the agent should be deleted (delete the @agents/[agent_name] folder and all in it)
+
 -update the @agents/config.js file (remove the deleted agent from the agents array)
 -update the /api/agents/chat api route. since the agent is deleted, update the chat route so that no one can chat with the deleted agent anymore
 -delete the @agent_memory/chat/[agent_name] folder so there is no chat history of that agent (be sure to first check if the folder exist before deleting)
+
+
+
+
+
+
+instead of using the @agents/registry.json approach, lets use a registry.js file approach
+when creating a new agent, after creating all the folders, and system files, in the @agents/[agent_name] folder
+create a metadata.json file at the @agents/[agent_name], and populate it with the necessary data {name, description, role, model, id, date_and_time}
+
+make sure the description is not hard coded, 
+let the orchestrator agent rewrite a summarized description of the agent (not more than 7 words in total) based on the description written by the user at the frontend, use the transformed description in the metadata.json file
+
+after all this is done, update the registry.js file: simply insert (push) require("./[agent_name]/metadata.json") into the agent_registry array
+
+then update the agent chat api route (already working, no need to change)
 
 
 
