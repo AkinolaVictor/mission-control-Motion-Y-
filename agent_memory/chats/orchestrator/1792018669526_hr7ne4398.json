@@ -1,0 +1,63 @@
+{
+  "title": "hey",
+  "timestamp": "2026-10-14T23:07:20.608Z",
+  "agent": "orchestrator",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hey"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "//   agents: registry"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
+    }
+  ]
+}
