@@ -1,6 +1,6 @@
 {
   "title": "hello",
-  "timestamp": "2026-10-14T18:59:30.029Z",
+  "timestamp": "2026-10-14T22:34:41.559Z",
   "agent": "orchestrator",
   "messages": [
     {
@@ -10,6 +10,14 @@
     {
       "role": "assistant",
       "content": "**Orchestrator:** Hello! How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "how many goals does ronaldo have in total"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the orchestrator agent. Please try again."
     }
   ]
 }
