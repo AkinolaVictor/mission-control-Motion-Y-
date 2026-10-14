@@ -1,0 +1,6 @@
+{
+  "name": "live_scores",
+  "description": "an agent to help me check livescore updates every monday wednesday and saturday by 9pm each day",
+  "role": "An AI agent specialized in: an agent to help me check livescore updates every monday wednesday and saturday by 9pm each day",
+  "model": "gpt-oss:120b-cloud"
+}

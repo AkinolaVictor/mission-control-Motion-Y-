@@ -17,6 +17,7 @@ export default function AgentSlug() {
   const dispatch = useDispatch();
   const { navHeight, selectedCategory, selectedIdeaId } = useSelector((state) => state.general);
   const [activeAgent, setActiveAgent] = useState(null);
+  const [approveDelete, setApproveDelete] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isChatModalOpen, setIsChatModalOpen] = useState(false);
   const [showSystemSelector, setShowSystemSelector] = useState(false);
@@ -227,13 +228,23 @@ export default function AgentSlug() {
             `}
           >
             <div className='flex justify-left p-4 items-center w-full gap-3'>
-              <div className='w-10 h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0,0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+              <div className='flex gap-3'>
+                <div className='min-w-10 min-h-10 rounded-full bg-layer3 flex items-center justify-center text-lg'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0,0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
+                </div>
+                <div>
+                    <h2 className='text-[13px] font-semibold text-white tracking-tight'>{activeAgent.name}</h2>
+                    <p className='text-[12px] opacity-70'>{activeAgent.description}</p>
+                </div>
               </div>
-              <div>
-                  <h2 className='text-[13px] font-semibold text-white tracking-tight'>{activeAgent.name}</h2>
-                  <p className='text-[12px] opacity-70'>{activeAgent.description}</p>
-              </div>
+
+              {
+                activeAgent.name==="orchestrator"?
+                null:
+                <div onClick={() => setApproveDelete(!approveDelete)} className='min-w-10 min-h-10 ml-auto rounded-full bg-surface cursor-pointer flex items-center justify-center'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash preview-icon"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </div>
+              }
             </div>
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
                 <div className='bg-surface w-full h-auto p-3 rounded-[13px] mb-4'>
@@ -502,7 +513,42 @@ export default function AgentSlug() {
         ) : null
       }
 
-      <div onClick={() => setIsChatModalOpen(!isChatModalOpen)} className='fixed w-14 h-14 rounded-full bg-layer3 bottom-4 right-4 flex justify-center items-center cursor-pointer hover:bg-layer transition-colors'>
+      {
+        approveDelete ? (
+          <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4'>
+            <div className='bg-layer2 border border-border-subtle rounded-2xl w-full max-w-[350px] max-h-[80vh] flex flex-col overflow-hidden'>
+              <div className='p-4 border-b border-border-subtle flex justify-between items-center'>
+                <h2 className='text-sm font-semibold text-white'>
+                  Confirm Delete
+                </h2>
+                <button
+                  onClick={() => setApproveDelete(!approveDelete)}
+                  className='text-text-secondary hover:text-white transition-colors cursor-pointer'
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 6L6 18" /><path d="m6 6 12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <div className='p-2 flex flex-col'>
+                <p className='text-center'>Are you sure you want to delete this agent ({activeAgent.name})?</p>
+                <div className='flex justify-evenly items-center mt-5'>
+                  <div className='center py-1.5 cursor-pointer px-7 bg-layer3 rounded-full'>
+                    <p>Yes</p>
+                  </div>
+
+                  <div onClick={() => setApproveDelete(!approveDelete)} className='center py-1.5 cursor-pointer px-7 bg-layer3 rounded-full'>
+                    <p>No</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null
+      }
+
+      <div onClick={() => setIsChatModalOpen(!isChatModalOpen)} className='fixed w-14 h-14 bp7:hidden rounded-full bg-layer3 bottom-4 right-4 flex justify-center items-center cursor-pointer hover:bg-layer transition-colors'>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-circle preview-icon opacity-70"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
       </div>
 

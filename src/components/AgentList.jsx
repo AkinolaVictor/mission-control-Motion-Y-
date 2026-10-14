@@ -54,7 +54,7 @@ function AgentList({env, closeModal}) {
                             </div>
                             <h3 className='text-[13px] font-semibold text-white tracking-tight'>Agents Board</h3>
                         </div>
-                        <p className='text-[11px] text-text-secondary ml-9'>All agents activities overview</p>
+                        <p className='text-[11px] opacity-70 font-semibold text-text-secondary ml-9'>All agents activities overview</p>
                     </div>
                 </Link>
               </div>
@@ -79,7 +79,7 @@ function AgentList({env, closeModal}) {
                                 </div>
                                 <h3 className='text-[13px] font-semibold text-white tracking-tight'>{agent.name}</h3>
                             </div>
-                            <p className='text-[11px] text-text-secondary ml-9 opacity-70 font-semibold'>{agent.description}</p>
+                            <p className='text-[11px] text-text-secondary line-clamp-2 ml-9 opacity-70 font-semibold'>{agent.description}</p>
                         </div>
                     </Link>
                 ))

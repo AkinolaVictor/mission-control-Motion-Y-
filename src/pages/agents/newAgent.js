@@ -110,7 +110,23 @@ function createAgent(props) {
   return (
     <div className="relative">
         <DashboardLayout activePill="New Agent" where="Agents">
-            <div style={{alignItems: "flex-start"}} className='w-full h-auto center'>
+            <div style={{justifyContent: "flex-start"}} className='w-full h-auto center flex-col'>
+                {
+                    isCreating ? (
+                        <div className='w-full max-w-120 flex flex-col items-center justify-center my-4 p-4 bg-layer2 rounded-[13px] border border-border-subtle animate-in fade-in slide-in-from-top-2 duration-300'>
+                            <div className='w-full bg-layer3 rounded-full h-2 mb-3 overflow-hidden'>
+                                <div
+                                    className='bg-accent h-full transition-all duration-300 ease-out'
+                                    style={{ width: `${progress}%` }}
+                                />
+                            </div>
+                            <p className='text-[13px] font-semibold text-white'>{progress}% completed</p>
+                            <p className='text-[11px] opacity-60 text-center mt-1'>{progressStatus}</p>
+                            <p className='text-[11px] opacity-40 text-center'>{progressDetail}</p>
+                        </div>
+                    ):
+                    <div />
+                }
 
                 <div style={{height:h}} className='bg-surface w-full max-w-120 rounded-[15px] p-0'>
                     <div className='flex justify-left my-4 items-center w-full gap-3 px-4'>
@@ -157,18 +173,12 @@ function createAgent(props) {
                         </div>
                     </div>
 
-                    <div className='px-4 w-full'>
+                    <div className='px-4 mb-4 w-full'>
                         {isCreating ? (
-                            <div className='w-full flex flex-col items-center justify-center mt-3 p-4 bg-layer2 rounded-[13px] border border-border-subtle'>
-                                <div className='w-full bg-layer3 rounded-full h-2 mb-3 overflow-hidden'>
-                                    <div
-                                        className='bg-accent h-full transition-all duration-300 ease-out'
-                                        style={{ width: `${progress}%` }}
-                                    />
-                                </div>
-                                <p className='text-[13px] font-semibold text-white'>{progress}% completed</p>
-                                <p className='text-[11px] opacity-60 text-center mt-1'>{progressStatus}</p>
-                                <p className='text-[11px] opacity-40 text-center'>{progressDetail}</p>
+                            <div
+                                className={`w-full py-2 cursor-pointer flex justify-center items-center mt-3 bg-layer rounded-[9px] hover:bg-layer3 transition-colors`}
+                            >
+                                <p className='text-[13px] opacity-90'>Creating Agent...</p>
                             </div>
                         ) : (
                             <div

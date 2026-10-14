@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+const { generateAgentSystemFiles } = require('../../../../agents/orchestrator/functions/generate_system_files');
 
 /**
  * Agent Creation API Route
@@ -57,27 +58,17 @@ export default async function handler(req, res) {
     };
     fs.writeFileSync(path.join(agentRoot, 'metadata.json'), JSON.stringify(metadata, null, 2));
 
-    // Phase 2: System Prompt Generation (20-70%)
-    const systemFiles = [
-      'AGENTS.md', 'IDENTITY.md', 'SOUL.md', 'MEMORY.md',
-      'HEARTBEAT.md', 'SECURITY.md', 'TOOLS.md'
-    ];
+    // Phase 2: Dynamic System Prompt Generation (20-70%)
+    sendProgress(25, 'architecting agent identity', 'Orchestrator is generating system files...');
 
-    const templates = {
-      'AGENTS.md': `# AGENTS\nThis agent is part of the Motion-Y ecosystem. \nDescription: ${agentDescription}`,
-      'IDENTITY.md': `# IDENTITY\nName: ${sanitizedName}\nCore Identity: Specialized AI for ${agentDescription}`,
-      'SOUL.md': `# SOUL\nPhilosophical Approach: Efficiency, precision, and alignment with the user's goals regarding ${agentDescription}`,
-      'MEMORY.md': `# MEMORY\nOperational Memory: Maintains state and context related to ${agentDescription}`,
-      'HEARTBEAT.md': `# HEARTBEAT\nHealth Check: Active and operational. Monitoring stability of the ${sanitizedName} module.`,
-      'SECURITY.md': `# SECURITY\nProtocol: Restricted access. Only authorized instructions are executed. No leaks of internal system paths.`,
-      'TOOLS.md': `# TOOLS\nAvailable Capabilities: Standard LLM capabilities optimized for ${agentDescription}`
-    };
+    const systemFilesContent = await generateAgentSystemFiles(sanitizedName, agentDescription);
+    const systemFilesList = Object.keys(systemFilesContent);
 
-    let progressStep = 20;
-    for (const file of systemFiles) {
-      progressStep += Math.floor(50 / systemFiles.length);
-      sendProgress(progressStep, 'creating system file', `generating and creating ${file} file`);
-      fs.writeFileSync(path.join(agentRoot, 'system', file), templates[file] || `# ${file}\nContent for ${file}`, 'utf8');
+    let progressStep = 25;
+    for (const file of systemFilesList) {
+      progressStep += Math.floor(45 / systemFilesList.length);
+      sendProgress(progressStep, 'creating system file', `writing ${file} to system folder`);
+      fs.writeFileSync(path.join(agentRoot, 'system', file), systemFilesContent[file], 'utf8');
     }
 
     // Phase 3: Function Generation (70-90%)
@@ -166,19 +157,19 @@ module.exports = { chatWith${sanitizedName.charAt(0).toUpperCase() + sanitizedNa
     let configContent = fs.readFileSync(configPath, 'utf8');
 
     // Add import
-    const importLine = `const ${sanitizedName}_config = require('./${sanitizedName}/metadata.json');\n`;
-    const lines = configContent.split('\n');
+    const importLine = `const ${sanitizedName}_config = require('./${sanitizedName}/metadata.json');\\n`;
+    const lines = configContent.split('\\n');
 
     // Find the first index of "export const agent_config"
     const exportIndex = lines.findIndex(line => line.includes('export const agent_config'));
     lines.splice(exportIndex - 1, 0, importLine);
 
     // Add to agents array
-    const agentEntry = `        {\n            ...${sanitizedName}_config,\n            "id": "${sanitizedName}"\n        },`;
+    const agentEntry = `        {\\n            ...${sanitizedName}_config,\\n            "id": "${sanitizedName}"\\n        },`;
     const arrayStartIndex = lines.findIndex(line => line.includes('"agents": ['));
     lines.splice(arrayStartIndex + 1, 0, agentEntry);
 
-    fs.writeFileSync(configPath, lines.join('\n'), 'utf8');
+    fs.writeFileSync(configPath, lines.join('\\n'), 'utf8');
 
     sendProgress(100, 'completed', 'Agent created successfully');
     res.end();
