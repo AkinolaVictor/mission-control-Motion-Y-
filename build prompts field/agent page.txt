@@ -43,7 +43,6 @@ this code keeps reporting a syntax error, can you fix it for me?
 
 
 
-
 now everything works fine, i just need a few update for the mobile experience
 when a user clicks on line 189 of the [agentSlug].js file, it should show a modal containing everything in the AgentList.jsx file
 the user should be able to click on any of the available links, and navigate accordingly
@@ -54,4 +53,43 @@ also, the text in line
 
 
 
+Creating a new Agent
 
+-Frontend creation process:
+when a user clicks on line 92 (create button) of the newAgent.js file, 
+-it should validate the user data to ensure the name of this agent is unique (no name clash)
+-make sure the name, model and the description in not left empty
+-if all is clear, it should sent the data to the Backend for creation
+
+
+-Backend Creation Process:
+to create an agent, create a /api/agent/create_agent API route
+here are things that must be done
+-a folder must be created in the @agents folder with the name of the agent, as in @agents/[name_of_agent]
+-then 3 new folders, as in: 
+  1. @agents/[name_of_agent]/functions
+  2. @agents/[name_of_agent]/system
+  3. @agents/[name_of_agent]/workspace
+-then a file called metadata.json must also be created as in: @agents/[name_of_agent]/metadata.json
+-the newly created metadata.json file should contain name, description, role, model properties of the agent as in:
+  {
+    name: "new_agent_name",
+    description: "new agent description",
+    role: "new agent role description",
+    model: "llm_model_of_agent"
+  }
+-check the @agents/orchestrator/metadata.json file for clarity, updates on further changes
+-every agent must have a unique name and id, no two (or more) agents should have the same name, every one must be unique
+-then, based on the description of the agent provided by the user, all system files for this new agent must be generated and created in the @agents/[name_of_agent]/system folder as in:
+ . @agents/[name_of_agent]/system/AGENTS.md
+ . @agents/[name_of_agent]/system/IDENTITY.md
+ . @agents/[name_of_agent]/system/SOUL.md
+ . @agents/[name_of_agent]/system/MEMORY.md
+ . @agents/[name_of_agent]/system/HEARTBEAT.md
+ . @agents/[name_of_agent]/system/SECURITY.md
+ . @agents/[name_of_agent]/system/TOOLS.md
+-then, a chat function must be created for at @agents/[name_of_agent]/functions/[aagent_name_chat].js
+-to create this chat function, the agent must be fed with all the files in the @agents/[name_of_agent]/system folder to help define who it is in each chat (ensure to check @agents/orchestrator/functions/orchestrator_chat.js)
+-then you update the @agent/config.js file (to insert the new agent at the agents section)
+
+let me see your plan before getting this done.
