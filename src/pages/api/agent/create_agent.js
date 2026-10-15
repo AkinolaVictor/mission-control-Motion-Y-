@@ -81,7 +81,8 @@ export default async function handler(req, res) {
       id: sanitizedName,
       setup: false,
       status: "active",
-      date_and_time: new Date().toISOString()
+      date_and_time: new Date().toISOString(),
+      tools: {}
     };
     fs.writeFileSync(path.join(agentRoot, 'metadata.json'), JSON.stringify(metadata, null, 2));
 

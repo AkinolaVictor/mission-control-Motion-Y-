@@ -5,5 +5,8 @@
     "model": "gemma4:31b-cloud",
     "id": "motion_dev",
     "date_and_time": "2026-10-14T19:01:34.259Z",
-    "status": "active"
+    "status": "active",
+    "tools": {
+        
+    }
 }

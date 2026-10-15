@@ -57,6 +57,42 @@ async function chatWithOrchestrator(payload) {
         model: model,
         messages: ollamaMessages,
         stream: false,
+        tools: true?[]:[
+          {
+            type: "function",
+            function: {
+                name: "send_email",
+                description: "Send an email to a specified recipient.",
+                parameters: {
+                    type: "object",
+                    properties: {
+                        to: { type: "string" },
+                        subject: { type: "string" },
+                        body: { type: "string" }
+                    },
+                    required: ["to", "subject", "body"]
+                }
+            }
+          },
+          {
+              type: "function",
+              function: {
+                  name: "create_social_post",
+                  description: "Create a post for a social media platform.",
+                  parameters: {
+                      type: "object",
+                      properties: {
+                          platform: {
+                              type: "string",
+                              enum: ["linkedin", "instagram", "youtube"]
+                          },
+                          content: { type: "string" }
+                      },
+                      required: ["platform", "content"]
+                  }
+              }
+          }
+        ]
       }),
     });
 
@@ -66,6 +102,7 @@ async function chatWithOrchestrator(payload) {
     }
 
     const data = await response.json();
+    console.log({tool_calls: data.message?.tool_calls})
     return {
       content: data.message.content,
       role: 'assistant'

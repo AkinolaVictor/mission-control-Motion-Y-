@@ -66,22 +66,53 @@ Phase 1:
 Phase 2:
 -create a /api/agent/agent_ability_setup api route for this
 -once the user clicks "done", after being satisfied with the summary and plan, then they should pass all necessary data to /api/agent/agent_ability_setup api route
--this would create all the necessary function(s) needed for this agent to work fine at the @agents/[agent_name]/functions folder. ensure all functions are stored there
+-this would create all the necessary function(s) needed for this agent to work fine at the @agents/[agent_name]/functions/ folder. ensure all functions are stored there
 -at the top level of each function. write the information on function purpose, how to use it, and the data types necessary.
--after functions are created, check through the system files in the @agents/[agent_name]/system and update any necessary file to help the agent know how to call and use these functions where necessary (especially the TOOLS.md file, but basically any file that needs to be updated)
--after all these is done, update the metadata.json file of the agent, the setup:true, also add a property of functions as in:
+-after functions are created, check through the system files in the @agents/[agent_name]/system and update the TOOLS.md file, create sections for each files and explain how to use them, how to prompt the user for all the necessary parameters, and how to insist upon the right parameter before calling the function
+-for example if a user wants to send email, they must provide necessary information or context of the message to be sent
+-for the parameter, if the user does not give specifics but they provide a context, the function should be able to generate the right parameter
+-after all these is done, update the metadata.json file of the agent, set the setup:true, also add (or update) a property of the tools array as in:
 {
     ...,
     setup: true,
-    functions: {
-        name_of_function: {
-            parameters: [params1, params2, params3, etc],
-            description,
-            purpose: "why the function exists",
-            ...any other necessary information
+    tools: [  
+        /* for Example 1 */
+        {
+            type: "function",
+            function: {
+                name: "send_email",
+                description: "Send an email to a specified recipient.",
+                parameters: {
+                    type: "object",
+                    properties: {
+                        to: { type: "string" },
+                        subject: { type: "string" },
+                        body: { type: "string" }
+                    },
+                    required: ["to", "subject", "body"]
+                }
+            }
         },
-        ...the other functions
-    }
+        /* for Example 2 */
+        {
+            type: "function",
+            function: {
+                name: "create_social_post",
+                description: "Create a post for a social media platform.",
+                parameters: {
+                    type: "object",
+                    properties: {
+                        platform: {
+                            type: "string",
+                            enum: ["linkedin", "instagram", "youtube"]
+                        },
+                        content: { type: "string" }
+                    },
+                    required: ["platform", "content"]
+                }
+            }
+        }
+    ]
 }
 
 How to build the /api/agent/agent_ability_setup api route
@@ -94,7 +125,8 @@ don't worry about when the functions would be run by an agent, simply focus on c
 
 
 
-
+ask me any question before starting (for clarity)
+let me see your plan before starting
 
 
 
