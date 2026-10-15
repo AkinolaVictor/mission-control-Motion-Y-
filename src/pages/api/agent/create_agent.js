@@ -79,6 +79,8 @@ export default async function handler(req, res) {
       role: `An AI agent specialized in: ${agentDescription}`,
       model: selectedModel,
       id: sanitizedName,
+      setup: false,
+      status: "active",
       date_and_time: new Date().toISOString()
     };
     fs.writeFileSync(path.join(agentRoot, 'metadata.json'), JSON.stringify(metadata, null, 2));
@@ -174,7 +176,8 @@ async function chatWith${process_name}(payload) {
 
 module.exports = { chatWith${process_name} };
 `;
-    fs.writeFileSync(path.join(agentRoot, 'functions', `${sanitizedName}_chat.js`), chatFunctionContent, 'utf8');
+    // fs.writeFileSync(path.join(agentRoot, 'functions', `${sanitizedName}_chat.js`), chatFunctionContent, 'utf8');
+    fs.writeFileSync(path.join(agentRoot, `${sanitizedName}.js`), chatFunctionContent, 'utf8');
 
     // Phase 4: Registry Update (90-100%)
     sendProgress(95, 'updating agent system', 'adding new agent to registry');
@@ -212,7 +215,8 @@ module.exports = { chatWith${process_name} };
     
     // 1. Add import statement at the top
     let mappingContent = fs.readFileSync(mappingPath, 'utf8');
-    const importStatement = `import { chatWith${process_name} } from './../../../../../agents/${sanitizedName}/functions/${sanitizedName}_chat';`;
+    // const importStatement = `import { chatWith${process_name} } from './../../../../../agents/${sanitizedName}/functions/${sanitizedName}_chat';`;
+    const importStatement = `import { chatWith${process_name} } from './../../../../../agents/${sanitizedName}/${sanitizedName}';`;
     fs.writeFileSync(mappingPath, `${importStatement}\n${mappingContent}`)
     
     // const mappingPath2 = path.join(process.cwd(), 'src', 'pages', 'api', 'agent', 'chat_modules', 'agent_mappings.js');

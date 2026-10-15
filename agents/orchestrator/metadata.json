@@ -4,5 +4,6 @@
   "role": "The orchestrator agent is the central intelligence control that manages and coordinates the activities of other agents. It is responsible for overseeing the overall system, making high-level decisions, and ensuring that all agents work together effectively to achieve the desired outcomes.",
   "model": "gpt-oss:20b-cloud",
   "id": "orchestrator",
-  "date_and_time": "2026-10-14T19:01:34.259Z"
+  "date_and_time": "2026-10-14T19:01:34.259Z",
+  "status": "active"
 }
