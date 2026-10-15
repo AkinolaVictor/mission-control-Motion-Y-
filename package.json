@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "claude": "ollama launch claude --model gemma4:31b-cloud",
     "git": "git add . && git commit -m new-updates && git push origin master"
   },
   "dependencies": {

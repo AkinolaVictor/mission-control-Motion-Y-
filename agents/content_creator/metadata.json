@@ -1,0 +1,8 @@
+{
+  "name": "content_creator",
+  "description": "God-Glorifying Media Production",
+  "role": "An AI agent specialized in: creates videos and movie contents that Glorify God",
+  "model": "gemma4:31b-cloud",
+  "id": "content_creator",
+  "date_and_time": "2026-10-15T07:50:42.482Z"
+}
