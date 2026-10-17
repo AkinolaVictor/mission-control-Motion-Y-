@@ -1,0 +1,23 @@
+Link: http://arxiv.org/abs/2605.05991v1
+
+HTTP Status: 200
+
+Title: [2605.05991v1] A Case-Driven Multi-Agent Framework for E-Commerce Search Relevance
+
+Content:
+
+- Paper proposes a case-driven multi-agent framework for e-commerce search relevance, automating the pipeline from bad-case identification to resolution.
+- Relevance optimization is framed as a closed-loop ecosystem involving users, product managers, annotators, algorithm engineers, and evaluators; the framework replaces these human roles with autonomous agents.
+- Core agents:
+  - Annotator Agent: multi-turn annotation.
+  - Optimizer Agent: autonomous bad-case analysis and resolution.
+  - User Agent: identifies bad cases through conversational interaction.
+- These agents form an autonomous, continually evolving system.
+- Production-oriented components under a harness-engineering paradigm:
+  - Unified retrieval-and-ranking relevance model for efficient training.
+  - Instruction-following relevance model for real-time case resolution.
+  - Global Memory to reduce information asymmetry across agents.
+  - Deep Search Agent to target underestimation failures.
+  - Agent-based chatbot for human-agent collaboration.
+- Evaluation: extensive human evaluation reports effective performance on relevance-related tasks, improved annotation accuracy, and more timely and generalizable bad-case resolution.
+- Claimed implication: practical paradigm for industrial search relevance optimization.

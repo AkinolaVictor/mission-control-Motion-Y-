@@ -69,14 +69,13 @@ Phase 2:
 -this would create all the necessary function(s) needed for this agent to work fine at the @agents/[agent_name]/functions/ folder. ensure all functions are stored there
 -at the top level of each function. write the information on function purpose, how to use it, and the data types necessary.
 -after functions are created, check through the system files in the @agents/[agent_name]/system and update the TOOLS.md file, create sections for each files and explain how to use them, how to prompt the user for all the necessary parameters, and how to insist upon the right parameter before calling the function
--for example if a user wants to send email, they must provide necessary information or context of the message to be sent
--for the parameter, if the user does not give specifics but they provide a context, the function should be able to generate the right parameter
+-for example if a user wants to send email, they must provide necessary information or context of the message to be sent, they agent must know how to ask the user to provide this parameters, or the agent should be able to generate them based on the contextual explanations given by the user, so the paramaters can be passed to the function and it works fine.
 -after all these is done, update the metadata.json file of the agent, set the setup:true, also add (or update) a property of the tools array as in:
 {
     ...,
     setup: true,
     tools: [  
-        /* for Example 1 */
+        /* Example 1 */
         {
             type: "function",
             function: {
@@ -93,7 +92,7 @@ Phase 2:
                 }
             }
         },
-        /* for Example 2 */
+        /* Example 2 */
         {
             type: "function",
             function: {
@@ -124,11 +123,14 @@ How to build the /api/agent/agent_ability_setup api route
 don't worry about when the functions would be run by an agent, simply focus on creating the functions, teaching the agent to use it, the necessary data for the function to run
 
 
-
 ask me any question before starting (for clarity)
 let me see your plan before starting
 
-
+1. the metadata.json is a separate physical file inside each agent's folder (e.g., @agents/[agent_name]/metadata.json), 
+2. yes, 
+3. yes, i will import them in other files, 
+4. yes, json/object passed down, 
+5. yes, but instead of having an api url chatendpoint to be passed as a prop into the AgentChatWindow, let all the api urls be stored in an object inside the AgentChatWindow component, so you can receive a string prop for the name of the endpoint to chat with, stored inside the object, if no chatendpoint is provided, the default (currently being used) should be set as default
 
 
 
@@ -151,35 +153,169 @@ and teach each agent on how to access them through api or basic function calls. 
 
 
 
+researcher
+An agent that is able to make research, search the internet search and from all it finds it is able to create an article that can be reused elsewhere, or return it in any type of format
+
+
+
+
+i created an agent that is meant to help me make research on the internet, and summarize all its findings into an article.
+this is the process i want it to go through in doing it's work
+1. url collector: search the web for url of helpful places sources (including youtube)
+2. web scrapper: visit each url one by one, scrape its content and store it as a structured txt document
+3. youtube text extractor: extract the transcript of a youtube video and save in a txt document
+4. llm research: prompt an llm to make its own isolated research and store its result in a txt document
+5. article writer: read each and all the (groups) of available data, analyze and summarize them, and write out a mature article [title.md] file
+
+i would be building this one by one starting with this:
+create a function that research a question/prompt (given to it) in the internet (google, wikipedia, bing, duckduckgo, youtube, and any other necessary place to make a research)
+- create the function in @agents/researcher/functions/url_extractor.js 
+- it should get about 3-5 top links from each of the sources it visits, and save them in the folder research_urls.json in the @agents/researcher/workspace/[task_id] folder (it should create the folder if it doesnt exist). the json should look like this: 
+[
+    {id: 1, url: "url address"},
+    {id: 2, url: "url address"},
+    {id: 3, url: "url address"},
+    {id: 4, url: "url address"},
+    {id: 5, url: "url address"},
+    {id: 6, url: "url address"},
+    {id: 7, url: "url address"},
+    ...
+]
+- it keeps adding each url links to that single json file 
+- it would receive props (task_id, search_prompt). these props are mandatory
+-after the job is done and completed, it should update a @agents/researcher/workspace/[task_id].task_state.json file as in:
+{
+    ...,
+    process_states: {
+        ...,
+        url_collection: "completed" /*completed || failed*/
+    }
+}
+
+let me see your plan for this first before starting
+
+
+-keep in mind that the @agents/researcher/workspace/[task_id] should already have been created even before the function is called, but if it does not exist, it should be created
+-make sure to use free options
+-dont be limited to the target sources provided, if you know other important target source, please add them
+-please keep in mind that the function must receive only a single prop called task_state, this would contain all necessary information including task_id, and search_prompt
+-also while updating the research_urls.json file, the function must first ensure the process_states.url_collection is not already false,
+if it is false, it must erase all existing url, and start inserting again
+
+get it done now
+
+
+
+i want you to modify this function to pull in at least 10 url links from about 30 different sources, make sure the new code runs :
+effectively:
+
+
+Now the urls have been acquired and stored in folder @agents/researcher/workspace/[task_id]/reasearch_urls.json
+no i want you to create a function that loops through each url one after the other, extract the texts and store it in a txt file @agents/researcher/workspace/[task_id]/extractions/[generated_id].txt
+each txt file should be in this order
+1. link text is scraped from
+2. title of content scrapped
+3. all the content scrapped
+create the function in @agents/researcher/functions/url_scrapper.js
+
+- it would receive props (task_state) (which contains task_id (as in task_state.task_id) and other necessary information). this props is mandatory
+-before any work is done, it must first check to donfirm that task_states.process_states.url_collection is set to "completed", otherwise scrapping cannot be done
+-after the job is done and completed, it should update a @agents/researcher/workspace/[task_id]/task_state.json file as in:
+{
+    ...,
+    process_states: {
+        ...,
+        url_scrapping: "completed" /*completed || failed*/
+    }
+}
+
+let me see your plan before starting
+
+
+i created this function to help scrape some web content but i often get some errors (419, 403), and sometimes, it does not save the scrapped document as a file for some url, i mean it does save some extracted content to txt as expected, but for some, it does not and also doesn't return any error for explanation
+
+is there a better way or approach to scrape the content and save as [generated_id].txt for each url
+
+here's the code:
+
+
+
+
+
+now the scrapper function has been successfully built and all scrapped content are stored in @agents/researcher/workspace/[task_id]/extractions/ folder
+
+
+i want you to create a function that prompts the specified model (of the researcher agent) to make a research on the given search_prompt (it can use internet where necessary), and save its outcome in @agents/researcher/workspace/[task_id]/extractions/agent_search_result.txt tile
+
+- it would receive props (task_state) (which contains task_id (as in task_state.task_id), search_prompt, and other necessary information). this props is mandatory
+-before any work is done, it must first check to confirm that task_states.process_states.url_scrapping is set to "completed", otherwise agent search cannot be done
+-the research result should also contain references of 
+-after the job is done and completed, it should update a @agents/researcher/workspace/[task_id]/task_state.json file as in:
+{
+    ...,
+    process_states: {
+        ...,
+        agent_search: "completed" /*completed || failed*/
+    }
+}
+
+create the function in @agents/researcher/functions/model_research.js
+let me see your plan before starting
+
+
+i want you to update this code, i want it as an agent to help me search the internet based on a topic:search_prompt and write an article that i can save in a document
+
+i want it to inject a RESEARCH.md file (at path.join(process.cwd(), 'agents', 'researcher', 'system', 'RESEARCH.md');) into its instruction
+
+preserve the other logic of the code,
+
+here's the code
 
 
 
 
 
 
+create a function in @agents/researcher/functions/article_writer.js
+this function reads all the txt files in @agents/researcher/workspace/task_id/extractions
+read and understand all of them, and write out a very comprehensive and detailed article
+the title of the article is search_prompt (received as a prop, should be passed into the function)
+
+the article should be stored in @agents/researcher/output/[search_prompt_date_and_time].md
+
+the function should take in an object prop task_state (which contain {task_id, search_prompt})
+
+ensure to inject in the @agents/researcher/system/ARTICLE.md file into the prompt instruction. It contains information on how the agent should write out the article
+
+the model to be used for this operation is stored in @agents/researcher/metadata.json (as in {model})
+
+let me see your plan before starting
 
 
 
+i created an agent that is meant to write out an article based on the some extracted information given to it
+it would be given a title, and also a bulk of information regarding the title given
+i want you to write an article.md file, that teaches the agent how to write a detailed and comprehensive article
 
 
 
+i created an agent that is meant to write out an article
+it would be given a title, and also a bulk of information regarding the title given
+i want you to write an RESEARCH.md file, that teaches the agent how to search and write a detailed and comprehensive and effective article
 
 
+update the function:
+-after the job is done and completed, and article saved, it should update a @agents/researcher/workspace/[task_id]/task_state.json file as in:
+{
+    ...,
+    process_states: {
+        ...,
+        article_generated: "completed" /*completed || failed*/
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+create the function in @agents/researcher/functions/model_research.js
+let me see your plan before starting
 
 
 
@@ -203,19 +339,22 @@ a typical task should look like this:
 [task_id].json
 {
     task_id: id,
+
     await_approval: boolean,
     status: ongoing, // pending, completed, failed, scheduled/pending
     start_time: any,
     assigned_to: agent_name,
-    title: title of task,
-    description: description of task,
     created_at: data and time,
-    created_by: orchestrator,
-    max_attempt: 2,
+    description: description of task,
+    title: title of task,
+    max_attempt: 5,
+    attempt: 0
     expected_output: "store post created in a place, otherwise report error",
-    output,
-    priority: high
+    created_by: orchestrator,
     deadline,
+
+    priority: high
+    output,
     instructions: [],
     error: {},
     context: additional relevalt information
@@ -238,8 +377,21 @@ how to handle functions with a need for approval
 
 
 
+create an api route /api/agent/test_task_runner
+this api route checks the @agents/researcher/workspace/ directory. it looks for the task_state.json file contained in each folder inside the @agents/researcher/workspace/ directory. as in @agents/researcher/workspace/[any_folder]/task_state.json
 
+it creates an array, and push in the content of all task_state.json data.
 
+it loops through the array and calls the @agents/researcher/task_runner function on each of the array item (pass each item as prop)
+
+this api route is simply just to test that task_runner function
+
+after this
+create a @test_runner.js file, using axios to call the /api/agent/test_task_runner api route. 
+
+the task_runner function has already been created in @agents/researcher/task_runner.js simply import it, you don't need to create it again 
+
+let me see your plan before starting
 
 
 

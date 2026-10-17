@@ -9,7 +9,7 @@ import ChatHistory from './ChatHistory';
 import styles from './AgentChat.module.css';
 import { agent_config } from '../../../agents/config';
 
-export default function AgentChatWindow({ onClose, agentId, agentName }) {
+export default function AgentChatWindow({ onClose, agentId, agentName, endpointKey }) {
   const [view, setView] = useState('new'); // 'new' | 'active'
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -18,7 +18,15 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
   const [currentChatId, setCurrentChatId] = useState(null);
   const scrollRef = useRef(null);
 
+  const endpoints = {
+    default: '/api/agent/chat',
+    setup: '/api/agent/agent_setup_chat',
+  };
+
+  const activeEndpoint = endpointKey ? endpoints[endpointKey] || endpoints.default : endpoints.default;
+
   const activeAgentMetadata = agent_config.agents.find(a => a.id === agentId) || { model: 'gemma4:31b-cloud' };
+
 
   const scrollIntoView = () => {
     if (scrollRef.current) {
@@ -159,7 +167,7 @@ export default function AgentChatWindow({ onClose, agentId, agentName }) {
     setIsTyping(true);
 
     try {
-      const response = await axios.post('/api/agent/chat', {
+      const response = await axios.post(activeEndpoint, {
         agent: agentId || 'orchestrator',
         model: activeAgentMetadata.model,
         messages: newMsgs

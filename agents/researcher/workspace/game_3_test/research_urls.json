@@ -1,0 +1,434 @@
+[
+  {
+    "id": 1,
+    "url": "https://arxiv.org/pdf/1806.09055v1"
+  },
+  {
+    "id": 2,
+    "url": "https://en.wikipedia.org/wiki/Search_algorithm"
+  },
+  {
+    "id": 3,
+    "url": "https://www.systemdesignhandbook.com/guides/google-search-system-design/"
+  },
+  {
+    "id": 4,
+    "url": "https://commons.wikimedia.org/wiki/Popular_Science_Monthly_illustrations%2FCategories"
+  },
+  {
+    "id": 5,
+    "url": "https://arxiv.org/api/3Ye+Wyi0dalsL/GvpS66ASn0LW4"
+  },
+  {
+    "id": 6,
+    "url": "http://arxiv.org/abs/1706.06697v1"
+  },
+  {
+    "id": 7,
+    "url": "http://arxiv.org/abs/1209.4560v1"
+  },
+  {
+    "id": 8,
+    "url": "http://arxiv.org/abs/1908.09059v1"
+  },
+  {
+    "id": 9,
+    "url": "http://arxiv.org/abs/2605.05991v1"
+  },
+  {
+    "id": 10,
+    "url": "http://arxiv.org/abs/2507.20897v1"
+  },
+  {
+    "id": 11,
+    "url": "http://arxiv.org/abs/2311.13123v2"
+  },
+  {
+    "id": 12,
+    "url": "http://arxiv.org/abs/2104.10450v1"
+  },
+  {
+    "id": 13,
+    "url": "http://arxiv.org/abs/quant-ph/0101126v2"
+  },
+  {
+    "id": 14,
+    "url": "http://arxiv.org/abs/1103.4502v1"
+  },
+  {
+    "id": 15,
+    "url": "https://doi.org/10.1108/09699980410527849"
+  },
+  {
+    "id": 16,
+    "url": "https://doi.org/10.1016/j.autcon.2024.105624"
+  },
+  {
+    "id": 17,
+    "url": "https://doi.org/10.1108/eb021105"
+  },
+  {
+    "id": 18,
+    "url": "https://doi.org/10.1016/j.autcon.2004.12.007"
+  },
+  {
+    "id": 19,
+    "url": "https://doi.org/10.1108/ecam-10-2024-1390"
+  },
+  {
+    "id": 20,
+    "url": "https://doi.org/10.1108/ecam-08-2019-0457"
+  },
+  {
+    "id": 21,
+    "url": "https://doi.org/10.1108/ecam-11-2025-1821"
+  },
+  {
+    "id": 22,
+    "url": "https://doi.org/10.1046/j.1365-232x.1999.00086.x"
+  },
+  {
+    "id": 23,
+    "url": "https://doi.org/10.1108/09699980310466613"
+  },
+  {
+    "id": 24,
+    "url": "https://doi.org/10.1007/978-3-642-54862-8_14"
+  },
+  {
+    "id": 25,
+    "url": "https://doi.org/10.1109/dese.2018.00036"
+  },
+  {
+    "id": 26,
+    "url": "https://doi.org/10.5772/15191"
+  },
+  {
+    "id": 27,
+    "url": "https://doi.org/10.1177/2053951716652159"
+  },
+  {
+    "id": 28,
+    "url": "https://doi.org/10.1038/s41534-022-00570-y"
+  },
+  {
+    "id": 29,
+    "url": "https://doi.org/10.1109/iscas.2015.7169256"
+  },
+  {
+    "id": 30,
+    "url": "https://doi.org/10.1109/tnet.2007.900711"
+  },
+  {
+    "id": 31,
+    "url": "https://doi.org/10.48550/arxiv.2010.13501"
+  },
+  {
+    "id": 32,
+    "url": "https://doi.org/10.1016/j.knosys.2023.110341"
+  },
+  {
+    "id": 33,
+    "url": "https://doi.org/10.1007/978-3-030-68793-9_35"
+  },
+  {
+    "id": 34,
+    "url": "https://doi.org/10.1016/j.eswa.2022.118947"
+  },
+  {
+    "id": 35,
+    "url": "https://doi.org/10.3390/biomimetics11090663"
+  },
+  {
+    "id": 36,
+    "url": "https://doi.org/10.1038/s41598-025-25617-w"
+  },
+  {
+    "id": 37,
+    "url": "https://europepmc.org/article/MED/undefined"
+  },
+  {
+    "id": 38,
+    "url": "https://doi.org/10.3389/fnsys.2026.1847214"
+  },
+  {
+    "id": 39,
+    "url": "https://doi.org/10.3390/e28090951"
+  },
+  {
+    "id": 40,
+    "url": "https://doi.org/10.3390/biomimetics11070509"
+  },
+  {
+    "id": 41,
+    "url": "https://doi.org/10.1038/s41598-026-49709-3"
+  },
+  {
+    "id": 42,
+    "url": "https://doi.org/10.1073/pnas.2516128123"
+  },
+  {
+    "id": 43,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42884495/"
+  },
+  {
+    "id": 44,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42868758/"
+  },
+  {
+    "id": 45,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42730653/"
+  },
+  {
+    "id": 46,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42702165/"
+  },
+  {
+    "id": 47,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42678994/"
+  },
+  {
+    "id": 48,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42674497/"
+  },
+  {
+    "id": 49,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42674231/"
+  },
+  {
+    "id": 50,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42660006/"
+  },
+  {
+    "id": 51,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42590559/"
+  },
+  {
+    "id": 52,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42497402/"
+  },
+  {
+    "id": 53,
+    "url": "https://news.ycombinator.com/item?id=1884799"
+  },
+  {
+    "id": 54,
+    "url": "https://stackoverflow.com/questions/4663002/agile-user-stories-for-machine-learning-project"
+  },
+  {
+    "id": 55,
+    "url": "https://stackoverflow.com/questions/11951501/which-parts-of-mef-should-be-customized-for-dynamic-loading-of-plug-ins-in-a-dis"
+  },
+  {
+    "id": 56,
+    "url": "https://stackoverflow.com/questions/53917726/several-windows-as-a-single-taskbar-icon"
+  },
+  {
+    "id": 57,
+    "url": "https://openlibrary.org/works/OL19837953W"
+  },
+  {
+    "id": 58,
+    "url": "https://openlibrary.org/works/OL2719388W"
+  },
+  {
+    "id": 59,
+    "url": "https://openlibrary.org/works/OL24827181W"
+  },
+  {
+    "id": 60,
+    "url": "https://openlibrary.org/works/OL19896548W"
+  },
+  {
+    "id": 61,
+    "url": "https://openlibrary.org/works/OL19903843W"
+  },
+  {
+    "id": 62,
+    "url": "https://openlibrary.org/works/OL19893153W"
+  },
+  {
+    "id": 63,
+    "url": "https://openlibrary.org/works/OL1926026W"
+  },
+  {
+    "id": 64,
+    "url": "https://openlibrary.org/works/OL23175752W"
+  },
+  {
+    "id": 65,
+    "url": "https://openlibrary.org/works/OL19890379W"
+  },
+  {
+    "id": 66,
+    "url": "https://openlibrary.org/works/OL3694233W"
+  },
+  {
+    "id": 67,
+    "url": "https://archive.org/details/ProfitPress_Mega_WINOS2_Sharewares_Win31_OS2_1991_Eng"
+  },
+  {
+    "id": 68,
+    "url": "https://archive.org/details/github.com-faif-python-patterns_-_2022-08-21_11-22-06"
+  },
+  {
+    "id": 69,
+    "url": "https://archive.org/details/cia-readingroom-document-cia-rdp05c01629r000701490007-0"
+  },
+  {
+    "id": 70,
+    "url": "https://archive.org/details/cia-readingroom-document-cia-rdp95-00972r000100030009-9"
+  },
+  {
+    "id": 71,
+    "url": "https://archive.org/details/designingdigital0000bert"
+  },
+  {
+    "id": 72,
+    "url": "https://archive.org/details/designimplementa0000shae"
+  },
+  {
+    "id": 73,
+    "url": "https://archive.org/details/DTIC_ADB010399"
+  },
+  {
+    "id": 74,
+    "url": "https://archive.org/details/from-walmart-register-to-the-sensitive-compartmented-information-facility"
+  },
+  {
+    "id": 75,
+    "url": "https://archive.org/details/DTIC_ADA198291"
+  },
+  {
+    "id": 76,
+    "url": "https://archive.org/details/DTIC_ADA359957"
+  },
+  {
+    "id": 77,
+    "url": "https://www.npmjs.com/package/trie-search"
+  },
+  {
+    "id": 78,
+    "url": "https://www.npmjs.com/package/@csstools/css-parser-algorithms"
+  },
+  {
+    "id": 79,
+    "url": "https://www.npmjs.com/package/js-graph-algorithms"
+  },
+  {
+    "id": 80,
+    "url": "https://www.npmjs.com/package/jwa"
+  },
+  {
+    "id": 81,
+    "url": "https://www.npmjs.com/package/hashery"
+  },
+  {
+    "id": 82,
+    "url": "https://www.npmjs.com/package/@hapi/nigel"
+  },
+  {
+    "id": 83,
+    "url": "https://www.npmjs.com/package/apparatus"
+  },
+  {
+    "id": 84,
+    "url": "https://www.npmjs.com/package/fintech-algorithms"
+  },
+  {
+    "id": 85,
+    "url": "https://www.npmjs.com/package/eslint-plugin-boundaries"
+  },
+  {
+    "id": 86,
+    "url": "https://www.npmjs.com/package/jws"
+  },
+  {
+    "id": 87,
+    "url": "https://en.wikipedia.org/wiki/List_of_algorithms"
+  },
+  {
+    "id": 88,
+    "url": "https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms"
+  },
+  {
+    "id": 89,
+    "url": "https://en.wikipedia.org/wiki/TurboQuant"
+  },
+  {
+    "id": 90,
+    "url": "https://en.wikipedia.org/wiki/Career_and_technical_education"
+  },
+  {
+    "id": 91,
+    "url": "https://en.wikipedia.org/wiki/Government_by_algorithm"
+  },
+  {
+    "id": 92,
+    "url": "https://en.wikipedia.org/wiki/Machine_learning"
+  },
+  {
+    "id": 93,
+    "url": "https://en.wikipedia.org/wiki/Priority_queue"
+  },
+  {
+    "id": 94,
+    "url": "https://en.wikipedia.org/wiki/Register_allocation"
+  },
+  {
+    "id": 95,
+    "url": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+  },
+  {
+    "id": 96,
+    "url": "https://en.wikipedia.org/wiki/L-system"
+  },
+  {
+    "id": 97,
+    "url": "https://www.mojeek.com/"
+  },
+  {
+    "id": 98,
+    "url": "https://blog.mojeek.com/"
+  },
+  {
+    "id": 99,
+    "url": "https://community.mojeek.com/"
+  },
+  {
+    "id": 100,
+    "url": "https://buttondown.email/Mojeek"
+  },
+  {
+    "id": 101,
+    "url": "https://www.bing.com/ck/a?!&&p=af17f5f6d330aabd83ff130866faa6d121a4da8f79df91c333f21ca218e10a36JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L3NlYXJjaD9xPUFyY2hpdGVjdHVyYWwrY29uc3RydWN0aW9uK29mK3NlYXJjaCthbGdvcml0aG1zJndlYnNjcD0xJkZPUk09SERSV1ND&ntb=1"
+  },
+  {
+    "id": 102,
+    "url": "https://www.bing.com/ck/a?!&&p=b69c87d26e3f2064d342142cd40da034f038f2f08eb4f6a6bbe81d5e48894a69JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L2ltYWdlcy9zZWFyY2g_cT1BcmNoaXRlY3R1cmFsK2NvbnN0cnVjdGlvbitvZitzZWFyY2grYWxnb3JpdGhtcyZGT1JNPUhEUlNDMg&ntb=1"
+  },
+  {
+    "id": 103,
+    "url": "https://www.bing.com/ck/a?!&&p=e9a0e93b753a66543cfe1dd7f68de9fea9b23ee7c51ec3bfebcb1945a8646e22JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L3ZpZGVvcy9zZWFyY2g_cT1BcmNoaXRlY3R1cmFsK2NvbnN0cnVjdGlvbitvZitzZWFyY2grYWxnb3JpdGhtcyZGT1JNPUhEUlNDMw&ntb=1"
+  },
+  {
+    "id": 104,
+    "url": "https://www.bing.com/ck/a?!&&p=62d8810bd52feb45105bbe656ca0f981f3dce233bcf6c3c56e402b4584a00e9dJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L21hcHM_cT1BcmNoaXRlY3R1cmFsK2NvbnN0cnVjdGlvbitvZitzZWFyY2grYWxnb3JpdGhtcyZGT1JNPUhEUlNDNA&ntb=1"
+  },
+  {
+    "id": 105,
+    "url": "https://www.bing.com/ck/a?!&&p=dac34cc6ee81211e25005036302f3fdfed9e8c9920583eaa553e166f89e9ea66JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L25ld3Mvc2VhcmNoP3E9QXJjaGl0ZWN0dXJhbCtjb25zdHJ1Y3Rpb24rb2Yrc2VhcmNoK2FsZ29yaXRobXMmRk9STT1IRFJTQzY&ntb=1"
+  },
+  {
+    "id": 106,
+    "url": "https://www.bing.com/ck/a?!&&p=fc877f22a6375076145cf17258c378b847c109622e1267c401505c9c2576bd4aJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1L3RyYXZlbC9zZWFyY2g_cT1BcmNoaXRlY3R1cmFsK2NvbnN0cnVjdGlvbitvZitzZWFyY2grYWxnb3JpdGhtcyZtPWZsaWdodHMmRk9STT1GQlNDT1A&ntb=1"
+  },
+  {
+    "id": 107,
+    "url": "https://www.bing.com/ck/a?!&&p=bd11960e6a65872435e21990487d30bd3095da7f6a9f280cbf6449f89918884dJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1aHR0cHM6Ly9yZXN1bHRzLm5lY28uZ292Lm5nLw&ntb=1"
+  },
+  {
+    "id": 108,
+    "url": "https://www.bing.com/ck/a?!&&p=028637622d910ddaf381ab68c3e51900495f24c986559015ad3b16f35c79390cJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=02c06c52-d215-6829-236f-7ba7d3906972&u=a1aHR0cHM6Ly9yZXN1bHRzLm5lY28uZ292Lm5nL3NpZ251cA&ntb=1"
+  }
+]

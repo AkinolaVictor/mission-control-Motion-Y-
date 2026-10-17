@@ -1,0 +1,201 @@
+Link: http://arxiv.org/abs/1104.3098v3
+
+HTTP Status: 200
+
+Title: [1104.3098v3] Optimal strategies for a game on amenable semigroups
+
+Content:
+
+Computer Science > Computer Science and Game Theory
+
+arXiv:1104.3098v3 (cs)
+
+[Submitted on 15 Apr 2011 (v1), last revised 18 Jul 2012 (this version, v3)]
+Title:Optimal strategies for a game on amenable semigroups
+Authors:Valerio Capraro, Kent Morrison View a PDF of the paper titled Optimal strategies for a game on amenable semigroups, by Valerio Capraro and Kent Morrison
+View PDF
+HTML (experimental)
+
+Abstract:The semigroup game is a two-person zero-sum game defined on a semigroup S as follows: Players 1 and 2 choose elements x and y in S, respectively, and player 1 receives a payoff f(xy) defined by a function f from S to [-1,1]. If the semigroup is amenable in the sense of Day and von Neumann, one can extend the set of classical strategies, namely countably additive probability measures on S, to include some finitely additive measures in a natural way. This extended game has a value and the players have optimal strategies. This theorem extends previous results for the multiplication game on a compact group or on the positive integers with a specific payoff. We also prove that the procedure of extending the set of allowed strategies preserves classical solutions: if a semigroup game has a classical solution, this solution solves also the extended game.
+
+Comments:
+17 pages. To appear in International Journal of Game Theory
+
+Subjects:
+
+Computer Science and Game Theory (cs.GT); Group Theory (math.GR); Probability (math.PR)
+
+Cite as:
+arXiv:1104.3098 [cs.GT]
+
+ 
+(or 
+arXiv:1104.3098v3 [cs.GT] for this version)
+
+ 
+https://doi.org/10.48550/arXiv.1104.3098
+
+Focus to learn more
+
+arXiv-issued DOI via DataCite
+
+Journal reference:
+International Journal of Game Theory 42 (2013) 917-929
+
+Related DOI:
+
+https://doi.org/10.1007/s00182-012-0345-7
+
+Focus to learn more
+
+DOI(s) linking to related resources
+
+Submission history From: Valerio Capraro [view email] [v1]
+Fri, 15 Apr 2011 16:03:59 UTC (8 KB)
+[v2]
+Sat, 18 Jun 2011 18:58:20 UTC (14 KB)
+[v3]
+Wed, 18 Jul 2012 09:24:52 UTC (14 KB)
+
+Full-text links:
+Access Paper:
+
+View a PDF of the paper titled Optimal strategies for a game on amenable semigroups, by Valerio Capraro and Kent MorrisonView PDFHTML (experimental)TeX Source
+
+view license
+
+Current browse context:
+cs.GT
+
+< prev
+
+  |   
+next >
+
+new
+| 
+recent
+| 2011-04
+
+Change to browse by:
+
+cs
+math
+math.GR
+math.PR
+
+References & Citations
+
+NASA ADSGoogle Scholar
+Semantic Scholar
+
+1 blog link (what is this?)
+
+DBLP - CS Bibliography
+
+listing | bibtex 
+
+Valerio Capraro 
+
+export BibTeX citation
+Loading...
+
+BibTeX formatted citation
+×
+
+loading...
+
+Data provided by: 
+
+Bookmark
+
+Bibliographic Tools
+
+Bibliographic and Citation Tools
+
+Bibliographic Explorer Toggle
+
+Bibliographic Explorer (What is the Explorer?)
+
+Connected Papers Toggle
+
+Connected Papers (What is Connected Papers?)
+
+Litmaps Toggle
+
+Litmaps (What is Litmaps?)
+
+scite.ai Toggle
+
+scite Smart Citations (What are Smart Citations?)
+
+Code, Data, Media
+
+Code, Data and Media Associated with this Article
+
+alphaXiv Toggle
+
+alphaXiv (What is alphaXiv?)
+
+Links to Code Toggle
+
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+
+DagsHub Toggle
+
+DagsHub (What is DagsHub?)
+
+GotitPub Toggle
+
+Gotit.pub (What is GotitPub?)
+
+Huggingface Toggle
+
+Hugging Face (What is Huggingface?)
+
+ScienceCast Toggle
+
+ScienceCast (What is ScienceCast?)
+
+Demos
+
+Demos
+
+Replicate Toggle
+
+Replicate (What is Replicate?)
+
+Spaces Toggle
+
+Hugging Face Spaces (What is Spaces?)
+
+Spaces Toggle
+
+TXYZ.AI (What is TXYZ.AI?)
+
+Related Papers
+
+Recommenders and Search Tools
+
+Link to Influence Flower
+
+Influence Flower (What are Influence Flowers?)
+
+Core recommender toggle
+
+CORE Recommender (What is CORE?)
+
+Author
+Venue
+Institution
+Topic
+
+About arXivLabs
+
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.
+
+Which authors of this paper are endorsers? |
+Disable MathJax (What is MathJax?)

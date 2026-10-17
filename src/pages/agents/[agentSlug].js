@@ -9,6 +9,7 @@ import Link from 'next/link';
 import AgentList from '@/components/AgentList';
 import axios from 'axios';
 import { usePathname } from 'next/navigation';
+import OnboardingModal from "../../components/OnboardingModal";
 
 export default function AgentSlug() {
   const router = useRouter();
@@ -20,6 +21,7 @@ export default function AgentSlug() {
   const [approveDelete, setApproveDelete] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isChatModalOpen, setIsChatModalOpen] = useState(false);
+  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
   const [showSystemSelector, setShowSystemSelector] = useState(false);
   const [showSystemSelector2, setShowSystemSelector2] = useState(false);
   const [modalType, setModalType] = useState('category'); // 'category' or 'idea'
@@ -44,6 +46,10 @@ export default function AgentSlug() {
     if (agentSlug) {
       const agent = agent_config.agents.find(a => a.id === agentSlug);
       setActiveAgent(agent);
+
+      // if (agent && agent.setup === false) {
+      //   setIsOnboardingOpen(true);
+      // }
     }
   }, [agentSlug]);
 
@@ -562,6 +568,13 @@ export default function AgentSlug() {
           </div>
         ) : null
       }
+
+      {/* <OnboardingModal
+        isOpen={isOnboardingOpen}
+        onClose={() => setIsOnboardingOpen(false)}
+        agentId={activeAgent?.id}
+        agentName={activeAgent?.name}
+      /> */}
 
       <div onClick={() => setIsChatModalOpen(!isChatModalOpen)} className='fixed w-14 h-14 bp7:hidden rounded-full bg-layer3 bottom-4 right-4 flex justify-center items-center cursor-pointer hover:bg-layer transition-colors'>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-circle preview-icon opacity-70"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>

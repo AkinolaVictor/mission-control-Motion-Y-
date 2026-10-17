@@ -1,0 +1,181 @@
+Link: http://arxiv.org/abs/2207.14140v1
+
+HTTP Status: 200
+
+Title: [2207.14140v1] Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning
+
+Content:
+
+Computer Science > Machine Learning
+
+arXiv:2207.14140v1 (cs)
+
+[Submitted on 28 Jul 2022]
+Title:Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning
+Authors:Jerin Paul Selvan, Pravin S. Game View a PDF of the paper titled Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning, by Jerin Paul Selvan and 1 other authors
+View PDF
+HTML (experimental)
+
+Abstract:For over a decade now, robotics and the use of artificial agents have become a common this http URL the performance of new path finding or search space optimization algorithms has also become a challenge as they require simulation or an environment to test this http URL creation of artificial environments with artificial agents is one of the methods employed to test such this http URL have also become an environment to test this http URL performance of the algorithms can be compared by using artificial agents that will behave according to the algorithm in the environment they are put this http URL performance parameters can be, how quickly the agent is able to differentiate between rewarding actions and hostile this http URL can be tested by placing the agent in an environment with different types of hurdles and the goal of the agent is to reach the farthest by taking decisions on actions that will lead to avoiding all the this http URL environment chosen is a game called "Flappy Bird".The goal of the game is to make the bird fly through a set of pipes of random this http URL bird must go in between these pipes and must not hit the top, the bottom, or the pipes this http URL actions that the bird can take are either to flap its wings or drop down with this http URL algorithms that are enforced on the artificial agents are NeuroEvolution of Augmenting Topologies (NEAT) and Reinforcement this http URL NEAT algorithm takes an "N" initial population of artificial this http URL follow genetic algorithms by considering an objective function, crossover, mutation, and augmenting this http URL learning, on the other hand, remembers the state, the action taken at that state, and the reward received for the action taken using a single agent and a Deep Q-learning this http URL performance of the NEAT algorithm improves as the initial population of the artificial agents is increased.
+
+Comments:
+5 pages, 7 figures, 3 tables
+
+Subjects:
+
+Machine Learning (cs.LG); Artificial Intelligence (cs.AI)
+
+Cite as:
+arXiv:2207.14140 [cs.LG]
+
+ 
+(or 
+arXiv:2207.14140v1 [cs.LG] for this version)
+
+ 
+https://doi.org/10.48550/arXiv.2207.14140
+
+Focus to learn more
+
+arXiv-issued DOI via DataCite
+
+Submission history From: Pravin Game [view email] [v1]
+Thu, 28 Jul 2022 15:01:26 UTC (859 KB)
+
+Full-text links:
+Access Paper:
+
+View a PDF of the paper titled Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning, by Jerin Paul Selvan and 1 other authorsView PDFHTML (experimental)TeX Source
+
+view license
+
+Current browse context:
+cs.LG
+
+< prev
+
+  |   
+next >
+
+new
+| 
+recent
+| 2022-07
+
+Change to browse by:
+
+cs
+cs.AI
+
+References & Citations
+
+NASA ADSGoogle Scholar
+Semantic Scholar
+
+export BibTeX citation
+Loading...
+
+BibTeX formatted citation
+×
+
+loading...
+
+Data provided by: 
+
+Bookmark
+
+Bibliographic Tools
+
+Bibliographic and Citation Tools
+
+Bibliographic Explorer Toggle
+
+Bibliographic Explorer (What is the Explorer?)
+
+Connected Papers Toggle
+
+Connected Papers (What is Connected Papers?)
+
+Litmaps Toggle
+
+Litmaps (What is Litmaps?)
+
+scite.ai Toggle
+
+scite Smart Citations (What are Smart Citations?)
+
+Code, Data, Media
+
+Code, Data and Media Associated with this Article
+
+alphaXiv Toggle
+
+alphaXiv (What is alphaXiv?)
+
+Links to Code Toggle
+
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+
+DagsHub Toggle
+
+DagsHub (What is DagsHub?)
+
+GotitPub Toggle
+
+Gotit.pub (What is GotitPub?)
+
+Huggingface Toggle
+
+Hugging Face (What is Huggingface?)
+
+ScienceCast Toggle
+
+ScienceCast (What is ScienceCast?)
+
+Demos
+
+Demos
+
+Replicate Toggle
+
+Replicate (What is Replicate?)
+
+Spaces Toggle
+
+Hugging Face Spaces (What is Spaces?)
+
+Spaces Toggle
+
+TXYZ.AI (What is TXYZ.AI?)
+
+Related Papers
+
+Recommenders and Search Tools
+
+Link to Influence Flower
+
+Influence Flower (What are Influence Flowers?)
+
+Core recommender toggle
+
+CORE Recommender (What is CORE?)
+
+IArxiv recommender toggle
+
+IArxiv Recommender
+(What is IArxiv?)
+
+Author
+Venue
+Institution
+Topic
+
+About arXivLabs
+
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.
+
+Which authors of this paper are endorsers? |
+Disable MathJax (What is MathJax?)

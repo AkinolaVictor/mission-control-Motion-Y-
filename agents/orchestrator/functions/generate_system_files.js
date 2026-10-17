@@ -58,6 +58,8 @@ Requirements:
 - Format the output in clean Markdown.
 - Do not include any conversational filler (e.g., "Here is the content...").
 - Provide ONLY the final content of the file.
+- Be concise and straight to the point
+- Each file should not contain more than 350 words
 `;
 
     try {

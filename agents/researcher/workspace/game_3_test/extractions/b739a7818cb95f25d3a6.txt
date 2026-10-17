@@ -1,0 +1,88 @@
+Link: https://doi.org/10.1038/s41534-022-00570-y
+
+HTTP Status: 200
+
+Title: Quantum circuit architecture search for variational quantum algorithms | npj Quantum Information
+
+Content:
+
+- Quantum architecture search (QAS) for variational quantum algorithms (VQAs) seeks a near-optimal circuit architecture (ansatz) to balance expressivity gains from more gates against noise and trainability losses.
+- VQAs update parameters θ in an ansatz U(θ) via a classical optimizer to minimize an objective L(θ, Z); examples include quantum neural networks and variational quantum eigensolvers.
+- A hardware-efficient ansatz has a multi-layer form U(θ)=∏_{l=1}^L U_l(θ), where each layer contains parameterized single-qubit and two-qubit gates; gate arrangement is flexible.
+- The ansatz pool S contains all possible architectures, with size |S|=O(Q^{NL}), where N is qubit count, L is maximum depth, and Q is the number of allowed gate types.
+- Architecture-aware optimization jointly minimizes L(θ, a, Z, E_a), where a is the selected ansatz and E_a models noise induced by that architecture.
+- QAS frames noise inhibition and trainability enhancement as a learning problem; it uses no ancillary quantum resources and has runtime almost the same as conventional VQA-based algorithms.
+- QAS is compatible with optical, trapped-ion, and superconducting platforms and can adapt to physical restrictions and weighted gate noise; it can also integrate with quantum error mitigation and barren-plateau mitigation methods.
+- Prior variable-structure ansatz approaches often use brute-force search, whose candidate count scales exponentially with qubits and depth.
+- QAS was tested on a numerical simulator and real quantum hardware via the IBM cloud for data classification and quantum chemistry tasks; results indicate it can alleviate quantum noise and barren plateaus and outperform VQAs with pre-selected ansatze.
+- Qualification: QAS seeks a near-optimal, not necessarily globally optimal, ansatz; the reported focus is on hardware-efficient ansatze, though results are said to extend to other representative ansatze.
+
+- QAS is a one-stage optimization strategy for quantum circuit architecture search in variational quantum algorithms, contrasting with a two-stage strategy that individually optimizes all possible ansatze and then ranks them.
+- The two-stage strategy is intractable because the classical optimizer must store and update O(d Q N L) parameters, limiting scalability in N and L.
+- For the same number of iterations T, QAS memory cost is at most T times that of conventional VQAs, while runtime complexity is identical.
+- QAS has four steps: initialization (supernet setup), optimization, ranking, and fine tuning.
+- Supernet serves two roles: (1) ansatz indicator defining the ansatze pool S (e.g., by maximum circuit depth and gate choices), and (2) parameterizer of each ansatz via a weight sharing strategy.
+- Weight sharing correlates parameters among different ansatze, reducing the parameter space needed for optimization.
+- Initialization uses an indexing technique to track S with linear memory cost; example: N=4, L=1, gates {RX, RY, RZ} with Q=3, indexed as "0", "1", "2".
+- Optimization jointly optimizes {(a, θ)}: at iteration t, QAS uniformly samples an ansatz a^(t) from S and updates its parameters with learning rate η.
+- Weight sharing rule: if the layout of single-qubit gates in the lth layer is identical between a' and a^(t) for all l in [L], then parameters assigned to U_l(θ^(t), a^(t)) are used to parameterize U_l(θ', a'), regardless of variations in other layers.
+- Parameters of unsampled ansatze are never stored in classical memory, supporting scalability even when the ansatze pool grows exponentially in N and L.
+- Ranking: after T iterations, QAS uniformly samples K ansatze from S and selects the one minimizing L(θ^(T), a, Z, E_a).
+- Fine tuning: QAS uses the searched ansatz and θ^(T) to retrain the quantum solver for a few iterations.
+- VQA optimization is NP-hard; empirical studies generally restrict T to less than O(poly(Q N L)) to obtain an estimate within reasonable runtime.
+
+- QAS uses hyperparameter K to balance efficiency and performance; to avoid exponential runtime complexity, K should scale polynomially with N, L, and Q. K can be established by random sampling or other methods such as evolutionary algorithms.
+- Fine-tuning step: QAS uses trained parameters θ(T) to fine-tune the output ansatz.
+- Empirical observation: fierce competition among ansatze in search space S; ansatze independently classified as good/bad (e.g., classification accuracy above/below 99%) may not retain relative performance under joint QAS optimization, suggesting difficulty in accurately optimizing correlated trainable parameters across ansatze.
+- Mitigation: instead of one supernet, QAS uses W independent supernets with separately initialized and updated parameters; at training/ranking, each supernet parameterizes the sampled ansatz, and the supernet with minimum loss is selected for that ansatz.
+- Ansatz construction: starting from hardware-efficient ansatz U(θ)=∏_{l=1}^L U_l(θ), a good ansatz is found by dropping unnecessary multi-qubit gates and substituting single-qubit gates in each layer.
+- Removing multi-qubit gates/reducing entanglement may help alleviate barren plateaus; quantum circuit architecture choice can significantly affect ansatz expressive power and learning performance.
+- QAS is presented as applicable to VQA-based tasks such as machine learning, quantum chemistry, and quantum information processing; experiments include classification and VQE.
+- Classification experiment details: synthetic dataset with n=300 samples, 3-dimensional features, binary labels; split into training/validation/test sets of 100 each; objective is mean squared error over training set.
+- Implementation uses Python with PennyLane and Qiskit.
+
+- QAS searches quantum circuit ansatz architectures for variational quantum algorithms.
+- Search space: parameterized gates fixed as RY; at each layer, choose whether to apply CNOT to qubit pairs (0,1), (0,2), (1,2); search-space size |S| = 8^3; circuit depth L = 3.
+- Uses W supernets and T training epochs; ranks K = 500 sampled ansatze.
+- Noiseless results: W=1, T=10 performs worst; W=1, T=400 slightly improves; W=5, T=400 strongly improves, with 151 ansatze above 90% validation accuracy.
+- Retraining the selected W=5, T=400 ansatz reaches 100% train/test accuracy within 15 epochs.
+- Noisy setting: depolarizing error 0.05 for single-qubit gates and 0.2 for two-qubit gates; baseline quantum kernel classifier drops to ~50% accuracy.
+- Under the same noise, QAS with W=5, T=400 has 115 ansatze above 90% validation accuracy; selected ansatz uses fewer CNOT gates; retraining for 10 epochs reaches 100% train/test accuracy.
+- Under an Ibmq_lima-extracted noise model, the QAS ansatz outperforms a conventional hardware-efficient ansatz.
+- QAS is also applied to find the ground-state energy of molecular hydrogen (H2), with the Hamiltonian including Z, ZZ, and multi-qubit Pauli terms.
+
+- Quantum circuit architecture search (QAS) dynamically and automatically designs ansatzes for variational quantum algorithms (VQAs).
+- Task example: estimate ground-state energy of a 4-qubit hydrogen Hamiltonian Hh, with accurate value Em = −1.136 Ha.
+- Conventional VQE optimizes trainable parameters in U(θ) to prepare the ground state; under noiseless conditions its estimated energy converges to Em within 40 iterations.
+- QAS hyperparameters for Hh: supernets W = 1 or 5; layer number L = 3; ranking iterations T = 500; sampled ansatzes K = 500.
+- Search space: single-qubit gates fixed to rotational Y and Z gates; two-qubit gates explore whether CNOT is applied to qubit pairs (0,1), (1,2), (2,3) or not; total ansatzes |S| = 128^3.
+- Weight sharing correlates parameters across ansatzes by a specified rule, enabling joint optimization of (θ, a) and reducing parameter space from O(d Q N L) to O(d L Q N); simulations indicate this supports good performance within reasonable runtime.
+- Supernet defines the search space containing all candidate ansatzes and parameterizes each via weight sharing; candidate ansatzes are evaluated by inheriting weights, and the supernet is trained once.
+- Indexing technique tracks candidate ansatzes; example with N = 5, L = 1, single-qubit gates {RY, RZ}, two-qubit gates {CNOT, I4}, and chain topology Q1↔Q2↔Q3↔Q4↔Q5 uses an index list such as [a,b,c,d,e,A,B,C,D].
+- Performance: with W = 5, retraining the obtained ansatz for 50 iterations converges to Em, matching conventional VQE under noiseless conditions.
+- Under the noisy model, conventional VQE converges to −0.4 Ha, while QAS achieves −0.93 Ha (W = 1) and −1.05 Ha (W = 5); larger W improves performance.
+- The W = 5 searched ansatz contains no CNOT gates, mitigating high gate noise; it produces only separable states efficiently simulable classically, suggesting VQE may not outperform classical methods under large gate noise.
+- Real-hardware test on “Ibmq_ourense”: QAS ansatz estimated −0.96 Ha versus conventional VQE −0.61 Ha.
+- Supplementary results: evolutionary algorithms for constructing K can improve QAS performance; QAS can alleviate barren plateaus; a variant targets large-scale problems.
+- QAS is described as requiring computational resources similar to conventional VQAs with fixed ansatzes and as compatible with all quantum systems.
+- Future directions: better ansatz sampling (e.g., reinforcement learning), shrinking parameter space, using prior information/symmetry, post-processing to remove redundant gates, theoretical understanding of competition, and applications beyond VQAs such as optimal quantum control and target-unitary approximation.
+- Classical analog is neural architecture search; quantum search is harder due to distinct components (neurons vs. gates), classical correlation vs. entanglement, barren plateaus, noise, and hardware restrictions.
+
+- QAS runtime complexity: supernet setup O(1); parameter optimization over T iterations costs O(d) per iteration, total O(dT); ranking K sampled ansatze costs at most O(K); final fine-tuning costs O(d); total O(dT + K).
+- QAS memory cost: ansatze-pool/index-space setup O(QNL); storing T index lists and explicitly updated parameters O(TNL + Td); sampling K index lists and corresponding parameters O(KNL + Kd); final fine-tuning O(d); total O(Td + TNL + Kd).
+- With T = O(QNL) and K = O(QNL), runtime complexity becomes O(dQNL) and memory cost becomes O(dQNL + QN^2L^2).
+- When W supernets are involved, memory cost and runtime complexity scale linearly with W; adversarial bandit learning techniques can remove this overhead (Supplementary A).
+- d denotes the number of trainable parameters in Eq. (1); per-iteration optimization cost arises from gradient calculation via the parameter shift rule.
+
+- Article: "Quantum circuit architecture search for variational quantum algorithms," npj Quantum Information.
+- Code availability: QAS source code to reproduce numerical experiments is available at https://github.com/yuxuan-du/Quantum_architecture_search/.
+- Data availability: datasets generated/analyzed are available from Y.D. on reasonable request.
+- Relevant cited works on architecture/search construction:
+  - Elsken, Metzen, and Hutter (2019): neural architecture search survey.
+  - Pham et al. (2018): efficient neural architecture search via parameter sharing.
+  - Liu et al. (2018): progressive neural architecture search.
+  - You et al. (2020): GreedyNAS (greedy one-shot NAS with greedy path filter).
+  - Yang et al. (2020): ISTA-NAS (efficient and consistent NAS by sparse coding).
+  - Huang et al. (2021): GreedyNASv2 (greedier search with greedy path filter).
+  - Bubeck and Cesa-Bianchi (2012): regret analysis of stochastic and nonstochastic multi-armed bandit problems.
+- Limitation: the extracted page contains availability statements and references only; no detailed QAS algorithm, architecture construction procedure, or experimental results are present.

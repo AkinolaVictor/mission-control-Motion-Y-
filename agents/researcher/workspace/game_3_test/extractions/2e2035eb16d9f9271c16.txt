@@ -1,0 +1,76 @@
+Link: https://doi.org/10.3389/fnsys.2026.1847214
+
+HTTP Status: 200
+
+Title: Frontiers | Metaheuristic-optimized cross-modal attention networks for multimodal mental health assessment in college students
+
+Content:
+
+- Proposes the Addax Optimization Algorithm, described as a bio-inspired metaheuristic created specifically for neural architecture search in multimodal learning.
+- The algorithm searches the architecture of a cross-modal attention network, including parameters such as attention heads, fusion points, and layer dimensions.
+- The searched network is intended for multimodal mental health assessment using passive sensing data.
+- Research questions compare Addax with particle swarm optimization, genetic algorithms, and ant colony optimization for neural architecture search.
+- The optimized cross-modal attention network is compared with traditional fusion methods: early concatenation, late averaging, and tensor fusion.
+- Comparison dimensions include predictive accuracy, missing-modality robustness, and computational efficiency.
+- The paper also describes an interpretability approach that converts attention weights into modality-significance descriptions.
+- Validation datasets mentioned: StudentLife and the College Experience Study (CES).
+
+- Addax is described as a bio-inspired metaheuristic optimization algorithm based on prior evolutionary neural architecture search work; it is actively adjusted to multimodal mobile time-series data and discovers cross-modal attention networks for mental-health monitoring.
+- Unlike prior work that only optimized parameters within fixed architectural designs, Addax is described as optimizing full topology/architecture and finding an architecture with particular architectural parameters shown effective on multimodal mental health signals.
+- M ENAS (Li et al., 2024): evolutionary neural architecture search for major depressive disorder prediction using multimodal MRI; uses a one-shot supernet with evolutionary search to identify best network structures; reported better than hand-designed models on neuroimaging benchmarks; adapted to neuroimaging rather than time-varying, sparse, heterogeneous passive sensing streams.
+- MBC ATT (Li et al., 2025): modality-guided attentional fusion for EEG and fNIRS cognitive-state decoding; dynamically modulates modalities based on task-dependent dependencies; improved decoding over static concatenation and late averaging; optimized for neuroimaging rather than mobile sensing.
+- The study generalizes cross-modal attention to heterogeneous smartphone-based modalities: activity, sleep, conversation, location, and self-reports.
+- Final model input modalities: activity, location, audio, sleep, and surveys; phone-use modality was excluded because initial feature-importance analysis showed relatively small accuracy impact (<1%) and high multicollinearity (VIF > 10) with activity and location modalities.
+
+- The source introduces a novel Addax Optimization Algorithm (AOA) as a metaheuristic optimization method; the provided text begins its inspiration and mathematical modeling section but is truncated before algorithmic details.
+- General metaheuristic context in the source: metaheuristics are used for complex optimization problems; basic algorithms can perform well on simple benchmarks but struggle with high-dimensional, constrained, or uncertain problems.
+- Reported enhancement strategies for metaheuristics include adaptive parameters for exploration/exploitation, hybridization with local search, machine learning, or chaos theory, opposition-based learning for initialization, interval-based or robust variants for uncertainty, and physical constraints or problem-specific heuristics.
+- These enhancements are described as improving convergence speed, solution quality, and reliability; adjusted metaheuristics are noted as used in safety-critical and real-time applications.
+- Search/optimization-related architecture detail: the final model uses h = 8 attention heads, found through neural architecture search, from candidate values {2, 4, 8, 16}; key and value dimensions are 32; attention dropout is 0.1; softmax temperature is 5.66.
+- Training/optimization settings reported: Adam optimizer with η = 0.001, β1 = 0.9, β2 = 0.999; batch size 16; up to 200 epochs; gradient clipping at maximum norm 1.0; early stopping patience 20 epochs; L2 regularization γ = 0.001; task weights α = 0.7 and β = 0.3.
+
+- Addax Optimization Algorithm (AOA) is a population-based metaheuristic where each addax represents a candidate solution and decision variables correspond to positions in the search space.
+- Initialization: population positions are randomly generated within lower/upper bounds; objective function values are computed; best and worst candidates are tracked and updated iteratively.
+- Inspiration: addax foraging (seeking/moving toward vegetation) and excavation/digging (resting/sheltering) behaviors.
+- Phase 1, foraging (exploration): candidate areas are selected based on addaxes with superior objective values; each addax randomly selects an area and updates its position using random values and a stochastic integer.
+- Phase 2, digging (exploitation): positions are adjusted with minor local changes to enhance local search.
+- Novel AOA enhancements: circular chaotic mapping is used for an uncertain parameter to provide more diverse search points; Lévy flight with index γ = 1.5 and Gaussian-distributed samples is incorporated, including in the foraging-phase position update, to improve global exploration and local exploitation.
+- Neural architecture search is formulated as constrained optimization over architectural and training hyperparameters, with goals including predictive performance, computational efficiency, and interpretability.
+- The objective is a weighted multi-objective function: regression loss (MSE) weight 0.5; classification loss (categorical cross-entropy) weight 0.3; model complexity via L2 regularization with λ = 0.001 weight 0.1; attention sparsity via L1 regularization on attention weights weight 0.1. Training uses early stopping if validation loss does not improve for 20 epochs.
+- Search space is hybrid discrete-continuous with about 47 parameters: 28 discrete and 19 continuous; hierarchical constraints reduce effective dimensionality to about 32 independent parameters.
+- Discrete options include encoder type (CNN, LSTM, GRU, MLP), attention heads (2, 4, 8, 16), fusion method (concatenation, averaging, weighted sum), and activation function (ReLU, GELU, Swish, Sigmoid).
+- Continuous parameters include learning rate in [10^-5, 10^-2], dropout rate in [0.1, 0.5], hidden dimension in [16, 256], and attention scale in [0.5, 2.0].
+- Constraint handling uses a penalty approach: hard constraints are repaired to the nearest valid configuration; soft constraints use adaptive penalty terms, though the source text is truncated on penalty growth details.
+
+- Search optimization uses hard constraints: maximum parameter count for mobile deployment; inference time Ctime ≤ 100 ms per sample; attention sparsity Csparsity ≥ 0.7 (at least 70% attention weights near zero). Soft constraints (e.g., model size, training time) are handled by adaptive penalties P(θ), with constraint functions gk(θ) ≤ 0 and penalty coefficients μk increasing exponentially with iteration count.
+- Penalty coefficients follow an adaptive schedule from initial values to upper bounds over Tmax = 100 iterations, starting low for exploration and increasing to enforce feasibility.
+- The novel Addax algorithm maintains a population P = {θ1, …, θN} with N = 50 candidate neural architectures. Each candidate is initially evaluated by proxy training on 10% of training data for 5 epochs; top candidates receive full-dataset training for final fitness.
+- Over Tmax = 100 iterations, Addax simulates exploration, exploitation, migration, and conservation. Exploration probability decreases from 70% to 30%. Solution updates combine random exploration, global best, local neighborhood centroid, and Gaussian noise, with adaptively tuned coefficients.
+- Discrete parameters mutate with probability pm from 0.1 to 0.01; continuous parameters undergo Gaussian perturbation with σ from 0.2 to 0.02. The top 10% elite solutions are preserved unchanged.
+- Novelties: hierarchical mutation operators respecting structural dependencies; surrogate-based fitness approximation; multi-fidelity evaluation with increasingly accurate candidate evaluations.
+- Termination criteria: 100 iterations; fitness improvement below 10^-4 for 20 consecutive iterations; population diversity below 0.1, measured by average pairwise Hamming distance for discrete parameters and range-normalized Euclidean distance for continuous parameters.
+- Final selection produces a Pareto-optimal set trading off accuracy, efficiency, and interpretability; the final model is chosen by weighted sum of normalized objectives with weights 40% interpretability, 30% accuracy, 30% efficiency.
+- Evaluation protocol: leave-one-subject-out cross-validation with N = 48 students; preprocessing, feature engineering, scaling, feature selection, and NAS occur only on training folds; NAS uses 50% of training fold as validation. External CES dataset uses grouped 5-fold cross-validation by student.
+- Reported Addax performance: convergence in 42 iterations to fitness 0.894, versus PSO 67/0.867, GA 89/0.841, ACO 78/0.856, BO 53/0.879. Convergence rates τ: Addax 0.0212, PSO 0.0141, GA 0.0105, ACO 0.0118, BO 0.0170. Repeated-measures ANOVA: F = 18.47, p < 0.001, partial η² = 0.649; Bonferroni p < 0.001 versus PSO/GA/ACO and p < 0.003 versus BO.
+- Population diversity via Shannon entropy: Addax 2.34, PSO 2.01, GA 1.76, ACO 1.45, BO 1.45. Runtime: Addax 8.7 h, 12.1% faster than BO (9.9 h) and 29.8% faster than PSO (12.4 h).
+
+- Optimization/search performance: full optimization took 8.7 h, reported as 12.1% faster than Bayesian Optimization (9.9 h) and 29.8% faster than Particle Swarm Optimization (12.4 h).
+- Best architecture found: hierarchical encoder with 64 filters / 5-kernel on activity data, 32 filters / 5-kernel on location data, 16 GRU units on audio data, 32/16/8 dimensions on sleep data, and 8 dimensions on survey responses via an embedding MLP.
+- Cross-modal attention: 8 attention heads of dimension 32, scaled dot-product attention with temperature scaling factor 1.25.
+- Fusion: two-stage method—weighted concatenation first, then a transformer layer with 4 self-attention heads and feedforward dimension 128.
+- Model size: 412,750 trainable parameters, meeting a stated mobile deployment limit of ≤500,000 parameters.
+- Sensitivity analysis (Sobol, 10,000 Monte Carlo samples): attention head configuration had strongest individual impact (S1 = 0.211), followed by encoder type (S1 = 0.162) and learning rate (S1 = 0.154); key interactions were attention heads × dropout rate (S2 = 0.087) and encoder type × fusion strategy (S2 = 0.076); main effects 68.3%, two-way interactions 21.4%, higher-order interactions 10.3%.
+- Stability/efficiency: final architecture stable across 20 runs (fitness variance σ² = 0.00047); 3.2:1 compression ratio versus the largest candidate while retaining 97.8% of peak performance.
+- Ablation/fusion results: removing attention reduced accuracy substantially (e.g., depression 87.4% to 73.8%); weighted attention fusion achieved 85.6% accuracy versus early concatenation 78.3%, late averaging 80.7%, and tensor fusion 82.9%; it degraded by 6.4% under missing modalities versus 14.7% (early concatenation) and 11.2% (late averaging); Pareto optimal among 15 fusion variants; 23.4% inference-time overhead versus simple concatenation with 9.3% accuracy improvement.
+- Component contributions: individual modality removals had task-dependent effects (e.g., survey removal largest depression drop, Δ = −14.2%; activity removal largest stress drop, Δ = −12.4%); specific attention heads specialized in modality interactions (sleep-activity, location-audio, survey-behavior).
+
+- A novel Addax Optimization Algorithm, described as an improved modified metaheuristic, was used for neural architecture search.
+- It exhibited better convergence behavior and solution quality than well-known metaheuristics.
+- It reached optimal fitness in 42 iterations.
+- The optimized target architecture is a metaheuristic-optimized cross-modal attention network.
+
+- Source: Liu and Qian (2026), "Metaheuristic-optimized cross-modal attention networks for multimodal mental health assessment in college students," Frontiers in Systems Neuroscience.
+- Keywords include: attention network, college student, cross-modal, deep learning, mental health assessment, Novel Addax optimization algorithm.
+- Appendix lists "FIGURE A 1 Multi-head cross-modal attention mechanism"; no further architectural details are present in the provided text.
+- Cited works mention optimization/search-related methods: improved weed optimization algorithm; firebug swarm optimization algorithm; modified future search algorithm; evolutionary neural architecture search.
+- The excerpt does not provide algorithm pseudocode, parameters, search-space definitions, or detailed architectural construction of any search algorithm.

@@ -1,0 +1,9 @@
+{
+  "process_states": {
+    "url_collection": "completed",
+    "url_scrapping": "completed",
+    "agent_search": "completed",
+    "article_generated": "completed"
+  },
+  "attempt": 2
+}

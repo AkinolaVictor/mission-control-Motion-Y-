@@ -1,0 +1,17 @@
+{
+  "task_id": "game_3_test",
+  "title": "Architectural construction of search algorithms",
+  "description": "description of task",
+  "search_prompt": "Architectural construction of search algorithms",
+  "await_approval": false,
+  "status": "ongoing",
+  "scheduled_time": "timestamp",
+  "assigned_to": "agent_name",
+  "created_at": "data_and_time",
+  "attempt": 1,
+  "process_states": {
+    "url_collection": "completed",
+    "url_scrapping": "ssds.,",
+    "article_generated": "ksnmsx"
+  }
+}

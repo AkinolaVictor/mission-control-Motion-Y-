@@ -1,0 +1,15 @@
+Link: https://doi.org/10.5772/15191
+
+HTTP Status: 200
+
+Title: Construction of Optimal Artificial Neural Network Architectures for Application to Chemical Systems: Comparison of Generalized Pattern Search Method and Evolutionary Algorithm | IntechOpen
+
+Content:
+
+- Source: IntechOpen chapter, "Construction of Optimal Artificial Neural Network Architectures for Application to Chemical Systems: Comparison of Generalized Pattern Search Method and Evolutionary Algorithm," by Matthias Ihme.
+- Publication details: submitted 04 June 2010; published 11 April 2011; DOI 10.5772/15191.
+- Volume: "Artificial Neural Networks - Application," edited by Patrick Chi Leung Hui.
+- Topic indicated by title: construction of optimal artificial neural network architectures for chemical systems, comparing generalized pattern search method and evolutionary algorithm.
+- Access: open access under Creative Commons Attribution-NonCommercial-ShareAlike-3.0 License.
+- Page metric: 3,057 chapter downloads.
+- The provided text contains no technical details, algorithmic descriptions, results, or methodological comparison.
