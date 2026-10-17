@@ -1,6 +1,6 @@
-import { article_writter } from "./functions/article_writter_2"
-import { url_extractor } from "./functions/url_extractor_2"
-import { url_scrapper } from "./functions/url_scrapper_2"
+import { article_writter } from "./functions/article_writter"
+import { url_extractor } from "./functions/url_extractor"
+import { url_scrapper } from "./functions/url_scrapper"
 import fs from "fs/promises"
 import path from "path"
 

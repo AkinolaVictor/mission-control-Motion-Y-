@@ -3,322 +3,10 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import axios from 'axios';
 
-const LIMIT = 7;
-const TIMEOUT = 60000;
-
-const client = axios.create({
-  timeout: TIMEOUT,
-  headers: {
-    'User-Agent': 'MotionY-Researcher/1.0 (research URL collector)',
-    Accept: 'application/json, application/xml, text/html, */*'
-  }
-});
-
-function isHttpUrl(value) {
-  try {
-    const url = new URL(value);
-    return ['http:', 'https:'].includes(url.protocol);
-  } catch {
-    return false;
-  }
-}
-
-function normalizeUrl(value) {
-  try {
-    const url = new URL(value.trim());
-
-    if (!['http:', 'https:'].includes(url.protocol)) return null;
-
-    url.hash = '';
-
-    for (const key of [...url.searchParams.keys()]) {
-      if (/^(utm_.+|fbclid|gclid)$/i.test(key)) {
-        url.searchParams.delete(key);
-      }
-    }
-
-    return url.href;
-  } catch {
-    return null;
-  }
-}
-
-function decodeEntities(value = '') {
-  return value
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#x27;|&#39;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&apos;/g, "'");
-}
-
-function getXmlEntries(xml) {
-  return [...xml.matchAll(/<entry\b[^>]*>([\s\S]*?)<\/entry>/gi)]
-    .map(match => match[1]);
-}
-
-function getXmlTag(xml, tag) {
-  const escaped = tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const match = xml.match(
-    new RegExp(`<${escaped}\\b[^>]*>([\\s\\S]*?)<\\/${escaped}>`, 'i')
-  );
-
-  return match ? decodeEntities(match[1].replace(/<[^>]+>/g, '').trim()) : '';
-}
-
-function getDoiUrl(doi) {
-  if (!doi) return null;
-  return `https://doi.org/${doi.replace(/^https?:\/\/doi\.org\//i, '')}`;
-}
-
-// 1. DuckDuckGo
-async function searchDuckDuckGo(query) {
-  const { data } = await client.get(
-    'https://html.duckduckgo.com/html/',
-    { params: { q: query }, responseType: 'text' }
-  );
-
-  const urls = [];
-  const regex = /<a\b[^>]*class=["'][^"']*\bresult__a\b[^"']*["'][^>]*href=["']([^"']+)["']/gi;
-
-  for (const match of data.matchAll(regex)) {
-    let href = decodeEntities(match[1]);
-
-    try {
-      const parsed = new URL(href, 'https://html.duckduckgo.com');
-
-      if (parsed.hostname.endsWith('duckduckgo.com')) {
-        href = parsed.searchParams.get('uddg') || href;
-      }
-    } catch {
-      continue;
-    }
-
-    if (isHttpUrl(href)) urls.push(href);
-
-    if (urls.length >= LIMIT) break;
-  }
-
-  return urls;
-}
-
-// 2. Wikipedia — use the URLs returned by its API directly.
-async function searchWikipedia(query) {
-  const { data } = await client.get(
-    'https://en.wikipedia.org/w/api.php',
-    {
-      params: {
-        action: 'opensearch',
-        search: query,
-        limit: LIMIT,
-        namespace: 0,
-        format: 'json',
-        redirects: 'resolve'
-      }
-    }
-  );
-
-  if (!Array.isArray(data) || !Array.isArray(data[3])) {
-    throw new Error('Unexpected Wikipedia API response.');
-  }
-
-  return data[3];
-}
-
-// 3. OpenAlex — scholarly publications
-async function searchOpenAlex(query) {
-  const { data } = await client.get(
-    'https://api.openalex.org/works',
-    {
-      params: {
-        search: query,
-        per_page: LIMIT
-      }
-    }
-  );
-
-  return (data.results || []).map(item =>
-    item.primary_location?.landing_page_url ||
-    item.ids?.doi ||
-    getDoiUrl(item.doi)
-  ).filter(Boolean);
-}
-
-// 4. Crossref — research papers and publications
-async function searchCrossref(query) {
-  const { data } = await client.get(
-    'https://api.crossref.org/works',
-    {
-      params: {
-        query,
-        rows: LIMIT,
-        select: 'DOI,title,URL,type'
-      }
-    }
-  );
-
-  return (data.message?.items || [])
-    .map(item => item.URL || getDoiUrl(item.DOI))
-    .filter(Boolean);
-}
-
-// 5. arXiv — scientific papers
-async function searchArxiv(query) {
-  const { data } = await client.get(
-    'https://export.arxiv.org/api/query',
-    {
-      params: {
-        search_query: `all:${query}`,
-        start: 0,
-        max_results: LIMIT
-      },
-      responseType: 'text'
-    }
-  );
-
-  return getXmlEntries(data)
-    .map(entry => getXmlTag(entry, 'id'))
-    .filter(Boolean);
-}
-
-// 6. Europe PMC — biomedical and life-science literature
-async function searchEuropePMC(query) {
-  const { data } = await client.get(
-    'https://www.ebi.ac.uk/europepmc/webservices/rest/search',
-    {
-      params: {
-        query,
-        format: 'json',
-        pageSize: LIMIT,
-        resultType: 'core'
-      }
-    }
-  );
-
-  return (data.resultList?.result || []).map(item => {
-    if (item.pmcid) {
-      return `https://europepmc.org/articles/${item.pmcid}`;
-    }
-
-    if (item.doi) return getDoiUrl(item.doi);
-
-    if (item.id) {
-      return `https://europepmc.org/article/MED/${encodeURIComponent(item.id)}`;
-    }
-
-    return null;
-  }).filter(Boolean);
-}
-
-// 7. Stack Exchange — technical questions and answers
-async function searchStackExchange(query) {
-  const { data } = await client.get(
-    'https://api.stackexchange.com/2.3/search/advanced',
-    {
-      params: {
-        order: 'desc',
-        sort: 'relevance',
-        q: query,
-        site: 'stackoverflow',
-        pagesize: LIMIT
-      }
-    }
-  );
-
-  return (data.items || []).map(item => item.link);
-}
-
-// 8. Hacker News — technology discussions
-async function searchHackerNews(query) {
-  const { data } = await client.get(
-    'https://hn.algolia.com/api/v1/search',
-    {
-      params: {
-        query,
-        tags: 'story',
-        hitsPerPage: LIMIT
-      }
-    }
-  );
-
-  return (data.hits || []).map(item =>
-    item.url || item.story_url ||
-    `https://news.ycombinator.com/item?id=${item.objectID}`
-  );
-}
-
-// 9. GitHub — code repositories
-async function searchGitHub(query) {
-  const { data } = await client.get(
-    'https://api.github.com/search/repositories',
-    {
-      params: {
-        q: query,
-        sort: 'stars',
-        order: 'desc',
-        per_page: LIMIT
-      },
-      headers: {
-        Accept: 'application/vnd.github+json'
-      }
-    }
-  );
-
-  return (data.items || []).map(item => item.html_url);
-}
-
-// 10. Internet Archive — archived documents and media
-async function searchInternetArchive(query) {
-  const { data } = await client.get(
-    'https://archive.org/advancedsearch.php',
-    {
-      params: {
-        q: query,
-        fl: ['identifier'],
-        rows: LIMIT,
-        page: 1,
-        output: 'json'
-      }
-    }
-  );
-
-  return (data.response?.docs || []).map(item =>
-    `https://archive.org/details/${encodeURIComponent(item.identifier)}`
-  );
-}
-
-// 11. Open Library — books and publications
-async function searchOpenLibrary(query) {
-  const { data } = await client.get(
-    'https://openlibrary.org/search.json',
-    {
-      params: {
-        q: query,
-        limit: LIMIT,
-        fields: 'key,title'
-      }
-    }
-  );
-
-  return (data.docs || []).map(item =>
-    item.key ? `https://openlibrary.org${item.key}` : null
-  ).filter(Boolean);
-}
-
-const SOURCES = [
-  ['DuckDuckGo', searchDuckDuckGo],
-  ['Wikipedia', searchWikipedia],
-  ['OpenAlex', searchOpenAlex],
-  ['Crossref', searchCrossref],
-  ['arXiv', searchArxiv],
-  ['Europe PMC', searchEuropePMC],
-  ['Stack Exchange', searchStackExchange],
-  ['Hacker News', searchHackerNews],
-  ['GitHub', searchGitHub],
-  ['Internet Archive', searchInternetArchive],
-  ['Open Library', searchOpenLibrary]
-];
+// GOOD HEAVY SEARCHER
+const LIMIT = 10;
+const TIMEOUT = 12000;
+const MAX_RETRIES = 1;
 
 export async function url_extractor(task_state) {
   const { task_id, search_prompt } = task_state ?? {};
@@ -343,7 +31,7 @@ export async function url_extractor(task_state) {
 
   const workspaceDir = path.join(root, task_id);
   const urlsFile = path.join(workspaceDir, 'research_urls.json');
-  const stateFile = path.join(root, `${task_id}`,`task_state.json`);
+  const stateFile = path.join(workspaceDir, 'task_state.json');
 
   await fs.mkdir(workspaceDir, { recursive: true });
 
@@ -354,19 +42,8 @@ export async function url_extractor(task_state) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
-  
-  // await fs.writeFile(stateFile, JSON.stringify({
-  //   ...state,
-  //   attempt: state.attempt+1,
-  //   status: "ongoing",
-  //   process_states: {
-  //     ...state.process_states,
-  //     url_collection: 'working'
-  //   }
-  // }, null, 2), 'utf8');
-  
-  const reset = state.process_states?.url_collection === 'failed';
 
+  const reset = state.process_states?.url_collection === 'failed';
   let existing = [];
 
   try {
@@ -383,44 +60,254 @@ export async function url_extractor(task_state) {
     if (error.code !== 'ENOENT') throw error;
   }
 
-  // Run every source independently. A failure in one won't stop others.
-  const outcomes = await Promise.allSettled(
-    SOURCES.map(async ([name, search]) => {
-      const urls = await search(search_prompt.trim());
+  const query = search_prompt.trim();
+  const q = encodeURIComponent(query);
+  const qPlus = encodeURIComponent(query).replace(/%20/g, '+');
 
-      return {
-        name,
-        urls: [...new Set(urls.map(normalizeUrl).filter(Boolean))].slice(0, LIMIT)
-      };
+  // Thirty independently queried sources.
+  const sources = [
+    {
+      name: 'DuckDuckGo',
+      url: `https://html.duckduckgo.com/html/?q=${qPlus}`,
+      parse: parseHtml
+    },
+    {
+      name: 'Wikipedia',
+      url: `https://en.wikipedia.org/w/api.php?action=opensearch&search=${q}&limit=10&namespace=0&format=json`,
+      parse: d => {
+        const x = JSON.parse(d);
+        return (x[3] || []).concat(
+          (x[1] || []).map(t =>
+            `https://en.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}`
+          )
+        );
+      }
+    },
+    {
+      name: 'Wikidata',
+      url: `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${q}&language=en&format=json&limit=10`,
+      parse: d => (JSON.parse(d).search || [])
+        .map(x => `https://www.wikidata.org/wiki/${x.id}`)
+    },
+    {
+      name: 'Wikimedia Commons',
+      url: `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${q}&srnamespace=0&srlimit=10&format=json`,
+      parse: d => (JSON.parse(d).query?.search || [])
+        .map(x => `https://commons.wikimedia.org/wiki/${encodeURIComponent(x.title.replace(/ /g, '_'))}`)
+    },
+    {
+      name: 'arXiv',
+      url: `https://export.arxiv.org/api/query?search_query=all:${q}&start=0&max_results=10`,
+      parse: d => [...d.matchAll(/<id>\s*(https?:\/\/[^<]+)\s*<\/id>/gi)]
+        .map(m => decodeEntities(m[1].trim()))
+    },
+    {
+      name: 'Crossref',
+      url: `https://api.crossref.org/works?query.bibliographic=${q}&rows=10`,
+      parse: d => (JSON.parse(d).message?.items || [])
+        .map(x => x.URL)
+    },
+    {
+      name: 'OpenAlex',
+      url: `https://api.openalex.org/works?search=${q}&per-page=10`,
+      parse: d => (JSON.parse(d).results || [])
+        .map(x => x.doi || x.primary_location?.landing_page_url)
+    },
+    {
+      name: 'Semantic Scholar',
+      url: `https://api.semanticscholar.org/graph/v1/paper/search?query=${q}&limit=10&fields=url,openAccessPdf`,
+      parse: d => (JSON.parse(d).data || [])
+        .flatMap(x => [x.url, x.openAccessPdf?.url])
+    },
+    {
+      name: 'Europe PMC',
+      url: `https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${q}&format=json&pageSize=10`,
+      parse: d => (JSON.parse(d).resultList?.result || [])
+        .map(x => x.doi
+          ? `https://doi.org/${x.doi}`
+          : `https://europepmc.org/article/MED/${x.pmid}`)
+    },
+    {
+      name: 'PubMed',
+      url: `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${q}&retmax=10&retmode=json`,
+      parse: d => (JSON.parse(d).esearchresult?.idlist || [])
+        .map(id => `https://pubmed.ncbi.nlm.nih.gov/${id}/`)
+    },
+    {
+      name: 'Hacker News',
+      url: `https://hn.algolia.com/api/v1/search?query=${q}&hitsPerPage=10`,
+      parse: d => (JSON.parse(d).hits || [])
+        .map(x => x.url || `https://news.ycombinator.com/item?id=${x.objectID}`)
+    },
+    {
+      name: 'Stack Overflow',
+      url: `https://api.stackexchange.com/2.3/search/advanced?order=desc&sort=relevance&q=${q}&site=stackoverflow&pagesize=10`,
+      parse: d => (JSON.parse(d).items || []).map(x => x.link)
+    },
+    {
+      name: 'Reddit',
+      url: `https://www.reddit.com/search.json?q=${q}&limit=10&sort=relevance`,
+      parse: d => (JSON.parse(d).data?.children || [])
+        .map(x => x.data?.url)
+    },
+    {
+      name: 'GitHub',
+      url: `https://api.github.com/search/repositories?q=${q}&per_page=10`,
+      parse: d => (JSON.parse(d).items || []).map(x => x.html_url)
+    },
+    {
+      name: 'GitLab',
+      url: `https://gitlab.com/api/v4/projects?search=${q}&per_page=10`,
+      parse: d => JSON.parse(d).map(x => x.web_url)
+    },
+    {
+      name: 'Google Books',
+      url: `https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=10`,
+      parse: d => (JSON.parse(d).items || [])
+        .map(x => x.volumeInfo?.infoLink)
+    },
+    {
+      name: 'Open Library',
+      url: `https://openlibrary.org/search.json?q=${q}&limit=10`,
+      parse: d => (JSON.parse(d).docs || [])
+        .map(x => x.key ? `https://openlibrary.org${x.key}` : null)
+    },
+    {
+      name: 'Internet Archive',
+      url: `https://archive.org/advancedsearch.php?q=${q}&fl%5B%5D=identifier&rows=10&page=1&output=json`,
+      parse: d => (JSON.parse(d).response?.docs || [])
+        .map(x => `https://archive.org/details/${x.identifier}`)
+    },
+    {
+      name: 'GDELT News',
+      url: `https://api.gdeltproject.org/api/v2/doc/doc?query=${q}&mode=ArtList&maxrecords=10&format=json`,
+      parse: d => (JSON.parse(d).articles || []).map(x => x.url)
+    },
+    {
+      name: 'DEV Community',
+      url: `https://dev.to/api/articles?per_page=10&tag=${q}`,
+      parse: d => JSON.parse(d).map(x => x.url)
+    },
+    {
+      name: 'Hugging Face',
+      url: `https://huggingface.co/api/models?search=${q}&limit=10`,
+      parse: d => JSON.parse(d)
+        .map(x => `https://huggingface.co/${x.id}`)
+    },
+    {
+      name: 'npm',
+      url: `https://registry.npmjs.org/-/v1/search?text=${q}&size=10`,
+      parse: d => (JSON.parse(d).objects || [])
+        .map(x => x.package?.links?.npm)
+    },
+    {
+      name: 'Stack Exchange Network',
+      url: `https://api.stackexchange.com/2.3/search/advanced?order=desc&sort=relevance&q=${q}&site=superuser&pagesize=10`,
+      parse: d => (JSON.parse(d).items || []).map(x => x.link)
+    },
+    {
+      name: 'Wikipedia REST',
+      url: `https://en.wikipedia.org/w/rest.php/v1/search/page?q=${q}&limit=10`,
+      parse: d => (JSON.parse(d).pages || [])
+        .map(x => x.key
+          ? `https://en.wikipedia.org/wiki/${encodeURIComponent(x.key)}`
+          : null)
+    },
+    {
+      name: 'Qwant',
+      url: `https://api.qwant.com/v3/search/web?t=web&q=${q}&count=10&locale=en_US`,
+      parse: d => (JSON.parse(d).data?.result?.items?.main || [])
+        .map(x => x.url)
+    },
+    {
+      name: 'Mojeek',
+      url: `https://www.mojeek.com/search?q=${qPlus}`,
+      parse: parseHtml
+    },
+    {
+      name: 'Brave Search',
+      url: `https://search.brave.com/search?q=${qPlus}`,
+      parse: parseHtml
+    },
+    {
+      name: 'Yahoo Search',
+      url: `https://search.yahoo.com/search?p=${qPlus}`,
+      parse: parseHtml
+    },
+    {
+      name: 'Bing Search',
+      url: `https://www.bing.com/search?q=${qPlus}`,
+      parse: parseHtml
+    },
+    {
+      name: 'Google Search',
+      url: `https://www.google.com/search?q=${qPlus}`,
+      parse: parseHtml
+    }
+  ];
+
+  const discovered = [];
+  const succeeded = [];
+  const failedSources = [];
+
+  // Each source is isolated, so one failure cannot stop other searches.
+  const outcomes = await Promise.allSettled(
+    sources.map(async source => {
+      console.log(`Searching ${source.name}...`);
+
+      let lastError;
+
+      for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          const response = await axios.get(source.url, {
+            timeout: TIMEOUT,
+            maxRedirects: 5,
+            responseType: 'text',
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (compatible; ResearchURLCollector/1.0)',
+              Accept: 'text/html,application/json,application/xml,*/*'
+            }
+          });
+          const useLimit = source.name=="Wikipedia" || source.name=="Wikipedia REST"?
+                            LIMIT*2:
+                            LIMIT
+          const found = source.parse(response.data)
+            .filter(isHttpUrl)
+            .map(normalizeUrl)
+            .filter(Boolean)
+            .slice(0, useLimit);
+
+          if (found.length === 0) {
+            throw new Error('No valid URLs returned');
+          }
+
+          console.log(`${source.name}: ${found.length} URLs`);
+          return { name: source.name, urls: found };
+        } catch (error) {
+          lastError = error;
+
+          if (attempt < MAX_RETRIES) {
+            await new Promise(resolve => setTimeout(resolve, 500));
+          }
+        }
+      }
+
+      throw new Error(`${source.name}: ${lastError?.message}`);
     })
   );
 
-  const sourceResults = outcomes.map((outcome, index) => {
-    if (outcome.status === 'fulfilled') {
-      const { name, urls } = outcome.value;
+  for (let i = 0; i < outcomes.length; i++) {
+    const result = outcomes[i];
 
-      console.log(`${name}: ${urls.length} URLs found.`);
-
-      return { name, success: true, count: urls.length, urls };
+    if (result.status === 'fulfilled') {
+      succeeded.push(result.value.name);
+      discovered.push(...result.value.urls);
+    } else {
+      failedSources.push(sources[i].name);
+      console.error(result.reason.message);
     }
+  }
 
-    const name = SOURCES[index][0];
-
-    console.error(`${name} failed:`, outcome.reason?.message);
-
-    return {
-      name,
-      success: false,
-      count: 0,
-      urls: [],
-      error: outcome.reason?.message || 'Unknown error'
-    };
-  });
-
-  const succeeded = sourceResults.filter(source => source.success);
-  const failed = sourceResults.filter(source => !source.success);
-
-  // Do not erase previous results if every source fails.
   if (succeeded.length === 0) {
     await fs.writeFile(stateFile, JSON.stringify({
       ...state,
@@ -431,16 +318,12 @@ export async function url_extractor(task_state) {
       }
     }, null, 2), 'utf8');
 
-    throw new Error('All search sources failed. Existing URLs were preserved.');
+    throw new Error('All sources failed. Existing URLs were preserved.');
   }
 
-  const combined = [
-    ...(reset ? [] : existing),
-    ...sourceResults.flatMap(source => source.urls)
-  ];
-
+  const combined = [...(reset ? [] : existing), ...discovered];
   const seen = new Set();
-  const resultList = [];
+  const results = [];
 
   for (const value of combined) {
     const url = normalizeUrl(value);
@@ -448,15 +331,12 @@ export async function url_extractor(task_state) {
     if (!url || seen.has(url)) continue;
 
     seen.add(url);
-    resultList.push({
-      id: resultList.length + 1,
-      url
-    });
+    results.push({ id: results.length + 1, url });
   }
 
   await fs.writeFile(
     urlsFile,
-    JSON.stringify(resultList, null, 2),
+    JSON.stringify(results, null, 2),
     'utf8'
   );
 
@@ -467,21 +347,90 @@ export async function url_extractor(task_state) {
     process_states: {
       ...state.process_states,
       url_collection: 'completed'
+    //   url_collection: results.length >= LIMIT
+    //     ? 'completed'
+    //     : 'completed_with_few_results'
     }
   }, null, 2), 'utf8');
 
   return {
-    success: true,
-    urls_collected: resultList.length,
-    sources_attempted: SOURCES.length,
+    success: results.length >= LIMIT,
+    urls_collected: results.length,
+    new_urls_collected: discovered.length,
+    sources_attempted: sources.length,
     sources_succeeded: succeeded.length,
-    sources_failed: failed.length,
-    source_report: sourceResults.map(({ name, success, count, error }) => ({
-      name,
-      success,
-      urls_found: count,
-      ...(error ? { error } : {})
-    })),
+    sources_failed: failedSources.length,
+    failed_sources: failedSources,
     workspace: workspaceDir
   };
+}
+
+function isHttpUrl(value) {
+  if (typeof value !== 'string') return false;
+
+  try {
+    const url = new URL(value);
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+function normalizeUrl(value) {
+  try {
+    const url = new URL(value);
+
+    if (!['http:', 'https:'].includes(url.protocol)) return null;
+
+    url.hash = '';
+
+    for (const key of [...url.searchParams.keys()]) {
+      if (/^(utm_.+|fbclid|gclid)$/i.test(key)) {
+        url.searchParams.delete(key);
+      }
+    }
+
+    return url.href;
+  } catch {
+    return null;
+  }
+}
+
+function parseHtml(html) {
+  const urls = [];
+  const regex = /<a\b[^>]*\bhref\s*=\s*(["'])(.*?)\1[^>]*>/gi;
+
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    let href = decodeEntities(match[2].trim());
+
+    try {
+      const parsed = new URL(href, 'https://example.com');
+
+      // DuckDuckGo redirect URLs contain the real URL in uddg.
+      if (
+        parsed.hostname.endsWith('duckduckgo.com') &&
+        parsed.searchParams.has('uddg')
+      ) {
+        href = parsed.searchParams.get('uddg');
+      }
+
+      if (isHttpUrl(href)) urls.push(href);
+    } catch {
+      // Ignore malformed links.
+    }
+  }
+
+  return urls;
+}
+
+function decodeEntities(value) {
+  return value
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&apos;/g, "'");
 }
