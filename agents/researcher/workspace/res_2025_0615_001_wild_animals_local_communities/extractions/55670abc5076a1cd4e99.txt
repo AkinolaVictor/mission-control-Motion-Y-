@@ -1,0 +1,31 @@
+Link: https://doi.org/10.63671/ijeir.v2i3.87
+
+HTTP Status: 200
+
+Title: Human–Wildlife Conflict in and around Sohagibarwa Wildlife Sanctuary: Spatial Patterns, Socio-Economic Impacts, GIS-Based Hotspot Assessment and Strategies for Sustainable Coexistence
+							| International Journal of Educational Innovations and Research
+
+Content:
+
+**Case Study: Sohagibarwa Wildlife Sanctuary (SWS), Uttar Pradesh, India**
+
+**Context**
+*   **Location:** 428.2 km² Terai protected landscape in Maharajganj district, near the India–Nepal border and Uttar Pradesh–Bihar interface.
+*   **Ecology:** Sal-dominated forests, grasslands, wetlands, rivers, and agricultural fringes.
+*   **Key Species:** Leopards, tigers, gaur, nilgai, wild boar, crocodiles, birds, and reptiles.
+
+**Human-Wildlife Conflict (HWC)**
+*   **Conflict Drivers:** The mosaic of protected landscapes and agricultural fringes creates frequent opportunities for human-wildlife encounters.
+*   **Documented Impacts:**
+    *   **Crop Depredation:** Caused primarily by nilgai and wild boar.
+    *   **Livestock Loss:** Depredation by leopards and tigers (e.g., a 2025 report of a tigress and cubs killing a goat near Sohagibarwa village).
+    *   **Physical Danger:** Gaur/wild-buffalo attacks and crocodile movement into human-use areas.
+    *   **Wildlife Mortality:** Deaths resulting from snares or crowd responses.
+*   **Conflict Hotspots:** North Chowk, South Chowk, Madhwalia, and Nichlaul are identified as recurring conflict interfaces.
+
+**Strategies for Sustainable Coexistence and Conservation**
+*   **Proposed Management Framework:**
+    *   **Technical Tools:** GIS-oriented frameworks, verified incident geodatabases, range/beat mapping, and severity-weighted hotspot analysis.
+    *   **Mitigation Measures:** Early-warning systems, livestock protection, and crop-loss mitigation.
+    *   **Socio-Economic Integration:** Compensation assessments and household surveys to understand impacts.
+    *   **Community-Based Conservation:** Emphasis on community participation and initiatives such as the "Sarus Mitra" (supported by the Wildlife Trust of India).

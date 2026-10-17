@@ -426,6 +426,8 @@ show me you plan before starting
 Tool calling to researcher agent
 implement a tool calling feature in the @agents/researcher/researcher.js, the created @agents/researcher/functions/task_creator.js must be used in @agents/researcher/researcher.js agent as a callable tool so that the agent is given the ability to create a research task, so implement a tool calling feature in the @agents/researcher/researcher.js.
 
+check @agents/researcher/functions/task_creator.js function on example on how to implement an ollama tool calling feature
+
 the researcher agent must read the @agents/researcher/metadata.json[task_state_prototype] to know what must be contained in the prompt to be sent to the task_creator function, it should ask the user to clarify things if an information is not provided.
 
 ask me any question for clarity

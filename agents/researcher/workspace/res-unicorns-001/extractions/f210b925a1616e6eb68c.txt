@@ -1,0 +1,84 @@
+Link: https://en.wikipedia.org/wiki/Unicorn_(finance)
+
+HTTP Status: 200
+
+Title: Unicorn (finance) - Wikipedia
+
+Content:
+
+**Definition and Terminology**
+*   **Unicorn:** A privately owned startup company valued at over US$1 billion. The term was coined in 2013 by venture capitalist Aileen Lee to represent the statistical rarity of such ventures.
+*   **Decacorn:** A private company valued at over $10 billion.
+*   **Centicorn/Hectocorn:** A private company valued at over $100 billion.
+*   **Terracorn:** A private company valued at $1 trillion.
+
+**Valuation Trends and Methods**
+*   **Basis of Valuation:** Unlike established companies (valued on past performance), startup valuations are derived from growth opportunities and expected long-term development in a potential market.
+*   **Valuation Drivers:** Usually result from large venture capital funding rounds or buyouts by larger companies (e.g., Facebook's $1 billion acquisition of Instagram).
+*   **Common Methods:**
+    *   Discounted cash flow analysis.
+    *   Market comparable method.
+    *   Comparable transactions.
+*   **Market Sizing Process:** Involves defining market sub-segments, top-down sizing, bottom-up analysis, and competitor analysis to create financial forecasts.
+*   **Trends:**
+    *   **2021 Surge:** Described as "meteoric," with $71 billion invested in 340 new unicorns, exceeding the total of the previous five years.
+    *   **2022 Decline:** Many valuations fell due to the COVID-19 pandemic economic slowdown, increased interest rates (raising borrowing costs), market volatility, and stricter regulatory scrutiny.
+    *   **Current Status:** As of May 2024, CB Insights identified 1,248 unicorns worldwide.
+
+**Growth Drivers**
+*   **Blitzscaling (Get-Big-Fast):** A strategy of rapid expansion via large funding rounds and price cutting to capture market share and eliminate competitors.
+*   **Corporate Buyouts:** Large public companies (e.g., Apple, Meta, Google) often acquire established technology/business models rather than developing them internally, especially in low-interest-rate environments.
+*   **Increased Private Capital:**
+    *   The average age of a tech company before going public increased from 4 years (1999) to 11 years.
+    *   **JOBS Act (2012):** Increased the allowed number of shareholders by four times before public financial disclosure is required.
+*   **Avoidance of IPOs:** Companies use repeated funding rounds to avoid the risks of public market devaluation (e.g., Square and Trivago were priced below initial offer prices) and stringent regulations like the Sarbanes–Oxley Act.
+*   **Technological Advances:** Social media and new technologies allow startups to achieve economies of scale and expand faster.
+*   **Sector Trends:** The "sharing economy" (e.g., Uber, Airbnb) and the shift from physical retail to e-commerce (e.g., Amazon, Alibaba) have been primary drivers.
+
+**Risks and Limitations**
+*   **Overvaluation:** Research by Stanford professors (2018) suggests unicorns are overvalued by an average of 48%.
+*   **Sustainability:** Experts (e.g., Bill Gurley) have warned that excessive available capital creates a speculative and unsustainable environment, leading to "dead unicorns."
+*   **Market Correction:** Frequent occurrence and stock price devaluation can lead to a loss of "luster" and investor confidence.
+
+**Examples**
+*   **Successful/Large Unicorns:** ByteDance, SpaceX, Stripe.
+*   **Acquisition-based Unicorns:** Instagram, Dollar Shave Club (both acquired for $1 billion).
+*   **Failed/Devalued IPOs:** Square, Trivago (market value dropped below private valuation upon IPO).
+
+**Definitions and Valuation Tiers**
+*   **Unicorn:** A privately held startup company valued at over $1 billion.
+*   **Minicorn:** A startup with a valuation exceeding $1 million, typically characterized by having achieved product-market fit and substantial revenue growth.
+*   **Soonicorn:** A fast-growing startup with the potential to reach a $1 billion valuation in the near future.
+*   **Decacorn:** A startup valued above $10 billion.
+*   **Hectocorn:** A startup valued above $100 billion.
+*   **Kilocorn:** An informal term for a private startup valued at approximately $1 trillion.
+*   **Camel Startup:** A term for startups capable of surviving unfavorable conditions with minimal resource expenditure.
+
+**Growth Drivers and Operating Models**
+*   **Network Orchestrators:** A business model common among unicorns and sharing economy startups. It relies on a network of peers creating value through interaction, sharing, collaboration, and peer-to-peer or business-to-person selling platforms.
+
+**Valuation Trends and Risks**
+*   **Overvaluation:** Research by Gornall and Strebulaev (Stanford University) found that reported post-money valuations of 135 U.S. unicorns averaged 48% above fair value, with some exceeding fair value by more than 100%.
+*   **Market Risks:**
+    *   **Capital Excess:** Excessive available capital can inflate valuations regardless of company merit, potentially reducing entrepreneur accountability to investors.
+    *   **Burn Rates:** High burn rates and a "complete absence of fear" in investment climates are cited as precursors to "dead unicorns" (failed unicorns).
+    *   **Policy Criticism:** Economic policies specifically targeting the creation of unicorns may overlook other societally beneficial forms of entrepreneurship.
+
+**Regional Distribution (2023 Data - Dealroom)**
+*   **Top Hubs by Absolute Number (Created since 2019):**
+    1. Bay Area, USA (377)
+    2. New York City, USA (179)
+    3. Tel Aviv, Israel (83)
+    4. Boston, USA (80)
+    5. Los Angeles, USA (64)
+*   **Top Hubs per Capita (per 1 million people):**
+    1. Bay Area (48.6)
+    2. Tel Aviv (21.3)
+    3. Boston (16.3)
+
+**Examples of Unicorns by Sector and Value**
+*   **Fintech:** Ualá ($3.2B), Auth0 ($6.5B), Qonto ($5B), Bitso ($2.2B).
+*   **AI/Deep Tech:** Mistral AI ($6.23B), Hugging Face ($4.5B), Multiverse Computing ($1.7B).
+*   **Marketplace/E-commerce:** Mercado Libre ($100B), Tienda Nube ($3.1B), Mirakl ($3.5B).
+*   **Healthtech/Biotech:** Doctolib ($6.5B), Owkin ($1B).
+*   **Transport/Logistics:** Cabify ($1.4B), BlaBlaCar ($2B), Nowports ($1.1B).

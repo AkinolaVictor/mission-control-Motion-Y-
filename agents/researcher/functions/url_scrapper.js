@@ -458,6 +458,7 @@ export async function url_scrapper(task_state) {
       JSON.stringify(
         {
           ...currentTaskState,
+          status:"ongoing",
           attempt: (currentTaskState.attempt || 0) + 1,
           process_states: {
             ...currentTaskState.process_states,
@@ -489,6 +490,7 @@ export async function url_scrapper(task_state) {
           JSON.stringify(
             {
               ...currentTaskState,
+              status:"failed",
               attempt: (currentTaskState.attempt || 0) + 1,
               process_states: {
                 ...currentTaskState.process_states,

@@ -311,6 +311,7 @@ export async function url_extractor(task_state) {
   if (succeeded.length === 0) {
     await fs.writeFile(stateFile, JSON.stringify({
       ...state,
+      status:"failed",
       attempt: state.attempt+1,
       process_states: {
         ...state.process_states,

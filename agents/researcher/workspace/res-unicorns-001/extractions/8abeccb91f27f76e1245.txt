@@ -1,0 +1,17 @@
+Link: https://scholarworks.iu.edu/journals/index.php/ilj/article/view/58095
+
+HTTP Status: 200
+
+Title: Taming Unicorns
+							| Indiana Law Journal
+
+Content:
+
+Definition: Unicorns are private, venture-backed startups valued over one billion dollars.
+
+Trends: The number of unicorns has increased more than tenfold over the last decade.
+
+Risks of Unicorn Status:
+- Concealment of Misconduct: The difficulty of trading private company securities facilitates the concealment of corporate misconduct.
+- Lack of Market Deterrence: Unlike public companies, unicorns lack the oversight provided by short sellers, analysts, and financial journalists who are incentivized by securities trading to uncover and reveal misconduct.
+- Regulatory Barriers: Securities regulation and standard contract provisions restrict the trading of private company securities, which undermines the deterrence of misconduct.

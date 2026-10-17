@@ -1,0 +1,18 @@
+Link: https://doi.org/10.34190/ecie.18.1.1364
+
+HTTP Status: 200
+
+Title: The Fairy Tale of Unicorns
+							| European Conference on Innovation and Entrepreneurship
+
+Content:
+
+- Diffusion and Forecasting Analysis (2023): Study analyzed unicorn diffusion across 8 countries (USA, China, India, UK, Germany, France, Netherlands, Sweden) and 3 industries (Fintech, Health, Transportation).
+- Geographic Trends:
+    - USA: Highest saturation level of unicorns (6,241).
+    - India: Highest estimated speed of diffusion (97%).
+    - Saturation Forecast: Most studied countries (excluding USA) are projected to reach their unicorn diffusion saturation level around 2030.
+- Sector-Specific Trends:
+    - Transportation and Health: Expected to reach maximum unicorn diffusion by 2030.
+    - Fintech: Projected to require an additional ten years beyond 2030 to reach maximum diffusion.
+- Modeling: Gompertz model was found suitable for China; Logistic model was appropriate for other studied countries and all three analyzed sectors.

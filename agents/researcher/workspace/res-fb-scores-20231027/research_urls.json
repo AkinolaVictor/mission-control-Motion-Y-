@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.livescore.com/en/"
+  },
+  {
+    "id": 2,
+    "url": "https://sportra.app/live-scores"
+  },
+  {
+    "id": 3,
+    "url": "https://www.espn.com/soccer/scoreboard"
+  },
+  {
+    "id": 4,
+    "url": "https://arxiv.org/api/z6npF2RaYuiS9Ge2MEYGWbA0FEo"
+  },
+  {
+    "id": 5,
+    "url": "http://arxiv.org/abs/2102.09288v1"
+  },
+  {
+    "id": 6,
+    "url": "http://arxiv.org/abs/2105.09881v2"
+  },
+  {
+    "id": 7,
+    "url": "http://arxiv.org/abs/2503.14509v1"
+  },
+  {
+    "id": 8,
+    "url": "http://arxiv.org/abs/2108.05796v1"
+  },
+  {
+    "id": 9,
+    "url": "http://arxiv.org/abs/2304.09078v6"
+  },
+  {
+    "id": 10,
+    "url": "http://arxiv.org/abs/2104.10125v1"
+  },
+  {
+    "id": 11,
+    "url": "http://arxiv.org/abs/1908.08991v2"
+  },
+  {
+    "id": 12,
+    "url": "http://arxiv.org/abs/1912.06804v3"
+  },
+  {
+    "id": 13,
+    "url": "http://arxiv.org/abs/1801.06644v5"
+  },
+  {
+    "id": 14,
+    "url": "https://doi.org/10.1093/ww/9780199540884.013.u34231"
+  },
+  {
+    "id": 15,
+    "url": "https://doi.org/10.1093/ww/9780199540884.013.34231"
+  },
+  {
+    "id": 16,
+    "url": "https://doi.org/10.4324/9781315656809"
+  },
+  {
+    "id": 17,
+    "url": "https://doi.org/10.1108/sbm-10-2021-0128"
+  },
+  {
+    "id": 18,
+    "url": "https://doi.org/10.1093/ww/9780199540884.013.u43427"
+  },
+  {
+    "id": 19,
+    "url": "https://doi.org/10.1093/ww/9780199540884.013.43427"
+  },
+  {
+    "id": 20,
+    "url": "https://doi.org/10.4324/9781315656809-1"
+  },
+  {
+    "id": 21,
+    "url": "https://doi.org/10.64628/ab.cpcr7paww"
+  },
+  {
+    "id": 22,
+    "url": "https://doi.org/10.4324/9781315656809-9"
+  },
+  {
+    "id": 23,
+    "url": "https://doi.org/10.4324/9781315656809-3"
+  },
+  {
+    "id": 24,
+    "url": "http://hdl.handle.net/10854/180909"
+  },
+  {
+    "id": 25,
+    "url": "https://norma.ncirl.ie/4752/1/martintierney.pdf"
+  },
+  {
+    "id": 26,
+    "url": "https://scholarship.law.wm.edu/wmblr/vol9/iss3/4"
+  },
+  {
+    "id": 27,
+    "url": "https://hdl.handle.net/11250/2712222"
+  },
+  {
+    "id": 28,
+    "url": "https://doi.org/10.35662/cies-2402"
+  },
+  {
+    "id": 29,
+    "url": "http://urn.fi/URN:NBN:fi:jyu-202101211190"
+  },
+  {
+    "id": 30,
+    "url": "http://hdl.handle.net/10071/22176"
+  },
+  {
+    "id": 31,
+    "url": "https://doi.org/10.82444/warw.33761965"
+  },
+  {
+    "id": 32,
+    "url": "https://en.wikipedia.org/wiki/Premier_League"
+  },
+  {
+    "id": 33,
+    "url": "https://en.wikipedia.org/wiki/Association_football"
+  },
+  {
+    "id": 34,
+    "url": "https://en.wikipedia.org/wiki/Racism_in_association_football"
+  },
+  {
+    "id": 35,
+    "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Arsenal_F.C._season"
+  },
+  {
+    "id": 36,
+    "url": "https://en.wikipedia.org/wiki/Christian_Pulisic"
+  },
+  {
+    "id": 37,
+    "url": "https://en.wikipedia.org/wiki/Sports_dynasty"
+  },
+  {
+    "id": 38,
+    "url": "https://en.wikipedia.org/wiki/Sport_in_India"
+  },
+  {
+    "id": 39,
+    "url": "https://en.wikipedia.org/wiki/Sports_broadcasting_contracts_in_the_United_States"
+  },
+  {
+    "id": 40,
+    "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2020"
+  },
+  {
+    "id": 41,
+    "url": "https://en.wikipedia.org/wiki/Responses_to_the_COVID-19_pandemic_in_March_2020"
+  },
+  {
+    "id": 42,
+    "url": "https://www.bing.com/ck/a?!&&p=e3013b62ea3982bdd8e4e5cfcf0a626f273b225eb0bd181b2ee1f8323f500690JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1L2ltYWdlcy9zZWFyY2g_cT1DdXJyZW50K2xpdmUrZm9vdGJhbGwrc2NvcmVzK2Zvcit0b2RheSthbmQrY29tcGxldGUrc2NoZWR1bGUrb2YrZm9vdGJhbGwrbWF0Y2hlcytmb3IrdGhlK25leHQrNytkYXlzK2Fjcm9zcyttYWpvcitsZWFndWVzKyhQcmVtaWVyK0xlYWd1ZSUyYytMYStMaWdhJTJjK0J1bmRlc2xpZ2ElMmMrU2VyaWUrQSUyYytMaWd1ZSsxJTJjK0NoYW1waW9ucytMZWFndWUpJkZPUk09SERSU0My&ntb=1"
+  },
+  {
+    "id": 43,
+    "url": "https://www.bing.com/ck/a?!&&p=db68d470411e5b27171261ffca1f139505548bd6a54aaa6e4f295257a8c67c84JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1L3ZpZGVvcy9zZWFyY2g_cT1DdXJyZW50K2xpdmUrZm9vdGJhbGwrc2NvcmVzK2Zvcit0b2RheSthbmQrY29tcGxldGUrc2NoZWR1bGUrb2YrZm9vdGJhbGwrbWF0Y2hlcytmb3IrdGhlK25leHQrNytkYXlzK2Fjcm9zcyttYWpvcitsZWFndWVzKyhQcmVtaWVyK0xlYWd1ZSUyYytMYStMaWdhJTJjK0J1bmRlc2xpZ2ElMmMrU2VyaWUrQSUyYytMaWd1ZSsxJTJjK0NoYW1waW9ucytMZWFndWUpJkZPUk09SERSU0Mz&ntb=1"
+  },
+  {
+    "id": 44,
+    "url": "https://www.bing.com/ck/a?!&&p=63d74eabd7dcaf6c988cf8a1c3a91cdbbc9b5903ceed6d3d5f506f4f40bedd38JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1L21hcHM_cT1DdXJyZW50K2xpdmUrZm9vdGJhbGwrc2NvcmVzK2Zvcit0b2RheSthbmQrY29tcGxldGUrc2NoZWR1bGUrb2YrZm9vdGJhbGwrbWF0Y2hlcytmb3IrdGhlK25leHQrNytkYXlzK2Fjcm9zcyttYWpvcitsZWFndWVzKyhQcmVtaWVyK0xlYWd1ZSUyYytMYStMaWdhJTJjK0J1bmRlc2xpZ2ElMmMrU2VyaWUrQSUyYytMaWd1ZSsxJTJjK0NoYW1waW9ucytMZWFndWUpJkZPUk09SERSU0M0&ntb=1"
+  },
+  {
+    "id": 45,
+    "url": "https://www.bing.com/ck/a?!&&p=dcb2879399e813334b48a9abd001e9833b842a6516eb347e4491893d6afdd00cJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1L25ld3Mvc2VhcmNoP3E9Q3VycmVudCtsaXZlK2Zvb3RiYWxsK3Njb3Jlcytmb3IrdG9kYXkrYW5kK2NvbXBsZXRlK3NjaGVkdWxlK29mK2Zvb3RiYWxsK21hdGNoZXMrZm9yK3RoZStuZXh0KzcrZGF5cythY3Jvc3MrbWFqb3IrbGVhZ3VlcysoUHJlbWllcitMZWFndWUlMmMrTGErTGlnYSUyYytCdW5kZXNsaWdhJTJjK1NlcmllK0ElMmMrTGlndWUrMSUyYytDaGFtcGlvbnMrTGVhZ3VlKSZGT1JNPUhEUlNDNg&ntb=1"
+  },
+  {
+    "id": 46,
+    "url": "https://www.bing.com/ck/a?!&&p=49b6ccc7d2b298d10325f441e872b29458734b367c515bb5201e9d5de23b5b51JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1L3RyYXZlbC9zZWFyY2g_cT1DdXJyZW50K2xpdmUrZm9vdGJhbGwrc2NvcmVzK2Zvcit0b2RheSthbmQrY29tcGxldGUrc2NoZWR1bGUrb2YrZm9vdGJhbGwrbWF0Y2hlcytmb3IrdGhlK25leHQrNytkYXlzK2Fjcm9zcyttYWpvcitsZWFndWVzKyhQcmVtaWVyK0xlYWd1ZSUyYytMYStMaWdhJTJjK0J1bmRlc2xpZ2ElMmMrU2VyaWUrQSUyYytMaWd1ZSsxJTJjK0NoYW1waW9ucytMZWFndWUpJm09ZmxpZ2h0cyZGT1JNPUZCU0NPUA&ntb=1"
+  },
+  {
+    "id": 47,
+    "url": "https://www.bing.com/ck/a?!&&p=ac08bd3d36deb1f3601f22134be3a7b9ce991dc8fb04d28bd277c462cf40e110JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1aHR0cHM6Ly9hbGxldmVudHMuaW4vY2hlc3Rlci9jYW5kbGVsaWdodC1jb25jZXJ0cw&ntb=1"
+  },
+  {
+    "id": 48,
+    "url": "https://www.bing.com/ck/a?!&&p=7265c3b6269f6d5f47a9c4b8dec0ff4956597a52dd9c4767a516afce4595374bJmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1aHR0cHM6Ly9ib3hvZmZpY2UuY29uY2VydHNieWNhbmRsZWxpZ2h0LmNvbS9ldmVudHMva2luZGFkdXN0eWx0ZC8xOTQ2Njgy&ntb=1"
+  },
+  {
+    "id": 49,
+    "url": "https://www.bing.com/ck/a?!&&p=8ce5622a77c4f09b1b829b2767da7486226d7c5f910c6f0b9d15168482b48664JmltdHM9MTc5MjE5NTIwMA&ptn=3&ver=2&hsh=4&fclid=0bbfdf97-fd7f-6469-351e-c862fcd0654c&u=a1aHR0cHM6Ly9ib3hvZmZpY2UuY29uY2VydHNieWNhbmRsZWxpZ2h0LmNvbS9ldmVudHMva2luZGFkdXN0eWx0ZC8yMTA1MTA1&ntb=1"
+  },
+  {
+    "id": 50,
+    "url": "https://support.google.com/websearch"
+  }
+]

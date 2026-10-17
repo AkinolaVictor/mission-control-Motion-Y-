@@ -1,0 +1,90 @@
+Link: https://doi.org/10.22215/timreview/1072
+
+HTTP Status: 200
+
+Title: Is There a Lean Future for Global Startups? | TIM Review
+
+Content:
+
+**Definitions and Frameworks for Global Startups**
+
+*   **Born-Global Firm:** A new venture that satisfies a global niche from day one by searching for and accessing resources to facilitate global reach. These firms are international or global by design rather than by emergence.
+*   **Global Startup:** A specific type of international new venture that seeks competitive advantage by coordinating multiple organizational activities (not limited to export sales) across many countries from its inception.
+*   **Lean Startup:** A firm utilizing a hypothesis-driven approach to evaluate entrepreneurial opportunities and develop new products for specific market niches. This method emphasizes a systematic search for a scalable business model (customer development process) to "cross the chasm" between early adopters and a viable market niche.
+*   **Lean Global Startup:** A proposed new type of firm that integrates lean startup entrepreneurial practices with a global-by-design orientation.
+
+**Logic of Global Orientation at Inception**
+
+*   **Intent vs. Outcome:** There is a critical distinction between firms that are "born global" by intent (designing the business to serve multiple foreign markets from the start) and those that simply export early as a result of growth. Intentions at founding lead to qualitatively different growth modes and business design principles.
+*   **Resource Coordination:** Global startups derive advantage not just from international sales, but from coordinating upstream activities across borders, such as off-shore R&D, joint ventures, or production subsidiaries, often before reaching full sales capacity.
+*   **Defining "Global" Reach:**
+    *   Some definitions focus on the quantitative multiplicity of international markets served.
+    *   Other frameworks argue that "global" must imply significant geographical, psychic, and cultural distance (e.g., spanning multiple continents or trading blocs like NAFTA, EU, and Asia-Pacific) to derive significant competitive advantages.
+
+**Logic and Drivers for Investing in Global Startups**
+
+**Strategic Rationale for Global Orientation**
+*   **Resource Acquisition:** Global startups can procure superior human resources and unique workforce skills from specific global locations, often at lower prices.
+*   **Financing Advantages:** International sourcing of funds can be a primary driver. Foreign investors may provide funding to facilitate the rapid entry of new technology into their own home markets.
+*   **Market Demand and Scale:** 
+    *   Global demand in many sectors necessitates an international presence.
+    *   Worldwide sales are often required to justify high R&D expenses.
+    *   "Reluctant global startups" may be forced to target foreign customers if home-country revenue is insufficient to sustain the venture's required scale.
+*   **Competitive Positioning:** 
+    *   Rapid worldwide communications allow startups to identify and exploit unprotected market niches globally.
+    *   An "international offense" can serve as the best domestic defense.
+    *   Starting internationally avoids "domestic inertia," where home-market policies and procedures create resistance to later disruptive operational changes.
+
+**Characteristics Associated with Survival and Growth (Investment Indicators)**
+*   **Vision and Leadership:** Founders possess a global vision from inception and have personal international business experience.
+*   **Network Access:** Reliance on international business networks and alliances to access vital resources rather than owning them outright.
+*   **Competitive Advantage:** 
+    *   Use of preemptive technology or marketing approaches to be first-to-market with a distinctively valuable product.
+    *   Possession of unique intangible assets or special knowledge.
+    *   A strategy of continuous, incremental innovation through product/service extensions linked to original unique assets.
+*   **Operational Coordination:** High capacity for worldwide coordination of R&D, procurement, and sales, supported by sophisticated technological communication infrastructure and a committed top management team.
+
+**Business Model Logic**
+*   **Resource Exploitation:** High-tech ventures often create business models specifically designed to identify, attract, and transform resources across multiple countries.
+*   **Enabling Trends:** Opportunities for global entrepreneurs are driven by global value chain "fine-slicing," global communities of practice, and advanced communications technologies.
+
+**Investment Logic and Startup Value Drivers**
+
+**Strategic Entry Points (Value Chain Logic)**
+*   **Value Chain Fine-Slicing:** Startups can enter global markets by developing specialized components or services targeted at major industry players, leveraging the trend of multinational companies outsourcing specific tasks (e.g., manufacturing, back-office, collaborative research).
+*   **Modularity and Displacement Innovation:** Investment potential increases when a product architecture has well-defined "points of modularity." This allows startups to pursue "displacement innovation"—specializing in one component to take market share from incumbents.
+*   **Low-End Disruption:** Startups may create value by assembling existing value chain components in new ways to offer new customer benefits (e.g., the Dell model).
+
+**Founder and Resource Logic**
+*   **Global Mindset and Networks:** Successful global entrepreneurs typically possess:
+    *   Deep industry experience and professional success (business or academia).
+    *   The ability to build networks with global experts to access resources, tools, and talent.
+    *   A "global mindset" and persistence.
+*   **Resource Efficiency:** Modern communication technologies and open-source tools reduce set-up costs, allowing startups to be "global from the start" by integrating complementary products from partners in multiple locations.
+
+**The Lean Startup Logic (Risk Mitigation)**
+*   **Definition:** A lean startup is a "temporary organization designed to search for a repeatable and scalable business model" under conditions of "extreme uncertainty."
+*   **Waste Reduction:** The core logic is the reduction of waste; the greatest waste is developing a product that no one wants. This contrasts with "non-lean" startups that prioritize intensive R&D over market validation.
+*   **Key Risk-Reduction Mechanisms:**
+    *   **Minimum Viable Product (MVP):** A version with minimum features used to reduce wasted engineering hours and gather immediate feedback from early visionary customers.
+    *   **Customer Development:** A process of interacting with customers to articulate a viable business model before transitioning to a sustaining operational mode.
+    *   **Pivot:** A strategic change in direction based on learning.
+    *   **Minimum Viable Ecosystem (MVE):** The construction of a minimum set of partners necessary to demonstrate the company's potential to create value.
+
+**Market Transition Logic**
+*   **The "Chasm" Challenge:** There is a critical distinction between early adopters (enthusiasts/innovators) and the ultimate target market (late adopters).
+*   **Product Evolution:** The technological solution that attracts early adopters is often insufficient for the broader market; the startup must evolve the "whole product" through customer interaction to achieve scalability.
+
+**Lean Startup Logic**
+*   **Core Objective:** The primary "product" of a lean startup is not the end product itself, but the discovery and validation of a proven business model.
+*   **Operational Nature:** A lean startup is viewed as a temporary organization. The goal is to avoid establishing a functional organization until a proven business model is found.
+*   **Development Process:** Product development is driven by "customer development." This involves using customer feedback to evolve a Minimum Viable Product (MVP) into a final product tailored to a specific target niche.
+
+**Lean Global Startup Logic**
+*   **Global Necessity:** Growth-oriented startups may need to be "born global" because local markets often lack the population size required to support significant scaling.
+*   **Strategic Integration:** In a lean global startup, the lean approach is applied to the global move itself, not just product development. Target market niches are identified at global locations, and local marketing is used primarily for experimentation and learning.
+*   **Scalability:** Establishing a business in a foreign country allows for the actualization of innovative capabilities; once these are demonstrated in one country, they can be more easily replicated globally.
+
+**Investment/Evaluation Considerations**
+*   **Resource vs. Market Focus:** There is a critical distinction between the *ex ante* resource focus of early-stage startups and the *ex post* product-market focus of established young companies.
+*   **Measurement Risk:** A common error in managing global organizations is judging the value or success of a global location using *ex post* performance measurements rather than early-stage intentions and potential.

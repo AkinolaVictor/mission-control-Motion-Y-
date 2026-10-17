@@ -1,0 +1,16 @@
+Link: http://arxiv.org/abs/0807.4040v2
+
+HTTP Status: 200
+
+Title: [0807.4040v2] The time horizon and its role in multiple species conservation planning
+
+Content:
+
+**Research Note: Conservation Planning and Time Horizons**
+
+*   **Source:** Hartig, F., & Drechsler, M. (2008). The time horizon and its role in multiple species conservation planning. *Biological Conservation*, 141, 2625-2631.
+*   **Key Concept:** Survival probability within a specific time horizon (T) is a standard measure for population viability.
+*   **Findings on Biodiversity Prioritization:**
+    *   The choice of time horizon (T) acts as a form of "time preference" (similar to economic discounting), where conservation success is measured at T and subsequent effects are ignored.
+    *   While the time horizon may not change the ranking of conservation options for a single species under stationary conditions, it can "substantially change conservation decisions" when planning for multiple species.
+*   **Conclusion for Conservation Strategy:** It is critical to analyze the sensitivity of model results to the chosen time horizon or time preference measures when prioritizing biodiversity conservation efforts.

@@ -1,119 +1,235 @@
+
 import fs from 'fs/promises';
 import path from 'path';
 import axios from 'axios';
 
 /**
- * Task Creator for the Researcher Agent.
- * Transforms a raw assignment prompt into a structured task_state.json file.
- *
- * @param {Object} assigned_task - Object containing the prompt.
+ * Convert the metadata prototype into a JSON Schema.
+ * This allows the tool schema to follow metadata.json dynamically.
  */
-export async function task_creator(assigned_task) {
-  const { prompt } = assigned_task;
-
-  if (!prompt) {
-    throw new Error('Missing mandatory prop: prompt is required in assigned_task.');
+function prototypeToSchema(prototype) {
+  if (Array.isArray(prototype)) {
+    return {
+      type: 'array',
+      items: prototype.length
+        ? prototypeToSchema(prototype[0])
+        : {}
+    };
   }
 
-  const metadataPath = path.join(process.cwd(), 'agents', 'researcher', 'metadata.json');
-  const systemDir = path.join(process.cwd(), 'agents', 'researcher', 'system');
+  if (prototype === null) {
+    return { type: 'string' };
+  }
 
-  try {
-    // 1. Read Metadata FRESH (no hardcoding)
-    const metadataContent = await fs.readFile(metadataPath, 'utf8');
-    const metadata = JSON.parse(metadataContent);
-    const model = metadata.model;
-    const prototype = metadata.task_state_prototype;
+  if (typeof prototype === 'object') {
+    const properties = {};
 
-    // 2. Read all system files for context
-    let systemContext = '';
-    try {
-      const sysFiles = await fs.readdir(systemDir);
-      for (const file of sysFiles) {
-        const content = await fs.readFile(path.join(systemDir, file), 'utf8');
-        systemContext += `\\n--- ${file} ---\\n${content}\\n`;
-      }
-    } catch (e) {
-      console.error('Warning: Could not read some system files:', e.message);
+    for (const [key, value] of Object.entries(prototype)) {
+      properties[key] = prototypeToSchema(value);
     }
-
-    // 3. LLM Prompting via Ollama API
-    const promptForLLM = `
-You are the Task Intake Specialist for the Researcher Agent. Your job is to convert a raw user request into a structured "task_state" object.
-
-USER REQUEST:
-"${prompt}"
-
-AGENT SYSTEM CONTEXT:
-${systemContext}
-
-TASK STATE PROTOTYPE (MUST FOLLOW EXACTLY):
-${JSON.stringify(prototype, null, 2)}
-
-INSTRUCTIONS:
-1. Analyze the user request and determine the core research goal.
-2. Create a unique, slug-style "task_id" (e.g., "ai_medicine_research_2026").
-3. Define a high-quality "search_prompt" that the agent will use to gather URLs.
-4. Populate all other fields from the prototype with appropriate values:
-   - "status": "pending"
-   - "created_at": current timestamp
-   - "attempt": 0
-   - "process_states": set all to "awaiting..."
-5. You must return a valid JSON object that is a perfect mirror of the prototype's structure.
-
-Return ONLY the JSON object. No conversational filler.
-`;
-
-    const response = await axios.post('http://localhost:11434/api/chat', {
-      model: model,
-      messages: [
-        {
-          role: 'system',
-          content: `You are a system coordinator. Your only goal is to translate a prompt into a structured JSON task object. Prototype: ${JSON.stringify(prototype)}`
-        },
-        { role: 'user', content: promptForLLM }
-      ],
-      stream: false
-    });
-
-    const content = response.data.message.content;
-
-    // Extract JSON from response
-    const jsonMatch = content.match(/\\{.*\\}/s);
-    if (!jsonMatch) {
-      throw new Error('LLM failed to return a valid JSON task_state object.');
-    }
-
-    const generatedTaskState = JSON.parse(jsonMatch[0]);
-
-    // 4. The task_func implementation
-    await task_func(generatedTaskState);
 
     return {
-      success: true,
-      task_id: generatedTaskState.task_id,
-      message: 'Task created successfully'
+      type: 'object',
+      properties,
+      required: Object.keys(properties),
+      additionalProperties: false
     };
-
-  } catch (error) {
-    console.error('Task Creator Error:', error.message);
-    throw error;
   }
+
+  if (typeof prototype === 'number') {
+    return {
+      type: Number.isInteger(prototype) ? 'integer' : 'number'
+    };
+  }
+
+  if (typeof prototype === 'boolean') {
+    return { type: 'boolean' };
+  }
+
+  return { type: 'string' };
 }
 
 /**
- * task_func: The actual file system operation to persist the task.
+ * Task Creator for the Researcher Agent.
+ */
+export async function task_creator(assigned_task) {
+  const { prompt } = assigned_task ?? {};
+
+  if (!prompt || typeof prompt !== 'string') {
+    throw new Error('assigned_task.prompt must be a non-empty string.');
+  }
+
+  const agentDir = path.join(process.cwd(), 'agents', 'researcher');
+
+  const metadataPath = path.join(agentDir, 'metadata.json');
+  const systemDir = path.join(agentDir, 'system');
+
+  // Always read fresh metadata.
+  const metadata = JSON.parse(await fs.readFile(metadataPath, 'utf8'));
+
+  const { model, task_state_prototype: prototype } = metadata;
+
+  if (!model || !prototype || typeof prototype !== 'object') {
+    throw new Error('metadata.json must contain model and task_state_prototype.');
+  }
+
+  // Read the agent's system files.
+  let systemContext = '';
+
+  try {
+    const entries = await fs.readdir(systemDir, {
+      withFileTypes: true
+    });
+
+    for (const entry of entries) {
+      if (!entry.isFile()) continue;
+
+      const content = await fs.readFile(
+        path.join(systemDir, entry.name),
+        'utf8'
+      );
+
+      systemContext +=
+        `\n--- ${entry.name} ---\n${content}\n`;
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    console.warn('Researcher system directory not found.');
+  }
+
+  // Define a REAL tool that Ollama can call.
+  const tools = [
+    {
+      type: 'function',
+      function: {
+        name: 'task_func',
+        description:
+          'Create and persist a task_state.json file for the Researcher agent. ' +
+          'Pass the complete task_state object matching the supplied prototype.',
+        parameters: prototypeToSchema(prototype)
+      }
+    }
+  ];
+
+  const response = await axios.post(
+    'http://localhost:11434/api/chat',
+    {
+      model,
+      stream: false,
+      messages: [
+        {
+          role: 'system',
+          content: `
+You are the Researcher Agent's task intake specialist.
+
+Create one complete task_state object from the user's assignment.
+Follow the supplied prototype's exact structure and field names.
+Populate fields with values appropriate to this specific task.
+
+Use a unique task_id.
+Create a useful, specific search_prompt.
+Use status "pending", attempt 0, and the appropriate initial
+process_states values as specified by the prototype.
+
+Do not invent extra fields or omit required fields.
+Call task_func exactly once with the completed task_state.
+Do not merely print JSON.
+
+AGENT SYSTEM FILES:
+${systemContext}
+
+TASK STATE PROTOTYPE:
+${JSON.stringify(prototype, null, 2)}
+          `.trim()
+        },
+        {
+          role: 'user',
+          content: prompt
+        }
+      ],
+      tools,
+      tool_choice: 'required'
+    }
+  );
+
+  const message = response.data?.message;
+  const toolCalls = message?.tool_calls;
+
+  // Do not silently fall back to parsing JSON from message.content.
+  if (!Array.isArray(toolCalls) || toolCalls.length === 0) {
+    throw new Error(
+      `Model "${model}" did not return a tool call. ` +
+      `Response: ${JSON.stringify(message)}`
+    );
+  }
+
+  const taskCall = toolCalls.find(call => call.function?.name === 'task_func');
+
+  if (!taskCall) {
+    throw new Error('Model did not call the task_func tool.');
+  }
+
+  let taskState = taskCall.function.arguments;
+
+  // Ollama normally returns arguments as an object.
+  // Handle string arguments too, if returned by the model/version.
+  if (typeof taskState === 'string') {
+    taskState = JSON.parse(taskState);
+  }
+
+  // Validate the essential fields before writing.
+  if (
+    !taskState ||
+    typeof taskState !== 'object' ||
+    Array.isArray(taskState) ||
+    typeof taskState.task_id !== 'string' ||
+    !taskState.task_id.trim() ||
+    taskState.task_id === '.' ||
+    taskState.task_id === '..' ||
+    /[\\/]/.test(taskState.task_id)
+  ) {
+    throw new Error('Tool returned an invalid task_state.task_id.');
+  }
+
+  // Execute the actual local function using the tool arguments.
+  await task_func(taskState);
+
+  return {
+    success: true,
+    task_id: taskState.task_id,
+    message: 'Task created successfully'
+  };
+}
+
+/**
+ * Actual tool implementation.
+ * Saves exactly the task_state object received.
  */
 async function task_func(task_state) {
   const { task_id } = task_state;
-  if (!task_id) throw new Error('task_state must contain a task_id to be saved.');
 
-  const workspaceDir = path.join(process.cwd(), 'agents', 'researcher', 'workspace', task_id);
-  const stateFilePath = path.join(workspaceDir, 'task_state.json');
+  if (!task_id) {
+    throw new Error('task_state must contain task_id.');
+  }
 
-  // Create workspace folder if it doesn't exist
+  const workspaceDir = path.join(
+    process.cwd(),
+    'agents',
+    'researcher',
+    'workspace',
+    task_id
+  );
+
+  const stateFilePath = path.join(
+    workspaceDir,
+    'task_state.json'
+  );
+
   await fs.mkdir(workspaceDir, { recursive: true });
 
-  // Save the task_state exactly as received
-  await fs.writeFile(stateFilePath, JSON.stringify(task_state, null, 2), 'utf8');
+  await fs.writeFile(
+    stateFilePath,
+    JSON.stringify(task_state, null, 2),
+    'utf8'
+  );
 }

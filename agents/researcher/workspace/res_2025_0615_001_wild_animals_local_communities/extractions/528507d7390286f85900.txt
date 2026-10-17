@@ -1,0 +1,12 @@
+Link: http://arxiv.org/abs/1705.08670v1
+
+HTTP Status: 200
+
+Title: [1705.08670v1] Assessing the role of the spatial scale in the analysis of lagoon biodiversity. A case-study on the macrobenthic fauna of the Po River Delta
+
+Content:
+
+- Ecological Importance of Lagoons: Analysis of benthic assemblages (macrobenthic fauna) serves as a tool to describe the ecological status of transitional water ecosystems.
+- Ecosystem Services: Changes in the composition of macrobenthic communities in specific microhabitats can act as "early warnings" for environmental changes that may impact the ecological and economic importance of lagoons through the provision of ecosystem services.
+- Conservation Application: Defining the appropriate spatial aggregation level of local communities or microhabitats is critical for conservation efforts.
+- Case Study Location: Po River Delta lagoons.

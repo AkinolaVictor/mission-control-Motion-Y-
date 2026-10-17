@@ -1,0 +1,9 @@
+Link: https://recentai.news/
+
+HTTP Status: 200
+
+Title: Recent AI News – Latest Artificial Intelligence Updates
+
+Content:
+
+Meta has removed language from its policies that previously raised concerns regarding data scraping and AI training.

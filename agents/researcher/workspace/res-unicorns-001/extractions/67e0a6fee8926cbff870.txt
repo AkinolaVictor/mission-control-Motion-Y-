@@ -1,0 +1,12 @@
+Link: https://repository.uchastings.edu/hastings_law_journal/vol72/iss5/3
+
+HTTP Status: 200
+
+Title: "Race and Equity in the Age of Unicorns" by Lynnise E. Phillips Pantin
+
+Content:
+
+- Example of failed unicorn: Theranos (and founder Elizabeth Holmes).
+- Risks of unicorn status: The "glorification and pursuit" of the unicorn designation can lead to deficiencies in startup culture, including fraud and systemic risk.
+- Growth drivers/Valuation factors: Perception of "worthiness" for founders—driven by race, socioeconomic status, pedigree, and social connections—influences the ability to secure financing, mentorship, and media exposure.
+- Structural issues: Private financial markets are controlled by the wealthy and privileged, creating structural inequities that exclude diverse and nontraditional entrepreneurs from achieving unicorn status.

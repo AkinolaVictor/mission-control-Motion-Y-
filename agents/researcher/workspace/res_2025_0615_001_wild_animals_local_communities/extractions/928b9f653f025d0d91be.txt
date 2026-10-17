@@ -1,0 +1,14 @@
+Link: http://arxiv.org/abs/2109.10637v1
+
+HTTP Status: 200
+
+Title: [2109.10637v1] Facilitating human-wildlife cohabitation through conflict prediction
+
+Content:
+
+**Case Study: Human-Wildlife Conflict in Bramhapuri Forest Division (Chandrapur, Maharashtra, India)**
+
+*   **Impact of Conflict:** Interactions and conflicts between humans and wildlife in cohabited forest regions result in large-scale loss of human and animal lives, as well as economic loss of livelihoods.
+*   **Management Challenges:** Predicting conflicts is a complex socio-technical problem, particularly in low-resource regions with limited and sparse data.
+*   **Intervention Strategy:** Predictive analysis can enable forest officials and conservation organizations to implement targeted interventions to save lives and livelihoods.
+*   **Research Gap:** While most existing research focuses on human-wildlife conflicts within protected areas, this study specifically addresses conflicts in unprotected areas.

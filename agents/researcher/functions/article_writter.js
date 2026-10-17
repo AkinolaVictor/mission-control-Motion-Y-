@@ -318,6 +318,7 @@ export async function article_writter(task_state) {
       } else if (status === 'failed') {
         state.status = 'failed';
       }
+      state.attempt = Number(state.attempt || 0) + 1;
 
       if (errorMessage) {
         state.article_writer_error = errorMessage;
@@ -332,7 +333,7 @@ export async function article_writter(task_state) {
   }
 
   try {
-    await updateTaskState('working');
+    // await updateTaskState('working');
 
     const [writingGuide, metadataRaw] = await Promise.all([
       fs.readFile(guidePath, 'utf8'),

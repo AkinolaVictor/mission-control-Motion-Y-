@@ -1,0 +1,225 @@
+Link: https://doi.org/10.11648/j.ijber.20251402.11
+
+HTTP Status: 200
+
+Title: The Startup-Zoo: A Typology of Startups Based on the Ambitions of Their Founders
+, International Journal of Business and Economics Research, Science Publishing Group
+
+Content:
+
+- Founders' ambitions serve as a driving force for entrepreneurial action, determining a startup's goals, strategies, measures, and desired development/success.
+- Research indicates that not all founders strive for maximum growth or share the same ambitions regarding content and form.
+- Key dimensions of entrepreneurial ambition used to categorize startups include:
+    - Growth
+    - Ownership
+    - Cooperation
+- Implications for investors: Potential investors should consider the specific ambition groups of founders, as these goals influence the trajectory and development of the startup.
+
+**Foundational Logic of Entrepreneurial Action**
+* **Uncertainty and Judgment:** Entrepreneurship is characterized by action under uncertainty. Success, particularly in early phases, depends on the founders' experience, judgments, and rational actions.
+* **Process Flow:** The entrepreneurial process typically follows a trajectory where wishes transform into goals, actions, and eventually performance.
+
+**The Role of Founder Ambition and Vision**
+* **Vision as a Driver:** Founders develop visions—clear ideas of future achievements—based on their ambitions. This vision defines what the startup should look like and achieve in the future.
+* **Ambition as a Catalyst:** Ambition is identified as a driver that both initiates and sustains entrepreneurship. It is defined as having a long-term goal that extends beyond current capabilities.
+* **Goal Setting:** Ambitions form the basis for specific goals (defined as the object or aim of an action, often with a specified time limit). Founders determine the timing and method of achieving these goals individually or collectively.
+
+**Typology of Ambitions**
+* **Beyond Growth:** While literature often distinguishes between "low" and "high" ambition or focuses specifically on "growth ambitions," the research suggests that ambition encompasses a broader range of strength and content beyond simple growth metrics.
+
+- **Upper Echelons Theory**: This theory posits that a company is a reflection of its top managers. The experiences, beliefs, characteristics, and ambitions of the founding team shape the startup's interpretation of situations, decision-making processes, and ultimate results.
+- **Founder Influence**: Founders shape the structure and strategy of a startup to achieve success; therefore, the ambitions of the founders are equated with the ambitions of the startup itself.
+- **Nature of Entrepreneurial Ambitions**:
+    - Ambitions vary in strength, particularly regarding growth (distinguished as low vs. high ambition).
+    - Founders may pursue multiple, simultaneous ambitions with varying strengths and contents.
+    - The combination of multiple ambitions allows for a multi-dimensional approach to goal setting and planning.
+- **Investment Relevance**: A classification of startups based on entrepreneurial ambitions is proposed as a tool for both founders and investors to reflect on and classify a startup's goals, which serves as a basis for making essential decisions regarding the venture's future.
+- **Action-Ambition Link**: Entrepreneurial action is determined by ambition; different types of ambitions lead to different types of entrepreneurial actions and different types of startups.
+
+**Investment Logic and Startup Typology**
+
+*   **Investment Decision Basis:** A differentiated classification of startups based on founder ambitions provides investors with a basis for "balanced investment decisions and exit options" that extend beyond simply targeting maximum valuation.
+*   **Key Dimensions of Entrepreneurial Ambition:** Research identifies three essential dimensions that define a startup's type and its subsequent value to an economic ecosystem or its prospect for venture capital funding:
+    *   Growth ambitions
+    *   Exit ambitions
+    *   Collaboration ambitions
+*   **Critique of "Outlier" Focus:** There is a scholarly argument (Kuckertz et al., 2023) against the obsession with "unicorn" startups (extreme outliers). The logic suggests that considering a broader range of ambitions—rather than just maximum growth—identifies different startup types with distinct strengths for development.
+*   **Practice-Based Typologies:** While theoretical foundations were previously lacking, practice-oriented reporting uses animal metaphors to categorize startups based on founder ambitions:
+    *   **Unicorns:** High-growth, high-valuation targets.
+    *   **Zebras:** Often positioned as an alternative to unicorns (e.g., focusing on sustainability or social impact rather than just exponential growth).
+    *   **Other designations:** Dragons, Pegasus, Ponies, Camels, and Gazelles.
+*   **Founder-Investor Alignment:** A nuanced understanding of a founder's goals and visions allows for a better assessment of a startup's "attractiveness to investors."
+
+**Entrepreneurial Ambitions and Startup Success**
+* **Correlation to Success:** Entrepreneurial ambitions are identified as relevant factors for startup success. They serve as the foundation for entrepreneurial quality, actions, and overall success.
+* **Role of Uncertainty:** Due to inherent uncertainty, entrepreneurs often act cautiously and rely on visions of what is feasible for an unpredictable future. This process is driven by specific goals, visions, and ambitions.
+* **Definition of Ambitious Entrepreneurship:** 
+    * Some perspectives define an ambitious enterprise as one founded on an innovation that is utilized throughout the company's life cycle.
+    * Other perspectives (Schumpeterian) link ambitious entrepreneurship to the continuous ability to innovate throughout the company's life cycle.
+    * "Entrepreneurial quality" is defined as the specific actions taken by entrepreneurs to support their firms across their life cycle.
+
+**High vs. Low Growth Ambitions**
+* **High-Growth Founder Characteristics:** Founders with high growth ambitions typically aim for a large economic impact and exhibit the following traits:
+    * **Strategic Approach:** Focus on technological innovation and market growth.
+    * **Commitment:** Stronger involvement in the firm's success and a higher willingness to make personal sacrifices for the company.
+    * **Leadership:** More powerful leadership capabilities.
+    * **Planning:** Advance planning regarding the firm's growth, financing, quality, and public image.
+
+**Founder Ambitions as a Predictor of Startup Performance**
+*   **Correlation with Output:** Entrepreneurial ambition can forecast actual output in later business phases and serves as a predictor for the performance of SMEs.
+*   **Necessity of Early Ambition:** Founders lacking ambition at the inception of a venture are unlikely to achieve growth in later stages.
+*   **Defining Ambition:** Entrepreneurial ambition is not limited to the degree of product/idea innovation; it encompasses:
+    *   Associated growth and development within the market and competition.
+    *   Financing strategies.
+    *   Exit scenarios across the company/founder life cycle.
+*   **Innovation Levels:** Ambitions are often categorized by the level of project innovativeness: incremental (low ambition) vs. radical (high ambition).
+
+**The Logic of Founder-Centric Analysis (Upper Echelons Theory)**
+*   **Organization as a Reflection:** Based on "upper echelons theory," a company is a reflection of its top managers. Organizational outcomes, strategies, and effectiveness reflect the cognitive foundations and values of the organization's powerful actors.
+*   **Founder Influence:** Because founders act as the architects of a startup's structure and strategy, their individual orientations and personal characteristics (ambitions) shape the organization's decision-making and performance.
+*   **Startup Typology:** Startup types can be derived directly from the entrepreneurial ambitions of the founders.
+
+**Key Manifestations of Entrepreneurial Ambitions**
+Founders pursue various specific ambitions that influence the trajectory of the startup:
+*   **Growth:** The desire to start and expand a firm (categorized as long-term vs. short-term).
+*   **Exit:** Strategies for the eventual departure or sale of the company.
+*   **Innovation:** The degree of radical or incremental change introduced.
+*   **Other relevant ambitions:** Cooperation, social, and sustainability ambitions.
+
+**Founder Growth Ambitions**
+* **Growth Variations:** While most entrepreneurs strive for growth, they differ in the desired pace and duration.
+    * **Sustainable Growth:** Some prioritize slow, sustainable building over a long period to maintain control and avoid the stress/workload associated with rapid scaling.
+    * **Exponential Growth:** Other founders seek rapid, exponential growth over a short period, prioritizing market expansion, new technologies, and global scaling (often termed "productive" entrepreneurs).
+* **Growth vs. Profitability:** Extremely high growth is not always linked to immediate profitability; high customer acquisition costs may outpace sales and profits, creating pressure on financial liquidity.
+
+**Ownership and Exit Logic**
+* **Retention Logic:** Founders may seek to maintain ownership due to psychological attachment, company-specific human capital, or a sense of stewardship. Retention is more likely if:
+    * The company has a successful track record.
+    * The founder has made significant personal investments.
+    * Career options outside the firm are limited.
+    * The operating environment is highly complex or dynamic.
+* **Exit Logic:** An "exit" is defined as the process where founders remove themselves from primary ownership and decision-making. Exit aspirations are often viewed as a primary indicator of entrepreneurial success and a means of liquidating financial investments.
+* **Exit Mechanisms:**
+    * **Initial Public Offering (IPO):** Transitioning to a public company to obtain additional capital.
+    * **Management Buy-out (MBO):** Selling the company to the existing management team.
+    * **Management Buy-in (MBI):** Selling the company to an external management team.
+    * **Mergers and Acquisitions (M&A):** Full or partial fusion with other companies.
+
+**Strategic Logic of Startup Market Positioning**
+
+*   **Cooperative Logic:**
+    *   **Objectives:** Firms may pursue cooperation to gain innovation, add value, expand profit, save costs, or spread potential risks.
+    *   **Resource Acquisition:** Cooperation is often used to gain access to resources necessary for innovation.
+    *   **Standardization:** In developing new products/processes, cooperation helps define technical standards used by multiple companies, which reduces R&D costs.
+    *   **Market Growth:** Cooperative ambitions can lead to the creation of new markets.
+    *   **Strategic Advantages:** Regional network cooperation can promote marketplace success, growth, and the ability to leverage partners' reputations and customer relationships.
+    *   **Corporate Synergy:** Older companies specifically seek cooperation with research institutions to access new technologies for product development.
+    *   **Risk/Limitation:** Excessive cooperation may result in insufficient value creation for the firm's survival.
+
+*   **Competitive Logic:**
+    *   **Objectives:** Founders may pursue a specific market position by offering comparable products to targeted customers, often pursuing their own interests at the expense of others.
+    *   **Value Creation:** The goal is to create value by outplaying competitors or realizing a relative cost advantage.
+    *   **"Winner-Takes-All" Dynamics:** Some startups aim for markets where the top-performing company claims the vast majority of available profit, leaving little for others.
+    *   **Visibility:** Competitive behavior is driven by the fact that successful companies receive more attention.
+
+*   **Investment-Related Factors:**
+    *   **Equity Partnerships:** The form and development of startups are significantly determined by relationships, particularly equity partnerships.
+
+**Startup Definitions and Characteristics**
+*   **General Definition:** Startups are characterized as being younger than ten years, growth-oriented (in terms of sales and/or employees), and/or innovative (regarding products, services, business models, and/or technologies).
+*   **Industry Distribution (2020-2022):** Information and communication technology is the dominant sector (consistently ~30-33%), followed by medicine and healthcare (~8-10%). Other notable sectors include nutrition/food, energy/electricity, industrial goods, and consumer goods.
+
+**Dimensions of Entrepreneurial Ambitions**
+The research identifies three key dimensions used to categorize startup logic and founder ambitions:
+*   **Value Increase:** Long-term linear increase in value vs. short-term exponential increase in value.
+*   **Ownership Strategy:** Desire to fully own/maintain company shares vs. planning a complete exit (sale or IPO).
+*   **Market Approach:** Viewing other market participants as potential partners (cooperation) vs. potential competitors (competition).
+
+**Startup Typology Based on Founder Ambitions**
+
+The research identifies four distinct types of startups based on three primary variables of entrepreneurial ambition: value increase (long-term linear vs. short-term exponential), ownership goal (ownership vs. exit), and market approach (cooperation vs. competition).
+
+**Startup Cluster Profiles:**
+*   **Cluster 1 ("Zebras"):** Characterized by ambitions for long-term linear increase in value, maintaining ownership, and cooperation.
+*   **Cluster 2:** Characterized by short-term exponential increase in value, maintaining ownership, and cooperation.
+*   **Cluster 3:** Characterized by short-term exponential increase in value, pursuing an exit, and cooperation.
+*   **Cluster 4 ("Unicorns"):** Characterized by short-term exponential increase in value, pursuing an exit, and competition. (Note: In practice, "Unicorns" are defined as having a valuation of at least $1 billion).
+
+**Data Trends (2020–2022):**
+*   **2020 Distribution:** Cluster 4 was the largest (32.1%), followed by Cluster 3 (24.3%), Cluster 2 (22.2%), and Cluster 1 (21.4%).
+*   **2021–2022 Shift:** Post-hoc analysis showed a significant shift toward Cluster 1 ("Zebras"), which grew to represent over 46% of the cases in both 2021 (46.5%) and 2022 (46.8%).
+
+**Robustness and Generalizability:**
+*   The four-cluster typology remained consistent regardless of the founders' migration backgrounds (EU vs. non-EU), suggesting the framework may be applicable internationally.
+
+**Startup Typology Framework ("The Startup-Zoo")**
+
+The research identifies four distinct startup types based on founder ambitions, which dictate growth trajectories, market behavior, and investor exit strategies.
+
+**1. Zebras**
+*   **Growth Logic:** Long-term, sustainable, and linear increase in value.
+*   **Market Behavior:** High cooperation with competitors; operates in "all-takes-it-all" markets where multiple participants can hold significant shares.
+*   **Ownership/Exit:** Strong focus on founder-related ownership. Preferred investor exits include management buy-ins (MBI), management buy-outs (MBO), or buybacks.
+
+**2. Cows**
+*   **Growth Logic:** Medium-term, moderate, and linear value growth. Aims for fast growth but less aggressive than Unicorns.
+*   **Market Behavior:** Cooperative mindset with open market tolerance toward competitors; operates in "many-takes-it-all" markets (multiple shares available, but fewer than in Zebra markets).
+*   **Ownership/Exit:** Strong founder-related ownership orientation. Potential investor exits include secondary purchases or MBO/MBI.
+
+**3. Horses**
+*   **Growth Logic:** Short-term, strong, and exponential value growth.
+*   **Market Behavior:** Moderate willingness to cooperate with competitors; operates in "some-takes-it-all" markets where only a few participants survive and divide the market.
+*   **Ownership/Exit:** Strong investor-related exit orientation. Preferred exits include mergers and acquisitions (M&A) or secondary purchases.
+
+**4. Unicorns**
+*   **Growth Logic:** Short-term, very strong, and exponential value growth.
+*   **Market Behavior:** Highly competitive; zero willingness to cooperate with competitors. High risk-taking for market dominance; capital is used primarily for rapid growth. Operates in "winner-takes-it-all" markets.
+*   **Ownership/Exit:** Strong investor-related exit orientation. Preferred exits include Initial Public Offerings (IPO) and M&A.
+
+**Comparative Statistics (Means)**
+*   **Employee Count:** Unicorns (21.17) and Horses (15.71) maintain significantly larger workforces than Zebras (5.76) and Cows (5.5).
+*   **Age:** Average age across all types ranges from 2.14 (Cows) to 2.61 (Unicorns) years.
+
+**Startup Typology and Investment Logic**
+
+**Founder Ambitions and Capital Preferences**
+The desire for specific funding sources correlates directly with the founder's ambitions (startup "type"):
+*   **Unicorns:** Highest preference for Venture Capital (80.7%) and Business Angels (70.2%); lowest reliance on founder savings (10.5%). High willingness to sell shares.
+*   **Horses:** Strong preference for Venture Capital (70.1%) and Business Angels (52.8%); low reliance on founder private capital (11%).
+*   **Cows:** Prefer Business Angels (46.7%), followed by Venture Capital (37.8%) and founder savings (31.1%).
+*   **Zebras:** Highest preference for founder private capital (42.2%) and Business Angels (40.2%); lowest preference for Venture Capital (22.3%). High desire to retain ownership and give up fewer shares.
+
+**Investor Strategy and Fit**
+Investors can use founder ambitions to align startups with their own strategic goals and risk tolerance:
+*   **Short-term Exit Focus (e.g., Venture Capital):** Horse and Unicorn startups are the primary targets due to their growth ambitions.
+*   **Long-term Ownership/Strategic Focus (e.g., Corporate Venture Capital):** Zebra and Cow startups provide a better fit.
+*   **Risk Management:** Investing in Cow and Horse ambitions is identified as a way to mitigate risk; these types are less risky than Unicorns but grow faster than Zebras. This allows for better asset portfolio management.
+
+**Growth Indicators (Hiring Plans)**
+Entrepreneurial ambitions significantly influence planned headcount (p < .001), serving as a proxy for growth expectations:
+*   **Unicorns:** Highest hiring intent (avg. 24.65 employees in next 12 months).
+*   **Horses:** High hiring intent (avg. 16.71 employees).
+*   **Cows:** Moderate hiring intent (avg. 4.72 employees).
+*   **Zebras:** Lower hiring intent (avg. 3.87 employees).
+
+**Key Limitations for Investors**
+*   **Ambition vs. Reality:** There is a gap between "Unicorn ambitions" and actual financial valuation. While 21.3%–32.1% of startups in the study expressed Unicorn ambitions, actual Unicorn status is rare globally.
+*   **Cultural Variance:** The framework is based primarily on German startups; ambitions may vary by country.
+*   **Dynamic Nature:** Founder ambitions are subject to change over time and based on external circumstances.
+
+- **Founder Ambitions as Investment Indicators**: A founder's ambitions serve as a driving force for entrepreneurial action and determine the company's goals, strategies, and measures for development and success.
+- **Key Dimensions of Ambition**: Research identifies three critical dimensions of entrepreneurial ambition that are relevant for potential investors to consider:
+    - Growth
+    - Ownership
+    - Cooperation
+- **Typology Application**: The "Startup-Zoo" typology, based on the configuration of these three ambition dimensions, provides a framework for investors to better understand and categorize startups based on the founders' goals rather than just the product or market.
+- **Risk Management Strategies**: Reference is made to venture capital firms (specifically in India) utilizing "specialisation and syndication" as strategies for risk management.
+
+**Founder Ambitions and Startup Development**
+* **Core Driver:** Founder ambitions serve as the driving force behind entrepreneurial action, determining the goals, strategies, and measures of a startup.
+* **Impact on Success:** These ambitions dictate the desired development path of the company and its associated success.
+* **Dimensions of Ambition:** Research identifies three primary dimensions of entrepreneurial ambition that configure a startup's trajectory:
+    * Growth
+    * Ownership
+    * Cooperation
+* **Investor Relevance:** Because founders do not uniformly strive for "the maximum" or share the same ambitions, potential investors should consider the specific ambition group/typology of a startup when evaluating investment opportunities.

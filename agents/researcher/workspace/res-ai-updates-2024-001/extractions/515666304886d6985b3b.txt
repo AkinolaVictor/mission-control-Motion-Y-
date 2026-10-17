@@ -1,0 +1,12 @@
+Link: http://arxiv.org/abs/2408.00025v3
+
+HTTP Status: 200
+
+Title: [2408.00025v3] Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)
+
+Content:
+
+Research on Explainable AI (xAI) in Education (2024-2025):
+- Focus: Investigating how complex AI models make decisions in educational contexts, specifically regarding the influence of parental income on student outcomes.
+- Findings: Research identified inherent biases in AI models that conflict with goals of transparency and equal access in education.
+- Objective: Utilizing xAI tools to uncover these complexities to develop more reliable, accountable, and fair AI-driven educational policies.

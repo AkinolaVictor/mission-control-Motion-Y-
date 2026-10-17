@@ -1,0 +1,16 @@
+Link: https://doi.org/10.48550/arxiv.2405.01674
+
+HTTP Status: 200
+
+Title: [2405.01674] Generative AI in Cybersecurity
+
+Content:
+
+Research Paper: "Generative AI in Cybersecurity" (Submitted May 2, 2024)
+Authors: Shivani Metta, Isaac Chang, Jack Parker, Michael P. Roman, Arturo F. Ehuan (Duke Pratt School of Engineering, Coalfire, and Safebreach).
+
+Key Findings & Trends:
+- Dual-Use Nature of GAI: Generative AI (specifically GPT and other LLMs) is creating a paradox in cybersecurity where the same technology used for threat detection and response is being used by adversaries to enhance attack strategies.
+- Adversarial Use Cases: Cyber criminals are utilizing GAI to develop malware that is more covert and adaptable, complicating traditional cybersecurity efforts.
+- Regulatory Gap: The pace of GAI progression is currently outstripping the development of cybersecurity protocols and regulatory frameworks.
+- Defensive Requirement: There is a critical need for organizations to develop more complex defensive strategies to counter GAI-driven malware creation.

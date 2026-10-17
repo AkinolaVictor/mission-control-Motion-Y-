@@ -1,18 +1,17 @@
 {
   "task_id": "game_3_test",
-  "title": "Architectural construction of search algorithms",
+  "title": "The logic behind investing in startups",
   "description": "description of task",
-  "search_prompt": "Architectural construction of search algorithms",
+  "search_prompt": "The logic behind investing in startups",
   "await_approval": false,
-  "status": "failed",
+  "status": "ongoing",
   "scheduled_time": "timestamp",
   "assigned_to": "agent_name",
   "created_at": "data_and_time",
-  "attempt": 709,
+  "attempt": 1,
   "process_states": {
     "url_collection": "completed",
-    "url_scrapping": "completed",
-    "article_generated": "failed"
-  },
-  "article_writer_error": "Ollama returned an empty response."
+    "url_scrapping": "awaiting",
+    "article_generated": "awaiting"
+  }
 }

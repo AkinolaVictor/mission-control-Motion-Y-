@@ -16,11 +16,12 @@ export async function task_runner(data){
     // const workspaceDir = path.join(process.cwd(), 'agents', 'researcher', 'workspace', task_id);
     
     if(status === "completed") return
+    // if(status === "ongoing") return
     if(attempt>7) return
 
-    if(url_collection === "working") return
-    if(url_scrapping === "working") return
-    if(article_generated === "working") return
+    // if(url_collection === "working") return
+    // if(url_scrapping === "working") return
+    // if(article_generated === "working") return
     
     if(
         url_scrapping==="completed" &&

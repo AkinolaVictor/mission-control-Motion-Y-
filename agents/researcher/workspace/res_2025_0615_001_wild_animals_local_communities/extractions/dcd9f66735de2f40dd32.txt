@@ -1,0 +1,18 @@
+Link: http://arxiv.org/abs/2505.17687v2
+
+HTTP Status: 200
+
+Title: [2505.17687v2] Farm Size Matters: A Spatially Explicit Ecological-Economic Framework for Biodiversity and Pest Management
+
+Content:
+
+**Ecological Benefits (Pest Control & Biodiversity)**
+*   **Natural Pest Control:** The study identifies a positive relationship between hedgerow restoration and enhanced populations of natural enemies (wild animals/predators), which provide natural pest control.
+*   **Drivers of Decline:** Biodiversity decline in European agriculture is driven by intensification, specifically increasing farm sizes, landscape simplification, and reliance on synthetic pesticides.
+
+**Economic Impacts (Livelihoods)**
+*   **Economic Gains from Biodiversity:** Small to medium-sized farms can achieve economic benefits through reduced pesticide expenditures when ecological restoration (e.g., hedgerows) is implemented to support natural pest control.
+*   **Scale Limitations:** Large farms face greater challenges in achieving similar economic gains from biodiversity-based pest management due to their inherent landscape characteristics.
+
+**Sustainable Coexistence & Policy**
+*   **Policy Implications:** The effectiveness of agri-environmental policies for biodiversity conservation and agricultural sustainability is strongly contingent upon farm size.
