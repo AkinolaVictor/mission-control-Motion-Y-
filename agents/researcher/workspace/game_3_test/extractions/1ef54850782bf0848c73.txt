@@ -1,0 +1,18 @@
+Link: https://archive.org/details/DTIC_ADA198291
+
+HTTP Status: 200
+
+Title: DTIC ADA198291: Ordering Methods for Sparse Matrices and Vector Computers : Defense Technical Information Center : Free Download, Borrow, and Streaming : Internet Archive
+
+Content:
+
+- Title: "Ordering Methods for Sparse Matrices and Vector Computers" (DTIC ADA198291), publication date 1988-03-31.
+- Topics include sparse matrices, factor analysis, computer architecture, modular construction, vector analysis, heuristic methods, equations, numerical analysis, computations, linear systems, algorithms, and costs.
+- Direct factorization methods for solving large sparse linear equations are fundamental building blocks for numerical solution of many scientific and computational problems.
+- Reordering variables and equations is crucial for reducing the cost of direct solution techniques.
+- Finding the optimal reordering is an NP-complete problem.
+- Practical reordering algorithms are heuristic, and their behavior is usually known only empirically.
+- Different reordering heuristics have been developed across disciplines, reflecting different sparse linear systems and different views of computing cost.
+- The research examines how ordering heuristics and companion numerical solution routines behave on high-performance computers.
+- High-performance computing has increased the size and complexity of scientific computations, where better heuristics can most affect cost.
+- Architectural constraints chosen for high speed often appear to conflict with sparsity.

@@ -396,3 +396,71 @@ let me see your plan before starting
 
 
 
+
+
+
+create a function in @agents/researcher/functions/task_creator.js
+the purpose of this function is to be able to create assigned tasks for the researcher agent
+
+it receives a prop called, assigned_task {prompt} (basically contains a prompt) that contain conext of information on what is needed to create the task 
+
+the prompt is passed into an llm (using the model of the researcher Agent (in @agents/researcher/metadata.json[model]), and also reads the  @agents/researcher/system files), 
+then it reads the @agents/researcher/metadata.json[task_state_prototype] to understand what an ideal task_state is, and should contain, 
+this llm implements tool calling and calls the "task_func" function that receives the ideal object of a task_state, that looks exactly like the sample in the metadata.json
+
+the metadata must always be read each time this code is ran, it must not be hardcoded. 
+
+the ideal prototype of a task_state is always read from @agents/researcher/metadata.json[task_state_prototype], the llm must read the prompt given to it and return an object that looks exactly like task_state, containing all the unique specifics of this current task, and pass it directly into the task_func
+
+the task_func recieves the task_state object prop and creates: 
+a task_state.json file in @agents/researcher/workspace/[task_state.task_id]/task_state.json, the task_state.json contains exactly everything in the task_state prop passed to it (no changes)
+
+ask me any question for clarity
+show me you plan before starting
+
+
+
+
+
+
+Tool calling to researcher agent
+implement a tool calling feature in the @agents/researcher/researcher.js, the created @agents/researcher/functions/task_creator.js must be used in @agents/researcher/researcher.js agent as a callable tool so that the agent is given the ability to create a research task, so implement a tool calling feature in the @agents/researcher/researcher.js.
+
+the researcher agent must read the @agents/researcher/metadata.json[task_state_prototype] to know what must be contained in the prompt to be sent to the task_creator function, it should ask the user to clarify things if an information is not provided.
+
+ask me any question for clarity
+show me you plan before starting
+
+
+
+
+
+
+orchestrator central task creator
+create a function in @agents/orchestrator/functions/task_assigner.js
+this function implements an llm (using the model of the orchestrator Agent (in @agents/orchestrator/metadata.json[model])), it receives a prop {prompt}, 
+it reads this prompt, and loops through the @agents/[each_agents]/metadata.json and reads to know which agent is capable of carrying out this task, 
+it check the task_state_prototype property of the qualified agent, and checks if the given prop ({propmt}) contains all the necessary context to build a task_state, if not, it responds back to the orchestrator agent to provide another prompt that contain all the important information necessary to be contained in an ideal task_state prototype
+
+then, it calls the @agents/[each_agents]/functions/task_creator.js function found in the qualified agent (could be imported using "require(`.../${each_agent}/...`)), it passed the right props into the function {promptz}. the promptz params should be a string contain all the context needed to be contained in an ideal task_state prototype
+
+if no suitable agent is found who can carry out the task, then, returns back a prompt string message containing all the agents available and what they can do. so the agent can refine its prompt (or chat with the user) to include the specific agent to do the job, or provide a context to help know which agent to use, and calls the task_assigner again
+
+
+
+
+
+Tool calling to the orchestrator agent
+implement a tool calling feature in the @agents/orchestrator/orchestrator.js agent,the created @agents/orchestrator/functions/task_assigner.js must be used in the orchestrator agent as a callable tool so it can assign task to any agent, 
+it must be able to engage in a chat with the task_assigner function, to know if all the necessary information to create the task has been provided, if it has not yet been provided, it must ask the user to provide the necessary contexts.
+Let all it's instruction be kept in @agents/orchestrator/system/TASK_ASSIGNER.md file so you don't really need to edit the current instruction
+
+
+
+
+
+
+
+
+
+

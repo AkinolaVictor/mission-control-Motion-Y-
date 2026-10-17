@@ -1,0 +1,65 @@
+Link: https://en.wikipedia.org/wiki/Priority_queue
+
+HTTP Status: 200
+
+Title: Priority queue - Wikipedia
+
+Content:
+
+- Priority queue ADT: elements have associated priorities; highest-priority item served first; priority values must be ordered; higher priority may correspond to lesser or greater values.
+- Core operations:
+  - Max-priority queue: insert, maximum/find_max, extract_max/delete/extract, increase_key.
+  - Min-priority queue: insert, minimum/find_min, extract_min/delete/extract, decrease_key.
+- Stacks and queues can be represented as priority queues with monotonically increasing or decreasing insertion priorities.
+- Equal-priority tie-breaking is FIFO in some implementations and undefined in others.
+- Naive implementations:
+  - Unsorted array: insert O(1), extract O(n).
+  - Sorted array: insert O(n), extract O(1).
+- Typical implementations:
+  - Heap: O(log n) insert and removal; O(n) to build from n elements.
+  - Self-balancing BST: O(log n) insert/removal; O(n log n) to build from sequence; more storage due to node references.
+  - Heap variants (pairing, Fibonacci, etc.) can improve bounds for some operations.
+- Specialized heaps for integer keys {1,...,C}:
+  - Bucket queue: O(1) insert; worst-case O(C) extract-min; useful for sorting graph vertices by degree.
+  - van Emde Boas tree: O(log log C) for min, max, insert, delete, search, extract-min/max, predecessor, successor; space about O(2^{m/2}) for small queues, reducible with hashing.
+  - Fusion tree: O(1) minimum; O(log n / log log C) insert and extract-min; author notes impractical constant factors.
+- Caching the highest-priority element can make peek O(1); insertion adds at most constant cost, deletion adds at most an additional peek cost.
+- Monotone priority queues are optimized for cases where no later inserted item has lower priority (for min-heap) than any previously extracted item.
+- Heap complexity summary (min-heap; amortized where noted):
+  - Binary: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(log n), insert Θ(log n), meld Θ(n), make-heap Θ(n).
+  - Skew: find-min Θ(1), delete-min O(log n) am., decrease-key O(log n) am., insert Θ(1) am., meld Θ(1) am., make-heap Θ(n) am.
+  - Leftist: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(log n), insert Θ(log n), meld Θ(log n), make-heap Θ(n).
+  - Binomial: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(log n), insert Θ(1) am., meld Θ(log n), make-heap Θ(n).
+  - Skew binomial: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(log n), insert Θ(1), meld Θ(log n), make-heap Θ(n).
+  - 2-3 heap: find-min Θ(1), delete-min O(log n) am., decrease-key Θ(1), insert Θ(1) am., meld O(log n), make-heap Θ(n).
+  - Bottom-up skew: find-min Θ(1), delete-min O(log n) am., decrease-key O(log n) am., insert Θ(1) am., meld Θ(1) am., make-heap Θ(n) am.
+  - Pairing: find-min Θ(1), delete-min O(log n) am., decrease-key o(log n) am., insert Θ(1), meld Θ(1), make-heap Θ(n).
+  - Rank-pairing: find-min Θ(1), delete-min O(log n) am., decrease-key Θ(1) am., insert Θ(1), meld Θ(1), make-heap Θ(n).
+  - Fibonacci: find-min Θ(1), delete-min O(log n) am., decrease-key Θ(1) am., insert Θ(1), meld Θ(1), make-heap Θ(n).
+  - Strict Fibonacci: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(1), insert Θ(1), meld Θ(1), make-heap Θ(n).
+  - Brodal: find-min Θ(1), delete-min Θ(log n), decrease-key Θ(1), insert Θ(1), meld Θ(1), make-heap Θ(n).
+- Equivalence to sorting:
+  - Sorting via priority queue: insert all elements, then extract; corresponds to heapsort, smoothsort, selection sort, insertion sort, and tree sort with stated best/average/worst complexities.
+  - Sorting can implement a priority queue: if sorting up to n keys takes S(n) time per key, then delete and insert take O(S(n)) and find-min takes O(1) (Thorup).
+- Persistent-heap transformations can reduce meld cost to insert cost while delete-min cost becomes sum of old delete-min and meld costs; applied to skew binomial heaps yields Brodal-Okasaki queues with optimal worst-case complexities except no decrease-key.
+
+- Priority queue is a container/abstract data type used in search and graph algorithms; common implementations include binary heaps (min/max), sorted-array-like structures, and library-specific heaps.
+- Best-first search / A*: a priority queue (the “fringe”) tracks unexplored routes; the route with the smallest estimated total path length receives highest priority (a lower bound in A*).
+- SMA*: a memory-limited best-first variant uses a double-ended priority queue to remove low-priority items.
+- Dijkstra’s algorithm: a priority queue efficiently extracts the minimum for adjacency-list or adjacency-matrix graphs; efficient priority alteration for a vertex is also needed. An alternative stores priority-node pairs in a heap and tracks visited nodes, ignoring stale lower-priority entries when they reappear.
+- Prim’s minimum spanning tree: uses a min-heap priority queue supporting insert, minimum, extract-min, and decrease-key; edge weights determine vertex priority.
+- Parallel/concurrent priority-queue architectures:
+  - Interface changes include concurrent multi-processor access or batch operations on k elements.
+  - Concurrent access raises semantic ambiguity (same vs. different highest-priority element) and contention.
+  - A lock-free skip-list implementation uses CAS, node keys/priorities, level pointers, and delete marks; insert searches levels and updates parent/successor pointers; extract-min marks a node deleted and updates parent pointers; conflicts can make inserted nodes unreachable.
+  - Batch operations include k_extract-min (remove k smallest), k_insert (union; cost O(k log(1+n/k)) if batch sorted by key, otherwise O(k log n)), and k_decrease-key (difference then union).
+- Other noted uses: discrete-event simulation (time as priority), Huffman coding (repeatedly obtain two lowest-frequency trees), ROAM triangulation (split/merge priority queues), and bandwidth management.
+- Library implementations mentioned: STL std::priority_queue (max-priority-queue, comparison/container/iterator parameters, no iteration), Boost heap, Python heapq (binary min-heap on list), Java PriorityQueue (min binary heap), .NET PriorityQueue (array-backed quaternary min-heap), Scala PriorityQueue (max), Go container/heap (min-heap), Rust BinaryHeap, PHP SplPriorityQueue, Apple CFBinaryHeap (min-heap).
+
+- Distributed-memory parallel priority queue architecture: each processor has local memory and a local sequential priority queue; global priority queue elements are distributed across processors.
+- k_insert: elements are assigned uniformly at random to processors and inserted into their local queues; single-element insertion remains possible. This makes the global smallest elements likely to be in the union of each processor's local smallest elements.
+- k_extract-min: the smallest m elements are removed from each local queue into a result set, where m depends on k and the number of processors p. Parallel selection identifies the k smallest elements in the result set; with high probability these are the global k smallest. If not, another m elements per local queue are added and the process repeats. The k selected elements are returned; other result-set elements are reinserted into their local queues.
+- Expected running time of k_extract-min: O((k/p) log n), where k = Ω(p log p) and n is the priority queue size.
+- Optimization: not moving remaining result-set elements directly back into local queues after k_extract-min can reduce unnecessary movement.
+- Batch extraction can provide considerable speedup, but not all algorithms can use it. Dijkstra's algorithm cannot process multiple extracted nodes at once because updating one node may change the distance of another extracted node, destroying its label-setting property.
+- Priority queues are used for efficient selection in graph search; the source notes Prim's algorithm needs a fast way to select a new edge to add to the tree.

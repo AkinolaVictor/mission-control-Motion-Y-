@@ -1,0 +1,19 @@
+Link: https://en.wikipedia.org/wiki/TurboQuant
+
+HTTP Status: 200
+
+Title: TurboQuant - Wikipedia
+
+Content:
+
+- TurboQuant is an online vector quantization algorithm for compressing high-dimensional Euclidean vectors while preserving geometric structure; applications include vector databases and nearest neighbor search.
+- It has two variants: TurboQuantmse, optimized for mean squared error, and TurboQuantprod, optimized for unbiased inner-product estimation.
+- TurboQuantmse architecture: apply a random rotation Π to a unit vector x to get z = Πx; in high dimensions coordinates become nearly independent; apply an independent scalar quantizer to each coordinate using 1D k-means/Lloyd-Max centroids; store per-coordinate centroid indices; dequantize to centroids to form z~; rotate back as x~ = Π^T z~.
+- TurboQuantmse bound: D_mse ≤ (√(3π)/2) · 1/4^b; reported MSE values approximately 0.36, 0.117, 0.03, and 0.009 for b = 1, 2, 3, 4.
+- TurboQuantprod architecture: first apply TurboQuantmse with bit-width b−1; compute residual r = x − Q_mse^{-1}(Q_mse(x)) and its norm γ = ||r||_2; apply a one-bit Quantized Johnson–Lindenstrauss transform to the residual, storing qjl = sign(Su) where u = r/γ (equivalently sign(Sr) when r ≠ 0); store MSE quantization, QJL sign vector, and residual norm.
+- TurboQuantprod reconstruction: x~ = x~_mse + (√(π/2)/d) γ S^T qjl.
+- TurboQuantprod is unbiased for inner-product estimation: E_{x~}[⟨y, x~⟩] = ⟨y, x⟩.
+- TurboQuantprod distortion bound: D_prod ≤ (√(3π)/2) · (||y||_2^2/d) · 1/4^b.
+- For nearest-neighbor vector search, the paper reports experiments on DBpedia entity embeddings and GloVe embeddings, comparing TurboQuant with product quantization and other vector-search quantization baselines.
+- TurboQuant is described as data-oblivious and online, avoiding dataset-specific codebook training, unlike many product-quantization methods.
+- Limitation: strongest performance claims come from the original paper and Google Research; broader real-world impact depends on implementation details, workloads, and hardware architectures.

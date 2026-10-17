@@ -10,12 +10,13 @@ export async function task_runner(data){
     const file = await fs.readFile(filePath, "utf8")
     const task_state = JSON.parse(file)
     // return
-    const {status, process_states, await_approval} = task_state
+    const {status, process_states, await_approval, attempt} = task_state
     const {article_generated, url_collection, url_scrapping} = process_states || {}
 
     // const workspaceDir = path.join(process.cwd(), 'agents', 'researcher', 'workspace', task_id);
     
     if(status === "completed") return
+    if(attempt>7) return
 
     if(url_collection === "working") return
     if(url_scrapping === "working") return

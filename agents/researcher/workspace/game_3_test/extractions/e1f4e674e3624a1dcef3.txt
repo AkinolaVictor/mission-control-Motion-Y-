@@ -1,0 +1,62 @@
+Link: https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
+
+HTTP Status: 200
+
+Title: Ant colony optimization algorithms - Wikipedia
+
+Content:
+
+- Ant colony optimization (ACO) is a probabilistic technique for solving computational problems reducible to finding good paths through graphs; artificial ants are multi-agent methods inspired by real ants.
+- Pheromone-based communication is often the predominant paradigm; combinations of artificial ants and local search algorithms are used for graph-based optimization tasks such as vehicle routing and internet routing.
+- ACO was initially proposed by Marco Dorigo in 1992 in his PhD thesis; the first algorithm sought an optimal path in a graph based on ants seeking a path between colony and food.
+- ACO performs model-based search and shares similarities with estimation of distribution algorithms.
+- Natural inspiration: ants wander randomly, find food, return while laying pheromone trails; other ants may follow and reinforce trails. Pheromone evaporation reduces attractiveness over time; shorter paths are traversed more frequently and become more strongly marked. Evaporation helps avoid convergence to locally optimal solutions and supports exploration.
+- To apply ACO, the optimization problem is converted into finding the shortest path on a weighted graph.
+- Each iteration has three conceptual steps: each ant stochastically constructs a solution (order of edges), the paths found by different ants are compared, and pheromone levels on edges are updated.
+- Pseudocode structure: while not terminated: generateSolutions(); daemonActions(); pheromoneUpdate(); repeat.
+- Edge selection: an ant moves from state x to state y among feasible expansions. Probability depends on trail level τ_xy (a posteriori desirability) and attractiveness η_xy (a priori desirability, typically 1/d_xy). Formula: p_xy^k = (τ_xy^α)(η_xy^β) / sum_{z in allowed_x} (τ_xz^α)(η_xz^β), where α ≥ 0 controls τ influence, β ≥ 1 controls η influence, and allowed_x is the set of allowed destinations from x.
+- Pheromone update: trails are usually updated after all ants complete their solutions, increasing or decreasing levels for moves in "good" or "bad" solutions. Example global rule: τ_xy ← (1 − ρ)τ_xy + sum_k Δτ_xy^k.
+- Artificial pheromone implementations include chemical and physical means (e.g., RFID tags, light, sound), though these may not replicate all natural pheromone aspects.
+- Related variation: the bees algorithm, analogous to honey bee foraging patterns.
+
+- Core ACO mechanism: pheromone evaporation coefficient ρ; m ants; deposit Δτ_xy^k = Q/L_k if ant k uses edge xy in its tour, otherwise 0; L_k is tour cost (typically length); Q is a constant.
+- Ant system (AS): first ACO algorithm; corresponds to the basic presented formulation.
+- Ant colony system (ACS): modifies AS by (1) biasing edge selection toward exploitation of short, high-pheromone edges, (2) applying local pheromone updates while ants build solutions, and (3) allowing only the best ant to apply a modified global pheromone update at the end of each iteration.
+- Elitist ant system: global best solution deposits pheromone on its trail after every iteration, along with all other ants; aims to direct search toward solutions containing links of the current best route.
+- Max-min ant system (MMAS): only global best or iteration best tour adds pheromone; pheromone on each trail is bounded to [τmax, τmin]; all edges initialized to τmax to encourage exploration; trails reinitialized to τmax when nearing stagnation.
+- Rank-based ant system (ASrank): solutions ranked by length; only a fixed number of best ants update trails; shorter-path solutions deposit more pheromone.
+- Parallel ant colony optimization (PACO): ACS with communication strategies; ants partitioned into groups; seven communication methods proposed for updating pheromone levels between groups; applied to TSP.
+- Continuous orthogonal ant colony (COAC): collaborative search using orthogonal design method and adaptive radius adjustment; described as extendable to other optimization algorithms.
+- Recursive ant colony optimization: recursive ant system that divides the search domain into subdomains, solves the objective on subdomains, compares results, promotes best few, subdivides selected subdomains, and repeats until desired precision; tested on ill-posed geophysical inversion problems.
+- Convergence: graph-based ant system, ACS, and MMAS can find the global optimum in finite time; performance and convergence rate are sensitive to parameters, especially pheromone evaporation rate; ACO-type algorithms are related to stochastic gradient descent, cross-entropy method, and estimation of distribution algorithms; described under umbrella term "Model-based search."
+- Applications: combinatorial optimization problems including TSP, scheduling, vehicle routing, assignment, and set problems; dynamic graph problems where continuous real-time adaptation is useful; also device sizing, antenna optimization/synthesis, and image edge detection using ACO with heuristic matrices based on local image statistics.
+
+- ACO algorithms are broadly regarded as populated metaheuristics: each solution is represented by an ant moving through the search space; ants mark better solutions and use previous markings to optimize search; transitions between iterations are probabilistic.
+- In combinatorial versions, solutions are constructed iteratively; the constructive aspect is highlighted as distinguishing ACO from relatives such as estimation-of-distribution algorithms and particle swarm optimization.
+- A shortest path/solution can be assembled from strong segments of multiple ants' paths; in TSP, no single ant need travel the shortest route.
+- Stigmergy: information exchange occurs through the environment; some authors treat this as sufficient for an algorithm to be considered an ant colony algorithm.
+- Example ACO edge-detection architecture:
+  - Construction: ant movement on 4- or 8-connected pixels; movement probability \(P_{x,y}\).
+  - Update: pheromone matrix updated twice—trail update \(\tau_{(x,y)}\) and evaporation update \(\tau_{new} \leftarrow (1-\psi)\tau_{old}+\psi\tau_0\), where \(\psi\) is the pheromone decay coefficient.
+  - Decision: after \(K\) ants move a fixed distance \(L\) for \(N\) iterations, edge/non-edge classification uses threshold \(T\) on the pheromone matrix \(\tau\); threshold may be computed by Otsu's method.
+- Some ACO algorithms have been shown equivalent to stochastic gradient descent, the cross-entropy method, and estimation-of-distribution algorithms.
+- Architectural variants/milestones mentioned: ant system (1991/1992), ant-q (1995), ant colony system (1996), ACS hybridized with local search (1997), multi-ant colony system for VRPTW (1999), max-min ant system (2000), first convergence evidence (2000).
+- Related search/optimization architectures: genetic algorithms (population, recombination/mutation, selection), estimation of distribution algorithms (model-guided operators, probabilistic graphical models), simulated annealing (neighbor moves, probabilistic acceptance, temperature), tabu search (multiple mutations, tabu list), artificial immune systems, particle swarm optimization, intelligent water drops, gravitational search, ant colony clustering, stochastic diffusion search, reactive search optimization.
+- Limitations/qualifications: precise definition is difficult; real-variable problems may lack a neighbor structure; ACO is often framed within the broader swarm-intelligence framework.
+
+- Source chunk is a Wikipedia reference list for "Ant colony optimization algorithms"; it contains bibliographic citations rather than full explanatory article text.
+- Cited works relevant to search-algorithm construction include:
+  - Fidanova (2003): ACO for the multidimensional knapsack problem using various heuristic information.
+  - Leguizamon, Michalewicz, and Schutz (2001): an ant system for the maximum independent set problem.
+  - Okobiah, Mohanty, and Kougianos (2012): ordinary Kriging metamodel-assisted ant colony algorithm for fast analog design optimization.
+  - Sarkar, Ghosal, and Mohanty (2013): reversible circuit synthesis using ACO and simulated annealing based Quine-McCluskey method.
+  - Gutjahr (2002): ACO algorithms with guaranteed convergence to the optimal solution.
+  - Stützle (1998): parallelization strategies for ant colony optimization.
+  - Iredi, Merkle, and Middendorf (2001): bi-criterion optimization with multi-colony ant algorithms.
+  - Gambardella and Dorigo (1995): Ant-Q, described as a reinforcement learning approach to the traveling salesman problem.
+  - Dorigo, Maniezzo, and Colorni (1991): positive feedback as a search strategy.
+  - Grassé (1959): stigmergy theory in termite nest reconstruction and coordination.
+  - Bonabeau, Dorigo, and Theraulaz (1999): swarm intelligence.
+  - Dorigo, Di Caro, and Stützle (2000): special issue on ant algorithms.
+  - Gutjahr (2000): graph-based Ant System and its convergence.
+- The same reference list also cites ACO applications across domains such as routing, data mining, scheduling, image retrieval, protein folding, antenna synthesis, edge detection, and network optimization, but the chunk provides only citations, not architectural details or comparative results.
