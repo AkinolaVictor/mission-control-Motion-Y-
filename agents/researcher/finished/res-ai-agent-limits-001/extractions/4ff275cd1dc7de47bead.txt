@@ -1,0 +1,27 @@
+Link: https://doi.org/10.15662/ijrai.2025.0805027
+
+HTTP Status: 200
+
+Title: Multi-Agent Generative AI Workflows for Contact Centers: Design Patterns and Failure Modes
+							| International Journal of Research and Applied Innovations
+
+Content:
+
+**Architectural Patterns: Multi-Agent Workflows**
+*   **Decomposition Pattern:** Transition from single-model assistance to specialized multi-agent coordination. Example workflow:
+    *   **Retrieval Agent:** Gathers account context.
+    *   **Reasoning Agent:** Determines appropriate resolution.
+    *   **Verification Agent:** Checks resolution against policy.
+    *   **Action Agent:** Executes the resolution.
+*   **Benefits:** Increased capability and modularity.
+
+**Failure Modes and Technical Bottlenecks**
+*   **Coordination Failures:** A category of failure unique to multi-agent systems where errors and misunderstandings propagate and compound across agent boundaries.
+*   **Systemic Failure:** Failures can occur even when no single agent behaves incorrectly in isolation.
+*   **Taxonomy of Multi-Agent Failures:**
+    *   **Cascading Failures:** Errors that trigger subsequent failures across the agent chain.
+    *   **Looping Failures:** Agents entering repetitive cycles of interaction without reaching a resolution.
+
+**Mitigation and Containment Strategies**
+*   **Containment Methods:** Implementation of methods to intercept and contain failures before they reach the end customer.
+*   **Design Patterns for Reliability:** Use of specific patterns for message passing and verification to ensure coordination stability.

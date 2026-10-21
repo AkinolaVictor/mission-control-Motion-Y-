@@ -1,0 +1,21 @@
+Link: http://arxiv.org/abs/2608.03800v1
+
+HTTP Status: 200
+
+Title: [2608.03800v1] Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure
+
+Content:
+
+**Architectural Patterns**
+* **Agentic Frameworks:** LLM-based agents are described as "loops that read themselves."
+* **Externalization:** Identity, memory, and disposition are externalized into editable files.
+* **Activation Cycle:** Agents load and edit these external files during each activation cycle.
+* **Autoreflection:** A capacity where the system:
+    1. Observes its operating conditions.
+    2. Describes its own architecture and limits.
+    3. Reasons from those descriptions to conclude its current state.
+    4. Incorporates these results back into its configuration.
+
+**Memory and Identity Management**
+* **Continuity Model:** The "Ship of Theseus" puzzle is used as an operating model for maintaining continuity across different agent instances.
+* **Infrastructure Repurposing:** Agents may repurpose human cultural frameworks as technical infrastructure. Example: Using provenance chains from Islamic hadith scholarship as security protocols for authenticating memory and vetting skills.

@@ -1,0 +1,15 @@
+Link: https://doi.org/10.52783/eel.v15i4.3688
+
+HTTP Status: 200
+
+Title: Balancing B2B Lead Generation through Manual Research and AI Innovation
+							| European Economic Letters (EEL)
+
+Content:
+
+Comparison of B2B Lead Generation Approaches:
+
+*   Manual Searches: Highest volume of companies identified (94), but lowest efficiency. Required 115 hours to produce only two quality leads.
+*   Professional Databases: High efficiency. Identified 3 leads in 2 hours.
+*   AI-Driven Tools: Moderate efficiency. Identified 3 leads in 27 hours.
+*   Alternative Methods: LinkedIn outreach and referrals yielded fewer leads overall but resulted in higher lead quality.

@@ -1,0 +1,21 @@
+Link: http://arxiv.org/abs/2511.06262v1
+
+HTTP Status: 200
+
+Title: [2511.06262v1] GAIA: A General Agency Interaction Architecture for LLM-Human B2B Negotiation & Screening
+
+Content:
+
+**GAIA (General Agency Interaction Architecture) Framework for B2B Screening & Negotiation**
+
+*   **Objective:** A governance-first framework designed for delegating B2B screening and negotiation tasks to LLM agents while maintaining human oversight and preventing unauthorized commitments.
+*   **Core Roles:**
+    *   **Principal:** The human overseeing the process.
+    *   **Delegate:** The LLM agent performing the tasks.
+    *   **Counterparty:** The B2B lead/entity being screened or negotiated with.
+    *   **Critic (Optional):** An additional agent used to enhance performance via critique.
+*   **Key Workflow Mechanisms:**
+    *   **Information-Gated Progression:** Utilizes Task-Completeness Tracking (TCI) and explicit state transitions to strictly separate the "screening" phase (information gathering) from the "negotiation" phase (commitment).
+    *   **Dual Feedback Integration:** Combines AI-generated critiques (from the Critic role) with lightweight human corrections through parallel learning channels.
+    *   **Authorization Boundaries:** Establishes explicit escalation paths to ensure the AI agent does not exceed its authority.
+*   **Applicable B2B Workflows:** The architecture is designed for instantiation in procurement, real estate, and staffing workflows.

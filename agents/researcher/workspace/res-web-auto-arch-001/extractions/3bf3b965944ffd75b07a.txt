@@ -1,0 +1,21 @@
+Link: http://arxiv.org/abs/2508.01858v3
+
+HTTP Status: 200
+
+Title: [2508.01858v3] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents
+
+Content:
+
+**Web-CogReasoner Architecture & Framework**
+
+*   **Core Thesis:** Effective web agents require a decomposition of capabilities into two stages: knowledge content learning and cognitive processes.
+*   **Web-CogKnowledge Framework:** Categorizes necessary agent knowledge into three types:
+    *   **Factual Knowledge:** Used for the "Memorizing" process.
+    *   **Conceptual Knowledge:** Used for the "Understanding" process.
+    *   **Procedural Knowledge:** Grounds the "Exploring" process, defining the "how" of reasoning and action.
+*   **Agentic Workflow:**
+    *   Utilizes a knowledge-driven **Chain-of-Thought (CoT)** reasoning framework.
+    *   Integrates multimodal large-scale models to enable perception and interaction with digital environments.
+*   **Training & Evaluation:**
+    *   **Web-CogDataset:** A structured resource curated from 14 real-world websites used to instill core knowledge and reasoning/action patterns.
+    *   **Web-CogBench:** An evaluation suite designed to assess agent performance across specific knowledge domains and cognitive capabilities, particularly for generalizing to unseen tasks.

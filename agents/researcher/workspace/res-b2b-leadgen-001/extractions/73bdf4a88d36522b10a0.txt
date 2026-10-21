@@ -1,0 +1,11 @@
+Link: https://doi.org/10.69554/hpji8608
+
+HTTP Status: 200
+
+Title: Reframing the awareness funnel and lead nurturing strategies to increase B2B brand awareness and quality lead generation | HSTalks
+
+Content:
+
+- Intent marketing strategies: Effective for capturing leads who are actively seeking a product/service ("easy wins"), but limited to a specific subset of the target market.
+- Awareness funnel expansion: To reach larger audiences who lack the knowledge or brand awareness to have existing intent, organizations should combine intent marketing with paid social strategies to educate the audience and nurture intent.
+- Lead generation workflow: A dual approach involving both intent-based capture and awareness-based education/nurturing to feed the lead generation pipeline.

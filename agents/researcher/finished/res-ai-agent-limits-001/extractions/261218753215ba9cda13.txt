@@ -1,0 +1,413 @@
+Link: https://arxiv.org/html/2601.01743v1
+
+HTTP Status: 200
+
+Title: AI Agent Systems: Architectures, Applications, and Evaluation
+
+Content:
+
+**Architectural Patterns**
+*   **Unified Taxonomy of Components:**
+    *   **Policy/LLM Core:** Acts as the planner/controller mapping context (instructions, retrieved docs, tool outputs, memory) to decisions.
+    *   **Memory:** Persistent state and retrieval-augmented generation (RAG) to ground decisions in external evidence.
+    *   **World Models & Planners:** Range from reactive policies to hierarchical and multi-step planners.
+    *   **Tool Routers & Critics:** Modular routing (e.g., MRKL-style) separates language understanding from specialized tools; critics provide verification.
+*   **Orchestration Patterns:**
+    *   Single-agent vs. multi-agent systems.
+    *   Centralized vs. decentralized coordination.
+    *   Reasoning-and-acting loops: Interleaving deliberation with environment interaction to improve grounding and failure recovery.
+*   **Multimodal Integration:** Decomposing perception into specialized tools (OCR, detection, layout parsing) with an LLM acting as the high-level planner to integrate visual evidence.
+
+**Technical Bottlenecks & Weaknesses**
+*   **Reliability & Grounding:** LLMs are not inherently grounded and prone to hallucinations; they require external evidence and executable checks to avoid plausible but incorrect statements.
+*   **Compounding Errors:** In long-horizon tasks, small errors accumulate, amplifying failure rates.
+*   **Non-determinism:** Sampling and tool variability make reproducibility, debugging, and evaluation difficult.
+*   **Evaluation Challenges:** Complicated by long-horizon credit assignment, environment variability, and hidden costs (e.g., retries, context growth).
+*   **Resource Trade-offs:**
+    *   Latency vs. Accuracy/Reliability.
+    *   Autonomy vs. Controllability.
+    *   Capability vs. Safety.
+
+**Failure Modes & Security Risks**
+*   **Tool-Centric Risks:**
+    *   Prompt injection and untrusted retrieved content can manipulate tool execution.
+    *   Side-effecting tools (actions that change the environment) require stricter constraints than text-only moderation.
+*   **Execution Failures:** Tool failures and the inability to maintain state over long sequences.
+
+**Mitigation & Management Strategies**
+*   **Reflection & Verification:**
+    *   Use of self-reflection, verification loops, and trace-based evaluation.
+    *   Test-time compute scaling: Employing self-consistency, reranking, backtracking, and tree-style search to improve reliability.
+*   **Governance & Guardrails:**
+    *   **Structured Action Spaces:** Using typed tool schemas and structured outputs to ensure actions pass validation and policy checks before execution.
+    *   **Defense-in-Depth:** Enforcing safety across the entire execution graph (retrieval $\rightarrow$ tool output $\rightarrow$ action gating) rather than just the final response.
+    *   **Modular Routing:** Separating language understanding from tools to enable auditing of structured interfaces.
+*   **Memory Management:** Utilizing retrieval and persistent state to ground decisions and maintain context.
+
+**Architectural Patterns**
+*   **Agent Transformer Tuple:** Defined as $\mathcal{A}=(\pi_{\theta},\mathcal{M},\mathcal{T},\mathcal{V},\mathcal{E})$, consisting of a transformer policy ($\pi_{\theta}$), memory subsystem ($\mathcal{M}$), tool set ($\mathcal{T}$), verifiers/critics ($\mathcal{V}$), and environment ($\mathcal{E}$).
+*   **Execution Loop:** Observation $\rightarrow$ Memory Retrieval $\rightarrow$ Action Proposal $\rightarrow$ Validation $\rightarrow$ Execution $\rightarrow$ Memory/Environment Update.
+*   **Specific Patterns:**
+    *   **ReAct:** Interleaves reasoning (deliberation tokens) and acting (tool calls) to improve grounding and create evidence-backed traces.
+    *   **MRKL:** Routes tasks to specialized tools to separate language understanding from deterministic components.
+    *   **Tree-of-Thoughts:** Search-based deliberation that explores a space of action candidates, trading compute for reliability.
+    *   **Reflexion:** Internal feedback channels (critic/reflection) to reduce compounding errors and support iterative repair.
+    *   **RAG:** Integrates retrieval as a first-class tool and memory operation to ground policies in external evidence.
+    *   **Multi-Agent Frameworks:** Multiple policies communicating via messages for specialization and cross-checking.
+    *   **Planner-Executor Separation:** A planner proposes plans with constraints/success criteria; an executor carries them out under stricter permissions.
+
+**Memory Management**
+*   **Subsystems:** Includes short-term working context and long-term state (retrieval, summaries).
+*   **Operational Control:** Use of caching and summarization to manage and control context growth.
+
+**Failure Modes & Technical Bottlenecks**
+*   **Compounding Errors:** Addressed via reflection mechanisms.
+*   **Brittleness:** Open-ended text can be brittle; mitigated by using typed tool schemas and canonical action templates.
+*   **RL Bottlenecks in Tool-Rich Settings:**
+    *   Sparse or delayed rewards.
+    *   Expensive rollouts due to the cost of tool calls and environment steps.
+    *   Safety constraints that limit exploration.
+*   **Coordination Complexity:** A trade-off cost associated with multi-agent frameworks.
+
+**Mitigation & Governance Strategies**
+*   **Risk-Aware Control:** Branching policies based on action risk. Low-risk actions run with minimal deliberation; high-risk actions (writes, payments) trigger:
+    *   Additional verification.
+    *   Multi-step evidence gathering.
+    *   Human-in-the-loop confirmation.
+*   **Verification/Validation:**
+    *   **Verifiers/Critics:** Check proposals before side effects occur; define operational semantics.
+    *   **Tool Schemas:** Enable automatic argument validation before execution.
+    *   **Policy-as-Code Gates:** Used for compliance.
+*   **Safety & Robustness:**
+    *   **Sandboxing:** Used for code and web actions to reduce the "blast radius" of failures.
+    *   **Offline/Safe RL:** Optimizing from logged trajectories and using policy constraints to bound undesirable actions.
+*   **Continuous Improvement:** "Trace-first data flywheel"—logging full trajectories and mining failures to improve prompts, tools, and verifiers.
+
+**Architectural Patterns**
+*   **Hybrid LLM-RGB Stacks:** Combines LLM-centric components (for interpreting ambiguous instructions and proposing plans) with Traditional RGB (Rule/Graph/Behavior-tree) components. RGB components enforce safety, timing, and domain rules (e.g., approval gates, safety envelopes), providing predictability and auditability.
+*   **Modular Design:** Common modules include an LLM policy core, retrieval/memory, planners, tool routers, and critics/verifiers.
+*   **MRKL-style Routing:** Separates language understanding from specialized tools to improve controllability and allow toolchain evolution without retraining the core model.
+*   **ReAct-style Execution:** Couples reasoning with actions to create traceable trajectories.
+*   **Search-based Planning:** Explores alternative action sequences by sampling candidate tool calls or subplans and scoring them via critics or heuristics.
+
+**Technical Bottlenecks & Failure Modes**
+*   **Imitation Learning (IL) Limitations:**
+    *   **Compounding Errors:** Pure behavioral cloning is vulnerable to small deviations from expert distributions, leading to unseen states where the policy lacks guidance.
+    *   **Coverage Gaps:** Inherits biases from demonstration sets; may omit edge cases or fail to represent adversarial inputs (e.g., prompt injection, ambiguous requests).
+*   **In-Context Learning (ICL) Failures:**
+    *   **Context Growth:** Increases cost and latency.
+    *   **Constraint Dilution:** Long prompts can dilute critical constraints.
+    *   **Prompt Injection:** Retrieved text can introduce instructions that override the agent's policy.
+    *   **Sensitivity:** Small changes in formatting or examples can dramatically shift behavior.
+*   **RGB Limitations:** Brittleness; handcrafted rules fail to generalize in open-ended environments.
+*   **General Optimization Trade-offs:** Tension between reliability, latency, and cost.
+
+**Reflection & Memory Management**
+*   **Reflection-based Self-Improvement:** "Verbal reinforcement" loops where agents learn from feedback.
+*   **Verification Loops:** Trading additional computation for lower failure rates by checking actions and revising plans based on tool outputs or inconsistencies.
+*   **Memory Compression:** Using summaries to control context growth and manage costs.
+*   **Test-Time Compute Scaling:** Increasing controlled deliberation steps (reranking, self-consistency, backtracking) rather than increasing model size.
+
+**Mitigation Strategies**
+*   **For IL Failures:** Use verification and repair loops (critics, self-correction, constrained execution) to handle out-of-distribution cases.
+*   **For ICL Failures:** Pair ICL with memory (summaries, persistent state), retrieval grounded in trusted sources, and strict tool interfaces that cannot be bypassed by text.
+*   **For General Reliability:**
+    *   **Adaptive Optimization:** Use "fast-path" execution for routine cases and "slower verified paths" for high-risk/irreversible actions.
+    *   **System-level Guardrails:** Combine IL for baseline competence with post-hoc verification to manage long-horizon compounding errors.
+    *   **Permission Gates:** Bound side effects through explicit budgets (time, tokens, tool calls) and approval gates.
+    *   **DAgger:** Iteratively collect corrective demonstrations on states induced by the learned policy to improve robustness under distribution shift.
+
+**Architectural Patterns**
+*   **Modularization:** Division of labor where the core model delegates tasks to specialized modules (e.g., routing, safety classification, summarization). This shifts the model's learning from memorization to query formulation and candidate proposal.
+*   **Memory Modules:**
+    *   **Episodic Memory:** Tracks "what happened" (events).
+    *   **Semantic Memory:** Stores facts.
+    *   **Procedural Memory:** Stores skills.
+*   **Multi-Agent Frameworks:** Decomposition of tasks into distinct roles (e.g., Planner, Executor, Reviewer) to enable cross-checking and specialization.
+*   **Hierarchical Design (Embodied Agents):** High-level planning via LLM/VLM, with execution handled by classical or RL controllers within safety envelopes.
+*   **Reasoning-and-Acting Loops:** ReAct-style interleaving of reasoning and tool calls to create traceable trajectories.
+*   **Retrieval-Augmented Generation (RAG):** Used for grounding claims in retrieved evidence to reduce hallucinations.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Long-Horizon Failures:** Compounding errors over extended tasks; agents struggle to retrieve correct context, choose appropriate tools/arguments, and recover from partial failures (e.g., timeouts, UI changes).
+*   **Memory Challenges:**
+    *   **Consistency:** Conflicts between stored state and new observations.
+    *   **Security:** Increased attack surface for retrieved prompt injection.
+*   **Multi-Agent Costs:** High coordination costs (latency, token usage) and potential for amplified inconsistency when agents disagree.
+*   **Embodied Agent Bottlenecks:** Partial observability, sensor noise, continuous control issues, and the "sim-to-real" gap where simulation-feasible plans fail in reality.
+*   **Generalist Brittleness:** Vulnerability to distribution shifts and surface pattern overfitting during interface learning.
+
+**Mitigation Strategies**
+*   **Verification and Reflection:**
+    *   **Critics/Verifiers:** Checking claims against tool outputs and trusted sources to mitigate memory inconsistency.
+    *   **Reflection/Search:** Allocating extra deliberation during high-uncertainty states.
+    *   **State Assertions:** Requiring verification before committing physical actions.
+*   **Infrastructure-Level Guardrails:**
+    *   **Sandboxing:** Isolated tool execution to prevent catastrophic failures.
+    *   **Schema Validation:** Constraining open-ended actions into strict interfaces to reduce hallucinated tool arguments.
+    *   **Policy Gates:** Enforcing constraints and permissions beyond the final model response.
+    *   **Audit Logs:** Maintaining traces of prompts and tool calls for observability and error recovery.
+*   **Training/Finetuning Approaches:**
+    *   **Trace-Centric Finetuning:** Training on trajectories that include tool calls, intermediate checks, and corrected failures to teach recovery.
+    *   **Preference Optimization (RLHF/DPO):** Shaping refusal behavior and improving adherence to tool schemas.
+*   **Role Management:** Using explicit handoff artifacts (plans, checklists, traces) to resolve multi-agent disagreements via evidence rather than debate.
+
+**Architectural Patterns**
+*   **Planner-Controller Stacks:** Hierarchical structures (e.g., SayCan, PaLM-E, RT-2) where a language model proposes skill sequences and a controller executes them under safety constraints.
+*   **ReAct-style Loops:** Interleaving reasoning with action, tool calls, and state checks to bind decisions to executed outcomes.
+*   **MRKL-style Design:** Routing subproblems to symbolic or deterministic components to ensure correctness in logic-heavy tasks.
+*   **Memory-Centric Designs:** Use of persistent memory (episodic summaries, persona state) and retrieval grounding to maintain long-horizon coherence.
+*   **Iterative Tool-Driven Loops:** A pattern of generating candidates, validating constraints via structured tool calls (world queries, asset validators), and revising via critics.
+*   **Tree-of-Thoughts:** Search-based deliberation over candidate plans for complex problem solving.
+
+**Technical Bottlenecks & Failure Modes**
+*   **Execution & Grounding:**
+    *   Safe skill execution under uncertainty and stochastic outcomes.
+    *   Compounding failures caused by state estimation errors.
+    *   Tool interface failures (e.g., motion planners, grasp checkers) returning partial or incorrect information.
+    *   Grounding errors in AR/VR causing unsafe or confusing user experiences.
+*   **Cognitive & Logical Limitations:**
+    *   **Hallucinations:** Hallucinating user intent or generating "confidently wrong" answers due to missing retrieval documents.
+    *   **Coherence:** Difficulty maintaining consistent world states, personas, and narratives over long horizons (drift and repetition).
+    *   **Reasoning:** Free-form neural reasoning is not a formal proof; mismatched assumptions can silently invalidate conclusions.
+*   **Environmental & Data Issues:**
+    *   **Brittleness:** Partial observability and environment drift (e.g., website layout changes).
+    *   **Simulation Gaps:** Reward hacking, overfitting to benchmark artifacts, and difficulty in sim-to-real transfer.
+    *   **Latency:** Tight latency budgets in real-time multimodal streams (AR/VR).
+*   **Security & Safety:**
+    *   Prompt injection embedded in retrieved content.
+    *   Adversarial prompts triggering out-of-character or unsafe behavior in emotional reasoning agents.
+
+**Memory Management**
+*   **Persistence:** Use of episodic summaries and persona state to avoid drift in generative agents.
+*   **Retrieval Grounding:** Implementing retrieval pipelines with metadata (source, timestamp, trust level) to reduce hallucinations and provide auditable citations.
+
+**Reflection & Mitigation Strategies**
+*   **Reflection & Verification:**
+    *   Verification loops that re-plan after deviations.
+    *   Using verifiers/critics to check plans against constraints before execution.
+    *   Rerunning checks under alternative assumptions to reduce brittle reasoning.
+*   **Human-in-the-Loop (HITL):**
+    *   **Shared Autonomy:** Using humans for clarification, instruction following, and approving high-impact actions.
+    *   **Uncertainty Handling:** Agents asking clarifying questions and surfacing uncertainty rather than guessing intent.
+    *   **Trace-Centric Refinement:** Using logs of human corrections and clarifications for continual improvement.
+*   **Safety Guardrails:**
+    *   Permission gating and conservative alignment policies.
+    *   "Ask/Abstain" policies when uncertainty is high.
+    *   Separation of proposed reasoning steps from validated system outcomes.
+
+### AI Agent Architectural Patterns
+*   **Neuro-Symbolic Agents:** Combine neural models (for language understanding/flexibility) with symbolic structures (rules, graphs, typed schemas) to improve controllability, verifiability, and auditability.
+*   **Modular Routing (MRKL):** LLMs act as orchestrators that select among specialized tools, allowing toolchains to evolve without retraining the core agent.
+*   **Orchestrator-Constrained Systems:** Using a frontier-scale LLM/VLM as an orchestrator within a system constrained by:
+    *   **RAG (Retrieval-Augmented Generation):** For grounding.
+    *   **Typed Tool Schemas/Allowlists:** To ensure safe execution.
+    *   **ReAct/Verification Loops:** Binding decisions to tool outputs to recover from failures.
+*   **Coding Agent Pattern:** Context retrieval $\rightarrow$ executable plan $\rightarrow$ small diff implementation $\rightarrow$ test/linter execution $\rightarrow$ iterative repair.
+*   **Enterprise Workflow Stack:** Employs permission gates, policy-as-code, and immutable audit logs to ensure compliance and segregation of duties.
+
+### Technical Bottlenecks & Failure Modes
+*   **General Technical Bottlenecks:**
+    *   **Integration Boundary:** Difficulty aligning probabilistic neural models with strict symbolic semantics, leading to invalid tool calls.
+    *   **Schema Drift:** System fragility when symbolic tools or interfaces evolve.
+    *   **Scaling Limits:** Pure backbone scaling does not eliminate tool-use brittleness, hallucinated actions, or unpredictable behavior over long horizons.
+    *   **Multimodal Errors:** OCR/layout failures, visual hallucinations, and synchronization issues between audio, frames, and screen state.
+    *   **Resource Constraints:** Rapid growth of cost and latency during unconstrained deliberation and tool calls.
+*   **Domain-Specific Failure Modes:**
+    *   **Software Engineering:** Handling "flaky" environments, dependency drift, and subtle/delayed failures (e.g., security regressions) that only surface during integration.
+    *   **Enterprise Ops:** Reconciling inconsistent records across distributed systems and handling partial failures (e.g., one API call succeeds while another fails).
+    *   **GUI/Browser:** "Action drift" caused by A/B tests, pop-ups, and dynamic layouts; compounding errors where a single misclick leads to irrecoverable states.
+    *   **Real-time Multimodal:** Perception errors cascading into unsafe advice; difficulty managing context growth without reprocessing entire streams.
+
+### Memory Management & Reflection
+*   **Structured Memory:** Grounding interactions in explicit relationships, commitments, and boundaries.
+*   **Multimodal Memory:** Decomposing perception into tools (OCR, detection) and using the LLM to maintain memory over intermediate artifacts.
+*   **Reflection/Review Loops:**
+    *   **Verifier Gates:** Checking planned actions against constraints/policies before execution.
+    *   **Iterative Repair:** Using diagnostics from tool failures (e.g., compiler errors) to ground subsequent edits rather than relying on intuition.
+    *   **State Assertions:** In GUI agents, using ReAct-style loops to verify if the expected element appeared or the URL changed correctly.
+
+### Mitigation & Human-in-the-Loop Strategies
+*   **Safety Constraints:** Using aligned instruction-following backbones with Constitutional-style safety policies.
+*   **Human-in-the-Loop:** Mandatory human confirmation for high-impact changes in enterprise workflows.
+*   **Governance Mechanisms:**
+    *   **Policy-as-Code:** Explicit gates defining who can perform specific actions under which conditions.
+    *   **Tool Discipline:** Using Toolformer-style schemas to reduce invalid invocations.
+    *   **Isolation:** Placing sensitive operations behind narrow, restricted interfaces.
+*   **Recovery Strategies:** Implementing backtracking and alternative affordances when initial actions fail.
+
+**Architectural Patterns**
+*   **Hierarchical Orchestration:** Separation of high-level cognition (instruction-tuned LLMs for dialogue, intent, and goal reasoning) from low-level control (smaller policies/controllers for reactive decisions and real-time action selection).
+*   **Planner-Controller Design:** LLMs propose goals and plans while a separate engine enforces hard constraints (e.g., physics, cooldowns) and executes actions.
+*   **ReAct-style Orchestration:** Interleaving reasoning and acting loops that bind claims to executed tool calls, making intermediate steps checkable and inspectable.
+*   **Generator-Critic/Verifier Pattern:** Using a generator to create candidates and a critic/verifier to check consistency, enforce boundaries, and revise plans when the environment disagrees.
+*   **Modular Tool-Routing (MRKL-style):** Routing requests through constrained tools to evolve detectors and privacy policies without rewriting the agent core.
+*   **Hybrid Robotics Stack:** Pairing VLMs for perception/grounding with LLMs for task decomposition, while relying on classical or RL controllers for continuous control to maintain timing and safety guarantees.
+
+**Technical Bottlenecks & Failure Modes**
+*   **Temporal & Resource Constraints:** Hard real-time budgets in gaming and robotics; LLM inference latency can cause spikes or oscillatory behavior.
+*   **Long-Horizon Instability:** Context growth over long sessions leads to "persona drift," repetition, and drift in behavior.
+*   **Stochasticity & Observability:** Partial observability and stochastic decoding can amplify instability, leading to contradictory behavior.
+*   **Grounding & Hallucinations:** Failures in state grounding (e.g., NPCs forgetting prior interactions or claiming impossible items) break immersion and logic.
+*   **Sim-to-Real Gap:** Plans feasible in simulation may be invalidated in physical environments.
+*   **Adversarial Vulnerabilities:** Prompt injections, jailbreaks, and adversarial player inputs attempting to elicit unsafe content or meta-knowledge.
+*   **Data Noise:** Telemetry noise, schema drift, and inconsistent metric definitions in analytics agents.
+
+**Memory Management**
+*   **Explicit Memory:** Use of episodic summaries, relationship states, preferences, and commitments to maintain coherence beyond raw context windows.
+*   **Embedding-based Retrieval:** Grounding responses in external lore, quest states, or structured metadata (schemas, metric definitions) to reduce hallucinations.
+*   **Auditable State:** Structuring memory updates to be reversible and auditable.
+
+**Reflection & Mitigation Strategies**
+*   **Reflection Loops:** Using critic mechanisms to check consistency and revise plans when environment feedback contradicts the agent's internal state.
+*   **Conservative Policies:** Implementing "abstain," "defer," or "ask clarifying questions" policies when uncertainty is high to reduce harm.
+*   **Verification Loops:** Rerunning analyses with alternative filters, counterfactual comparisons, and sanity checks (e.g., back-of-the-envelope bounds).
+*   **Structured Pipelines:** Using pipelines that produce inspectable intermediate outputs (recognized text, detected objects) that can be verified or corrected.
+*   **Human-in-the-Loop/Auditability:** Ensuring high-impact state changes are gateable via structured tool interfaces and maintaining auditable logs of sensor evidence and tool calls.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Compounding Errors:** In long trajectories, a single mistaken assumption can negatively shape all subsequent retrieval, planning, and writing.
+*   **Hallucinations & Faithfulness:** 
+    *   Persistence of overconfident answers, especially when retrieval returns noisy or adversarial text.
+    *   "Filling gaps": Models may use plausible but incorrect text when tool outputs are incomplete or misleading.
+    *   Visual hallucinations and brittle OCR/layout extraction in multimodal agents, where small errors can flip the meaning of documents or UI screenshots.
+*   **Tool-Related Failures:**
+    *   Brittle tool selection (wrong tool, incorrect arguments, or misunderstood tool semantics).
+    *   Cascading failures: Tool brittleness (e.g., ASR errors, indexing drift) leads to incorrect summaries.
+    *   Nondeterminism in retrieval and indexing undermines reproducibility.
+*   **Multimodal/Temporal Bottlenecks:**
+    *   Temporal reasoning errors (ordering, causality, cross-scene references) in video agents.
+    *   Compute costs scale rapidly with video length and resolution.
+    *   Difficulty in balancing fine-grained evidence (e.g., a brief on-screen number) with high-level narrative.
+*   **Security Vulnerabilities:** Prompt injection can be embedded in untrusted text (notes, messages) or images (hidden instructions in screenshots) to manipulate tool usage or override policies.
+
+**Architectural Patterns**
+*   **Reasoning-and-Acting:** 
+    *   **ReAct-style:** Interleaving perception tools with reasoning.
+    *   **Modular Tool Routing (MRKL-style):** Routing tasks to specialized tools.
+*   **Decomposition & Multi-Agent Patterns:**
+    *   Division of labor across sub-agents (e.g., segmenter, retriever, summarizer, verifier).
+    *   Orchestration graphs using a "planner + executor + reviewer" structure.
+*   **Video-Language Pattern:** "Segment–index–retrieve" (chunking videos, computing multimodal embeddings, retrieving relevant segments, then planning actions).
+*   **Hybrid Model Stacks:** Using frontier-scale models for breadth, augmented by smaller models for routing, moderation, summarization, caching, and retrieval to manage cost/latency.
+*   **Planning Variants:** Tree search over candidate actions and search-based planning to explore alternative sequences when single rollouts are unreliable.
+
+**Memory and Reflection**
+*   **Memory Management:** Use of memory to store intermediate artifacts (screenshots, crops, extracted tables) for inspection and verification.
+*   **Reflection & Correction:** 
+    *   Critic/self-consistency loops to catch missed regions or unstable interpretations.
+    *   Reflection/self-correction mechanisms to improve robustness against compounding errors.
+
+**Human-in-the-Loop & Mitigation Strategies**
+*   **Constrained Workflows:** Embedding agents in tools where they propose actions for human confirmation with audit logs (e.g., EHR-adjacent tools).
+*   **Safety Layers & Isolation:**
+    *   Tool calling bounded by read-only access, templated actions, and least-privilege scopes.
+    *   Sandboxed tool execution and strict tool allowlists.
+    *   Provenance tracking and safety layers to mitigate prompt injection.
+*   **Alignment for Conservative Behavior:** Instruction tuning to enforce deferral when uncertain, citing sources, and requesting confirmation.
+*   **Verification Steps:** Implementing checks for completeness and guideline consistency; using timestamp citation checks in video agents.
+*   **Adaptive Policies:** Implementing "fast path" vs. "slow verified path" to balance reliability with budget/latency constraints.
+
+**Weaknesses and Limitations**
+*   **Instruction Following:** Tension between over-refusal (harming usability) and unsafe compliance (increasing security/safety exposure).
+*   **Robustness Issues:** Vulnerability to specification ambiguity and adversarial prompts, leading to misinterpreted constraints or tool misuse.
+*   **Contextual Vulnerabilities:** Agents can be socially engineered through their own context if retrieved content or tool outputs contain untrusted instructions or unsafe data.
+*   **Autonomy Risks:** Increased "blast radius" of mistakes; agents may perform actions that are locally reasonable but globally undesirable (e.g., redundant tickets, spammy notifications).
+*   **Operational Bottlenecks:** High latency (including tool runtime) and significant token costs per successful completion.
+*   **Reliability Gaps:** Performance degradation under perturbations (noisy instructions, missing info, flaky tools) and variance across random seeds/prompt variants.
+
+**Failure Modes**
+*   **Tool-Use Failures:** Incorrect tool selection, schema/parameter invalidity (argument errors), API timeouts, and partial execution failures.
+*   **Trajectory Failures:** 
+    *   **Looping:** Repeating the same step or oscillating between states.
+    *   **Invalid Actions:** Executing illegal UI actions or invalid tool calls.
+    *   **Plan Incoherence:** Failure to adhere to a sensible plan or follow constraints.
+*   **Safety Failures:** Policy violations, privacy/data leakage, and disallowed content generation during execution.
+
+**Architectural Patterns & Mitigation Strategies**
+*   **Control Mechanisms:**
+    *   **Structured Interfaces:** Using constrained tool schemas, structured outputs, and explicit planning to replace fragile text prompts.
+    *   **Permission Gates:** Implementing allowlists, sandboxing, and permission gates for sensitive actions to bound side effects.
+    *   **Verification Loops:** Checking planned actions and outputs against policies *before* execution.
+*   **Recovery & Refinement:**
+    *   **Reflection:** Using reflection and self-consistency mechanisms to recover from partial failures without increasing privileges.
+    *   **Tool-Use Learning:** Reducing reliance on brittle prompt engineering.
+*   **Observability:** Treating tool-call logs and intermediate states as first-class artifacts for auditing, debugging, and incident response.
+*   **Human-in-the-Loop:** Escalating edge cases to humans with clear traces and justifications; measuring the "human intervention rate" (manual approval, correction, rollback).
+
+**Evaluation Metrics for Agent Performance**
+*   **End-to-End:** Task success rate, time-to-completion, and trajectory length.
+*   **Efficiency:** Median/tail latency (p95), token usage, and cost per successful completion.
+*   **Tool Competence:** Tool selection accuracy, argument correctness, tool execution success rate, and recovery rate after failure.
+*   **Orchestration Quality:** Action validity rate, loop rate, and plan adherence.
+*   **Robustness:** Success under perturbations and stability across random seeds.
+
+**Technical Bottlenecks & Weaknesses**
+*   **Verifiable Action:** Difficulty ensuring tool calls are correct, policy-compliant, and safe before execution. Current reliance on schemas, allowlists, and post-hoc critics is insufficient for formal verification.
+*   **Compositional Safety:** Local safety of individual steps does not guarantee global plan safety; cumulative risk is high when tools are nondeterministic or have hidden states.
+*   **Long-Horizon Planning:** Prone to failure due to compounding errors and partial observability.
+*   **Compute Constraints:** Reliability must be balanced against tight edge budgets and real-time latency targets.
+*   **Evaluation Sensitivity:** Results are highly volatile based on prompts, sampling, tool versions, and environment drift.
+
+**Failure Modes**
+*   **Memory Corruption:** Naive memory writing allows prompt-injected artifacts from untrusted tool outputs to persist across sessions, altering future behavior.
+*   **Planning Failures:** Reward hacking by heuristics and brittle scoring during search/deliberation.
+*   **Multi-Agent Failures:** Correlated failures in multi-agent debate when agents share the same "blind spots" or use poorly calibrated aggregation mechanisms.
+*   **Trajectory-Level Harms:** Unsafe tool calls, data exfiltration, or policy violations occurring during execution, even if the final output appears safe.
+
+**Architectural Patterns & Mitigation Strategies**
+*   **Verification & Tooling:**
+    *   **Tool Contracts:** Defining preconditions, postconditions, and required evidence (logs/states) for audit and rollback.
+    *   **Layered Defenses:** Utilizing sandboxed execution for code, permission gates for irreversible actions, and trace-first monitoring.
+    *   **Constrained Action Spaces:** Moving from free-form text to structured tool interfaces and typed arguments.
+*   **Memory Management:**
+    *   **Categorization:** Distinguishing between episodic, semantic, and procedural memory.
+    *   **Security Policies:** Implementing memory write policies, provenance tracking (source of facts), and memory verification.
+    *   **Budgeted Memory:** Managing context length, retrieval fan-out, and summarization frequency to optimize cost/latency.
+*   **Planning & Compute:**
+    *   **Test-Time Compute Allocation:** Dynamically deciding when to use extra tokens for reflection, self-consistency, or search versus immediate action.
+    *   **Tool-Grounded Checks:** Integrating verifiable feedback (compilers, unit tests) into the search/scoring process.
+    *   **Budgeted Autonomy:** Adapting planning depth and verification intensity based on risk and uncertainty.
+*   **Multi-Agent Coordination:**
+    *   **Role Specialization:** Using planner/executor/reviewer roles with bounded capability and explicit tool permission budgets to limit the "blast radius."
+    *   **Evidence-Based Resolution:** Requiring citations to tool outputs and trace-anchored critiques to resolve disagreements.
+
+**Human-in-the-Loop & Governance**
+*   **Observability:** Requirement for audit logs, complete trace logging (arguments and outputs), and incident response paths for multi-agent graphs.
+*   **Escalation:** Developing formal alignment for delegation, including human-in-the-loop escalation.
+*   **Metrics for Intervention:** Tracking `InterventionRate` and `InterventionsPerStep` to quantify human reliance.
+
+**Architectural Patterns**
+*   **General Definition:** AI agents are defined as systems embedding foundation models in a control loop consisting of memory, tools, and verifiers.
+*   **Modular Components:** Common system-level architectures include:
+    *   Policy core
+    *   Memory
+    *   Tool routers
+    *   Planners
+    *   Critics/Verifiers
+*   **Infrastructure Layers:** Use of structured tool schemas, sandboxing, and audit logs to constrain side effects and improve debuggability.
+*   **Learning/Optimization Layers:**
+    *   **Mechanism Level:** RL/IL, in-context learning, and test-time compute (reflection, self-consistency, and search) to improve long-horizon behavior.
+    *   **Model Level:** Instruction/policy tuning and preference optimization to shape tool-use discipline and safety.
+    *   **Trace-Centric Finetuning:** Used to teach agents how to operate rather than just answer.
+
+**Weaknesses, Limitations, and Technical Bottlenecks**
+*   **Dependability at Scale:** Central challenges include achieving verifiable and policy-compliant tool execution and secure, consistent long-term memory.
+*   **Standardization Gaps:** Lack of standardized agent interfaces (tool schemas, trace formats) leads to progress being hindered by "prompt idiosyncrasies" and unreported engineering details.
+*   **Resource Management:** The need for principled allocation of test-time compute under explicit budgets.
+*   **Environment Complexity:** Agents must operate within non-deterministic environments and toolchains, complicating reliability.
+
+**Failure Modes and Mitigation Strategies**
+*   **Failure Identification:** There is a stated need for clearer taxonomies to identify failure modes and move beyond ad-hoc prompt engineering toward scientific design loops.
+*   **Mitigation via System Design:**
+    *   **Observability:** Implementing "trace-first" operation and observability to support auditing, reproducibility, and governance.
+    *   **Verification:** Utilizing stronger verifiers and system-level changes (e.g., better caching) to improve reliability.
+    *   **Full-Stack Approach:** Reliability and governance are viewed as properties of the entire stack (model + orchestration + tools) rather than the base model alone.
+
+**Evaluation Metrics for Robustness**
+*   Beyond end-to-end success, deployable systems require measurement of:
+    *   Tool-use correctness
+    *   Trajectory quality
+    *   Robustness under perturbations
+    *   Efficiency and cost
+    *   Safety and compliance

@@ -1,0 +1,27 @@
+Link: https://doi.org/10.48550/arxiv.2512.23343
+
+HTTP Status: 200
+
+Title: [2512.23343] AI Meets Brain: Memory Systems from Cognitive Neuroscience to Autonomous Agents
+
+Content:
+
+**Research Paper: AI Meets Brain: Memory Systems from Cognitive Neuroscience to Autonomous Agents (arXiv:2512.23343)**
+
+**Core Focus**
+*   Synthesis of cognitive neuroscience and LLM-driven autonomous agents to improve memory workflows.
+
+**Technical Bottlenecks & Limitations**
+*   **Interdisciplinary Gap:** Existing AI agent research struggles to fully assimilate the essence of human memory mechanisms due to barriers between cognitive neuroscience and computer science.
+
+**Architectural Patterns & Memory Management**
+*   **Comparative Analysis:** The research provides a comparative analysis of memory taxonomy, storage mechanisms, and the complete management lifecycle between biological systems and artificial agents.
+*   **Memory Workflow:** Focuses on designing efficient memory workflows for agents to navigate complex tasks.
+
+**Evaluation & Security**
+*   **Benchmarks:** The paper reviews mainstream benchmarks specifically used for evaluating agent memory.
+*   **Security:** Explores memory security through the dual lenses of attack and defense.
+
+**Future Research Directions**
+*   Multimodal memory systems.
+*   Skill acquisition within autonomous agents.

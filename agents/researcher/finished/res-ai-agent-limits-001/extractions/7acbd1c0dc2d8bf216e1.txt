@@ -1,0 +1,24 @@
+Link: http://arxiv.org/abs/2510.27051v1
+
+HTTP Status: 200
+
+Title: [2510.27051v1] Adaptive Data Flywheel: Applying MAPE Control Loops to AI Agent Improvement
+
+Content:
+
+**Architectural Patterns**
+* **MAPE-K Control Loop:** Application of Monitor-Analyze-Plan-Execute (MAPE) loops to create a "data flywheel" for continuous AI agent improvement.
+* **Mixture-of-Experts (MoE):** Utilized in the NVInfo AI Knowledge Assistant to handle enterprise-scale queries.
+* **RAG Pipelines:** The system specifically targets the systematic addressing of failures within Retrieval-Augmented Generation pipelines.
+
+**Failure Modes & Technical Bottlenecks**
+* **Routing Errors:** Identified as a major failure mode (5.25% of analyzed negative samples), where the agent fails to direct the query to the correct expert or module.
+* **Query Rephrasal Errors:** Identified as a significant failure mode (3.2% of analyzed negative samples), where the agent fails to correctly rewrite the user query for better retrieval.
+* **Performance Trade-offs:** Large models (e.g., Llama 3.1 70B) can introduce latency bottlenecks in routing tasks.
+
+**Mitigation Strategies**
+* **Human-in-the-Loop (HITL):** Structuring user feedback within a data flywheel to transform agents into self-improving systems.
+* **Targeted Fine-Tuning:** 
+    * Replacing large general-purpose models with smaller, fine-tuned variants (e.g., replacing a 70B model with a fine-tuned 8B variant for routing) to increase accuracy (96%) and reduce latency (70% improvement).
+    * Fine-tuning query rephrasal modules to gain accuracy (3.7%) and reduce latency (40%).
+* **Operational Strategies:** Implementing staged rollouts in production and navigating privacy constraints to ensure robustness despite limited user feedback.

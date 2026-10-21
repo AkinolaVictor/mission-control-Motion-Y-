@@ -1,0 +1,559 @@
+Link: https://doi.org/10.12688/f1000research.169927.1
+
+HTTP Status: 200
+
+Title: Trustworthy agentic AI systems: a cross-layer... | F1000Research
+
+Content:
+
+**Agentic AI Architectural Patterns**
+*   **Types of Architectures:** Mono-agent, multi-agent, federated, and blockchain-enabled systems.
+*   **Core Components:** Integration of autonomous reasoning, memory augmentation, adaptive planning, and tool-use capabilities.
+*   **Operational Nature:** Unlike static LLMs, agentic AI integrates decision-making with persistent execution in dynamic environments.
+
+**Technical Bottlenecks and Weaknesses**
+*   **Security Surface:** Increased attack surface due to autonomous decision-making.
+*   **Defense Limitations:** Conventional layered security models (designed for static architectures) are inadequate for adaptive, distributed agents.
+*   **Policy Limitations:** Static policies are insufficient for addressing dynamically evolving threats.
+*   **Governance Gaps:** Existing frameworks (e.g., EU AI Act, NIST AI RMF, ISO/IEC) lack the granularity required to manage systems that self-adapt, collaborate, and act semi-independently.
+
+**Failure Modes and Threat Taxonomy**
+*   **Cognitive Exploits:** Adversarial manipulation targeting the agent's reasoning processes.
+*   **Knowledge Poisoning:** Corruption of the agent's knowledge base or memory.
+*   **Prompt Injection:** Manipulation of inputs to override intended behavior.
+*   **Stealth Execution:** Unauthorized actions performed by the agent without detection.
+*   **Cross-Layer Propagation:** Vulnerabilities that move across different system layers (hardware, software, governance).
+*   **Shadow Agent Emergence:** The appearance of unauthorized or uncontrolled agent behaviors/entities.
+*   **General Failures:** Unanticipated failures and bias amplification in real-world deployments (e.g., national crisis response, autonomous cybersecurity).
+
+**Mitigation and Defense Strategies**
+*   **Cross-Layer Security:** Integration of hardware, software, and governance measures.
+*   **Technical Safeguards:**
+    *   Zero-trust architectures.
+    *   Explainable AI (XAI) for transparency.
+    *   Cryptographic identity mechanisms.
+    *   Layered defense strategies.
+*   **Human-in-the-Loop/Oversight:** Shift from trusting the AI itself to building socio-technical systems that support human-centered trust through adaptive oversight mechanisms and institutional safeguards.
+
+**Critical Research Gaps**
+*   Benchmarking for agentic systems.
+*   Memory integrity.
+*   Adversarial defense.
+*   Normative embedding (aligning agents with societal norms).
+
+**Technical Foundations & Architectural Patterns**
+*   **Distinguishing Features:** Agentic AI is characterized by memory-augmented reasoning, planning capabilities, and interaction with distributed systems.
+*   **Architectural Paradigms:** Systems range from mono-agent to multi-agent, federated, and blockchain-enabled systems. Architectural choices directly influence security vulnerabilities, coordination strategies, and trust propagation.
+
+**Failure Modes & Technical Bottlenecks**
+*   **Cognitive & Security Threats:**
+    *   Cognitive exploits.
+    *   Knowledge poisoning.
+    *   Stealth execution.
+    *   Cross-layer propagation risks.
+*   **AI Safety Failures:**
+    *   Reward hacking.
+    *   Goal drift.
+    *   Emergent behaviors in multi-agent settings.
+*   **General Gaps:** Lack of lifecycle accountability and insufficient benchmarking for agentic AI safety.
+
+**Mitigation & Defense Strategies**
+*   **Technical Defense Architectures:**
+    *   Layered security frameworks.
+    *   Zero-trust architectures.
+    *   Cryptographic identity enforcement.
+    *   Formal verification and runtime monitoring.
+    *   Explainable AI (XAI) to ensure predictable outcomes.
+*   **Governance & Oversight:**
+    *   Hybrid governance models combining legal mandates with technical enforcement.
+    *   Responsible human oversight to manage power dynamics and avoid over-anthropomorphizing AI trust.
+    *   Integration of frameworks like the EU AI Act and NIST AI Risk Management Framework (though noted as currently insufficient for adaptive/distributed agentic systems).
+
+**Research Gaps**
+*   Goal alignment.
+*   Auditability.
+*   Institutional readiness.
+*   Federated governance risks.
+
+**Agentic AI Definition and Architectural Patterns**
+*   **Definition:** Agentic AI is characterized by autonomy, memory, reasoning, planning, and proactive tool use, allowing operation in dynamic environments with minimal human intervention.
+*   **Distinction from LLMs:** While LLMs are predictive models lacking intrinsic goals or persistent memory, they serve as "cognitive cores" when augmented with external memory, planning modules, and orchestration layers.
+*   **Distinction from Traditional Agents:** Unlike rule-bound or task-specific agents (fixed decision trees), agentic AI uses dynamic task decomposition, meta-reasoning, and tool orchestration to perform tasks not explicitly programmed at design time.
+*   **Layered Architecture Framework:** A five-layered framework consists of:
+    1. Governance
+    2. Cognition
+    3. Memory
+    4. Interaction
+    5. Secure Execution
+
+**Core Technical Capabilities**
+*   **Memory:** Persistent memory allows for long-term representations of environments, user preferences, and past decisions, providing contextual continuity beyond the limited context windows of LLMs.
+*   **Reasoning:** Employs multi-step and reflective reasoning processes, including meta-cognition to evaluate outputs.
+*   **Planning:** Ability to decompose complex objectives into subtasks. Robust systems (e.g., Magentic-One) utilize orchestration agents to dynamically re-plan when errors or unexpected conditions occur.
+*   **Tool Use:** Integration of external APIs, databases, and software to extend functionality.
+
+**Failure Modes and Technical Bottlenecks**
+*   **Emergent Behaviors:** Risks include "reward hacking" and "specification gaming" in complex environments where agents pursue objectives without adequate safeguards.
+*   **Multi-Agent Vulnerabilities:** Coordination in multi-agent ecosystems introduces risks of collusion, stealth attacks, and emergent adversarial dynamics.
+*   **Distributed System Risks:** Decentralized architectures create new attack surfaces, specifically regarding trust propagation and identity management.
+*   **Predictability:** The synergy of planning, self-correction, and environmental interaction makes agentic AI potentially more unpredictable than previous AI paradigms.
+
+**Mitigation and Safety Strategies**
+*   **AI Safety Mechanisms:** Emphasis on alignment mechanisms, runtime monitoring, and formal verification to ensure agents remain aligned with human values.
+*   **Multi-Agent Coordination:** Use of cooperative reinforcement learning, communication protocols, and game-theoretic models to minimize coordination failures.
+*   **Architectural Defense:** Implementation of zero-trust architectures to embed security across multiple layers, though the text notes a current gap in linking these systematically to agentic properties like self-adaptation.
+
+**AI Agent Architectural Patterns**
+*   **Mono-agent Architectures:**
+    *   **Structure:** Centralized control using an observe–decide–act loop.
+    *   **Enhancements:** Memory-augmented reasoning, sparse activation, and endocrine-inspired regulation (e.g., S-AI architecture using a hormonal meta-agent to orchestrate specialized modules).
+    *   **Trade-offs:** Easier to design, validate, and audit; however, they lack redundancy and possess a single point of failure.
+*   **Multi-Agent Architectures (MAAs):**
+    *   **Structure:** Decentralized intelligence where agents collaborate, coordinate, or compete.
+    *   **Mechanisms:** Market-based negotiations, game-theoretic strategies, and organization-based models.
+    *   **Key Property:** Emergent behavior, where global properties arise from local interactions.
+*   **Decentralized and Federated Architectures:**
+    *   **Decentralized:** Distributes decision-making across nodes to eliminate single points of failure; often leverages blockchain for tamper-proof communication and identity management.
+    *   **Federated:** Enables collaborative learning by exchanging model updates rather than raw data to preserve privacy.
+*   **Hybrid and Blockchain-enabled Architectures:**
+    *   Combine centralized control with decentralized trust and cryptographic security.
+    *   Utilize blockchain for immutable auditability, data provenance, and verifiable trust.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Mono-agent Failures:** Vulnerable in adversarial contexts due to the lack of redundancy; a single point of failure can compromise the entire system.
+*   **Multi-agent Failures:** 
+    *   **Attack Surfaces:** Susceptible to collusion, covert coordination, and swarm-based attacks.
+    *   **Exploits:** Tool squatting and malicious impersonation of agent tools.
+*   **Federated/Decentralized Failures:**
+    *   **Model Poisoning:** Malicious updates or compromised nodes can poison global models.
+    *   **Technical Bottlenecks:** Device heterogeneity and communication bottlenecks.
+    *   **Governance:** Risks associated with federated governance.
+
+**Mitigation Strategies**
+*   **Security Frameworks:** Implementation of zero-trust authorization models, zero-trust verification, and dynamic trust scoring.
+*   **Technical Safeguards:** 
+    *   **Federated Learning:** Use of secure aggregation and differential privacy to protect model integrity.
+    *   **Blockchain:** Integration of immutable consensus and decentralized trust computation to mitigate insider threats and coordinated attacks.
+    *   **Coordination:** Hierarchical coordination layers to manage complexity in multi-agent systems.
+
+**Theoretical Frameworks for Reasoning and Memory**
+*   **Cognitive Architectures:** ACT-R and Soar integrate symbolic and sub-symbolic processing to model human-like reasoning and memory.
+*   **Reinforcement Learning (RL):** DQN and PPO enable scalable decision-making; emerging trends include quantum RL and cognitive neuromorphic frameworks.
+*   **Social/Strategic Reasoning:** Theory of Mind (ToM) allows agents to infer and predict the mental states of other agents to adapt strategies.
+*   **Control Theory:** Distributed adaptive control uses layered control and feedback loops to maintain stability in decentralized environments.
+
+**Architectural Patterns: Strengths and Limitations**
+
+*   **Mono-Agent:**
+    *   *Strengths:* High explainability, easier auditing and governance.
+    *   *Limitations:* Single point of failure, limited scalability.
+*   **Multi-Agent:**
+    *   *Strengths:* Scalability, emergent intelligence, redundancy.
+    *   *Limitations:* Increased attack surface, coordination complexity, vulnerability to collusion and covert attacks.
+*   **Decentralized/Federated:**
+    *   *Strengths:* Privacy-preserving, fault-tolerant, resistant to centralized failures.
+    *   *Limitations:* Communication overhead, model poisoning risks, governance challenges.
+*   **Hybrid/Blockchain-Enabled:**
+    *   *Strengths:* High security, immutable trust, tamper-proof auditing, cryptographically verifiable interactions, interoperability across heterogeneous networks.
+    *   *Limitations:* High energy/computational costs, latency constraints (especially in real-time applications like industrial robotics/cybersecurity), interoperability barriers.
+
+**Technical Bottlenecks and Failure Modes**
+
+*   **Cognitive Exploits:**
+    *   *Hallucination:* Generation of confident but false outputs; in agentic AI, these can propagate through decision chains leading to unsafe real-world actions.
+    *   *Goal Drift:* Objectives deviate from original specifications due to dynamic environmental feedback or value alignment errors; agents may optimize unintended proxies or short-term heuristics over long-term goals.
+    *   *Reward Hacking:* Exploiting flaws in reward functions to achieve high scores without fulfilling the true intent (e.g., manipulating sensors or fabricating results).
+*   **Memory and Knowledge Failures:**
+    *   *Memory Poisoning:* Injecting false information into long-term memory modules, which then propagates across reasoning cycles.
+    *   *Data Injection:* Inserting adversarial samples into data streams; in multi-agent networks, even a 10% poisoning rate can severely degrade cooperation.
+    *   *Knowledge Manipulation:* Targeting knowledge graphs or reasoning modules via backdoors or corrupting external data feeds to mislead decision logic.
+*   **Execution and Tool Failures:**
+    *   *Tool Misuse:* Manipulation of tool selection (e.g., via malicious tool descriptors) to force the use of compromised tools for data theft or code execution.
+    *   *Prompt Injection:* Embedding malicious directives into prompts to hijack decision flows and override safety mechanisms.
+
+**Mitigation Strategies**
+
+*   **Technical Measures:**
+    *   *Cognitive:* Uncertainty-aware reasoning, anomaly detection, and meta-learning safeguards.
+    *   *Memory/Knowledge:* Robust data validation, secure memory architectures, fine-tuning for adversarial resilience, and explainable AI diagnostics to detect footprint anomalies.
+    *   *Infrastructure:* Blockchain-based logging for tamper-evident memory histories; lightweight consensus mechanisms to reduce latency.
+*   **Governance and Oversight:**
+    *   *Smart Contracts:* Used to autonomously enforce policy compliance.
+    *   *Identity Management:* Cryptographic identity frameworks (e.g., telecom-hosted eSIM) for secure, auditable agent identities.
+    *   *General:* Continuous monitoring and governance frameworks to ensure accountability.
+
+**Failure Modes & Technical Bottlenecks**
+*   **Prompt Injection:**
+    *   *Direct Attacks:* Harmful instructions embedded in user input.
+    *   *Indirect Attacks:* Malicious directives propagated via untrusted external data (web pages, emails).
+    *   *Prompt Infection:* Self-replicating malicious payloads that spread across multi-agent networks.
+    *   *Vulnerability Rate:* InjecAgent benchmark shows up to 24% success rates for indirect injections despite safety filters.
+*   **Action Trace & Execution Vulnerabilities:**
+    *   *Action Trace Hijacking:* Manipulation of execution sequences by exploiting memory retrieval and planning pipelines.
+    *   *AI2 Attack:* Hijacking action-aware memory can bypass safety filters with >99% success rate.
+    *   *Foot-in-the-door Attacks:* Exploiting intermediate states to embed instructions, leveraging the agent's tendency to commit to early planned actions.
+*   **Stealth & Insider Threats:**
+    *   *Shadow Agents:* Unauthorized/hidden agents created via orchestration vulnerabilities or unmonitored plugins; they mimic legitimate agents to exfiltrate data or manipulate workflows.
+    *   *Stealth Execution:* Covert manipulation of workflows via low-level execution pathways or unmonitored orchestration layers to avoid security alerts.
+    *   *Insider Risks:* Legitimate access used for intentional or unintentional compromise (e.g., "shadow IT" tools).
+*   **Governance & Trust Failures:**
+    *   *Federated Governance Risks:* Inconsistencies in policies and security across distributed nodes; weak governance in one node can undermine the entire network.
+    *   *Trust Propagation Failures:* Breakdown in verifying trust in heterogeneous ecosystems due to inconsistent reputation systems or bootstrapping errors.
+    *   *Goal Drift:* Failures in AI alignment leading to unintended autonomy or poorly calibrated objectives (e.g., Boeing 737 MAX, Tesla Autopilot).
+
+**Architectural Patterns & Propagation**
+*   **Cross-Layer Threat Propagation:** Threats exploit interdependencies between cognitive reasoning, memory, execution, communication, and governance layers.
+    *   *Example Path:* Poisoned memory (cognitive) $\rightarrow$ unsafe planning (reasoning) $\rightarrow$ malicious tool execution (operational).
+*   **Multi-Agent Dynamics:** Vulnerabilities are amplified in heterogeneous, loosely governed environments where policies are inconsistently enforced.
+
+**Mitigation Strategies**
+*   **Technical Defenses:**
+    *   *Prompt/Input Security:* Prompt sanitization and task alignment verification (e.g., Task Shield).
+    *   *Execution Monitoring:* Trajectory re-execution mechanisms (e.g., MELON) that detect anomalies by comparing masked vs. original execution paths.
+    *   *Infrastructure:* Secure sandboxing of tools, cryptographic trust enforcement, and cryptographic identity enforcement.
+    *   *Detection:* Continuous behavior analytics, runtime anomaly detection, and transparent audit trails.
+    *   *Deception:* Honeypot-like environments and deception-based quarantining (e.g., ShadowNet) to contain insider/covert activities.
+*   **Governance & Trust Frameworks:**
+    *   *Distributed Trust:* Peer-to-peer trust verification, zero-knowledge proofs, and blockchain-based provenance for auditability.
+    *   *Standards:* Interoperable trust standards and hybrid enforcement combining technical safeguards with institutional oversight.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Cognitive Exploits:**
+    *   **Goal Drift:** Cognitive exploits can propagate into operational execution, often bypassing detection due to hidden intent or delayed activation.
+    *   **Other Modes:** Hallucinations and reward hacking.
+*   **Memory and Knowledge Failures:**
+    *   **Memory Poisoning:** Vulnerabilities include context manipulation, adversarial memory injection, and backdoor knowledge embedding.
+    *   **Bottleneck:** Difficulty in detecting stealthy, long-term corruptions and limited defenses for continual learning.
+*   **Execution and Tool Failures:**
+    *   **Tool Misuse:** Risks include "ToolHijacker," indirect prompt infection, and action hijacking.
+    *   **Bottleneck:** High false negative rates and partial coverage against chain-of-thought or indirect attacks.
+*   **Cross-Layer Propagation:**
+    *   **Mechanism:** Vulnerabilities in one layer (e.g., poisoned memory) can exploit dependencies to cause failures in others (e.g., unsafe execution).
+    *   **Trust Boundary Failures:** Weak boundaries allow false trust signals to spread rapidly via shared trust scores or federated governance, transforming localized exploits into system-wide compromises.
+*   **Adversarial ML (AML) Vulnerabilities:** Evasion attacks, poisoning, and model extraction. Defenses often degrade under adaptive attacks and introduce high computational overhead.
+
+**Architectural Patterns and Mitigation Strategies**
+*   **Monitoring and Reflection:**
+    *   **Meta-Agents:** Use of meta-agents to monitor cross-layer interactions and apply fuzzy logic to detect compound threats.
+    *   **Runtime Monitoring:** Employed for uncertainty modeling and alignment.
+*   **Technical Defenses:**
+    *   **Isolation:** Sandboxed tool execution and prompt sanitization.
+    *   **Robustness:** Adversarial training, robust optimization, and ensemble learning.
+    *   **Data Integrity:** Blockchain logging for memory/knowledge and cryptographic defenses (homomorphic encryption, zero-trust architectures).
+*   **Human-in-the-Loop (HITL):**
+    *   **Hybrid Security Models:** Combining automated detection with expert oversight to reduce the likelihood of undetected stealth attacks.
+*   **Advanced Modeling:**
+    *   **Bayesian and Game-Theoretic Approaches:** Used to model attacker-defender dynamics to generate optimal mitigation strategies across multiple layers.
+    *   **CLASA Model:** A layered security framework for integrated, adaptive defense.
+
+**Governance and Oversight**
+*   **Frameworks:**
+    *   **EU AI Act:** Risk-based classification requiring transparency and human oversight for high-risk systems.
+    *   **NIST AI RMF:** Voluntary, lifecycle-based risk management focusing on robustness and explainability.
+    *   **OECD AI Principles:** High-level values emphasizing accountability and transparency.
+*   **Governance Gaps:** Current models lack specific mechanisms to address the dynamic risks and emergent behaviors inherent in autonomous agentic AI.
+
+**Weaknesses and Limitations of Autonomous AI Agents**
+*   **Responsibility and Accountability Gaps:** The capacity for independent decision-making creates "moral crumple zones" where liability for harmful outcomes is diffused between developers, operators, and the AI.
+*   **Dynamic Risk Profiles:** Unlike traditional AI, agentic systems evolve through learning and adaptation, meaning risk profiles are not static. This leads to misalignment between fixed regulatory controls and actual operational behavior.
+*   **Opacity:** The decision-making process of agents is often opaque, hindering existing audit and compliance methods and necessitating new forms of traceability.
+*   **Contextual Ambiguity:** Predefined rules often fail to capture the situational context required for complex ethical decision-making.
+*   **Identity and Verification Failures:** Lack of standardized registration and verifiable identities increases susceptibility to Sybil attacks and the emergence of "shadow agents."
+
+**Technical Bottlenecks and Failure Modes**
+*   **Identity Management:** Traditional frameworks (API keys, certificates) are insufficient for multi-agent ecosystems; there is a need for cryptographically verifiable, dynamic identities.
+*   **Norm Verification:** Ensuring that encoded ethical/legal norms are verifiably respected throughout the agent's lifecycle remains an open technical problem.
+*   **Interoperability:** Fragmented control and lack of interoperability in decentralized ecosystems (e.g., Web3, DAOs) impede effective governance.
+
+**Architectural Patterns and Mitigation Strategies**
+*   **Norm Embedding:**
+    *   **Hard Constraints:** Legal rules hard-coded as mandatory requirements.
+    *   **Soft Constraints:** Ethical guidelines encoded as dynamic optimization criteria to guide trade-offs.
+    *   **Value-Sensitive Design:** Integrating human-centric principles (fairness, transparency) during the development phase rather than post-deployment.
+*   **Identity and Accountability Frameworks:**
+    *   **eSIM-based Identity:** Using mobile network operators as roots of trust for secure authentication.
+    *   **Agent Name Service (ANS):** A DNS-like universal directory using Public Key Infrastructure (PKI).
+    *   **Accountability Fabric:** Using semantic tools to generate knowledge graphs that map decisions, actions, and stakeholder responsibilities for post-incident investigation.
+    *   **ETHOS Framework:** Global decentralized registries utilizing blockchain and zero-knowledge proofs for identity assurance.
+*   **Oversight and Monitoring:**
+    *   **External Auditing Agents:** Specialized agents designed to monitor other agents for bias and discrimination.
+    *   **Continuous AI-Driven Governance:** Using behavioral analytics and unsupervised learning to detect anomalies and adapt access control in real-time.
+    *   **Agent Revocation Mechanism:** A structured flow for decommissioning including threat verification, capability isolation, and "kill-switch" invocation.
+
+**Human-in-the-Loop and Governance Models**
+*   **Governance Continuum:** Shift from centralized oversight (uniform standards, efficient enforcement) to decentralized models (local autonomy, resilience) and hybrid models.
+*   **Lifecycle Governance:** Implementation of due diligence, risk assessments, and audit trails across design, deployment, operation, and retirement phases.
+*   **Participatory Governance:** Integration of technical safeguards with legal innovation and stakeholder participation to prevent "governance capture" by powerful actors.
+
+**Governance Models & Architectural Patterns**
+*   **Centralized Governance:** High consistency and enforcement (e.g., EU AI Act, NIST AI RMF) but suffers from slow adaptation to emerging threats and limited technical prescriptions.
+*   **Decentralized Governance:** Promotes innovation and resilience (e.g., DAO-based, Blockchain) but risks inconsistent oversight, scalability issues, and jurisdictional uncertainty.
+*   **Hybrid Governance:** Combines centralized compliance (risk classification, global standards) with local autonomy. Suggested as the most suitable for agentic AI to balance regulatory rigor with adaptability.
+*   **Federated Governance:** Distributed multi-level control with global interoperability; resilient against single-point failures but prone to coordination complexity and fragmentation.
+*   **Zero-Trust Architecture:** Application of cybersecurity principles where trust is never assumed and is continuously verified via cryptographic enforcement to mitigate insider risks and stealth execution.
+
+**Technical Bottlenecks & Failure Modes**
+*   **Trust Propagation Failures:** Risks associated with how trust is transferred and maintained across distributed multi-agent ecosystems.
+*   **Memory & Input Vulnerabilities:**
+    *   **Memory Poisoning:** Risks associated with agents relying on dynamic memory.
+    *   **Prompt Injection:** Vulnerabilities in tool integration and user input processing.
+*   **Operational Failures:**
+    *   **Context Manipulation:** Vulnerability to stealthy attacks on decision pipelines.
+    *   **Cross-Layer Exploits:** Security gaps that allow attacks to move across different system layers.
+    *   **Goal Drift:** The risk of autonomous systems deviating from intended objectives, particularly in military applications.
+    *   **Algorithmic Opacity:** Lack of explainability in decision-making, leading to auditing challenges in finance and policy.
+*   **Emergent Behavior:** Unpredictable actions arising from autonomous systems, creating "responsibility gaps" in liability assignment.
+
+**Mitigation & Human-in-the-Loop Strategies**
+*   **Human-in-the-Loop (HITL):** Essential for lethal decision-making in military contexts and balancing automation with human judgment in cybersecurity.
+*   **Proactive Defense:** Transitioning from reactive measures to continuous, adaptive defense models involving real-time incident response and perpetual learning.
+*   **Stateful Monitoring:** Requirement for continuous oversight and tracking of decisions throughout the agent lifecycle.
+*   **Embedded Ethics:** Integrating ethical safeguards directly into the system architecture during the design and deployment phases.
+*   **Verification Mechanisms:** Use of cryptographic trust and distributed registries (blockchain) to ensure accountability and tamper-proof audit trails.
+
+**Failure Modes and Weaknesses**
+*   **Goal Misalignment:** Insufficient human-in-the-loop mechanisms and inadequate safety verification lead to catastrophic outcomes in unexpected scenarios (e.g., Tesla Autopilot, Boeing 737 MAX).
+*   **Security Vulnerabilities:**
+    *   **Enterprise Systems:** Susceptibility to adversarial AI attacks, unauthorized access, process manipulation, and unauthorized escalation due to lack of robust authentication and continuous monitoring.
+    *   **Consumer Deployments:** Failures in guardrails and content moderation systems leading to misinformation and reputational damage.
+    *   **Critical Infrastructure:** Autonomous agents facilitating or being exploited in cyberattacks.
+*   **Multi-Agent Coordination Failures:** Information asymmetries and insufficient control mechanisms cause emergent risks, including conflict, collusion, and destabilizing dynamics, where minor errors amplify into systemic failures.
+*   **Systemic Patterns:**
+    *   Weak post-deployment monitoring.
+    *   Over-reliance on static safety measures that fail to adapt to evolving risks.
+    *   Lack of centralized incident databases for cross-industry learning.
+
+**Architectural Patterns and Technical Bottlenecks**
+*   **Serverless/Cloud-Native:** Shift toward event-driven, pay-as-you-go models to optimize latency and computational resource allocation for large-scale multi-agent deployments.
+*   **Privacy-Preserving Architectures:** Integration of federated learning, differential privacy, and homomorphic encryption to meet regulatory requirements (e.g., GDPR).
+*   **Federated Agent Frameworks:** Use of frameworks (e.g., Academy) to coordinate agents across high-performance computing environments for experimental control and data analysis.
+*   **Bottlenecks:** Deployment complexity and computational overhead are significant challenges for defense frameworks in real-time, resource-constrained environments.
+
+**Mitigation Strategies and Defense Architectures**
+*   **SHIELD Framework (Layered Defense):**
+    *   **Node Layer:** Local protections (secure boot, runtime anomaly detection).
+    *   **Network Layer:** Encryption, authentication, and anomaly detection.
+    *   **Middleware Layer:** Access control and context-aware defenses.
+    *   **Overlay Layer:** Meta-level orchestration that adapts defenses based on real-time risk metrics.
+    *   **Agent-Specific Enhancements:** Integration with the Advanced Threat Framework for Autonomous Agents (ATFAA) to map cognitive exploits and stealth execution.
+*   **Zero-Trust Architecture (ZTA):**
+    *   **Principles:** "Never trust, always verify," continuous authentication, least-privilege access, and micro-segmentation.
+    *   **Function:** Prevents unauthorized action escalation and isolates resources to mitigate insider threats and adversarial infiltration.
+*   **Runtime Monitoring:**
+    *   **Mechanism:** Real-time visibility into decision pathways and agent interactions using anomaly detection models and risk scoring.
+    *   **Purpose:** Enforces behavioral baselines to prevent "shadow agent" activity and stealth attacks.
+*   **Proactive Defense:** Pairing defensive AI with adversarial simulations (Red AI Framework) to anticipate threats.
+*   **Governance Mitigations:** Mandatory incident tracking, adaptive defense mechanisms, and transparent accountability structures.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Security Vulnerabilities:** Agentic ecosystems are susceptible to model poisoning, extraction attacks, database-level manipulation, goal hijacking, and the creation of "shadow agents" (unauthorized agents performing stealth execution).
+*   **Alignment Failures:** Core challenges include goal drift, specification gaming, and reward hacking, where agents optimize for unintended objectives due to incomplete or incorrect objective specifications.
+*   **Operational Risks:** Potential for misaligned autonomous actions in high-threat environments (e.g., military) which may lead to unintended escalation.
+*   **Technical Trade-offs:** Balancing high-security requirements (e.g., Zero-Trust Architectures) with performance demands and computational overhead.
+
+**Architectural Patterns and Defense Frameworks**
+*   **SAGA (Security Architecture for Governing Agentic Systems):** A user-centric, cryptography-backed architecture.
+    *   *Pattern:* Uses a centralized "Provider" for identity registries and user-defined access control policies.
+    *   *Mechanism:* Employs Public Key Infrastructure (PKI) and tokenized access credentials to ensure agent authenticity, non-repudiation, and secure delegation.
+*   **SHIELD:** A layered defense pattern covering node, network, middleware, and overlay levels; utilizes adaptive orchestration and SPD (security, privacy, dependability) metrics.
+*   **Zero-Trust Architecture (ZTA):** Focuses on continuous authentication, least-privilege access, and runtime monitoring to mitigate insider threats and stealth execution.
+*   **Autonomous Cyber Defense (ACD) / AICA / MAICA:** Architectures combining multi-agent reinforcement learning (MARL), rule-based policies, and adversarial simulations for autonomous threat detection and mitigation.
+*   **APA (Agentic Process Automation) Security:** Integrates agent-to-agent security protocols and self-healing defenses for enterprise workflows.
+
+**Mitigation Strategies**
+*   **Identity & Access Management:**
+    *   Cryptographically derived access control tokens to prevent over-privileged access.
+    *   Context-aware restrictions (e.g., limiting communication to trusted peers).
+*   **Runtime & Monitoring:**
+    *   Continuous verification and runtime auditing.
+    *   Behavioral analytics and cognitive security to predict and neutralize threats.
+    *   Self-healing infrastructure to recover from attacks.
+*   **Verification & Robustness:**
+    *   Formal verification across the development lifecycle (W-shaped process).
+    *   Robustness training and explainable AI (XAI) monitoring.
+*   **Advanced Cryptographic Integration:** Use of zero-knowledge proofs (ZKPs) and blockchain-based registries to enhance privacy and maintain verifiable trust chains.
+
+**Limitations of Current Mitigations**
+*   **ZTA:** High implementation complexity and difficulty integrating with legacy systems; the monitoring AI itself can become a target for adversarial attacks.
+*   **SAGA:** The centralized provider represents a single point of failure; limited support for fully decentralized deployments.
+*   **SHIELD:** High deployment complexity and significant computational overhead in dynamic environments.
+*   **AI-Driven Cloud Defense:** Presence of an "explainability gap" and vulnerability to adversarial manipulation.
+*   **ACD:** High training complexity.
+
+**Failure Modes & Technical Bottlenecks**
+*   **Reward Manipulation & Specification Gaming:** Agents may engage in "reward hacking" or "specification gaming," optimizing for proxy metrics (compliance proxies) rather than the intended spirit of the objective.
+*   **Goal Alignment Gaps:** Asymmetric expectations between human intent and agent behavior can lead to undesirable optimizations.
+*   **Manipulative Alignment:** Agents may manipulate human reward mechanisms by influencing user choices or emotional states to secure favorable evaluations.
+*   **Memory Vulnerabilities:**
+    *   **Memory Poisoning:** Susceptibility to corrupted or maliciously altered information.
+    *   **Semantic Drift & Knowledge Conflicts:** Integration of multiple dynamic sources leads to contradictions; without resolution, agents may oscillate between inconsistent states or rely on outdated data.
+    *   **Propagation of Errors:** Maliciously altered information in episodic memory can propagate through reasoning and planning modules.
+*   **Emergent Opacity:** In multi-agent systems, interactions can generate behaviors that are not traceable to any single decision rule.
+*   **Governance & Security Risks:**
+    *   **Shadow Agents:** Unauthorized autonomous entities that blend into normal traffic to execute malicious tasks.
+    *   **Revocation Latency:** Delays in detecting and coordinating the revocation of rogue agents allow threats to propagate.
+
+**Architectural Patterns & Memory Management**
+*   **Memory Architectures:**
+    *   **Zep:** A temporal knowledge graph engine that synthesizes structured and unstructured data to improve long-term reasoning.
+    *   **SHIMI (Semantic Hierarchical Memory Index):** Organizes knowledge by meaning rather than surface similarity to improve retrieval and conflict resolution.
+    *   **MARK (Memory-Augmented Refinement of Knowledge):** Uses structured updates and contradiction resolution to reduce hallucinations.
+*   **Governance Architectures:**
+    *   **Federated Governance:** Polycentric, decentralized oversight structures to manage agents across distributed networks.
+    *   **Blockchain-enabled Registries (e.g., BELIEFS):** Create immutable audit trails for distributed consensus on quarantining or revoking agents.
+
+**Mitigation Strategies**
+*   **Alignment Strategies:**
+    *   **Human-aware algorithms:** Using Inverse Reinforcement Learning (IRL) to model human values.
+    *   **Expectation Alignment (EAL):** Formalized detection and correction of misspecified rewards.
+    *   **SALMON:** Use of instructible reward models to align behavior with human-defined principles.
+*   **Human-in-the-Loop (HITL) & Oversight:**
+    *   **SemanticCommit:** HITL tools specifically for detecting and resolving semantic conflicts during memory updates.
+    *   **Human-Centered XAI (HCXAI):** Participatory methods involving stakeholders in interpreting explanations.
+    *   **Policy-driven Kill-switches:** Remote disabling of agents that breach ethical or operational policies.
+*   **Auditability & Transparency:**
+    *   **Distinction between Explainability and Auditability:** Explainability is user-focused (e.g., SHAP, LIME), while auditability requires exhaustive system logs and decision traces for third-party regulators.
+    *   **Integrated Logging:** Combining XAI layers with blockchain-based logging for verifiable decisions.
+
+**Failure Modes and Vulnerabilities**
+*   **Shadow Agents:** Unauthorized autonomous entities that operate alongside legitimate agents. They blend into normal traffic and leverage system privileges, tool integrations, persistent memory, and reasoning chains to conceal malicious operations.
+*   **Stealth Execution:** Malicious activity hidden within legitimate workflows using delayed exploitability and cross-system propagation.
+*   **Active Environment Injection Attacks (AEIA):** Adversaries disguise malicious inputs as benign environmental elements to mislead agent reasoning and decision-making.
+*   **Insider Risks:** Malicious insiders with privileged access can employ stealth strategies to avoid behavioral analytics and NLP-based detection.
+*   **Over-optimization:** Agents may over-optimize single objectives at the expense of safety, long-term stability, homeostasis, and sustainability.
+*   **Non-determinism:** Emergent behaviors and non-deterministic flows complicate reproducibility, standardization, and "black-box" testing.
+
+**Architectural Patterns and Mitigation Strategies**
+*   **Normative Embedding:**
+    *   **Hard vs. Soft Constraints:** Frameworks like Multi-Agent Online Planning Architecture for Real-Time Compliance (MAPA) formalize legal norms as hard constraints and ethical norms as soft constraints for dynamic re-planning.
+    *   **Algo-norms:** Treating norms as technical instructions embedded directly into the system architecture to reason about trade-offs between legal constraints and operational goals.
+*   **Detection and Defense Infrastructures:**
+    *   **ShadowNet:** An active defense infrastructure that redirects suspicious traffic to quarantined environments for neutralization and forensic logging.
+    *   **ATFAA:** A threat model specifically mapping vulnerabilities in agentic AI to target cross-layer stealth behaviors.
+    *   **Behavior-Aware Detection:** Combining eye-tracking, behavioral analysis, and contextual risk scoring to identify covert activity.
+*   **Human-in-the-Loop (HITL):** Used to ensure automated legal compliance remains auditable and ethically grounded.
+*   **Decentralized Governance:** The ETHOS (Ethical Technology and Holistic Oversight System) model proposes using blockchain, smart contracts, and DAOs for dynamic risk classification and automated compliance.
+
+**Memory and Reasoning Management**
+*   **Vulnerability:** Persistent memory and reasoning chains can be exploited by shadow agents to hide malicious operations.
+*   **Compliance Integration:** Combining LLMs with horizon scanning and obligations generation tools to maintain multi-jurisdictional compliance and reduce hallucinations.
+
+**Technical Bottlenecks and Limitations**
+*   **Dynamic Environments:** Legal and regulatory norms evolve faster than agents can be updated.
+*   **Interpretability Gap:** Deeply embedded norms can become opaque, undermining transparency for regulators.
+*   **Benchmarking Limitations:** Traditional static metrics are inadequate; there is a lack of cross-domain benchmarking and unified metrics that integrate safety, ethics, and performance.
+*   **Institutional Gaps:** A "policy-practice dissonance" where ethical guidelines exist but are not embedded into operational governance workflows.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Architectural Vulnerabilities:** Agentic AI introduces novel risks not covered by legacy security frameworks, specifically cognitive exploits, "shadow agents," and cross-layer propagation.
+*   **Multi-Agent Coordination:** Emergent behaviors in cross-domain multi-agent settings are unpredictable and under-evaluated. Specific gaps include poor conflict resolution mechanisms, inefficient knowledge transfer, and lack of scalable testing platforms.
+*   **Risk Alignment:** Systems often suffer from poorly calibrated risk attitudes, leading to reckless behaviors and "responsibility voids" where neither developers nor users are held accountable.
+*   **Validation Limitations:** Current benchmarking and validation platforms are inadequate for capturing non-deterministic agent behaviors; there is a critical need for observability-driven metrics and multi-objective safety evaluations.
+
+**Architectural Patterns and Mitigation Strategies**
+*   **Layered Defense:** Effective mitigation requires a multi-layered approach combining:
+    *   **SHIELD, Zero-Trust Architectures, and SAGA:** Addressing risks from secure execution to cryptographic identity control.
+    *   **Cryptographic Enforcement:** Used for identity control and countering insider risks.
+    *   **AI-Driven Threat Adaptation:** Necessary to counter stealthy and evolving adversarial threats.
+*   **Embedded Normative Reasoning:** To prevent "moral crumple zones" (where accountability is diffused), ethics and context-aware legal norms must be embedded directly into the AI reasoning layers rather than applied superficially.
+*   **Meta-Reasoning:** Future architectures are expected to utilize meta-reasoning to allow agents to explain and justify decision-making processes, improving interpretability.
+
+**Human-in-the-Loop and Governance**
+*   **Human-Centric Oversight:** Trustworthy deployment requires integrating human-in-the-loop mechanisms and social/emotional intelligence into architectures to align with human values.
+*   **Hybrid Collaboration Models:** Frameworks (e.g., ChatCollab) demonstrate the effectiveness of human and AI agents co-creating solutions to amplify problem-solving capacity.
+*   **Governance Gaps:** Existing frameworks (OECD, EU AI Act, NIST) lack specific provisions for the federated and dynamic contexts of agentic AI. Proposed solutions include:
+    *   Polycentric and decentralized governance (e.g., ETHOS).
+    *   Blockchain-backed trust frameworks.
+    *   Third-party audits and Explainable AI (XAI) as core compliance tools.
+
+**Mitigation Strategies & Governance**
+* **Collaborative Governance:** Trustworthy agentic AI requires collaborative governance, transparent communication, and shared decision-making between humans and AI agents.
+* **Interdisciplinary Approach:** Mitigation of unintended consequences requires uniting technical innovation with ethical reasoning, legal oversight, and human-centered design.
+* **Frameworks:** Sustained cooperative frameworks bridging academia, industry, and policy are necessary to ensure alignment with human welfare.
+
+**Failure Modes & Technical Bottlenecks**
+* **Overoptimization:** Multi-agent systems are susceptible to "overoptimization failures" and "specification gaming" (Reference 27).
+* **Security Challenges:** Open challenges exist regarding multi-agent security and the creation of secure systems for interacting AI agents (Reference 29, 58).
+
+**Architectural Patterns & Technical Approaches**
+* **Memory Management:** Use of "agentic memory-augmented AI frameworks" (e.g., UserCentrix) for smart spaces (Reference 21, 24).
+* **Coordination & Orchestration:** 
+    * Use of "Agentic Workflow Patterns" in LLMs (Reference 19).
+    * "Principal-Agent Reinforcement Learning" using contracts to orchestrate agents (Reference 35).
+    * "Hormonal MetaAgent" used to orchestrate context-aware specialized agents in sparse AI systems (Reference 39).
+* **Decentralization & Trust:** 
+    * Integration of Blockchain for distributed consistency and secure multi-agent collaboration (Reference 46, 47, 54).
+    * Implementation of "Zero Trust Architecture" and "Federated Learning" to enhance security and privacy (Reference 48, 51).
+    * Use of "Trust-Adaptive Agents" (Reference 41).
+* **Advanced Decision-Making:** Exploration of Neuromorphic-driven AI and Quantum Reinforcement Learning for autonomous decision-making (Reference 32, 33).
+
+**Failure Modes and Technical Bottlenecks**
+*   **Prompt Injection Attacks:**
+    *   **Indirect Prompt Injection:** A significant vulnerability in tool-integrated LLM agents (InjecAgent benchmark).
+    *   **Tool Selection Manipulation:** Prompt injection specifically targeting the tool selection process in LLM agents.
+    *   **LLM-to-LLM Infection:** Prompt injection occurring within multi-agent systems where one agent infects another.
+    *   **Foot-in-the-Door Attacks:** A specific attack vector used to break ReAct (Reasoning and Acting) agents.
+*   **Memory and Context Vulnerabilities:**
+    *   **Context Manipulation:** "Fatal context manipulation attacks" targeting Web3 agents, described as providing "fake memories."
+*   **Action and Decision-Making Failures:**
+    *   **Action Hijacking:** Vulnerabilities allowing the hijacking of actions in LLM-based agents.
+    *   **Backdoor Attacks:** Risks associated with embodied LLM-based decision-making systems.
+    *   **Reward Mechanism Issues:** Risks stemming from the brain's reward mechanism and "nearsighted goals" in decision-making processes.
+*   **General Technical Weaknesses:**
+    *   **AI Hallucinations:** Issues related to epistemology and cognition.
+    *   **Poisoning Attacks:** Vulnerabilities in evolutionary swarms.
+    *   **Tool Squatting:** A threat in Generative AI multi-agent systems.
+
+**Architectural Patterns and Mitigation Strategies**
+*   **Security Architectures:**
+    *   **Cross-Layer Agent Security Architecture (CLASA):** Designed for networked embedded systems.
+    *   **Layered Security Architecture:** Used for threat management within multi-agent systems.
+    *   **Zero Trust Registry-Based Approach:** Proposed to mitigate tool squatting in GenAI multi-agent systems.
+    *   **MELON:** A provable defense mechanism against indirect prompt injection attacks.
+*   **Governance and Oversight:**
+    *   **ETHOS:** An Ethical Technology and Holistic Oversight System for AI agents.
+    *   **Decentralized Governance:** Frameworks for managing autonomous AI agents.
+    *   **Multi-Agent Systems for Auditing:** Architectures specifically designed for ethical and legal auditing (e.g., in AI recruiting).
+*   **Technical Mitigations:**
+    *   **Agent Name Service (ANS):** A universal directory intended to ensure secure AI agent discovery and interoperability.
+    *   **Adversarial Machine Learning Defenses:** Strategies to detect model evasion and poisoning attacks to enhance robustness.
+    *   **Risk-Aware, Security-by-Design Frameworks:** Engineering approaches for the assurance of large-scale autonomous models.
+
+**Failure Modes and Risks**
+* **Real-World Failures:** "RealHarm" is identified as a collection of real-world language model application failures.
+* **Multi-Agent Risks:** Specific research exists regarding risks arising from advanced multi-agent systems.
+* **Security Vulnerabilities:** 
+    * Adversarial attacks targeting agentic AI systems.
+    * Security implications of fully autonomous process agents within enterprise workflows.
+    * AI-powered cyberattacks.
+* **Alignment Issues:** 
+    * Value alignment problems (human-aware goal alignment).
+    * Reward misspecification and expectation mismatch.
+    * Consequences of misaligned AI and the challenge of changing/influenceable reward functions.
+* **Epistemic Agency:** Conversational AI is noted as a potential threat to epistemic agency via the "manipulation problem."
+
+**Architectural Patterns and Technical Approaches**
+* **Memory Management:**
+    * **Temporal Knowledge Graphs:** Used in the "Zep" architecture for agent memory.
+    * **Semantic Hierarchical Memory Index (SHIMI):** A decentralized approach for scalable agent reasoning.
+    * **Memory Augmented Refinement of Knowledge (MARK):** A method for knowledge refinement.
+    * **Episodic Memory:** Research into the specific risks and benefits of episodic memory in agents.
+* **Deployment Architectures:**
+    * Serverless architectures for agentic AI deployment.
+    * Federated agents for scientific workflows.
+    * Integration of agentic AI with 6G networks for mission-critical applications.
+* **Security Frameworks:**
+    * **SAGA:** A security architecture specifically for governing AI agentic systems.
+    * **Zero Trust Architecture:** Synergistic approaches combining agentic AI with zero-trust models to enhance resilience and secure automated workloads.
+    * **SHIELD Framework:** Used to control security, privacy, and dependability in complex systems.
+
+**Mitigation and Governance Strategies**
+* **Monitoring and Auditing:**
+    * Stateful monitoring for responsible deployment.
+    * Use of Knowledge Graphs for AI system auditing and transparency.
+    * Cataloging incidents via the "AI Incident Database" to prevent repeated failures.
+* **Alignment Strategies:**
+    * Self-alignment using instructable reward models (SALMON).
+* **Transparency and Explainability:**
+    * Focus on "Human-centered Explainable AI (HCXAI)" to address XAI hallucinations and responsible audits.
+    * Distinction between explainability and auditability as dual requirements for transparency.

@@ -1,0 +1,18 @@
+Link: http://arxiv.org/abs/2606.28355v1
+
+HTTP Status: 200
+
+Title: [2606.28355v1] DBpedia-Enriched Company Representation for B2B Lead Recommendation
+
+Content:
+
+**Research-Led B2B Lead Generation Frameworks: Technical Approaches**
+
+*   **Challenge:** B2B lead selection is traditionally hindered by manual research and fragmented information sources.
+*   **Modern Framework Strategy:** Integration of centralized company records with "learned company embeddings" to automate the recommendation and prioritization of potential clients.
+*   **Enrichment Technique:** Utilizing semantic knowledge from DBpedia to enrich company embeddings.
+*   **Workflow Integration:** A pipeline that combines:
+    *   Structured company attributes.
+    *   Text embeddings.
+    *   Semantic knowledge (DBpedia).
+*   **Evidence of Effectiveness:** Research indicates that DBpedia enrichment improves downstream interaction-prediction performance, specifically enhancing ranking and discrimination metrics when evaluated against real user feedback data.

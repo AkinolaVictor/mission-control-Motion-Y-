@@ -1,0 +1,19 @@
+Link: https://doi.org/10.48550/arxiv.2606.30119
+
+HTTP Status: 200
+
+Title: [2606.30119] On the Internet, Nobody Knows You're an LLM Bot: Unmasking Web Agents with Multi-Layer Fingerprinting
+
+Content:
+
+**Web Agent Capabilities and Detection**
+* **Evolution of Web Agents:** A new class of bots has emerged (since 2023) that leverages Large Language Models (LLMs) to automate complex web tasks, surpassing the capabilities of traditional browser automation tools like Selenium, Puppeteer, and Playwright.
+* **Advanced Functionalities:** LLM-based agents can mimic human behavior and solve anti-bot mechanisms. They may operate from the cloud or directly from a user's local machine.
+* **Anti-Bot Mechanisms:** Common defenses against these agents include:
+    * CAPTCHAs
+    * Proof-of-work
+    * Proprietary solutions (e.g., Cloudflare)
+* **Detection and Stealth:**
+    * Some Web Agents are capable of bypassing all evaluated anti-bot mechanisms.
+    * Multi-layer fingerprinting (network, HTTP, and browser layers) can effectively distinguish Web Agents from humans and from other agents.
+    * Paradoxically, the integration of stealth and anti-detection mechanisms often increases the detectability of the agent rather than decreasing it.

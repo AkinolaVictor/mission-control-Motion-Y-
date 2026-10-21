@@ -1,0 +1,30 @@
+Link: http://arxiv.org/abs/2603.17419v1
+
+HTTP Status: 200
+
+Title: [2603.17419v1] Caging the Agents: A Zero Trust Security Architecture for Autonomous AI in Healthcare
+
+Content:
+
+**Failure Modes and Vulnerabilities of Autonomous AI Agents**
+*   **Instructional Failures:** Unauthorized compliance with instructions from non-owners.
+*   **Information Security:** Sensitive information disclosure and identity spoofing.
+*   **Propagation Risks:** Cross-agent propagation of unsafe practices.
+*   **Injection Attacks:** Indirect prompt injection via external resources.
+*   **Healthcare-Specific Risks:** Potential HIPAA violations when processing Protected Health Information (PHI).
+
+**Technical Bottlenecks and Threat Model (Six-Domain Model)**
+*   Credential exposure.
+*   Execution capability abuse (e.g., shell execution, file system access, database queries).
+*   Network egress exfiltration.
+*   Prompt integrity failures.
+*   Database access risks.
+*   Fleet configuration drift.
+
+**Mitigation Strategies and Architectural Patterns (Zero Trust Security Architecture)**
+*   **Workload Isolation:** Kernel-level isolation using gVisor on Kubernetes.
+*   **Credential Management:** Use of credential proxy sidecars to prevent agent containers from accessing raw secrets.
+*   **Network Control:** Implementation of network egress policies restricting agents to allowlisted destinations.
+*   **Prompt Integrity Framework:** Use of structured metadata envelopes and untrusted content labeling.
+*   **Automated Auditing:** Deployment of an automated security audit agent to discover and remediate high-severity findings.
+*   **Fleet Hardening:** Progressive hardening across VM image generations.

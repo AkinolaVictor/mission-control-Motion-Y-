@@ -1,0 +1,58 @@
+Link: https://doi.org/10.20517/aiagent.2026.13
+
+HTTP Status: 200
+
+Title: From execution loop to reasoning loop in autonomous materials research
+
+Content:
+
+**Architectural Patterns**
+*   **Execution Loop (Current State):** A closed multi-agent cycle integrating peripheral subsystems (literature mining, experiment design, computation, and robotic operation). It functions as a parameter optimization engine that accelerates iteration within predefined search spaces.
+*   **Reasoning Loop (Aspirational):** A cyclical inference process where experimental observations are converted into updated mechanistic hypotheses, which then guide subsequent experimental decisions.
+*   **Proposed Reasoning Architecture:** A multi-modal system where characterization data is encoded/fused and routed to a central reasoning orchestrator supported by three specialized agents:
+    1.  Mechanistic Inference Agent.
+    2.  Physicochemical Constraint Enforcement Agent.
+    3.  Knowledge Management Agent.
+
+**Technical Bottlenecks & Limitations**
+*   **Reasoning vs. Execution Gap:** Current systems exhibit "surface equivalence" to reasoning (task decomposition, tool calling, natural language communication) but lack the ability to generate mechanistic hypotheses from new experimental data.
+*   **Search Space Dependency:** Execution loops rely on search spaces predefined by humans; they cannot derive new boundaries from hypotheses generated during experiments.
+*   **Knowledge Transfer:** Lack of structured mechanism representation prevents knowledge accumulated in one material system from being transferable to another.
+*   **Constraint Integration:** Physicochemical constraints are often "passive queries" (e.g., calling DFT calculations) that can be overridden by LLM text generation, rather than active constraints that shape the proposal.
+*   **Memory/Accumulation:** Current systems lack cross-experiment knowledge accumulation. Each task typically starts with fresh retrieval, and experimental rounds remain isolated, lacking structured records of failed approaches.
+
+**Failure Modes**
+*   **Hallucinations:** LLMs produce thermodynamically infeasible or charge-imbalanced proposals with high confidence when physicochemical constraints are not actively enforced.
+*   **Rule-Following vs. Explaining:** Systems can perform stepwise inference based on established rules (e.g., retrosynthetic pathways) but fail to use mechanisms to explain new phenomena.
+
+**Mitigation Strategies & Requirements**
+*   **Structured Mechanism Representation:** Implementing formalisms (causal graphs, symbolic rules, or descriptors) to encode regularities that can be communicated, transferred, and updated.
+*   **Active Constraint Enforcement:** Integrating systems (similar to bond-electron matrices for charge conservation) that prevent the generation of physically impossible candidates.
+*   **Integration of Characterization Data:** Using raw experimental signals (e.g., XRD peak shifts) as the starting point for mechanistic inference rather than treating them as static labels.
+*   **Systematic Validation:** Improving reasoning transparency and traceability to strengthen reliability in agentic workflows.
+
+**Architectural Patterns: Execution Loop vs. Reasoning Loop**
+*   **Execution Loop:** Focuses on making synthesis faster and more reproducible; identifies better formulations but lacks mechanistic discovery.
+*   **Reasoning Loop:** A proposed advanced architecture that turns anomalies (e.g., XRD signals) into structured mechanisms, generative constraints, and transferable knowledge.
+
+**Technical Bottlenecks and Failure Modes**
+*   **Mechanistic Inference (Gate 1):** Most systems fail to generate autonomous mechanistic hypotheses from observations. They rely on literature abstracts or multimodal fusion (e.g., VLM anomaly correction) without achieving true mechanistic understanding.
+*   **Physicochemical Constraint Enforcement (Gate 2):** 
+    *   **Failure Mode:** Constraints are often applied post-hoc via LLMs after proposal generation, making them unreliable and non-binding.
+    *   **Bottleneck:** Lack of "hard" architectural guarantees to ensure outputs satisfy physical laws.
+*   **Knowledge Accumulation (Gate 3):** 
+    *   **Failure Mode:** Systems treat outcomes as numerical fitness signals or store simple logs/conversation history rather than structured mechanistic knowledge.
+    *   **Bottleneck:** Absence of automated write-back loops and cross-task knowledge retention.
+
+**Evaluation of Current AI Agent Implementations**
+*   **Self-Driving Laboratories (SDLs):** Strong in data acquisition and multimodal fusion, but fail in mechanistic hypothesis generation and cross-task knowledge accumulation.
+*   **AI-Agent Platforms:** Often reuse literature-derived knowledge; constraints are typically unreliable/non-binding.
+*   **Standalone Models:** Generally lack knowledge accumulation mechanisms and the ability to generate hypotheses from novel observations.
+
+**Mitigation Strategies and Successful Patterns**
+*   **Hard Constraints:** Encoding specific physical laws (e.g., charge conservation) as hard architectural constraints (seen in FlowER) is more effective than post-hoc LLM checks.
+*   **Knowledge Integration:** Using RAG-driven LLMs combined with iterative ML feedback and continuously updated domain knowledge bases (seen in DigHyd) improves candidate refinement.
+*   **Structured Representation:** Moving toward a "reasoning loop" requires:
+    1.  Autonomous identification of plausible mechanistic hypotheses.
+    2.  Active enforcement of physicochemical constraints during the reasoning process.
+    3.  Adaptive retrieval and application of task-relevant knowledge in novel contexts.

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "url": "https://medium.com/@gz1416288973/selenium-vs-puppeteer-vs-playwright-complete-guide-for-web-scraping-testing-ai-automation-0bf4c2829002"
+  },
+  {
+    "id": 2,
+    "url": "https://medium.com/top-python-libraries/playwright-vs-selenium-vs-scrapers-the-architecture-that-finally-works-for-llm-agents-a7f1e2e45dce"
+  },
+  {
+    "id": 3,
+    "url": "https://chanderdhall.com/reports/browser-automation-tools/review"
+  },
+  {
+    "id": 4,
+    "url": "https://arxiv.org/api/PsluYn5hAgkyjwLUoa9d4ta5Ehg"
+  },
+  {
+    "id": 5,
+    "url": "http://arxiv.org/abs/1806.07158v2"
+  },
+  {
+    "id": 6,
+    "url": "http://arxiv.org/abs/2401.11841v1"
+  },
+  {
+    "id": 7,
+    "url": "http://arxiv.org/abs/1612.05413v1"
+  },
+  {
+    "id": 8,
+    "url": "http://arxiv.org/abs/1902.04790v1"
+  },
+  {
+    "id": 9,
+    "url": "http://arxiv.org/abs/2102.06607v4"
+  },
+  {
+    "id": 10,
+    "url": "http://arxiv.org/abs/2005.05623v1"
+  },
+  {
+    "id": 11,
+    "url": "http://arxiv.org/abs/2508.01858v3"
+  },
+  {
+    "id": 12,
+    "url": "http://arxiv.org/abs/2304.06032v1"
+  },
+  {
+    "id": 13,
+    "url": "http://arxiv.org/abs/1803.07525v1"
+  },
+  {
+    "id": 14,
+    "url": "https://doi.org/10.20944/preprints202603.2070.v1"
+  },
+  {
+    "id": 15,
+    "url": "https://doi.org/10.1007/978-3-319-32001-4_461-1"
+  },
+  {
+    "id": 16,
+    "url": "https://doi.org/10.1007/978-3-319-32010-6_461"
+  },
+  {
+    "id": 17,
+    "url": "https://doi.org/10.1007/979-8-8688-0291-1_4"
+  },
+  {
+    "id": 18,
+    "url": "https://doi.org/10.4018/978-1-61520-973-6.ch001"
+  },
+  {
+    "id": 19,
+    "url": "https://doi.org/10.22215/etd/1998-03972"
+  },
+  {
+    "id": 20,
+    "url": "https://doi.org/10.2139/ssrn.6801118"
+  },
+  {
+    "id": 21,
+    "url": "https://doi.org/10.5220/0013171600003890"
+  },
+  {
+    "id": 22,
+    "url": "https://doi.org/10.1109/wiiatw.2007.4427621"
+  },
+  {
+    "id": 23,
+    "url": "https://doi.org/10.62891/2d7c8429"
+  },
+  {
+    "id": 24,
+    "url": "https://doi.org/10.48550/arxiv.2606.30119"
+  },
+  {
+    "id": 25,
+    "url": "https://arxiv.org/abs/2604.06367"
+  },
+  {
+    "id": 26,
+    "url": "https://doi.org/10.1016/j.array.2026.101135"
+  },
+  {
+    "id": 27,
+    "url": "https://www.mojeek.com/"
+  },
+  {
+    "id": 28,
+    "url": "https://blog.mojeek.com/"
+  },
+  {
+    "id": 29,
+    "url": "https://community.mojeek.com/"
+  },
+  {
+    "id": 30,
+    "url": "https://buttondown.email/Mojeek"
+  },
+  {
+    "id": 31,
+    "url": "https://www.bing.com/ck/a?!&&p=f90fdfdc54f795e5b762d316dbe0479732d8b90ca91db4e8a275cb5d8429e3b3JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1L2ltYWdlcy9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK3dlYithdXRvbWF0aW9uK2FnZW50K2FyY2hpdGVjdHVyZStTZWxlbml1bSt2cytQbGF5d3JpZ2h0K3ZzK1B1cHBldGVlcitMTE0raW50ZWdyYXRpb24rZm9yK3dlYithZ2VudHMrYXV0b25vbW91cyt3ZWIrbmF2aWdhdGlvbitlcnJvcitoYW5kbGluZytDQVBUQ0hBK3NvbHZpbmcrYWdlbnRpYyt3b3JrZmxvd3MrZm9yK3dlYiticm93c2luZyZGT1JNPUhEUlNDMg&ntb=1"
+  },
+  {
+    "id": 32,
+    "url": "https://www.bing.com/ck/a?!&&p=9743d1c58328ce0d9fcf3ca9782fe14fc1e8fcfdfe225e82292764bc8fbaaa8dJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1L3ZpZGVvcy9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK3dlYithdXRvbWF0aW9uK2FnZW50K2FyY2hpdGVjdHVyZStTZWxlbml1bSt2cytQbGF5d3JpZ2h0K3ZzK1B1cHBldGVlcitMTE0raW50ZWdyYXRpb24rZm9yK3dlYithZ2VudHMrYXV0b25vbW91cyt3ZWIrbmF2aWdhdGlvbitlcnJvcitoYW5kbGluZytDQVBUQ0hBK3NvbHZpbmcrYWdlbnRpYyt3b3JrZmxvd3MrZm9yK3dlYiticm93c2luZyZGT1JNPUhEUlNDMw&ntb=1"
+  },
+  {
+    "id": 33,
+    "url": "https://www.bing.com/ck/a?!&&p=2ce394ab347e832fe4319df8c0baad225e32deaa695fd45f662216e7327f6c70JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1L21hcHM_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK3dlYithdXRvbWF0aW9uK2FnZW50K2FyY2hpdGVjdHVyZStTZWxlbml1bSt2cytQbGF5d3JpZ2h0K3ZzK1B1cHBldGVlcitMTE0raW50ZWdyYXRpb24rZm9yK3dlYithZ2VudHMrYXV0b25vbW91cyt3ZWIrbmF2aWdhdGlvbitlcnJvcitoYW5kbGluZytDQVBUQ0hBK3NvbHZpbmcrYWdlbnRpYyt3b3JrZmxvd3MrZm9yK3dlYiticm93c2luZyZGT1JNPUhEUlNDNA&ntb=1"
+  },
+  {
+    "id": 34,
+    "url": "https://www.bing.com/ck/a?!&&p=8c355c2f7623a807899054138b25ee50114e4c4a87d8514130e5473041b8da66JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1L25ld3Mvc2VhcmNoP3E9Y29tcHJlaGVuc2l2ZStndWlkZSt0byt3ZWIrYXV0b21hdGlvbithZ2VudCthcmNoaXRlY3R1cmUrU2VsZW5pdW0rdnMrUGxheXdyaWdodCt2cytQdXBwZXRlZXIrTExNK2ludGVncmF0aW9uK2Zvcit3ZWIrYWdlbnRzK2F1dG9ub21vdXMrd2ViK25hdmlnYXRpb24rZXJyb3IraGFuZGxpbmcrQ0FQVENIQStzb2x2aW5nK2FnZW50aWMrd29ya2Zsb3dzK2Zvcit3ZWIrYnJvd3NpbmcmRk9STT1IRFJTQzY&ntb=1"
+  },
+  {
+    "id": 35,
+    "url": "https://www.bing.com/ck/a?!&&p=8240b173fa995a0e31e6d6938d35618e9c3633d7082ac082745708a1a7fedcbdJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1L3RyYXZlbC9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK3dlYithdXRvbWF0aW9uK2FnZW50K2FyY2hpdGVjdHVyZStTZWxlbml1bSt2cytQbGF5d3JpZ2h0K3ZzK1B1cHBldGVlcitMTE0raW50ZWdyYXRpb24rZm9yK3dlYithZ2VudHMrYXV0b25vbW91cyt3ZWIrbmF2aWdhdGlvbitlcnJvcitoYW5kbGluZytDQVBUQ0hBK3NvbHZpbmcrYWdlbnRpYyt3b3JrZmxvd3MrZm9yK3dlYiticm93c2luZyZtPWZsaWdodHMmRk9STT1GQlNDT1A&ntb=1"
+  },
+  {
+    "id": 36,
+    "url": "https://www.bing.com/ck/a?!&&p=2f41b868adbbed55b6cd650e8a653f48a6f85bc13f9dfd9f79be1ff19f9179eaJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1aHR0cDovL2FkbWVkaWFzZXJ2ZXIubmV0Lw&ntb=1"
+  },
+  {
+    "id": 37,
+    "url": "https://www.bing.com/ck/a?!&&p=e90b7beefb584be63cc8d3afb90f4338b48a6b718319072ecc59acf3a328d96bJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1"
+  },
+  {
+    "id": 38,
+    "url": "https://www.bing.com/ck/a?!&&p=9e6c2856381a9fc65d9bb0a5c32468c8f77f31cf773015c72f069cc186dad948JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1"
+  },
+  {
+    "id": 39,
+    "url": "https://www.bing.com/ck/a?!&&p=968df3d19715425899b2b902ec1017c280f83ba790a27c83e153920ce952a941JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=082e6f92-78c9-633b-1288-786b79e6622c&u=a1aHR0cHM6Ly9nby5taWNyb3NvZnQuY29tL2Z3bGluay8_bGlua2lkPTg2ODkyMg&ntb=1"
+  },
+  {
+    "id": 40,
+    "url": "https://support.google.com/websearch"
+  }
+]

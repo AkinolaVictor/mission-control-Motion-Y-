@@ -1,0 +1,19 @@
+Link: http://arxiv.org/abs/2609.27636v2
+
+HTTP Status: 200
+
+Title: [2609.27636v2] Multi-Agent AI Architecture for Regulated Insurers: A generic AI framework under Solvency II and the AI Act in Austria and Germany
+
+Content:
+
+**AI Agent Architectural Patterns**
+*   **Multi-Agent Decomposition:** The framework decomposes an enterprise (specifically a regulated insurer) into multiple specialized agents representing distinct functional domains (e.g., capital management, underwriting, claims processing, compliance, fraud detection, and client interaction).
+*   **Orchestration Layer:** An "orchestrator agent" is utilized to supervise inter-agent coordination and enforce regulatory admissibility and institutional coherence.
+*   **Communication Infrastructure:** Protocol integration relies on asynchronous execution and a dual-layer communication structure consisting of:
+    *   Model Context Protocol (MCP).
+    *   Agent-to-Agent (A2A) messaging.
+*   **Theoretical Integration:** The architecture incorporates Nash equilibrium to model strategic interactions between decision agents and Principal-Agent theory to address incentive alignment under information asymmetry.
+
+**Human-in-the-Loop (HITL) & Mitigation Strategies**
+*   **Tiered Access Control:** Human-in-the-loop agents are integrated via a tiered access control system. This ensures that data visibility and decision influence are differentiated based on specific user roles.
+*   **Regulatory Guardrails:** The orchestrator agent serves as a mitigation mechanism to ensure compliance with legal frameworks (e.g., Solvency II, the AI Act, and the Insurance Distribution Directive).

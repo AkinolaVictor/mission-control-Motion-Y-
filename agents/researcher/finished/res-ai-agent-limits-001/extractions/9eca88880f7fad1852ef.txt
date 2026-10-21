@@ -1,0 +1,26 @@
+Link: https://doi.org/10.48550/arxiv.2608.05179
+
+HTTP Status: 200
+
+Title: [2608.05179] Autonomous Research Agents: A Survey of AI Scientists and the Verification Gap
+
+Content:
+
+**Technical Bottlenecks and Failure Modes**
+* **The Verification Gap:** A central bottleneck in autonomous research agents is the disparity between the ability to generate research outputs (e.g., paper-like manuscripts and runnable code) and the ability to verify the claims made within those outputs.
+* **Lack of External Validation:** In a survey of 24 runnable systems, only 38% reported any novelty-verification method. Among "closed-loop L4" (high autonomy) systems, most are merely mechanical reruns, and none demonstrated an externally validated in-loop oracle.
+* **Auditability Deficits:** While code release is common (83% of runnable systems), there is a significant lack of reproducibility-grade artifacts, such as seeds or execution traces (only 38% released).
+
+**AI Agent Architectural Patterns & Lifecycle**
+* **Research Lifecycle Integration:** Agents are being deployed across the full scientific lifecycle: ideation, literature search, experiment design/execution, analysis, manuscript drafting, and review.
+* **Autonomy Levels:** The research identifies a spectrum of autonomy, specifically highlighting "closed-loop L4 systems" which aim for high levels of independence in the research process.
+
+**Mitigation and Evaluation Strategies**
+* **Audit Dimensions:** The research proposes seven dimensions for auditing AI agents:
+    1. Lifecycle stage
+    2. Autonomy level
+    3. Evaluation method
+    4. Released artifacts
+    5. Human-in-the-loop points
+    6. Novelty verification
+    7. Result-selection disclosure

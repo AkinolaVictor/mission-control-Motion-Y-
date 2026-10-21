@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import DashboardLayout from "../../components/DashboardLayout";
@@ -28,6 +28,7 @@ export default function AgentSlug() {
   const [categories, setCategories] = useState([]);
   const [ideas, setIdeas] = useState([]);
   const [h, useH] = useState(0);
+  const [task_categories, set_task_categories] = useState({})
 
   // Model selection state
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -41,6 +42,11 @@ export default function AgentSlug() {
   const [systemFileContent, setSystemFileContent] = useState('');
   const [isEditingSystem, setIsEditingSystem] = useState(false);
   const [editedContent, setEditedContent] = useState('');
+  const [all_agent_tasks, set_all_agent_tasks] = useState([
+    {name: "Ongoing Tasks", tasks: [1,2,3]}, 
+    {name: "Completed Tasks", tasks: [1,2,3]}, 
+    {name: "Awaiting Tasks", tasks: [1,2,3]}
+  ])
 
   useEffect(() => {
     if (agentSlug) {
@@ -333,28 +339,51 @@ export default function AgentSlug() {
                     {
                       showSystemSelector2?
                       <>
-                        <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'>
-                            <p>Ongoing Tasks</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
-                        </div>
-                        <div className='mt-3'>
-                            {
-                              Array(12).fill(0).map((item, index)=>{
-                                return (
-                                  <div key={index} className='w-full bg-layer2 rounded-[12px] p-3 mb-3'>
-                                      <div className='flex justify-between items-center mb-3'>
-                                          <h1 className='font-semibold text-[12px]'>Title of this task</h1>
-                                          <p className='font-semibold text-[9px] opacity-70'>9:39PM--12/03/2024</p>
-                                      </div>
-                                      <p className='text-[12px] opacity-70'>
-                                          Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
-                                          Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent and provide approval.
-                                      </p>
+                        {
+                          all_agent_tasks.map((cat, index)=>{
+                            return (
+                              <Fragment key={index}>
+                                <div 
+                                  onClick={()=>{set_task_categories((prev)=>{
+                                    return {...prev, [cat.name]: !task_categories[cat.name]}
+                                  })}} 
+                                  className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'
+                                >
+                                    <p>{cat.name}</p> {/* name of category */}
+                                    {
+                                      !task_categories[cat.name]?
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>:
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up preview-icon"><path d="m18 15-6-6-6 6"/></svg>
+                                    }
+                                </div>
+                                {
+                                  !task_categories[cat.name]?
+                                  null:
+                                  <div className='mt-3'>
+                                      {
+                                        cat.tasks.map((item, index)=>{
+                                          return (
+                                            <div key={index} className='w-full bg-layer3 rounded-[12px] p-4 mb-3'>
+                                                <div className='flex justify-between items-center mb-3'>
+                                                    <h1 className='font-semibold text-[12px]'>Title of this task</h1> 
+                                                    <p className='font-semibold text-[9px] opacity-90'>9:39PM--12/03/2024</p> {/* time of creation */}
+                                                </div>
+                                                <p className='text-[12px] opacity-95'>
+                                                    {/* Task Description */}  Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
+                                                </p>
+                                                <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-center items-center p-3 py-2 mt-3'>
+                                                    <p>Delete</p>
+                                                </div>
+                                            </div>
+                                          )
+                                        })
+                                      }
                                   </div>
-                                )
-                              })
-                            }
-                        </div>
+                                }
+                              </Fragment>
+                            )
+                          })
+                        }
                       </>:
                       null
                     }

@@ -1,0 +1,28 @@
+Link: https://doi.org/10.20517/aiagent.2026.12
+
+HTTP Status: 200
+
+Title: A closed-loop universal catalyst design workflow ready for AI agents
+
+Content:
+
+**AI Agent Architectural Patterns**
+*   **Proto-Agent Architecture (Research Pipeline):** The text proposes a modular, executable research system where a structured workflow serves as the orchestration chain for specialized agents.
+*   **Specialized Agent Roles:** A proposed multi-agent system for scientific discovery would assign specific tasks to distinct agents:
+    *   Literature and database retrieval.
+    *   Descriptor generation and quality control.
+    *   ML model training and uncertainty analysis.
+    *   Microkinetic simulation.
+    *   Candidate prioritization under multi-objective constraints.
+    *   Linking predictions to experimental planning.
+*   **Closed-Loop Orchestration:** The suggested agentic workflow follows a linear-to-circular chain: Database $\rightarrow$ Descriptor $\rightarrow$ Model $\rightarrow$ Microkinetics $\rightarrow$ Candidate Selection $\rightarrow$ Experiment $\rightarrow$ Feedback.
+*   **Decision Layer:** Integration of a "decision layer" where kinetic and selectivity constraints determine the progression of candidates.
+
+**Technical Bottlenecks and Limitations**
+*   **Conversational vs. Executable Intelligence:** A central challenge in AI for science is the gap between "conversational intelligence" (summarization, suggestion, isolated prediction) and "executable research systems" that can operationalize a full research loop.
+*   **Human Dependency:** Current high-performance workflows are often "assembled by human researchers" rather than being autonomously orchestrated by AI.
+
+**Mitigation Strategies and Improvements**
+*   **Throughput Automation:** Using agents to automate repeated transitions between database queries, descriptor computation, microkinetic evaluation, and ranking.
+*   **Robustness Enhancements:** Implementing standardized benchmarking and "uncertainty-aware decision-making" to validate candidates before committing to expensive physical experiments.
+*   **Transferability:** Utilizing modular workflow skeletons (e.g., using universal descriptors like wACSF) that can be adapted across different but related chemical reactions (e.g., from WOR to ORR and OER).

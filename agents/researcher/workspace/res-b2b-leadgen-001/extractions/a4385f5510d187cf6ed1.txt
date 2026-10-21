@@ -1,0 +1,18 @@
+Link: http://arxiv.org/abs/1909.00057v1
+
+HTTP Status: 200
+
+Title: [1909.00057v1] Learning from Multi-User Activity Trails for B2B Ad Targeting
+
+Content:
+
+**B2B Purchase Decision Dynamics**
+* **Multi-Agent Journey:** B2B online purchase decisions are often complex and involve multiple agents within an organization rather than a single individual.
+* **Role Differentiation:** The process typically involves a workflow where some employees conduct initial market research and subsequently influence the decision-makers who execute the final purchase order.
+* **Data Limitation:** Because of this distributed process, the online activity trail of a single individual often provides only partial information for predicting conversions.
+
+**High-Intent Lead Identification Strategy**
+* **Collective Activity Trails:** To improve conversion prediction, it is more effective to leverage the collective activity trails of "relevant users" within an organization rather than focusing on a single lead.
+* **Relevant User Identification:** "Relevant users" are identified based on a seed list of activities specific to the B2B advertiser.
+* **Methodology:** The use of distributed activity representations can be employed to build these seed lists of relevant activities.
+* **Effectiveness:** Research using Yahoo Gemini data indicates that leveraging collective organizational activity trails can improve conversion prediction AUC by 8.8% and provide interpretable, advertiser-specific activity lists for targeting.

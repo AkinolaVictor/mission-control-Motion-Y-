@@ -1,0 +1,34 @@
+Link: https://doi.org/10.48550/arxiv.2607.18548
+
+HTTP Status: 200
+
+Title: [2607.18548] Engineering Trustworthy Agentic AI for Critical Systems
+
+Content:
+
+**Research Paper:** Engineering Trustworthy Agentic AI for Critical Systems (arXiv:2607.18548)
+
+**Core Focus:**
+Treats trustworthiness as a first-class engineering property for agentic AI (systems capable of autonomous perception, planning, tool use, and multi-step action) in critical engineering domains.
+
+**Trustworthiness Framework (Five Dimensions):**
+*   **Safety and Constraint Satisfaction:** Ensuring agents operate within predefined safety boundaries.
+*   **Robustness and Reliability:** Consistency of performance under varying conditions.
+*   **Transparency and Interpretability:** Ability to understand and explain agent decision-making.
+*   **Accountability and Auditability:** Ability to verify and audit agent behavior.
+*   **Privacy and Security:** Protection of data and resistance to adversarial attacks.
+
+**Technical Scope:**
+*   **Agentic Assurance Workflow:** Maps the process from perception through to audit.
+*   **Architectural Analysis:** Surveys agentic system architectures, associated threats, and concrete trust mechanisms.
+*   **Evaluation:** Utilizes quantitative metrics for development and evaluation.
+
+**Domain-Specific Applications & Findings:**
+The research identifies recurring design patterns and shared failure modes across four constraint-bound domains:
+*   Power systems
+*   Autonomous vehicles/robotics/UAVs
+*   High-performance computing
+*   Communication networks
+
+**Proposed Mitigation Strategy:**
+Advocates for a reusable, cross-domain assurance framework modeled after graded certification regimes used in mature safety-critical engineering fields.

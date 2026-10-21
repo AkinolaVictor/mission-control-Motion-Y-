@@ -1,0 +1,19 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "intake_specialist",
+  "description": "Create a comprehensive guide on building a web automation agent architecture. The guide should cover a comparison of Selenium, Playwright, and Puppeteer; methods for LLM integration in web agents; autonomous navigation strategies; error handling and CAPTCHA solving; and the design of agentic workflows for web browsing.",
+  "expected_output": "A comprehensive Markdown article structured as a technical guide, stored in the system repository.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2023-10-27T10:05:00Z",
+  "search_prompt": "comprehensive guide to web automation agent architecture Selenium vs Playwright vs Puppeteer LLM integration for web agents autonomous web navigation error handling CAPTCHA solving agentic workflows for web browsing",
+  "status": "completed",
+  "task_id": "res-web-auto-arch-001",
+  "title": "Building a Web Automation Agent Architecture: A Comprehensive Guide"
+}

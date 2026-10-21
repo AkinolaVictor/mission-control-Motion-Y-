@@ -1,0 +1,17 @@
+Link: https://arxiv.org/abs/2604.06367
+
+HTTP Status: 200
+
+Title: [2604.06367] WebSP-Eval: Evaluating Web Agents on Website Security and Privacy Tasks
+
+Content:
+
+**Web Agent Performance and Limitations (WebSP-Eval Study)**
+
+*   **Agentic Workflow Components:** The WebSP-Eval framework utilizes a system that includes:
+    *   A custom Google Chrome extension for account and initial state management across multiple runs.
+    *   Integration of multimodal large language models (MLLMs) to drive agent instantiations.
+    *   An automated evaluator to measure success rates.
+*   **Autonomous Navigation Challenges:**
+    *   Current web agents exhibit limited autonomous exploration capabilities, particularly when executing security and privacy tasks (e.g., managing cookie preferences, configuring privacy settings, revoking sessions).
+    *   **UI Element Failures:** Stateful UI elements are a primary cause of agent failure. Specifically, "toggles" were responsible for over 45% of task failures across multiple tested models.

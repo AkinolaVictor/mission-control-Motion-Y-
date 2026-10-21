@@ -532,3 +532,47 @@ ensure this api is called each time this page is refreshed
 from the task_state of the currently task, the user should be able to chat with the agent this task is assigned to in line 162 of the approval.js file, ensure to provide all the necessary information to make the user chat with the agent the task is assigned to
 
 let me see your plan before starting
+
+
+the user should be able to chat with the existing agent
+let me see your plan before starting
+
+act upon approval
+create two api endpoint
+1. when a user clicks on line 146 in the approval.js file, it should call the /api/agent/approve_task which approves the task awaiting the approval, it does this by simply changing the task_state[await_approval] value to false so it goes to the @agents/[selected_agent]/workspace/[selected_task_id]/task_state.json file to edit the task_state[await_approval] value to false
+
+2. when a user clicks on line 142 in the approval.js file, it should call the /api/agent/delete_task which deletes the task. the task is to be deleted by completely deleting the task contained folder @agents/[selected_agent]/workspace/[selected_task_id]/ you must ensure the task folder is deleted
+
+let me see your plan before starting
+
+
+
+
+
+Backend Implementation:
+create an api endpoint /api/agent/single_agent_tasks
+this route would get all tasks of its objective agent, it would categorize them into:
+1. Ongoing Tasks
+2. Completed Tasks
+3. Awaiting Tasks
+
+completed tasks are all tasks stored in @agents/[objective_agent]/finished/
+-if the folder doesn't exist, then no no task has been completed yet
+-otherwise you loop through it and get all the task_state .../finished/[each_task]/[each_task_state].json (store it all in an array)
+
+awaiting tasks
+read through the @agents/[objective_agent]/workspace/[each_task]/task_state.json
+after reading the task_state, every one with task_atate[await_approval] set to true (as in boolean) or true (as in string), categorize them all as awaiting.
+
+a task is categorized as Ongoing tasks if the task_atate[status] is set to "ongoing"
+if the  task_atate[status] is set to "completed", categorize it as a Completed Task
+
+check line 45 (all_agent_tasks, use to store date from api) of [agentslug].js file to see the data structure to implement
+
+
+
+Frontend Implementation:
+after pulling the data from the backend, implement its content across line 343
+
+
+let me see your plan before starting
