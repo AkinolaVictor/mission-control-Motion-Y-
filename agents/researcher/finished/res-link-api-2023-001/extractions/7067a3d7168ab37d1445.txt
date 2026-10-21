@@ -1,0 +1,23 @@
+Link: https://learn.microsoft.com/en-us/linkedin/
+
+HTTP Status: 200
+
+Title: LinkedIn API Documentation - LinkedIn | Microsoft Learn
+
+Content:
+
+LinkedIn API Structure:
+- Documentation is organized by business lines: Consumer, Compliance, Learning, Marketing, Sales, and Talent Solutions.
+
+Key Documentation Areas for Implementation:
+- Authentication: Dedicated section for API access and authentication protocols.
+- API Concepts: General foundations, terminology, and best practices.
+- Marketing Solutions: Includes Marketing Overview, Getting Started, Integrations Overview, and an application process for access.
+- Consumer Solutions: Includes "Sign in with LinkedIn using OpenID Connect" and "Share on LinkedIn."
+- Talent Solutions: Includes Job Posting, Recruiter System Connect, and CRM Connect.
+- Sales Solutions: Includes Analytics, Display, and Sync Services.
+
+Operational Guidelines:
+- Breaking Change Policy: Documentation exists for managing API updates.
+- Error Handling: Specific guidelines provided for troubleshooting.
+- Partner Support: Available for LinkedIn API developers.

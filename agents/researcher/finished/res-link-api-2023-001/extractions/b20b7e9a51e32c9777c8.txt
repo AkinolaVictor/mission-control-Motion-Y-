@@ -1,0 +1,13 @@
+Link: https://doi.org/10.32614/cran.package.linkedinadsr
+
+HTTP Status: 200
+
+Title: CRAN: Package linkedInadsR
+
+Content:
+
+**Tooling for LinkedIn Ads Data Extraction**
+* **Package:** `linkedInadsR` (Version 0.1.0, published 2022-10-18).
+* **Functionality:** Provides access to LinkedIn Ads marketing data.
+* **Mechanism:** This is not a direct interface with the official LinkedIn API; it operates as a wrapper for the **Windsor.ai API**.
+* **Technical Dependencies:** Requires R (≥ 3.5.0) and the `jsonlite` package.

@@ -1,0 +1,41 @@
+Link: https://developer.linkedin.com/product-catalog
+
+HTTP Status: 200
+
+Title: LinkedIn API | Products
+
+Content:
+
+LinkedIn API Product Categories:
+
+- Consumer Solutions:
+    - Sign in with LinkedIn: Professional identity authentication.
+    - Share on LinkedIn: Content sharing capabilities.
+    - Live Events: Streaming and management of network events.
+    - Add to Profile: Adding certifications to member profiles.
+
+- Marketing Tools (Marketing Developer Platform):
+    - Advertising: Scaling and optimizing business promotion.
+    - Community Management: Brand presence and community nurturing.
+    - Data Integrations: Cross-platform data connectivity.
+    - Events: Creation and promotion of LinkedIn events.
+
+- Sales Solutions:
+    - Sales Display: Profile/account viewing and lead messaging.
+
+- Talent Solutions:
+    - Apply Connect: Application streamlining.
+    - Apply with LinkedIn: Candidate application facilitation.
+    - Job Posting: Integration with ATS or job distribution tools.
+    - Recruiter System Connect: ATS synchronization with LinkedIn Recruiter.
+    - Talent Hub: HR tool integration.
+
+- Plugins:
+    - Add to Profile: Adding certifications and degrees.
+    - Follow Company: Increasing LinkedIn Page followers.
+    - LinkedIn AutoFill: Populating profile fields from LinkedIn profiles.
+    - Share: Posting content to member profiles.
+
+- Regulatory Developer Products:
+    - Pages Data Portability: Access to page data via admin authorization.
+    - Member Data Portability: Access to member/enterprise data.

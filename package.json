@@ -8,13 +8,19 @@
     "start": "next start",
     "lint": "eslint",
     "claude": "ollama launch claude --model gemma4:31b-cloud",
-    "git": "git add . && git commit -m new-updates && git push origin master"
+    "task_manager": "node call_task_manager",
+    "git": "git add . && git commit -m new-updates && git push origin master",
+    "missionx": "concurrently \"npm run dev --prefix frontend\" \"node call_task_manager --prefix backend\"",
+    "mission": "concurrently \"npm run dev\" \"npm run task_manager\"",
+    "all_kill": "concurrently -k \"npm run dev\" \"wait-on http://localhost:3000 && npm run task_manager\"",
+    "all": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && npm run task_manager\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.13.0",
     "axios": "^1.20.0",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
+    "concurrently": "^10.0.6",
     "lucide": "^1.55.0",
     "lucide-react": "^1.55.0",
     "next": "16.3.8",
@@ -23,7 +29,8 @@
     "react-markdown": "^10.1.0",
     "react-redux": "^9.3.0",
     "remark-gfm": "^4.0.1",
-    "tailwind-merge": "^3.7.0"
+    "tailwind-merge": "^3.7.0",
+    "wait-on": "^9.5.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,0 +1,47 @@
+Link: https://en.wikipedia.org/wiki/History_of_artificial_intelligence
+
+HTTP Status: 200
+
+Title: History of artificial intelligence - Wikipedia
+
+Content:
+
+**Market Cycles and Investment Risks**
+* **Economic Bubbles:** The AI sector in the 1980s followed a classic economic bubble pattern where business fascination rose and fell rapidly, leading to the failure of dozens of companies.
+* **Reputational Damage:** Following the "AI winter," the perception that the technology was not viable persisted into the 21st century. This led researchers and entrepreneurs to avoid the term "artificial intelligence" to avoid being viewed as "wild-eyed dreamers" and to better procure funding.
+* **Overestimation of Capabilities:** Financial setbacks occurred when expectations for commercial AI (e.g., Japan's Fifth Generation Project) far exceeded actual technical possibilities.
+
+**Factors Leading to Commercial Failure**
+* **Hardware Obsolescence:** The market for specialized AI hardware (e.g., Lisp machines) collapsed overnight in 1987 when general-purpose desktop computers from Apple and IBM became more powerful and cost-effective.
+* **Maintenance and Scalability:** Early expert systems proved too expensive to maintain, were difficult to update, and were "brittle" (prone to significant errors with unusual inputs).
+* **Funding Shifts:** Funding cuts (e.g., by DARPA) occurred when leadership shifted priority toward projects likely to produce immediate, tangible results rather than long-term speculative goals.
+
+**Drivers of Successful Commercial Integration**
+* **Narrow Focus:** Success in the 1990s was attributed to focusing on specific problems with verifiable solutions ("narrow AI") rather than speculating about general intelligence.
+* **Interdisciplinary Convergence:** Integration with established fields (statistics, mathematical optimization, economics, and operations research) provided a rigorous scientific foundation and measurable results.
+* **Infrastructure Growth:** The application of Moore's Law (doubling of computer speed and memory every two years) and the availability of "big data" were critical catalysts for the viability of AI products.
+* **Invisible Integration:** Many successful AI applications were integrated as components of larger systems (e.g., Google's search engine, banking software, logistics) rather than being marketed as standalone AI products.
+
+- **Drivers of AI Investment Boom**: Investment and interest in AI surged following the success of deep learning (circa 2012), which demonstrated "enormous gains in performance" across diverse applications including speech recognition, machine translation, medical diagnosis, and game playing.
+- **Technical Logic for Scaling**: Performance improvements in machine learning were found to be more heavily influenced by increasing the size of datasets (by two or three orders of magnitude) than by tweaking algorithms.
+- **AGI Investment Motivations**:
+    - **Strategic Ambition**: Founders and financiers (e.g., DeepMind) invested in Artificial General Intelligence (AGI) with the logic of "solving AI" to subsequently "solve everything else."
+    - **Risk Mitigation Logic**: Some investors (e.g., Elon Musk) funded AGI startups based on the belief that they alone could ensure the technology is developed safely to prevent existential threats to humanity.
+    - **Competitive Acquisition**: High-value acquisitions (e.g., Google's $44 million purchase of Geoffrey Hinton's team and the acquisition of DeepMind) indicate a logic of securing top talent and foundational research.
+- **Funding Model Shifts**:
+    - **Non-profit to For-profit**: OpenAI transitioned from a non-profit (intended to be free from corporate economic incentives) to a for-profit entity to secure larger scale financing (over $1 billion from Microsoft).
+    - **Specialized Spin-offs**: Anthropic was formed by former OpenAI scientists concerned with the prioritization of profits over safety, subsequently securing $6 billion in financing from Microsoft and Google.
+
+**AI Investment Trends and Data**
+* **Growth:** AI investment grew exponentially after 2020. Total investments rose from $18 billion in 2014 to $119 billion in 2021.
+* **Generative AI:** By 2023, generative AI accounted for approximately 30% of all AI investments.
+* **Key Players:** 
+    * U.S. Big Tech companies' investments in AI have surpassed those of U.S.-based venture capitalists.
+    * High-valuation examples: OpenAI reached a valuation of $86 billion by early 2024; NVIDIA's market capitalization surpassed $3.3 trillion by mid-2024 due to surging demand for AI-capable GPUs.
+* **Infrastructure Investment:** Stargate LLC (joint venture of OpenAI, SoftBank, Oracle, and MGX) announced plans to invest $500 billion in U.S. AI infrastructure by 2029.
+
+**Investment Logic and Risks**
+* **Drivers of Adoption:** Rapid public adoption (e.g., ChatGPT gaining 100 million users in two months) and the ability of AI to engage in human-like conversation, write code, and generate creative content have driven investment.
+* **Financial Scrutiny:** By mid-2024, the financial sector began questioning whether AI companies could produce a return on investment (ROI) commensurate with their massive valuations.
+* **Market Bubble Concerns:** Some investors (e.g., Jeremy Grantham and Jeffrey Gundlach) have warned that investor enthusiasm may be disconnected from fundamental business realities and revenue potential, drawing parallels to the dot-com bubble of the late 1990s.
+* **Profitability:** Concerns have been raised regarding the lack of sustainable profitability models for many AI-focused companies despite high market capitalizations.

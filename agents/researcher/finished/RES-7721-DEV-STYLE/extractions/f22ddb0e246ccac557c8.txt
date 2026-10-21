@@ -1,0 +1,23 @@
+Link: https://doi.org/10.54832/phj.v8i1.1379
+
+HTTP Status: 200
+
+Title: Relationship Between Parenting Styles and Psychological Well-Being Among Adolescents : An Analysis of Authoritative, Authoritarian, Permissive, and Uninvolved Parenting
+							| PROFESSIONAL HEALTH  JOURNAL
+
+Content:
+
+**Study Overview**
+*   **Objective:** Examined the relationship between parenting styles and psychological well-being among adolescents (n=192, aged 14–16) in a semi-rural Indonesian setting.
+*   **Methodology:** Cross-sectional correlational design using the Parenting Style Four Factor Questionnaire (PS-FFQ) and the Ryff Psychological Well-Being Scale.
+
+**Key Findings**
+*   **Correlation:** A highly significant relationship exists between parenting style and psychological well-being ($\chi^2 = 180.999$; $df = 6$; $p < 0.001$).
+*   **Authoritative Parenting:** 
+    *   Most prevalent style in the sample (65.1%).
+    *   Consistently associated with higher levels of psychological well-being.
+    *   Identified as a "strong protective factor" for adolescent emotional health.
+*   **Other Parenting Styles:** Authoritarian (16.7%), permissive (10.9%), and uninvolved (7.3%) styles were associated with lower levels of psychological well-being.
+
+**Conclusions**
+*   Supportive, structured, and communicative parenting practices (authoritative) are critical for promoting adolescent emotional health.

@@ -1,0 +1,21 @@
+Link: https://doi.org/10.1007/s11187-024-00970-8
+
+HTTP Status: 200
+
+Title: From one to many: education, diversity, and international experience in habitual vs. one-time founders | Small Business Economics | Springer Nature Link
+
+Content:
+
+- Sample Data: In a study of entrepreneurs (sourced from Crunchbase), 49% are solo founders, while 20% started with a team of three or more individuals.
+
+- **Team Composition and Management**:
+    - Habitual entrepreneurs (those who establish multiple firms) are reported to be more effective at both building and managing diverse teams compared to one-time founders (Kirschenhofer & Lechner, 2012; Linder et al., 2024).
+    - One-time founders may be more restricted in their venture outcomes due to an inability to develop equally effective and diverse teams.
+    - Habitual entrepreneurs often leverage a broad spectrum of general experiences, which they then complement with specialists on their teams.
+
+- **Human Capital (HC) and Team Dynamics**:
+    - While specialized HC is beneficial in the early stages of a new venture, a varied range of HC is more critical for the growth of multiple ventures over a career.
+    - The diversity of skills within a founding team (rather than just the number of members) is a significant factor impacting venture success.
+
+- **Operational/Strategic Considerations**:
+    - Organizing the exploitation of new opportunities within an existing organization (rather than starting a new venture) may substantially limit the attraction of crucial financial and human resources (Lechner & Leyronas, 2009; Lechner et al., 2016).

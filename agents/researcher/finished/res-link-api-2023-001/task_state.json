@@ -1,0 +1,20 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "orchestrator",
+  "deadline": "not provided",
+  "expected_output": "A comprehensive, professional Markdown article providing a step-by-step guide to building a LinkedIn automation agent using the official LinkedIn Developer APIs, including authentication and platform guides.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2023-10-27T10:05:00Z",
+  "search_prompt": "comprehensive guide to LinkedIn Developer API for automation and AI agents, LinkedIn Marketing Developer Platform documentation, LinkedIn API OAuth 2.0 authentication for bots, official LinkedIn API vs automation tools, step-by-step implementation of LinkedIn automation agent",
+  "start_time": "2023-10-27T10:00:00Z",
+  "status": "completed",
+  "task_id": "res-link-api-2023-001",
+  "title": "Building an AI Automation Agent with the LinkedIn Developer API"
+}

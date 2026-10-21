@@ -1,0 +1,21 @@
+Link: http://hdl.handle.net/10413/16167
+
+HTTP Status: 200
+
+Title: The relationship between poverty and the authoritarian and authoritative parenting style.
+
+Content:
+
+Study: The relationship between poverty and the authoritarian and authoritative parenting style (Khatib, 2017).
+
+- Theoretical Framework: Utilized the ‘family stress model’ to investigate the relationship between poverty and parenting styles.
+- Methodology: Quantitative secondary data analysis of black South Africans. Participants were categorized into "fewer resourced" and "more resourced" groups based on employment, food availability, and pensions/grants.
+- Measures Used:
+    - Authoritative parenting scale
+    - Punitive parenting scale
+    - Monitoring empathy measure
+    - Communication comfort and frequency scale
+- Findings:
+    - No significant differences were found between fewer resourced and more resourced parents regarding authoritative and authoritarian parenting styles.
+    - A significant difference was found in "communication frequency," which was higher among the fewer resourced group.
+- Conclusion/Limitations: Poverty is a multidimensional process; other mediating factors such as culture and the age of the parent and child may influence the relationship between poverty and parenting styles.

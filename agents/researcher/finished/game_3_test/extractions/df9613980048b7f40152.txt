@@ -1,0 +1,28 @@
+Link: https://doi.org/10.1371/journal.pone.0302943
+
+HTTP Status: 200
+
+Title: Collaborative servitization in service-oriented company: The case study of telco company | PLOS One
+
+Content:
+
+**Perceptions of Startup Collaboration (Telco Case Study)**
+* **Risk vs. Opportunity:** 40% of experts believe working with startups is "too risky." However, there is a consensus that companies should remain close to the startup ecosystem and monitor activities to identify high-quality opportunities.
+* **Startup Motivations for Partnership:** Startups typically approach established operators for two primary reasons:
+    * Assistance in finding customers.
+    * A partner to help develop a solution.
+
+**Role of Startups in Collaborative Servitization (Telco Case Study)**
+
+*   **Strategic Utility of Startups:**
+    *   **Idea Generation Phase:** Startups act as a source of external innovation, seeking established partners (e.g., mobile operators) to scale up their business.
+    *   **Development Phase:** Startups are utilized as partners who possess the specific technical knowledge required to develop a solution.
+
+*   **Logic for Collaboration/Investment:**
+    *   **Capability Gap:** Large service-oriented companies (like telcos) collaborate with startups because they lack the internal capabilities and resources necessary to develop and exploit complex Product-Service Systems (PSS).
+    *   **Risk Mitigation:** Collaborating with specialized partners allows the operator to identify the right solution and develop it according to specific requirements before monetization.
+    *   **Market Expansion:** Partnerships are used as a strategic tool to ensure growth in existing markets and expand into new markets driven by digitalization trends.
+
+*   **Challenges and Trade-offs:**
+    *   **Complexity vs. Agility:** Increasing the number of partners (including startups) during the development phase increases complexity, making agility harder to achieve and complicating the coordination of availability and responsibility for malfunctions.
+    *   **Dependency:** The operator remains responsible for the final solution's performance; therefore, increasing the number of third-party partners increases the risk of failure.

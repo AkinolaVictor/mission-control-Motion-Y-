@@ -291,7 +291,8 @@ export async function article_writter(task_state) {
   const extractionsDir = path.join(workspaceDir, 'extractions');
   const stateFile = path.join(workspaceDir, 'task_state.json');
   const guidePath = path.join(baseDir, 'system', 'ARTICLE.md');
-  const outputDir = path.join(baseDir, 'output');
+  // const outputDir = path.join(baseDir, 'output');
+  const outputDir = path.join(workspaceDir, 'output');
 
   if (
     !path.resolve(workspaceDir).startsWith(

@@ -1,0 +1,142 @@
+Link: https://en.wikipedia.org/wiki/Peter_Thiel
+
+HTTP Status: 200
+
+Title: Peter Thiel - Wikipedia
+
+Content:
+
+**Investment Strategies and Logic**
+
+*   **Talent Acquisition Strategy:** Rather than actively seeking talent, Thiel utilizes "provocative verbal cues" (delivered via books, talks, and mottos) to attract capable individuals to his projects.
+*   **Investment Philosophy/Influences:**
+    *   **Individualism:** A distaste for uniformity and regimentation (stemming from early education) informs a support for individualism and libertarianism.
+    *   **Mimetic Theory:** Influenced by the theories of René Girard.
+*   **Early Venture Capital Approach:**
+    *   **Dot-com Boom:** Capitalized on the era by raising initial funds from friends and family to establish Thiel Capital Management.
+    *   **Identifying Gaps:** With PayPal, the logic was to bridge a specific gap in online payments—specifically the lack of merchant hardware to accept credit cards—by creating a digital wallet for convenience and security.
+    *   **Mission-Driven Investing:** Viewed PayPal's mission as a means of liberating people from currency devaluation caused by inflation.
+*   **Macroeconomic Logic (Clarium Capital):**
+    *   **Directional Betting:** Focused on liquid instruments in currencies, interest rates, commodities, and equities.
+    *   **Peak-Oil Theory:** Operated on the "idée fixe" that the world was running out of oil with no easy alternatives.
+    *   **Bubble Identification:** Predicted the migration of the dot-com bubble into the financial sector (specifically citing General Electric and Walmart as vulnerable).
+*   **Strategic Reaction (Palantir):**
+    *   **Problem-Solving:** Formed Palantir as a reaction to the September 11 attacks, leveraging existing anti-fraud technology from PayPal.
+    *   **Governance Logic:** Aimed to provide the state with cutting-edge technology that included "built-in policing systems" to ensure legal use of power.
+
+**Investment Logic and Strategies: Peter Thiel / Founders Fund**
+
+**Investment Philosophies**
+*   **"Hard Tech" Pivot:** Following the success of Facebook, Thiel shifted Founders Fund toward "hard tech." The reasoning was that while high-value social platforms (e.g., Twitter) exist, they do not "take civilization to the next level."
+*   **Civilizational/National Security Focus:** Focuses on incubating startups performing "hypersensitive work" related to national security. This includes a "trilogy" of companies: Palantir, Anduril, and General Matter.
+*   **Strategic Market Positioning:** Investing in companies that challenge established monopolies or traditional industry dominance (e.g., forming a consortium of new-generation defense companies to challenge traditional defense firms).
+*   **Contrarian/High-Conviction Funding:** In the case of Palantir (2004), Thiel and his fund largely bankrolled the initial $30 million cost due to a lack of interest from other venture capital firms.
+
+**Investment Tactics and Instruments**
+*   **Convertible Notes:** Used in the initial $500,000 investment in Facebook; the note was set to convert to equity if the company reached 1.5 million users by the end of 2004.
+*   **Valuation and Risk Assessment:** Thiel cited "reasonable valuation" and comfort with the founders' "original vision" as key drivers for viewing the Facebook investment as "safe."
+*   **Timing of Funding Rounds:** Credit is given to Thiel for the strategic timing of Facebook's 2007 Series D, which closed immediately prior to the 2008 financial crisis.
+*   **Founder Control:** In the early stages of Palantir, founder control was maintained by declining to offer board seats to investors.
+
+**Portfolio Diversification and Sector Focus**
+*   **Defense and Infrastructure:** Heavy investment in defense hardware (Anduril), uranium enrichment (General Matter), and AI infrastructure using clean energy (Crusoe).
+*   **Frontier Technology:** Investments in photonic quantum computing (PsiQuantum), superconducting quantum computing (Rigetti Computing), and space-based services (Impulse Space, Varda).
+*   **Fintech (International):** Through Valar Ventures, a focus on international fintech and digital banking across Europe, Africa, and Latin America (e.g., Wise, N26, Kuda Bank).
+*   **Crypto/Digital Assets:** Strategic accumulation of Bitcoin (approx. $20 million) starting in 2012, with a major exit of $1.8 billion in March 2022 prior to a market crash.
+
+**Investment Strategies and Logic**
+
+*   **Stage-Specific Targeting:**
+    *   **Mithril Capital:** Targets companies beyond the startup stage that are ready to scale up.
+    *   **1517 Fund:** Targets "dropouts, renegade students, and deep tech scientists," providing cash grants and investments to extend support for Thiel Fellowship recipients.
+    *   **Crescendo Equity Partners:** Focuses on developing Small and Medium Enterprise (SME) companies into "hidden champions" and scaling them globally.
+
+*   **Sector Focus and Themes:**
+    *   **Deep Tech and Defense:** Significant investment in "dual-use" technology (civilian and military applications), including drones (Quantum-Systems, Stark, Neros), laser communications (Mynaric), and counter-drone missile technology (Nordic Air Defence).
+    *   **Strategic Sovereignty/Manufacturing:** America's Frontier Fund focuses on bringing manufacturing back to the US, specifically semiconductors.
+    *   **Life Sciences and Biotech:** Investments via Octave Life Sciences, Elevat3, and various biotech startups (e.g., Alloy Therapeutics, Compass Pathways).
+    *   **Frontier Infrastructure:** Pronomos Capital invests in the establishment of experimental, semi-autonomous "charter cities" on vacant lands.
+    *   **Space and Intelligence:** Investments in space-based intelligence (BlackSky) and satellite technology (Rivada Space Networks).
+
+*   **Strategic Logic and Influence:**
+    *   **Political Connectivity:** Use of "politically connected" boards and lobbyists (e.g., Rivada Space Networks) to navigate legal battles and secure investment.
+    *   **Ecosystem Building:** Creation of a "Thiel ecosystem" where different funds and companies (e.g., Palantir, Helsing) share strategic partnerships and personnel.
+    *   **Geopolitical Positioning:** America's Frontier Fund is characterized as "China-sceptic."
+
+**Investment Vehicles and Strategies**
+* **Personal Investment Vehicles:** Uses entities such as Rivendell One LLC, Rivendell 7, and Rivendell 25 for personal investments and holding shares (e.g., Palantir).
+* **Tax Strategy:** Utilized a Roth IRA (held in Rivendell Trust) for early investments in PayPal, Palantir, and Facebook, allowing assets to grow tax-free (exceeding $5 billion by 2019).
+* **Venture Fund Backing:** Acts as a sponsor or limited partner for numerous venture funds, including:
+    * Hydrazine Capital (Sam Altman)
+    * Narya Capital (J.D. Vance)
+    * Doepfner Capital
+    * Zeev Ventures (funded 90% of the first fund)
+    * Thrive Capital (backed the second fund in 2011)
+    * A-Star Partners and Wischoff Ventures
+* **Strategic Fund Support:** Through Founders Fund, provided backing to Intudo (Indonesia-focused), which served to validate the fund's mission.
+
+**Investment Focus and Logic**
+* **Sector Diversification:**
+    * **Deep Tech/Science:** Investments in nuclear energy (Saltborg Energy/Seaborg Technologies), biotech (AbCellera, Ataraxis AI, EnClear Therapies, Peptilogics, HistoSonics), and robotics (RoboteX).
+    * **Government/Intelligence:** Backed HySpecIQ (satellite imaging for government agencies) and Palantir.
+    * **Industry Firsts:** Founders Fund became the first institutional investor in the cannabis industry via Privateer Holdings (2015).
+    * **Crypto:** Co-backed the crypto investment fund 1Confirmation (2019).
+* **Ideological/Political Investing:**
+    * **Parallel Economy:** Instrumental in creating 1789 Capital to build a network of businesses, media, and political organizations associated with the "America First" movement.
+    * **Anti-ESG:** Backs Strive Asset Management, which aims to remove "stakeholder capitalism" and ESG mandates from corporate America.
+* **Opportunistic/Relationship-Based Investing:**
+    * **Tacora:** Invested $250 million in this venture debt firm after the founder pitched the idea during a casual dinner.
+    * **Enhanced Games:** Lead funder for a multi-sport event allowing performance-enhancing substances; investment driven by a relationship with the founder.
+
+**Due Diligence and Timing**
+* **Development Stage:** Example of rejecting a pitch (Reporty/Carbyne) via Valar in 2016 because the startup was deemed "premature," only to invest via Founders Fund in 2018 during a Series B round once the company was more developed.
+
+**Investment Logic and Strategy (Peter Thiel)**
+
+*   **Monopoly Strategy:** Thiel advocates that companies should avoid competition and public attention. The goal is to develop into a monopoly by creating something entirely new and dominating a niche market before expanding into broader markets. He asserts that specific niche markets can generate profits for years or decades.
+*   **Innovation Focus:**
+    *   **Bits vs. Atoms:** Thiel observes a discrepancy where innovative breakthroughs occur in computing/IT ("bits") but stagnate in the physical world ("atoms"), specifically in space travel, high-speed transit, and medical devices. He attributes this to the fact that "bits were unregulated and atoms were regulated."
+    *   **Technological Stagnation:** He advocates for a right-wing political turn to address perceived technological stagnation.
+*   **Investment Motivations:**
+    *   **Life Extension:** Investments in projects like the Singularity Institute are linked to a belief in life-extension technologies as a means to escape the natural limitations of human life.
+    *   **Creation Outside the System:** Thiel suggests that individuals should spend less time attempting to change existing government systems and instead focus on "creating things outside it."
+
+- **Tech-Elite Capitalism**: Klaus Schwab describes the model represented by Peter Thiel as "tech-elite capitalism," which prioritizes speed and explosive innovation over stakeholder capitalism. A core premise of this logic is that capital follows innovation rather than the reverse.
+- **Techno-Eschatology**: Some political theorists (e.g., Elke Schwarz) argue that Thiel and Marc Andreessen utilize "techno-eschatology," which involves the "sacralizing of AI" to provide a spiritual or ideological bolster for the logic of venture capitalism.
+- **Strategic/Geopolitical Investing**: Thiel's investment logic is heavily tied to national security and geopolitics, specifically an "arms race" with China. This includes:
+    - Investing in a "new military-industrial complex" (e.g., Palantir, Anduril, SpaceX) to break traditional barriers between government and the tech sector.
+    - Viewing economic relations and investments through a geopolitical lens.
+- **Ideological Frameworks**:
+    - **Centralization vs. Decentralization**: Thiel frames the logic of emerging technologies ideologically, stating "Crypto is decentralizing... AI is centralizing," equating crypto with libertarianism and AI with communism.
+    - **Warrior Culture**: Associated with Palantir, this culture values "excellence over money."
+    - **Techno-Feudalism**: Some critics suggest Thiel's approach integrates mimetic theory and elitism to propose a "techno-feudal alternative" to liberal democracy.
+
+- Investment Strategy: Thiel's investments are described as not being "merely commercial," often combining economic and political activities to target entire ecosystems rather than just individual companies.
+- Strategic Market Cornering: Since the 2010s, Thiel used multiple funds (Y Combinator, Founders Fund, Mithril) to corner the private satellite imagery market, subsequently selling these services to governments.
+- Defense Tech Focus: Thiel's funds (specifically Founders Fund) play a significant role in financing defense startups, particularly in Israel, where defense tech receives only 0.5% of all startup capital.
+- Political Logic in Tech Investment:
+    - AI vs. Crypto: Thiel views AI as a tool for centralization and global economic control, while crypto favors decentralization.
+    - Subordination of Technology: It is claimed he invests in AI not to follow its inherent logic of centralization, but to subordinate it to libertarian and authoritarian political ambitions.
+
+- **Philanthropic Approach to Innovation**: Thiel advocates for a form of philanthropy focused on businesses and innovation rather than traditional charitable commitments (e.g., The Giving Pledge).
+- **Funding Gaps in Research**: Through Breakout Labs, Thiel identified and targeted a "funding gap" for innovative research that exists outside of government, large corporations, or academic institutions.
+- **Investment Focus Areas**:
+    - **Artificial Intelligence**: Financial backing for the development of "friendly" and safe artificial general intelligence (e.g., Singularity Institute, OpenAI).
+    - **Life Extension/Biotech**: Investment in anti-aging research and biological sciences to accelerate health and longevity (e.g., Methuselah Mouse Prize).
+    - **Science-Focused Startups**: Breakout Ventures invests in early-stage companies specializing in technology, biology, and chemistry, specifically focusing on human health and sustainability.
+    - **Societal Experimentation**: Investment in "seasteading" (autonomous ocean communities) as a means to experiment with diverse social, political, and legal systems to create "human freedom."
+- **Human Capital Strategy**: The Thiel Fellowship provides funding to individuals under 23 to encourage them to drop out of college and create their own ventures, based on the belief that the university system requires external pressure to adapt.
+
+**Investment Focus and Logic**
+
+*   **High-Risk/Contrarian Profiles:** Through the 1517 Fund, Thiel targets "dropouts, students & SciFi science," specifically seeking founders with non-traditional backgrounds (e.g., those who leave formal education) to find the "next Mark Zuckerberg."
+*   **Deep Tech and Frontier Science:** Significant investment in high-complexity technical fields, including:
+    *   **Aerospace and Defense:** Hypersonic flight technology (Venus Aerospace), space-based intelligence, and drone defense solutions.
+    *   **Energy:** Nuclear fusion (Helion).
+    *   **Quantum Computing:** Superconducting quantum processors (Qolab).
+    *   **Biotech:** Dementia therapy and Parkinson's biomarkers (D&D Pharmatech, Valted Seq).
+    *   **Materials Science:** Solid-state metals (Foundation Alloy).
+*   **Strategic National Interests:** Investment in "defense-focused startups" and "national security-focused" ventures via America's Frontier Fund, including efforts to reinvigorate U.S. chip-making.
+*   **Market Competition:** Strategic investments designed to challenge dominant market players (e.g., backing Rivada Space Networks to compete with SpaceX/Starlink).
+*   **Geographic Diversification:** Utilization of specialized funds to target specific regional tech ecosystems, such as SNÖ Ventures for the Nordic region and Crescendo Equity Partners for Korean tech firms with global potential.
+*   **Investment Stages:** Operates across the lifecycle, from seed funding and cash grants (1517 Fund) to late-stage venture capital (Mithril).

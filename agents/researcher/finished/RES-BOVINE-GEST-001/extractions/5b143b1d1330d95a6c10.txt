@@ -1,0 +1,13 @@
+Link: https://doi.org/10.1515/bile-2015-0004
+
+HTTP Status: 200
+
+Title: The evaluation of gestation length range for different...
+
+Content:
+
+Gestation Length in Polish Dairy Cattle (Study 2005–2010):
+- Distribution: Gestation length follows a normal distribution.
+- Acceptable upper limits by breed:
+    - Montbéliard and Simental: 306 days.
+    - Other dairy cattle breeds: 298 days.

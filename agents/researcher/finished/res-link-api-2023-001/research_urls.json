@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "url": "https://developer.linkedin.com/"
+  },
+  {
+    "id": 2,
+    "url": "https://developer.linkedin.com/product-catalog"
+  },
+  {
+    "id": 3,
+    "url": "https://learn.microsoft.com/en-us/linkedin/"
+  },
+  {
+    "id": 4,
+    "url": "https://arxiv.org/api/quEUz9DbNmxA1UFL+lv+9qvcfQ0"
+  },
+  {
+    "id": 5,
+    "url": "http://arxiv.org/abs/1602.04572v1"
+  },
+  {
+    "id": 6,
+    "url": "http://arxiv.org/abs/1602.04924v1"
+  },
+  {
+    "id": 7,
+    "url": "http://arxiv.org/abs/2405.11344v4"
+  },
+  {
+    "id": 8,
+    "url": "http://arxiv.org/abs/2306.00025v1"
+  },
+  {
+    "id": 9,
+    "url": "http://arxiv.org/abs/1105.5717v1"
+  },
+  {
+    "id": 10,
+    "url": "http://arxiv.org/abs/2511.12905v1"
+  },
+  {
+    "id": 11,
+    "url": "http://arxiv.org/abs/2006.12425v1"
+  },
+  {
+    "id": 12,
+    "url": "http://arxiv.org/abs/1806.09063v1"
+  },
+  {
+    "id": 13,
+    "url": "http://arxiv.org/abs/2202.12472v1"
+  },
+  {
+    "id": 14,
+    "url": "https://doi.org/10.31219/osf.io/ysdmv"
+  },
+  {
+    "id": 15,
+    "url": "https://doi.org/10.32614/cran.package.rlinkedinads"
+  },
+  {
+    "id": 16,
+    "url": "https://doi.org/10.32614/cran.package.linkedinadsr"
+  },
+  {
+    "id": 17,
+    "url": "https://doi.org/10.32614/cran.package.rlinkedin"
+  },
+  {
+    "id": 18,
+    "url": "https://doi.org/10.1007/978-1-4939-0647-5_14"
+  },
+  {
+    "id": 19,
+    "url": "https://doi.org/10.1109/csci54926.2021.00191"
+  },
+  {
+    "id": 20,
+    "url": "https://doi.org/10.5040/9798216023166.ch-006"
+  },
+  {
+    "id": 21,
+    "url": "https://doi.org/10.1007/978-1-4842-2854-8_6"
+  },
+  {
+    "id": 22,
+    "url": "https://doi.org/10.29268/stcc.2014.2.2.2"
+  },
+  {
+    "id": 23,
+    "url": "https://doi.org/10.5937/mkng2603219m"
+  },
+  {
+    "id": 24,
+    "url": "https://doi.org/10.36227/techrxiv.174495492.22752319/v1"
+  },
+  {
+    "id": 25,
+    "url": "https://hdl.handle.net/11012/259613"
+  },
+  {
+    "id": 26,
+    "url": "https://www.bing.com/ck/a?!&&p=dbe2a12dbed5dbb60fe2446511a3e041a23e825fa5a3382f966206434e2c9231JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L3NlYXJjaD9xPWNvbXByZWhlbnNpdmUrZ3VpZGUrdG8rTGlua2VkSW4rRGV2ZWxvcGVyK0FQSStmb3IrYXV0b21hdGlvbithbmQrQUkrYWdlbnRzJTJjK0xpbmtlZEluK01hcmtldGluZytEZXZlbG9wZXIrUGxhdGZvcm0rZG9jdW1lbnRhdGlvbiUyYytMaW5rZWRJbitBUEkrT0F1dGgrMi4wK2F1dGhlbnRpY2F0aW9uK2Zvcitib3RzJTJjK29mZmljaWFsK0xpbmtlZEluK0FQSSt2cythdXRvbWF0aW9uK3Rvb2xzJTJjK3N0ZXAtYnktc3RlcCtpbXBsZW1lbnRhdGlvbitvZitMaW5rZWRJbithdXRvbWF0aW9uK2FnZW50JndlYnNjcD0xJkZPUk09SERSV1ND&ntb=1"
+  },
+  {
+    "id": 27,
+    "url": "https://www.bing.com/ck/a?!&&p=a8660cdb2c90e43ccf5ef2cc38e481ce6a4f5632181dae1cb0ee574881283af6JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L2ltYWdlcy9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK0xpbmtlZEluK0RldmVsb3BlcitBUEkrZm9yK2F1dG9tYXRpb24rYW5kK0FJK2FnZW50cyUyYytMaW5rZWRJbitNYXJrZXRpbmcrRGV2ZWxvcGVyK1BsYXRmb3JtK2RvY3VtZW50YXRpb24lMmMrTGlua2VkSW4rQVBJK09BdXRoKzIuMCthdXRoZW50aWNhdGlvbitmb3IrYm90cyUyYytvZmZpY2lhbCtMaW5rZWRJbitBUEkrdnMrYXV0b21hdGlvbit0b29scyUyYytzdGVwLWJ5LXN0ZXAraW1wbGVtZW50YXRpb24rb2YrTGlua2VkSW4rYXV0b21hdGlvbithZ2VudCZGT1JNPUhEUlNDMg&ntb=1"
+  },
+  {
+    "id": 28,
+    "url": "https://www.bing.com/ck/a?!&&p=2a17b8d165f9720f4c21334abde59e076dee90738df288641d27e5c928a071f7JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L3ZpZGVvcy9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK0xpbmtlZEluK0RldmVsb3BlcitBUEkrZm9yK2F1dG9tYXRpb24rYW5kK0FJK2FnZW50cyUyYytMaW5rZWRJbitNYXJrZXRpbmcrRGV2ZWxvcGVyK1BsYXRmb3JtK2RvY3VtZW50YXRpb24lMmMrTGlua2VkSW4rQVBJK09BdXRoKzIuMCthdXRoZW50aWNhdGlvbitmb3IrYm90cyUyYytvZmZpY2lhbCtMaW5rZWRJbitBUEkrdnMrYXV0b21hdGlvbit0b29scyUyYytzdGVwLWJ5LXN0ZXAraW1wbGVtZW50YXRpb24rb2YrTGlua2VkSW4rYXV0b21hdGlvbithZ2VudCZGT1JNPUhEUlNDMw&ntb=1"
+  },
+  {
+    "id": 29,
+    "url": "https://www.bing.com/ck/a?!&&p=175277e556c75bf5ba61d74eaa9d483aa71cbc8408a9e517c43e92145841a626JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L21hcHM_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK0xpbmtlZEluK0RldmVsb3BlcitBUEkrZm9yK2F1dG9tYXRpb24rYW5kK0FJK2FnZW50cyUyYytMaW5rZWRJbitNYXJrZXRpbmcrRGV2ZWxvcGVyK1BsYXRmb3JtK2RvY3VtZW50YXRpb24lMmMrTGlua2VkSW4rQVBJK09BdXRoKzIuMCthdXRoZW50aWNhdGlvbitmb3IrYm90cyUyYytvZmZpY2lhbCtMaW5rZWRJbitBUEkrdnMrYXV0b21hdGlvbit0b29scyUyYytzdGVwLWJ5LXN0ZXAraW1wbGVtZW50YXRpb24rb2YrTGlua2VkSW4rYXV0b21hdGlvbithZ2VudCZGT1JNPUhEUlNDNA&ntb=1"
+  },
+  {
+    "id": 30,
+    "url": "https://www.bing.com/ck/a?!&&p=e04790992098ee98fd08796ca16f844cb9cdb73f354315bcbfd94777f4570729JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L25ld3Mvc2VhcmNoP3E9Y29tcHJlaGVuc2l2ZStndWlkZSt0bytMaW5rZWRJbitEZXZlbG9wZXIrQVBJK2ZvcithdXRvbWF0aW9uK2FuZCtBSSthZ2VudHMlMmMrTGlua2VkSW4rTWFya2V0aW5nK0RldmVsb3BlcitQbGF0Zm9ybStkb2N1bWVudGF0aW9uJTJjK0xpbmtlZEluK0FQSStPQXV0aCsyLjArYXV0aGVudGljYXRpb24rZm9yK2JvdHMlMmMrb2ZmaWNpYWwrTGlua2VkSW4rQVBJK3ZzK2F1dG9tYXRpb24rdG9vbHMlMmMrc3RlcC1ieS1zdGVwK2ltcGxlbWVudGF0aW9uK29mK0xpbmtlZEluK2F1dG9tYXRpb24rYWdlbnQmRk9STT1IRFJTQzY&ntb=1"
+  },
+  {
+    "id": 31,
+    "url": "https://www.bing.com/ck/a?!&&p=45ace37dd28303a6d34de54be4e848c25f19a816deea302cb7dfc9417a379ebfJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1L3RyYXZlbC9zZWFyY2g_cT1jb21wcmVoZW5zaXZlK2d1aWRlK3RvK0xpbmtlZEluK0RldmVsb3BlcitBUEkrZm9yK2F1dG9tYXRpb24rYW5kK0FJK2FnZW50cyUyYytMaW5rZWRJbitNYXJrZXRpbmcrRGV2ZWxvcGVyK1BsYXRmb3JtK2RvY3VtZW50YXRpb24lMmMrTGlua2VkSW4rQVBJK09BdXRoKzIuMCthdXRoZW50aWNhdGlvbitmb3IrYm90cyUyYytvZmZpY2lhbCtMaW5rZWRJbitBUEkrdnMrYXV0b21hdGlvbit0b29scyUyYytzdGVwLWJ5LXN0ZXAraW1wbGVtZW50YXRpb24rb2YrTGlua2VkSW4rYXV0b21hdGlvbithZ2VudCZtPWZsaWdodHMmRk9STT1GQlNDT1A&ntb=1"
+  },
+  {
+    "id": 32,
+    "url": "https://www.bing.com/ck/a?!&&p=523a843dbabd979a09b087526501d51f2fd478732be22f8486f35f3c495999acJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L2NvbXByZWhlbnNpdmU&ntb=1"
+  },
+  {
+    "id": 33,
+    "url": "https://www.bing.com/ck/a?!&&p=40ef3e46aa01ca296c29146b53f8afd9d957f27b9becd9a2b31cf12f1f57424aJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=3699a119-4738-6046-0d13-b6e046746197&u=a1aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvZGljdGlvbmFyeS9lbmdsaXNoL2NvbXByZWhlbnNpdmU&ntb=1"
+  },
+  {
+    "id": 34,
+    "url": "https://support.google.com/websearch"
+  }
+]

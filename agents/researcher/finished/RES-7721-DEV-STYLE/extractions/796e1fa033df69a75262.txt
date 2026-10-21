@@ -1,0 +1,20 @@
+Link: https://hdl.handle.net/20.500.14639/2134
+
+HTTP Status: 200
+
+Title: Nurturing the Self: Investigating Self-Compassion as a Moderator Between Percieved Paretning Styles and Mental Health Outcomes in Adulthood
+
+Content:
+
+Study: Nurturing the Self: Investigating Self-Compassion as a Moderator Between Perceived Parenting Styles and Mental Health Outcomes in Adulthood (Storm, M. J., Cape Breton University).
+
+- Participants: 316 adults (ages 18–67, Mean = 27.75).
+- Measured Variables: Perceived parenting styles (PAQ), self-compassion (SCS), anxiety (GAD-7), and depression (BDI-II).
+
+Findings on Parenting Styles and Adult Mental Health:
+- Authoritarian Parenting: Predicted higher levels of depression (b = 0.22, p < .001) and anxiety (b = 0.10, p = .006).
+- Permissive Parenting: Showed no significant effects on the measured mental health outcomes.
+
+Moderating Factors:
+- Self-Compassion: Predicted lower depression (b = –9.17, p < .001) and lower anxiety (b = –4.57, p < .001).
+- Interaction: A marginal interaction (b = –0.17, p = .053) suggests self-compassion may buffer depressive symptoms specifically for individuals from authoritarian backgrounds.

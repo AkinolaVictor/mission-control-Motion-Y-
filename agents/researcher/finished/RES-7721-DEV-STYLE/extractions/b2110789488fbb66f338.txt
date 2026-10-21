@@ -1,0 +1,17 @@
+Link: https://doi.org/10.12928/jehcp.v10i3.20620
+
+HTTP Status: 200
+
+Title: Permissive, Authoritarian, and Authoritative Parenting Style and Smartphone Addiction on University Students
+							| Journal of Educational, Health and Community Psychology
+
+Content:
+
+Study: Permissive, Authoritarian, and Authoritative Parenting Style and Smartphone Addiction on University Students (2021)
+
+Sample: 225 university students in Jakarta (67 male, 158 female).
+
+Findings on Parenting Styles and Behavioral Outcomes (Smartphone Addiction):
+- Permissive Parenting: Significant positive correlation (0.320) with smartphone addiction.
+- Authoritarian Parenting: Significant positive correlation (0.300) with smartphone addiction.
+- Authoritative Parenting: No significant relationship found with smartphone addiction.

@@ -1,0 +1,20 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2024-05-22T10:00:00Z",
+  "created_by": "orchestrator",
+  "deadline": "not provided",
+  "expected_output": "A comprehensive Markdown article covering bovine gestation stages, fetal development, trimester-specific nutrition, calving signs, and breed variations.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2024-05-22T10:00:00Z",
+  "search_prompt": "comprehensive guide on bovine gestation period: fetal development timeline by stage, nutritional requirements for pregnant cows per trimester, signs of labor and calving in cattle, and average gestation length comparison across different cattle breeds",
+  "start_time": "2024-05-22T10:00:00Z",
+  "status": "completed",
+  "task_id": "RES-BOVINE-GEST-001",
+  "title": "Comprehensive Guide to Bovine Gestation and Calving"
+}

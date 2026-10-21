@@ -1,0 +1,15 @@
+Link: https://doi.org/10.32614/cran.package.rlinkedinads
+
+HTTP Status: 200
+
+Title: CRAN: Package rlinkedinads
+
+Content:
+
+- Tool: rlinkedinads (R package, version 0.2.0, published 2024-01-29).
+- Purpose: Loads data from the LinkedIn Advertising API.
+- Capabilities: 
+    - Load ad account hierarchy: accounts, users, campaign groups, campaigns, and creatives.
+    - Load ad analytics data from LinkedIn Ad accounts.
+- Official Documentation Reference: https://learn.microsoft.com/en-us/linkedin/marketing/overview?view=li-lms-2023-10
+- Technical Dependencies: Uses `httr2` (≥ 1.0.0) for HTTP requests.

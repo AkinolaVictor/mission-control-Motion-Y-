@@ -1,4 +1,5 @@
 import { article_writter } from "./functions/article_writter"
+import { task_cleanup } from "./functions/task_cleanup"
 import { url_extractor } from "./functions/url_extractor"
 import { url_scrapper } from "./functions/url_scrapper"
 import fs from "fs/promises"
@@ -9,14 +10,21 @@ export async function task_runner(data){
     const filePath = path.join(process.cwd(), "agents", "researcher", "workspace", data.task_id, "task_state.json")
     const file = await fs.readFile(filePath, "utf8")
     const task_state = JSON.parse(file)
+    
     // return
     const {status, process_states, await_approval, attempt} = task_state
     const {article_generated, url_collection, url_scrapping} = process_states || {}
 
     // const workspaceDir = path.join(process.cwd(), 'agents', 'researcher', 'workspace', task_id);
     
+    // stage 4
+    if(article_generated === "completed" && url_scrapping === "completed" && url_collection === "completed"){
+        await task_cleanup(task_state)
+        console.log("Done: research completed, article generated")
+        return
+    }
+    
     if(status === "completed") return
-    // if(status === "ongoing") return
     if(attempt>7) return
 
     // if(url_collection === "working") return
@@ -35,6 +43,7 @@ export async function task_runner(data){
         // add to the approval list or simply bring it to the top
         return
     }
+
     // stage 1
     if(url_collection !== "completed" ){
         await url_extractor(task_state)

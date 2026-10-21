@@ -1,6 +1,6 @@
 
 // import { article_writter } from './agents/researcher/functions/article_writter.js';
-import { url_scrapper } from './agents/researcher/functions/url_scrapper.js';
+import { url_scrapper } from './archives/url_scrapper_x.js';
 
 async function runTest() {
   const task_state = {

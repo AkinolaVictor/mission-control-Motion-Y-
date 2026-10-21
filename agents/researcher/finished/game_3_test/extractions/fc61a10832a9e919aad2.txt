@@ -1,0 +1,72 @@
+Link: https://en.wikipedia.org/wiki/Shopify
+
+HTTP Status: 200
+
+Title: Shopify - Wikipedia
+
+Content:
+
+**Case Study: Shopify Inc.**
+
+**Founding Logic & Product-Market Fit**
+* **Origin:** Founded in 2006 by Tobias Lütke, Daniel Weinand, and Scott Lake.
+* **Problem-Solving Approach:** The founders initially launched an online snowboarding store (Snowdevil) in 2004. Lütke, a programmer, built the platform because he was dissatisfied with existing e-commerce products on the market.
+* **Market Positioning:** Described as the "go-to e-commerce platform for startups."
+
+**Funding Rounds & Valuation Milestones**
+* **Series A (December 2010):** Raised $7 million from Bessemer Venture Partners, FirstMark Capital, and Felicis Ventures at a $20 million pre-money valuation. At this stage, the company had an annualized transaction value of $132 million.
+* **Series B (October 2011):** Raised $15 million.
+* **Series C (December 2013):** Raised $100 million.
+* **Revenue Growth vs. Funding:** In 2014, Shopify earned $105 million in revenue, which was double the amount it had raised in the previous year.
+* **IPO (May 21, 2015):** Raised more than $131 million.
+
+**Growth & Scaling Strategies**
+* **Ecosystem Expansion:** Launched an API platform and App Store in 2009, allowing third-party developers to create and sell applications, thereby increasing platform utility.
+* **Vertical Integration:** 
+    * Launched "Shopify Payments" (2013) to remove the need for third-party payment gateways.
+    * Developed "Shopify Plus" (2014) to target larger e-commerce businesses.
+    * Introduced "Shopify Capital" (2016), providing cash advances to merchants based on future earnings processed through its gateway.
+* **Strategic Partnerships:** Integrated with major platforms including Amazon, Facebook, Google, and Snapchat to expand merchant reach.
+* **Strategic Investments:** Made a $100 million strategic investment into Klaviyo (2022).
+* **Portfolio Value:** Held an 8% stake in Affirm; following Affirm's IPO in January 2021, this stake was valued at $2 billion.
+
+**Strategic Investment and Acquisition Patterns (Shopify)**
+
+**Strategic Investments**
+* **Ecosystem Growth:** Shopify invested $100 million in Klaviyo (2022), a marketing automation platform that originally launched on the Shopify app store (2012), demonstrating a logic of investing in successful third-party developers within its own ecosystem.
+* **Market Entry (Logistics):** Entered last-mile logistics via a Series A investment in Swyft (2021) as part of a $17.5 million funding round.
+
+**Acquisition Logic**
+* **Talent Acquisition (Acqui-hiring):** 
+    * Acquired Select Start Studios (2012) specifically for its 20 mobile engineers and designers.
+    * Acquired Jet Cooper (2013), a 25-person design studio.
+    * Acquired Tiny Hearts (2016), a mobile product development studio.
+* **Capability Expansion & Integration:**
+    * **B2B Commerce:** Acquired Handshake (2019) to integrate wholesale e-commerce capabilities into Shopify Plus.
+    * **Infrastructure/Automation:** Acquired 6 River Systems (2019) for warehouse robotics ($450 million) to support its Fulfillment Network.
+    * **User Experience/Tech Stack:** Acquired Remix (2022) for its TypeScript framework to improve page load speeds and transitions.
+    * **Feature Integration:** Acquired Checkout Blocks (2024) to provide no-code checkout customizations and Threads (2024) for business communication.
+    * **Marketing/AR:** Acquired Primer (2021) for AR digital previews and Dovetale (2022) for influencer marketing.
+
+**Investment Pivot/Exit Example**
+* **Logistics Strategy Shift:** After acquiring Deliverr for $2.1 billion (2022), Shopify wound down its logistics business in 2023. It sold Deliverr and 6 River Systems to Flexport and Ocado Group, converting a direct operational investment into a strategic partnership and a 13% equity stake in Flexport.
+
+**Strategic Investments and Acquisitions by Shopify**
+
+*   **Strategic Capability Expansion:**
+    *   **Marketing & Automation:** Invested $100M in marketing automation startup Klaviyo (August 2022).
+    *   **B2B Commerce:** Acquired Handshake for $100M to enhance B2B wholesale purchasing tools (May 2019).
+    *   **Logistics & Fulfillment:** Acquired shipping logistics startup Deliverr for $2.1B (May 2022) to compete with Amazon's fulfillment network, though the asset was later sold in May 2023 as the company "narrowed its ambition."
+    *   **Design & Storefront Tools:** Acquired Remix (October 2022) to improve storefront design tools and Checkout Blocks (June 2024) for checkout customization.
+    *   **Customer Engagement:** Acquired Kit CRM to improve bot-based messaging for merchants (June 2024) and influencer marketing startup Dovetale (April 2022).
+    *   **Mobile & UX:** Acquired Select Start (2012), Jet Cooper (2013), and Tiny Hearts (2016) to bolster mobile app development and design.
+
+*   **Ecosystem Growth Logic:**
+    *   **Developer Incentives:** Reduced App Store commissions to 0% on the first million in revenue for developers (June 2021) to boost the app ecosystem, which in turn supports the core business.
+
+*   **Diversification & Experimental Bets:**
+    *   **Esports:** Invested in esports (e.g., Shopify Rebellion in StarCraft II and League of Legends) as a strategic move (2021).
+    *   **Delivery Startups:** Participated in a $22 million Series A round for delivery startup Swyft (April 2021) to provide same-day delivery alternatives to Amazon.
+
+*   **Investment Risks/Failures:**
+    *   **Pandemic Over-extension:** Cut 10% of staff in July 2022 after making a "wrong bet" regarding the sustainability of the pandemic-driven online shopping boom.

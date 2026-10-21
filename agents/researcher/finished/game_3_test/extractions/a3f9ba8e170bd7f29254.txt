@@ -1,0 +1,21 @@
+Link: https://en.wikipedia.org/wiki/Cirrus_Logic
+
+HTTP Status: 200
+
+Title: Cirrus Logic - Wikipedia
+
+Content:
+
+- **Initial Financing Example**: Patil Systems, Inc. (founded 1981) was reorganized in 1983 with initial round financing provided by venture capitalist Fred Nazem (Nazem and Company).
+- **Strategic Pivot/Market Alignment**: The company renamed to Cirrus Logic in 1984 upon moving to Silicon Valley to specifically target the growing PC components market.
+- **Growth via Acquisition**: The company utilized an acquisition strategy to reposition itself as a premier supplier of high-performance analog and digital processing chips for consumer electronics. Notable acquisitions include:
+    - Crystal Semiconductor (1991)
+    - AudioLogic (1999)
+    - Peak Audio (2001)
+    - Wolfson Microelectronics (2014)
+    - Lion Semiconductor (2021)
+- **Risk Management/Divestiture**: The company exited markets or spun off units when focus shifted or competition increased:
+    - Spun off PC Modem business as Ambient Technologies (1999), which was later acquired by Intel (2000).
+    - Sold video products operation to an investment firm in 2005 to create Magnum Semiconductor.
+    - Exited the PC graphics market after Intel entered the 3D market.
+- **Revenue Concentration Risk**: As of 2025, Apple accounts for 89% of the company's revenue.

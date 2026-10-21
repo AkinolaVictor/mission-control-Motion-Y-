@@ -1,0 +1,81 @@
+Link: https://cattledaily.com/cattle-reproduction-cycle-complete-timeline/
+
+HTTP Status: 200
+
+Title: Cattle Reproduction Cycle: Complete Timeline - Cattle Daily
+
+Content:
+
+**Gestation Length**
+*   **Average:** 283 days (Range: 279–287 days).
+*   **Variations:** Length varies by breed, calf sex, and litter size.
+
+**Fetal Development Timeline**
+*   **Early Embryo (Days 1–30):**
+    *   Day 4–5: Embryo enters the uterus.
+    *   Day 16–17: Maternal recognition of pregnancy occurs via secretion of interferon-tau to prevent luteolysis.
+    *   Day 25–30: Placentation begins.
+*   **First Trimester (Days 1–95):**
+    *   Focus: Embryogenesis and organogenesis.
+    *   Day 45: Transition from embryo to fetus.
+    *   All major organ systems form; fetal programming occurs.
+    *   Weight gain: 5–10% of birth weight.
+*   **Second Trimester (Days 96–190):**
+    *   Focus: Rapid fetal growth and skeletal/muscle fiber development.
+    *   Muscle fiber numbers are permanently fixed during this stage.
+    *   Weight gain: 20–25% of birth weight.
+*   **Third Trimester (Days 191–283):**
+    *   Focus: Rapid fetal weight gain, brain, and immune system development.
+    *   Weight gain: Approximately 70% of total birth weight is gained in the final 90 days.
+    *   Day 250: Colostrum begins forming in the udder.
+
+**Nutritional Requirements per Trimester**
+*   **First Trimester:** Requirements are only slightly elevated above maintenance.
+*   **Second Trimester:** Cow can typically maintain Body Condition Score (BCS) with normal nutrition.
+*   **Third Trimester:** Nutritional requirements increase significantly; energy and protein supplementation are critical.
+
+**Labor and Calving (Parturition)**
+*   **Process:** A three-stage labor process.
+    *   Stage 1: Cervical dilation (2–6 hours).
+    *   Stage 2: Active fetal expulsion (30 minutes–2 hours).
+    *   Stage 3: Placental passage (within 12 hours).
+*   **Post-Calving:** Calves require colostrum within 2–6 hours of birth for passive immunity transfer.
+
+**Breed Comparisons (Puberty/Maturity)**
+*While the text does not provide a gestation length comparison by breed, it notes maturity differences:*
+*   **British Breeds (Angus, Hereford):** Earliest maturing (8–11 months).
+*   **Dairy Breeds (Holstein, Jersey):** 9–12 months.
+*   **Continental Breeds (Simmental, Charolais):** 10–13 months.
+*   **Zebu/Bos indicus (Brahman):** Latest maturing (13–18 months).
+
+**Gestation Length by Breed**
+*   Brahman / Zebu: 292 days
+*   Charolais: 289 days
+*   Simmental: 287 days
+*   Hereford: 285 days
+*   Angus: 283 days
+*   Jersey (Dairy): 279 days
+*   *Note:* Individual variation of ±7 days is normal. Bull calves average 1–2 days longer gestation than heifer calves.
+
+**Fetal Development & Nutritional Requirements**
+*   **Second Trimester (Days 96–190):**
+    *   Critical period for "fetal programming."
+    *   Nutritional status (specifically protein and energy levels) directly influences the number of muscle fibers formed.
+    *   Muscle fiber number is fixed permanently during this stage; nutritional stress leads to reduced lifetime muscle development, lower weaning weights, and inferior feedlot performance.
+*   **Third Trimester (Days 191–283):**
+    *   Rapid fetal weight gain: ~70% of birth weight is gained in the final 93 days.
+    *   Development: Immune and nervous systems mature.
+    *   Colostrum formation begins around day 250.
+    *   Nutritional needs: Cow energy and protein requirements increase 25–35% above mid-gestation levels.
+
+**Signs of Labor and Calving (Parturition)**
+*   **Stage 1: Preparation (2–6 hours; up to 8 for heifers)**
+    *   Signs: Cervical dilation, onset of uterine contractions, restlessness, isolation from the herd, appearance of the water sac.
+*   **Stage 2: Fetal Expulsion (30 min–2 hours)**
+    *   Signs: Active straining, visible amniotic sac, presentation of calf feet and head, followed by delivery.
+*   **Stage 3: Placenta Expulsion (Within 12 hours of calving)**
+    *   Events: Natural expulsion of the placenta and beginning of uterine involution.
+
+Indicators of pregnancy:
+- Non-veterinary indicators: Absence of return to estrus 18–24 days post-breeding; lack of heat when a cleanup bull is present; visible fetal movement or flank distension from approximately day 180+ of gestation.
+- Diagnostic tests: Blood tests (BioPRYN PAG test) can detect pregnancy from day 28 onward.

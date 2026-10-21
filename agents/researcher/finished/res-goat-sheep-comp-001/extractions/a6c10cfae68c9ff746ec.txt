@@ -1,0 +1,27 @@
+Link: https://doi.org/10.1007/978-3-031-62182-6_10
+
+HTTP Status: 200
+
+Title: Where Are Goats Going? The Future of Goats for Farming and Other Purposes | Springer Nature Link
+
+Content:
+
+**Agricultural and Farming Purposes (Goats)**
+*   **Traditional Production:** Used globally for production, with a high concentration of populations in developing countries.
+*   **Diversified Roles:** Use of goats is evolving beyond production to include:
+    *   Educational purposes (e.g., keeping goats in elementary schools).
+    *   Therapeutic and recreational uses.
+    *   Companion animals/pets.
+    *   Vegetation management (specifically in the USA).
+*   **Production Systems:** 
+    *   Extensive and organic systems are increasing in developed countries due to consumer demand for higher welfare.
+    *   Challenges in developing countries often include difficult farming conditions affecting animal welfare.
+*   **Non-Zootenic Management:** Increasing presence of goats in zoos, pet farms, sanctuaries, and private settings.
+
+**Behavioral Traits (Goats)**
+*   **Socialization:** Long-term socialization with humans significantly affects human-directed behavior.
+*   **Learning and Training:** Goats are capable of shape discrimination learning and can be trained using conditioned reinforcement (e.g., clicker training for halter behavior).
+*   **Environmental Interaction:** Behavioral responses are influenced by environmental enrichment, particularly in dairy goats in semi-arid regions.
+
+**General Biological/Health Notes (Small Ruminants)**
+*   **Disease Susceptibility:** Capripoxviruses represent an emerging worldwide threat affecting sheep, goats, and cattle.

@@ -1,0 +1,36 @@
+Link: https://worthbuild.io/compare/solo-founder-vs-cofounder
+
+HTTP Status: 200
+
+Title: Solo Founder vs Co-Founder — Pros, Cons & Data | WorthBuild | WorthBuild
+
+Content:
+
+**Solo Founder**
+*   **Pros:**
+    *   Equity: 100% retention.
+    *   Decision-Making: Instant speed; full creative and strategic control; ability to pivot immediately without needing alignment.
+    *   Conflict: Zero risk of co-founder conflict.
+*   **Cons/Challenges:**
+    *   Operational: Execution speed is limited by one person; inability to be an expert in all required skill sets.
+    *   Funding: Harder to raise venture capital (VCs generally prefer teams).
+    *   Psychological: High burnout risk; loneliness due to lack of shared burden.
+
+**Co-Founded**
+*   **Pros:**
+    *   Operational: Faster execution via parallel workstreams; complementary skill sets (e.g., combining technical and business expertise).
+    *   Funding: Strongly preferred by VCs and accelerators.
+    *   Psychological: Shared emotional burden and support.
+    *   Decision-Making: Potential for better decisions through debate.
+*   **Cons/Challenges:**
+    *   Equity: Dilution from inception; requires vesting schedules and legal complexity.
+    *   Conflict: High risk of co-founder conflict, cited as a cause for 23% of startup failures.
+    *   Operational: Slower decision-making due to the need for alignment; difficulty pivoting if founders disagree.
+
+**Comparative Summary Table**
+*   **Equity:** Solo (100%) vs. Co-founded (e.g., 50/50 or 60/40 split).
+*   **Decision Speed:** Solo (Instant) vs. Co-founded (Requires discussion).
+*   **VC Preference:** Solo (Harder to fundraise) vs. Co-founded (Strongly preferred).
+*   **Execution Speed:** Solo (Limited by one person) vs. Co-founded (Can parallelize work).
+*   **Burnout Risk:** Solo (High) vs. Co-founded (Moderate).
+*   **Conflict Risk:** Solo (None) vs. Co-founded (High).

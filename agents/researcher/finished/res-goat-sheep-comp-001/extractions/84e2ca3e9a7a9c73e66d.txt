@@ -1,0 +1,20 @@
+Link: https://doi.org/10.33584/jnzg.1987.48.1775
+
+HTTP Status: 200
+
+Title: DIETARY DIFFERENCES BETWEEN GOATS AND SHEEP
+							| Proceedings of the New Zealand Grassland Association
+
+Content:
+
+Dietary Habits and Intake:
+- Feed Intake: Goats in pens consume approximately 20% more low-quality feed than sheep.
+- Energy Requirements: The higher intake in goats is offset by higher maintenance energy requirements, meaning they are not inherently better suited for low-quality feeds than sheep.
+- Digestion: There is little difference between goats and sheep regarding the digestion and utilization of feeds.
+- Foraging Behavior: 
+    - Goats consume more browse (e.g., gorse) than sheep.
+    - Under intensive pasture grazing, goats' dry matter intake declines more rapidly than sheep's as herbage mass decreases.
+    - Goats show a greater unwillingness to graze less preferred components of the sward.
+
+Agricultural Implications:
+- Sheep are more effective than goats for grazing to low herbage masses; using goats in these conditions results in lower intake and performance.

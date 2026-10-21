@@ -1,0 +1,19 @@
+Link: https://scholarsarchive.byu.edu/etd/481
+
+HTTP Status: 200
+
+Title: "Japanese Mothers' Parenting Styles with Preschool-Age Children" by Ai Shibazaki Lau
+
+Content:
+
+Study: "Japanese Mothers' Parenting Styles with Preschool-Age Children" (Ai Shibazaki Lau, 2006)
+
+- Objective: To determine if Western parenting typologies (authoritative, authoritarian, permissive, and psychological control) and their dimensions (connection, regulation, physical punishment, verbal hostility) are measurable within the context of Japanese parenting.
+- Participants: 214 Japanese mothers of preschool-age children (101 boys, 113 girls) in Kushiro-city, Japan.
+- Findings on Typologies:
+    - Authoritative and Authoritarian: Confirmed as measurable via a 23-item, five-factor model.
+    - Psychological Control: Confirmed as measurable via a 9-item, two-factor model, specifically identifying "shaming" and "directiveness" as measurable constructs in Japan.
+    - Permissive Parenting: An invariant measurement model could not be identified for this style.
+- Key Observations:
+    - Shaming and directiveness were associated with dimensions of both authoritative and authoritarian parenting.
+    - No significant gender differences were found in parenting patterns between boys and girls.

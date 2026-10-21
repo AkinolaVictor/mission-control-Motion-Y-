@@ -1,0 +1,14 @@
+Link: https://doi.org/10.51791/njap.v26i1.2813
+
+HTTP Status: 200
+
+Title: PRELIMINARY OBSERVATIONS ON GESTATION LENGTH, AGE AT FIRST CALVING AND BIRTH WEIGHT OF MUTURU CATTLE
+							| Nigerian Journal of Animal Production
+
+Content:
+
+Muturu Cattle Data:
+- Average gestation length: 280.0 ± 2.34 days.
+- Mean birth weight: 11.3 ± 0.68 kg.
+- Mean age at first calving: 29.39 ± 1.5 months.
+- Findings: No significant differences (P > 0.05) in gestation length or birth weight between male and female calves.

@@ -1,0 +1,18 @@
+Link: https://doi.org/10.32614/cran.package.rlinkedin
+
+HTTP Status: 200
+
+Title: CRAN: Package Rlinkedin
+
+Content:
+
+Rlinkedin Package (CRAN):
+- Purpose: Provides R functions to access the LinkedIn API.
+- Capabilities: 
+    - Retrieve information about connections.
+    - Search for people and jobs.
+    - Share updates with network.
+    - Create group discussions.
+- Technical Dependencies: R (≥ 2.12.0), httr, XML, httpuv.
+- Version/Date: 0.2 (Published 2016-10-30).
+- Source Code: https://github.com/mpiccirilli/Rlinkedin

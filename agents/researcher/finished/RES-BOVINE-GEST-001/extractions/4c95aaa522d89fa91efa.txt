@@ -1,0 +1,17 @@
+Link: https://doi.org/10.5194/aab-52-553-2009
+
+HTTP Status: 200
+
+Title: AAB - Genetic parameters for calving ease, gestation length and stillbirth in three endangered Austrian blond cattle breeds
+
+Content:
+
+**Breed-Specific Gestation Length Data (Austrian Blond Cattle)**
+*   **Breeds Studied:** Carinthian Blond, Murboden, and Waldviertel Blond.
+*   **Heritability of Gestation Length:**
+    *   Direct heritability estimates: 0.235 to 0.512.
+    *   Maternal heritability estimates: 0.002 to 0.063.
+*   **Genetic Correlations (Gestation Length vs. Calving Ease):**
+    *   Waldviertel Blond: Close positive genetic correlation (0.707).
+    *   Carinthian Blond: Close negative genetic correlation (-0.943).
+    *   Murboden: Positive genetic correlation (range 0.520 to 0.700 for direct traits).

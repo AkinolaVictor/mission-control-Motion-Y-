@@ -1,0 +1,13 @@
+Link: https://digitalcommons.bucknell.edu/masters_theses/8
+
+HTTP Status: 200
+
+Title: "The Relationship Between Parenting Styles, Learning Autonomy, and Scho" by Meghan L. Starr
+
+Content:
+
+Study: "The Relationship Between Parenting Styles, Learning Autonomy, and Scholastic Achievement in Undergraduate College Students" (Meghan L. Starr, 2011).
+
+- Objective: To investigate the relationship between three parenting styles (authoritarian, authoritative, permissive), learning autonomy (defined as internal motivation to learn or achieve), perceived parental autonomy support, and scholastic achievement in undergraduate college students.
+- Methodology: Questionnaires administered to 61 participants at a small liberal arts college in the northeastern United States. Measures included perceived parental authority, perceived parental autonomy support, learning autonomy, and GPA.
+- Findings: While positive and negative correlations were observed between variables, simple regression analyses showed no statistically significant relationships between parental authority, learning autonomy, perceived autonomy support, and scholastic achievement.

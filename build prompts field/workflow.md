@@ -441,28 +441,63 @@ show me you plan before starting
 orchestrator central task creator
 create a function in @agents/orchestrator/functions/task_assigner.js
 this function implements an llm (using the model of the orchestrator Agent (in @agents/orchestrator/metadata.json[model])), it receives a prop {prompt}, 
-it reads this prompt, and loops through the @agents/[each_agents]/metadata.json and reads to know which agent is capable of carrying out this task, 
-it check the task_state_prototype property of the qualified agent, and checks if the given prop ({propmt}) contains all the necessary context to build a task_state, if not, it responds back to the orchestrator agent to provide another prompt that contain all the important information necessary to be contained in an ideal task_state prototype
+it reads this prompt, and loops through the @agents/[each_agents]/metadata.json and reads to know which agent is capable/qualified of carrying out this task, 
+it check the task_state_prototype property of the qualified agent, and checks if the given prop ({propmt}) contains all the necessary context to build a task_state, if not, it returns a message  saying something like "prompt does not contain all the requirement to create this task, please create a prompt that has all i need to create the task"
 
-then, it calls the @agents/[each_agents]/functions/task_creator.js function found in the qualified agent (could be imported using "require(`.../${each_agent}/...`)), it passed the right props into the function {promptz}. the promptz params should be a string contain all the context needed to be contained in an ideal task_state prototype
+if the prop ({propmt}) contains all needed to create a task, then, it calls the @agents/[qualified_agents]/functions/task_creator.js function found in the qualified agent (could be imported using "require(`.../${qualified_agent}/...`)), the task_creator function takes in a onject prop {prompt}, it passes the right prompt into the function. the prompt should be a string contain all the context needed to be contained in an ideal task_state prototype
 
-if no suitable agent is found who can carry out the task, then, returns back a prompt string message containing all the agents available and what they can do. so the agent can refine its prompt (or chat with the user) to include the specific agent to do the job, or provide a context to help know which agent to use, and calls the task_assigner again
+if no suitable agent is found who can carry out the task, then, returns back a prompt string message containing all the agents available and what they can do.
 
+ask me any question for clarity
+show me you plan before starting
 
 
 
 
 Tool calling to the orchestrator agent
-implement a tool calling feature in the @agents/orchestrator/orchestrator.js agent,the created @agents/orchestrator/functions/task_assigner.js must be used in the orchestrator agent as a callable tool so it can assign task to any agent, 
+implement a tool calling feature in the @agents/orchestrator/orchestrator.js agent, the created @agents/orchestrator/functions/task_assigner.js must be used in the orchestrator agent as a callable tool so it can assign task to any agent, 
 it must be able to engage in a chat with the task_assigner function, to know if all the necessary information to create the task has been provided, if it has not yet been provided, it must ask the user to provide the necessary contexts.
 Let all it's instruction be kept in @agents/orchestrator/system/TASK_ASSIGNER.md file so you don't really need to edit the current instruction
 
+for example on how to implement tool calling, check @agents/researcher/researcher.js file
+
+ask me any question for clarity
+show me you plan before starting
+
+
+
+write a function @agents/researcher/functions/task_cleanup.js that moves a complete task folder @agents/researcher/workspace/[any_given_task_folder_name]/ including all it's content into a new folder @agents/researher/finished/ 
+
+ask me any question for clarity
+show me you plan before starting
 
 
 
 
 
 
+i gave my llm this prompt:
 
+PROPMP STARTS
+
+
+
+PROMPT ENDS
+
+HERE IS THE CODE IT WROTE:
+
+CODE STARTS
+
+
+CODE ENDS
+
+help me fix the code, it dosen't work
+
+
+
+
+instead of using the task assigner approach (as in @agents/orchestrator/functions/task_assigner.js), delete the assigner
+now i want you to use the direct wiring approach to the research @agents/researcher/functions/task_creator.js file
+just as the task_creator is implemented in the @agent/researcher/researcher.js file as a called tool, implement the same in the orchestrator.js file and make sure it works fine
 
 
