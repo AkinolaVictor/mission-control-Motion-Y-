@@ -1,0 +1,20 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "orchestrator",
+  "deadline": "not provided",
+  "expected_output": "A comprehensive Markdown article analyzing football trends and predicting the 2026 Ballon d'Or winners, incorporating statistics and projected tournament impacts.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2023-10-27T10:00:00Z",
+  "search_prompt": "current football trends 2024-2026 player trajectories 2026 Ballon d'Or predictions impact of 2026 FIFA World Cup on Ballon d'Or candidates Kylian Mbappe Erling Haaland Jude Bellingham individual stats and club performance projections top European teams 2025-2026",
+  "start_time": "2023-10-27T10:00:00Z",
+  "status": "completed",
+  "task_id": "ballon-dor-2026-prediction-001",
+  "title": "2026 Ballon d'Or Predictions: Trends, Trajectories, and Tournament Impact"
+}

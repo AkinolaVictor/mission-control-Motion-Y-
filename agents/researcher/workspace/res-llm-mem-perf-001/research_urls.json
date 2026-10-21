@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "url": "https://martinuke0.github.io/posts/2026-01-06-ram-vs-vram-a-deep-dive-for-large-language-model-training-and-inference/"
+  },
+  {
+    "id": 2,
+    "url": "https://www.yottalabs.ai/post/what-actually-limits-llm-inference-speed-gpu-vs-memory-vs-kv-cache-explained"
+  },
+  {
+    "id": 3,
+    "url": "https://www.glukhov.org/llm-performance/"
+  },
+  {
+    "id": 4,
+    "url": "https://arxiv.org/api/sg3Rh8hCMXd1uZvVc/lSCbvBzks"
+  },
+  {
+    "id": 5,
+    "url": "http://arxiv.org/abs/2606.05868v1"
+  },
+  {
+    "id": 6,
+    "url": "http://arxiv.org/abs/2604.24971v1"
+  },
+  {
+    "id": 7,
+    "url": "http://arxiv.org/abs/2508.13231v2"
+  },
+  {
+    "id": 8,
+    "url": "http://arxiv.org/abs/2406.01698v3"
+  },
+  {
+    "id": 9,
+    "url": "http://arxiv.org/abs/2505.09142v1"
+  },
+  {
+    "id": 10,
+    "url": "http://arxiv.org/abs/2603.04428v1"
+  },
+  {
+    "id": 11,
+    "url": "http://arxiv.org/abs/2410.03129v3"
+  },
+  {
+    "id": 12,
+    "url": "http://arxiv.org/abs/2402.10517v4"
+  },
+  {
+    "id": 13,
+    "url": "http://arxiv.org/abs/2402.12065v2"
+  },
+  {
+    "id": 14,
+    "url": "https://doi.org/10.2139/ssrn.7273098"
+  },
+  {
+    "id": 15,
+    "url": "https://doi.org/10.5220/0014920900004039"
+  },
+  {
+    "id": 16,
+    "url": "https://doi.org/10.36227/techrxiv.176591390.00588709/v1"
+  },
+  {
+    "id": 17,
+    "url": "https://doi.org/10.58837/chula.the.2025.849"
+  },
+  {
+    "id": 18,
+    "url": "https://doi.org/10.21203/rs.3.rs-10297225/v1"
+  },
+  {
+    "id": 19,
+    "url": "https://doi.org/10.2139/ssrn.6153334"
+  },
+  {
+    "id": 20,
+    "url": "https://doi.org/10.36227/techrxiv.175234523.35511184/v1"
+  },
+  {
+    "id": 21,
+    "url": "https://doi.org/10.1109/iccvw69036.2025.00267"
+  },
+  {
+    "id": 22,
+    "url": "https://doi.org/10.1109/imcec66174.2025.11331697"
+  },
+  {
+    "id": 23,
+    "url": "https://doi.org/10.36227/techrxiv.174286524.45842767/v1"
+  },
+  {
+    "id": 24,
+    "url": "https://hdl.handle.net/10361/28913"
+  },
+  {
+    "id": 25,
+    "url": "https://hdl.handle.net/11012/258145"
+  },
+  {
+    "id": 26,
+    "url": "https://doi.org/10.48550/arxiv.2603.20223"
+  },
+  {
+    "id": 27,
+    "url": "https://hdl.handle.net/10216/175895"
+  },
+  {
+    "id": 28,
+    "url": "https://doi.org/10.48550/arxiv.2404.14294"
+  },
+  {
+    "id": 29,
+    "url": "http://www.theseus.fi/handle/10024/913372"
+  },
+  {
+    "id": 30,
+    "url": "https://www.bing.com/ck/a?!&&p=721318686bcd2aae4a5b2dc0b5758fb94594105e52ae56b9133c3d487efae0cfJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbXBhY3Qrb2Yrc3lzdGVtK1JBTSt2cytWUkFNK29uK0xMTStpbmZlcmVuY2UrbGF0ZW5jeSUyYytMTE0rcXVhbnRpemF0aW9uK2VmZmVjdHMrb24rb3V0cHV0K3F1YWxpdHkrYW5kK3ByZWNpc2lvbiUyYytLVitjYWNoZSttZW1vcnkrY2FsY3VsYXRpb24rYW5kK3JlcXVpcmVtZW50cytmb3IrbGFyZ2UrbGFuZ3VhZ2UrbW9kZWxzJTJjK3JlbGF0aW9uc2hpcCtiZXR3ZWVuK21lbW9yeStiYW5kd2lkdGgrYW5kK0xMTSt0b2tlbnMrcGVyK3NlY29uZCZGT1JNPUhEUlNDMw&ntb=1"
+  },
+  {
+    "id": 31,
+    "url": "https://www.bing.com/ck/a?!&&p=b876aee7a62f4cb167224d7a502e0ad01516d0598c9c158c77c5d4727584686dJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1L3ZpZGVvcy9zZWFyY2g_cT1pbXBhY3Qrb2Yrc3lzdGVtK1JBTSt2cytWUkFNK29uK0xMTStpbmZlcmVuY2UrbGF0ZW5jeSUyYytMTE0rcXVhbnRpemF0aW9uK2VmZmVjdHMrb24rb3V0cHV0K3F1YWxpdHkrYW5kK3ByZWNpc2lvbiUyYytLVitjYWNoZSttZW1vcnkrY2FsY3VsYXRpb24rYW5kK3JlcXVpcmVtZW50cytmb3IrbGFyZ2UrbGFuZ3VhZ2UrbW9kZWxzJTJjK3JlbGF0aW9uc2hpcCtiZXR3ZWVuK21lbW9yeStiYW5kd2lkdGgrYW5kK0xMTSt0b2tlbnMrcGVyK3NlY29uZCZGT1JNPUhEUlNDNA&ntb=1"
+  },
+  {
+    "id": 32,
+    "url": "https://www.bing.com/ck/a?!&&p=33544db34766d659627e90db43f11ad8a4d96aa1d124cf2c87e1a593560adc2bJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1L21hcHM_cT1pbXBhY3Qrb2Yrc3lzdGVtK1JBTSt2cytWUkFNK29uK0xMTStpbmZlcmVuY2UrbGF0ZW5jeSUyYytMTE0rcXVhbnRpemF0aW9uK2VmZmVjdHMrb24rb3V0cHV0K3F1YWxpdHkrYW5kK3ByZWNpc2lvbiUyYytLVitjYWNoZSttZW1vcnkrY2FsY3VsYXRpb24rYW5kK3JlcXVpcmVtZW50cytmb3IrbGFyZ2UrbGFuZ3VhZ2UrbW9kZWxzJTJjK3JlbGF0aW9uc2hpcCtiZXR3ZWVuK21lbW9yeStiYW5kd2lkdGgrYW5kK0xMTSt0b2tlbnMrcGVyK3NlY29uZCZGT1JNPUhEUlNDNg&ntb=1"
+  },
+  {
+    "id": 33,
+    "url": "https://www.bing.com/ck/a?!&&p=a65fbc71f146424e9f2579c0870f5d639557670b61c3bb1ae867354d2cbd1a04JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1L25ld3Mvc2VhcmNoP3E9aW1wYWN0K29mK3N5c3RlbStSQU0rdnMrVlJBTStvbitMTE0raW5mZXJlbmNlK2xhdGVuY3klMmMrTExNK3F1YW50aXphdGlvbitlZmZlY3RzK29uK291dHB1dCtxdWFsaXR5K2FuZCtwcmVjaXNpb24lMmMrS1YrY2FjaGUrbWVtb3J5K2NhbGN1bGF0aW9uK2FuZCtyZXF1aXJlbWVudHMrZm9yK2xhcmdlK2xhbmd1YWdlK21vZGVscyUyYytyZWxhdGlvbnNoaXArYmV0d2VlbittZW1vcnkrYmFuZHdpZHRoK2FuZCtMTE0rdG9rZW5zK3BlcitzZWNvbmQmRk9STT1IRFJTQzc&ntb=1"
+  },
+  {
+    "id": 34,
+    "url": "https://www.bing.com/ck/a?!&&p=41f810de7f4005fef5dd1bb7b4c59df51b41b40f86e4c216246ce7f4a2f34ee7JmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1L3RyYXZlbC9zZWFyY2g_cT1pbXBhY3Qrb2Yrc3lzdGVtK1JBTSt2cytWUkFNK29uK0xMTStpbmZlcmVuY2UrbGF0ZW5jeSUyYytMTE0rcXVhbnRpemF0aW9uK2VmZmVjdHMrb24rb3V0cHV0K3F1YWxpdHkrYW5kK3ByZWNpc2lvbiUyYytLVitjYWNoZSttZW1vcnkrY2FsY3VsYXRpb24rYW5kK3JlcXVpcmVtZW50cytmb3IrbGFyZ2UrbGFuZ3VhZ2UrbW9kZWxzJTJjK3JlbGF0aW9uc2hpcCtiZXR3ZWVuK21lbW9yeStiYW5kd2lkdGgrYW5kK0xMTSt0b2tlbnMrcGVyK3NlY29uZCZtPWZsaWdodHMmRk9STT1GQlNDT1A&ntb=1"
+  },
+  {
+    "id": 35,
+    "url": "https://www.bing.com/ck/a?!&&p=05690e3853b764be9e01b604e4c063f0fa7d47dcea25cb5b6106be2cce77714bJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1aHR0cHM6Ly9tYXJ0aW51a2UwLmdpdGh1Yi5pby9wb3N0cy8yMDI2LTAxLTA2LXJhbS12cy12cmFtLWEtZGVlcC1kaXZlLWZvci1sYXJnZS1sYW5ndWFnZS1tb2RlbC10cmFpbmluZy1hbmQtaW5mZXJlbmNlLw&ntb=1"
+  },
+  {
+    "id": 36,
+    "url": "https://www.bing.com/ck/a?!&&p=f966fd611c14ddd7437983453b5ce7eacf0a3b76de9edb64462acdee9ebe801bJmltdHM9MTc5MjU0MDgwMA&ptn=3&ver=2&hsh=4&fclid=073230ff-3525-6aec-05be-270634c66b77&u=a1aHR0cHM6Ly93d3cueW90dGFsYWJzLmFpL3Bvc3Qvd2hhdC1hY3R1YWxseS1saW1pdHMtbGxtLWluZmVyZW5jZS1zcGVlZC1ncHUtdnMtbWVtb3J5LXZzLWt2LWNhY2hlLWV4cGxhaW5lZA&ntb=1"
+  },
+  {
+    "id": 37,
+    "url": "https://support.google.com/websearch"
+  }
+]

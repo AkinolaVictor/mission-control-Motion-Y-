@@ -1,0 +1,27 @@
+Link: https://www.yottalabs.ai/post/what-actually-limits-llm-inference-speed-gpu-vs-memory-vs-kv-cache-explained
+
+HTTP Status: 200
+
+Title: What Actually Limits LLM Inference Speed? (GPU vs Memory vs KV Cache Explained) | Yotta Labs
+
+Content:
+
+**Memory Bandwidth and Inference Speed**
+* Memory bandwidth determines the speed of data movement between GPU memory and compute units, specifically for model weights, activations, and the KV cache.
+* In many production systems, memory bandwidth is a primary bottleneck rather than raw GPU compute (FLOPs).
+* Slow memory access can bottleneck the system even if the GPU has strong compute performance; this explains why GPUs with similar compute specs can exhibit different real-world performance.
+
+**KV Cache Impact and Requirements**
+* Purpose: Stores past tokens to prevent the model from recomputing them at every step.
+* Performance Impact: As sequence length and concurrency increase, the KV cache grows, leading to:
+    * Increased memory pressure.
+    * Less efficient memory access.
+    * Latency spikes and reduced throughput.
+    * GPU memory fragmentation.
+* In real-world systems, KV cache behavior often becomes the dominant bottleneck over the model itself.
+* Long prompts directly contribute to larger KV cache requirements.
+
+**System Bottlenecks and Latency**
+* Upgrading to faster GPUs (e.g., A100 to H100) does not always yield linear performance gains because memory bandwidth may not scale proportionally and KV cache usage increases with traffic.
+* Low GPU utilization can occur even on high-end hardware if the system is waiting on data movement (memory bandwidth saturation) or if the KV cache exceeds optimal limits.
+* Concurrency increases memory pressure quickly due to the growth of the KV cache.

@@ -1,0 +1,27 @@
+Link: https://martinuke0.github.io/posts/2026-01-06-ram-vs-vram-a-deep-dive-for-large-language-model-training-and-inference/
+
+HTTP Status: 200
+
+Title: RAM vs VRAM: A Deep Dive for Large Language Model Training and Inference | martinuke0's Blog
+
+Content:
+
+**Memory Bandwidth and Performance**
+*   **Bandwidth Comparison:** System RAM (DDR4/5) typically offers ~50-100 GB/s, whereas VRAM (GDDR/HBM) offers 700-3000+ GB/s.
+*   **Impact:** VRAM's high bandwidth and proximity to GPU cores reduce latency, which is critical for the massive data movement required during LLM training and inference.
+
+**System RAM vs. VRAM Impact on Inference**
+*   **VRAM Role:** Holds the bulk of model weights and activations. VRAM bottlenecks result in Out-of-Memory (OOM) errors.
+*   **RAM Role:** Handles data loading, tokenization, logging, and orchestration. Insufficient RAM leads to disk swapping (virtual memory), causing severe slowdowns during dataset loading or batch processing.
+*   **CPU Offloading:** High system RAM enables CPU offloading for models that exceed VRAM capacity (e.g., via Hugging Face accelerate).
+
+**Quantization Effects**
+*   **VRAM Reduction:** Quantization reduces the precision of model weights to fit larger models into limited VRAM.
+    *   **FP16 to INT4:** 4-bit quantization (e.g., AWQ/GPTQ) can provide up to 4x memory savings.
+    *   **Example:** A Llama 3 (70B) model requires ~140GB in FP16 but ~35GB in 4-bit quantization.
+    *   **FP16:** Reduces VRAM usage by 50% compared to full precision.
+
+**KV Cache Memory Requirements**
+*   **Scaling:** The KV cache stores attention keys and values; its memory requirement scales quadratically with context length.
+*   **Impact:** For long contexts (e.g., 128k tokens), the KV cache can consume 50% or more of the available VRAM.
+*   **Optimization:** PagedAttention (used in vLLM) can offload the KV cache to CPU RAM to manage memory more efficiently.

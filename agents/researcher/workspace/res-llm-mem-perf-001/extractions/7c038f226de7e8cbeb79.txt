@@ -1,0 +1,17 @@
+Link: https://doi.org/10.48550/arxiv.2603.20223
+
+HTTP Status: 200
+
+Title: [2603.20223] Inference Energy and Latency in AI-Mediated Education: A Learning-per-Watt Analysis of Edge and Cloud Models
+
+Content:
+
+**LLM Quantization and Latency (Microsoft Phi-3 Mini 4k-instruct on NVIDIA T4 GPU):**
+*   **Comparison:** Full-precision FP16 vs. 4-bit NormalFloat (NF4) quantization.
+*   **Latency:** NF4 exhibited higher latency (13.4 s) compared to FP16 (9.2 s) under realistic deployment.
+*   **Energy Consumption:** NF4 achieved lower per-inference energy (329 J) than FP16 (369 J).
+*   **Output Quality:** A quality difference of 0.19 points was noted between the two configurations.
+*   **KV Cache Impact:** 
+    *   With KV-cache enabled: FP16 had a 1.33x advantage in "Learning-per-Watt" (LpW).
+    *   With KV-cache disabled: The FP16 advantage widened to 7.4x, suggesting that disabling the cache significantly overstates the performance advantage of full-precision models.
+*   **Conclusion:** Quantization efficiency is dependent on both the hardware and the inference regime.

@@ -1,0 +1,20 @@
+Link: http://arxiv.org/abs/2604.24971v1
+
+HTTP Status: 200
+
+Title: [2604.24971v1] PolyKV: A Shared Asymmetrically-Compressed KV Cache Pool for Multi-Agent LLM Inference
+
+Content:
+
+**KV Cache Memory Requirements and Compression**
+* **Standard Paradigm:** Typically requires allocating a separate KV cache per agent in multi-agent inference.
+* **Memory Reduction Example:** For Llama-3-8B with 15 agents sharing a 4K-token context, standard KV cache memory requirements are 19.8 GB. Using the PolyKV shared compressed pool, this is reduced to 0.45 GB (a 97.7% reduction).
+* **Compression Ratio:** PolyKV achieves a stable 2.91x compression ratio across various configurations (SmolLM2-1.7B-Instruct and Llama-3-8B-Instruct, context lengths 600-7,194 tokens).
+
+**Quantization Effects on Quality and Precision**
+* **Asymmetric Quantization Strategy:**
+    * **Keys:** Quantized at int8 (q8_0) to maintain softmax stability.
+    * **Values:** Compressed using TurboQuant MSE (Fast Walsh-Hadamard Transform rotation followed by 3-bit Lloyd-Max quantization with centroids tuned to N(0,1)).
+* **Impact on Output Quality:**
+    * **Perplexity:** Llama-3-8B showed a +0.57% perplexity degradation. Perplexity delta does not increase with agent count and improves as context length increases (e.g., -0.26% at 1,851 coherent tokens).
+    * **Precision/Accuracy:** Maintained a mean BERTScore F1 of 0.928.

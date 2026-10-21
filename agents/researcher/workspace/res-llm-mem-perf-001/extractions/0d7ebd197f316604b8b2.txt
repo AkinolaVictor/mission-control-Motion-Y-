@@ -1,0 +1,14 @@
+Link: http://arxiv.org/abs/2606.05868v1
+
+HTTP Status: 200
+
+Title: [2606.05868v1] YouZhi: Towards High-Concurrency Financial LLMs via Adaptive GQA-to-MLA Transition
+
+Content:
+
+**KV Cache and Concurrency**
+* **KV Cache Impact:** KV cache memory overhead is identified as a primary bottleneck for high-concurrency LLM deployment, increasing infrastructure costs and limiting scalability.
+* **Compression Techniques:** The use of a layer-adaptive GQA-to-MLA (Grouped-Query Attention to Multi-head Latent Attention) transition framework is used to maximize KV-cache compression.
+* **Concurrency Gains:** Reducing KV-cache requirements directly increases maximum concurrency during inference.
+    * **YouZhi-7B:** Achieved a 2.69$\times$ increase in maximum concurrency compared to its base model.
+    * **YouZhi-14B:** Achieved a 2.43$\times$ increase in maximum concurrency compared to its base model.

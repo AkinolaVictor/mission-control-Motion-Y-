@@ -1,0 +1,19 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 0,
+  "await_approval": "true",
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "intake_specialist",
+  "description": "Comprehensive research and article creation on research-led B2B lead generation. The task covers lead generation frameworks, modern prospecting tools, identifying high-intent leads, workflow optimization, and a comparison between cold outreach and research-led prospecting.",
+  "expected_output": "A professional, high-fidelity Markdown article structured for a B2B audience, stored in the designated content repository.",
+  "process_states": {
+    "article_generated": "awaiting...",
+    "url_collection": "awaiting...",
+    "url_scrapping": "awaiting..."
+  },
+  "scheduled_time": "2023-10-27T10:05:00Z",
+  "search_prompt": "best strategies for research-led B2B lead generation frameworks, modern tools for research-based prospecting, identifying high-intent B2B leads via research, B2B lead generation workflows, research-led prospecting vs cold outreach comparison",
+  "status": "pending",
+  "task_id": "res-b2b-leadgen-001",
+  "title": "The Definitive Guide to Research-Led B2B Lead Generation"
+}

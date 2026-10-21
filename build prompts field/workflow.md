@@ -486,6 +486,9 @@ PROMPT ENDS
 
 HERE IS THE CODE IT WROTE:
 
+
+HERE IS THE CODE for the researcher.js file:
+
 CODE STARTS
 
 
@@ -496,8 +499,36 @@ help me fix the code, it dosen't work
 
 
 
-instead of using the task assigner approach (as in @agents/orchestrator/functions/task_assigner.js), delete the assigner
+instead of using the task assigner approach (as in @agents/orchestrator/functions/task_assigner.js).
 now i want you to use the direct wiring approach to the research @agents/researcher/functions/task_creator.js file
 just as the task_creator is implemented in the @agent/researcher/researcher.js file as a called tool, implement the same in the orchestrator.js file and make sure it works fine
 
+check the @agent/researcher/researcher.js as an example, ensure to not delete or edit it
 
+let me see your plan before starting
+
+
+
+
+
+
+
+
+
+now tasks can await approval
+create an api route /api/agent/getApprovals this route searches through all agents @agents/[each_agent]/workspace/[each_task]/task_state.json
+
+it reads to know if task_state[approval] is true, gets the task_state object, and returns a list of all tasks_states awaiting approval.
+
+this tasks are to be listed on the front end in line 109 of the approval.js file
+and also in line 181 in the modal for the mobile screen
+
+ensure the mobile option selection is also functional in line 77
+
+also read the task_state object of each awaiting task (at the front end), and clearly format it in line 155 of the approval.js url page file. ensure to format it in a very readable file, you can use a table or any mean, simply just format it in a great way
+
+ensure this api is called each time this page is refreshed
+
+from the task_state of the currently task, the user should be able to chat with the agent this task is assigned to in line 162 of the approval.js file, ensure to provide all the necessary information to make the user chat with the agent the task is assigned to
+
+let me see your plan before starting

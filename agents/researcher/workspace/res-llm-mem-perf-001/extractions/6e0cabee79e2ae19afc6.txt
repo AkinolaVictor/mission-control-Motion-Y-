@@ -1,0 +1,17 @@
+Link: http://arxiv.org/abs/2402.12065v2
+
+HTTP Status: 200
+
+Title: [2402.12065v2] WKVQuant: Quantizing Weight and Key/Value Cache for Large Language Models Gains More
+
+Content:
+
+**WKVQuant Framework**
+*   **Objective:** A Post-Training Quantization (PTQ) framework specifically designed to quantize both model weights and the Key/Value (KV) cache to reduce memory consumption and address computational demands of auto-regressive text generation.
+*   **Quantization Techniques:**
+    *   **Past-only quantization:** Used to improve the computation of attention.
+    *   **Two-dimensional quantization strategy:** Implemented to handle the specific distribution of the KV cache.
+    *   **Cross-block reconstruction regularization:** Used for parameter optimization.
+*   **Performance Claims:**
+    *   Achieves memory savings comparable to weight-activation quantization.
+    *   Approaches the output performance/accuracy of weight-only quantization.

@@ -1,0 +1,20 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "orchestrator",
+  "deadline": "not provided",
+  "expected_output": "A professional Markdown article detailing the relationship between memory (RAM/VRAM), LLM performance, latency, quantization, and KV cache requirements.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2023-10-27T10:00:00Z",
+  "search_prompt": "impact of system RAM vs VRAM on LLM inference latency, LLM quantization effects on output quality and precision, KV cache memory calculation and requirements for large language models, relationship between memory bandwidth and LLM tokens per second",
+  "start_time": "2023-10-27T10:00:00Z",
+  "status": "completed",
+  "task_id": "res-llm-mem-perf-001",
+  "title": "Impact of RAM and VRAM on LLM Performance and Quantization Effects"
+}

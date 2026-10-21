@@ -1,63 +1,76 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { pathToFileURL } = require('node:url');
+import { task_creator } from "./../researcher/functions/task_creator";
+
 
 const OLLAMA_URL = 'http://localhost:11434/api/chat';
 
-let taskAssignerPromise;
-
-async function getTaskAssigner() {
-  // task_assigner.js uses ES module exports in your earlier code.
-  if (!taskAssignerPromise) {
-    const filePath = path.resolve(
-      process.cwd(),
-      'agents/orchestrator/functions/task_assigner_2.js'
-    );
-
-    taskAssignerPromise = import(pathToFileURL(filePath).href)
-      .then(module => {
-        const fn = module.task_assigner ?? module.default;
-
-        if (typeof fn !== 'function') {
-          throw new Error(
-            'task_assigner.js must export task_assigner or a default function.'
-          );
-        }
-
-        return fn;
-      })
-      .catch(error => {
-        taskAssignerPromise = null;
-        throw error;
-      });
+function prototypeToSchema(proto) {
+  if (Array.isArray(proto)) {
+    return {
+      type: 'array',
+      items: proto.length ? prototypeToSchema(proto[0]) : {}
+    };
   }
 
-  return taskAssignerPromise;
+  if (proto === null) return { type: 'string' };
+
+  if (typeof proto === 'object') {
+    const properties = {};
+
+    for (const [key, value] of Object.entries(proto)) {
+      properties[key] = prototypeToSchema(value);
+    }
+
+    return {
+      type: 'object',
+      properties,
+      required: Object.keys(properties),
+      additionalProperties: false
+    };
+  }
+
+  if (typeof proto === 'number') {
+    return {
+      type: Number.isInteger(proto) ? 'integer' : 'number'
+    };
+  }
+
+  if (typeof proto === 'boolean') {
+    return { type: 'boolean' };
+  }
+
+  return { type: 'string' };
 }
 
 function getTools() {
+  const metadataPath = path.resolve(
+    process.cwd(),
+    'agents/researcher/metadata.json'
+  );
+
+  const metadata = JSON.parse(
+    fs.readFileSync(metadataPath, 'utf8')
+  );
+
+  if (!metadata.task_state_prototype) {
+    throw new Error(
+      'metadata.json is missing task_state_prototype.'
+    );
+  }
+
   return [
     {
       type: 'function',
       function: {
-        name: 'assign_task',
+        name: 'create_research_task',
         description:
-          'Assign a user-requested task to the most suitable agent. ' +
-          'The task assigner checks agent suitability and required context. ' +
-          'If context is missing, relay the missing information to the user ' +
-          'and wait for their response before trying again.',
-        parameters: {
-          type: 'object',
-          properties: {
-            prompt: {
-              type: 'string',
-              description:
-                'The user request and all relevant context collected so far.'
-            }
-          },
-          required: ['prompt']
-        }
+          'Create a research task using the Researcher agent. ' +
+          'Use this when the user wants to start a research project.',
+        parameters: prototypeToSchema(
+          metadata.task_state_prototype
+        )
       }
     }
   ];
@@ -75,13 +88,10 @@ You are the Orchestrator for Motion-Y Mission Control.
 - Coordinate specialized agents and manage task assignment.
 - Be professional, direct, and concise.
 - Use Markdown.
-- Follow the instructions loaded from the system directory.
-- When a user requests a task for an agent, use the assign_task tool.
-- If the tool reports missing information, ask the user for that
-  information in natural language. Do not claim the task was created.
-- Wait for the user's reply before trying to assign the task again.
-- Once the task is successfully created, report the actual result.
-- Never invent tool results or claim an action succeeded without evidence.
+- Follow instructions loaded from the system directory.
+- For research requests, collect the required information
+  and call create_research_task.
+- Report success only when the tool confirms success.
 `;
 
   const files = fs.readdirSync(systemDir)
@@ -100,7 +110,7 @@ You are the Orchestrator for Motion-Y Mission Control.
   return `${coreRules}\n\n# SYSTEM INSTRUCTIONS\n${instructions}`;
 }
 
-async function chatWithOrchestrator(payload = {}) {
+export async function chatWithOrchestrator(payload = {}) {
   const {
     messages,
     model = 'gemma4:31b-cloud'
@@ -110,15 +120,12 @@ async function chatWithOrchestrator(payload = {}) {
     throw new Error('payload.messages must be an array.');
   }
 
-  const systemPrompt = loadSystemPrompt();
-  const tools = getTools();
-
-  // Avoid adding a duplicate system message from the frontend.
   const currentMessages = [
-    { role: 'system', content: systemPrompt },
+    { role: 'system', content: loadSystemPrompt() },
     ...messages.filter(message => message.role !== 'system')
   ];
 
+  const tools = getTools();
   const MAX_ITERATIONS = 6;
 
   for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
@@ -134,9 +141,8 @@ async function chatWithOrchestrator(payload = {}) {
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
       throw new Error(
-        `Ollama API error ${response.status}: ${errorText}`
+        `Ollama API error ${response.status}: ${await response.text()}`
       );
     }
 
@@ -149,7 +155,6 @@ async function chatWithOrchestrator(payload = {}) {
 
     const toolCalls = assistantMessage.tool_calls ?? [];
 
-    // No tool call: return the assistant's final response.
     if (toolCalls.length === 0) {
       return {
         role: 'assistant',
@@ -157,59 +162,43 @@ async function chatWithOrchestrator(payload = {}) {
       };
     }
 
-    // Preserve the assistant's complete tool-call message.
+    // Preserve the assistant message containing the tool calls.
     currentMessages.push(assistantMessage);
 
-    // Execute each requested tool and append its corresponding result.
     for (const toolCall of toolCalls) {
       const toolName = toolCall.function?.name;
-
-      if (toolName !== 'assign_task') {
-        currentMessages.push({
-          role: 'tool',
-          tool_name: toolName ?? 'unknown',
-          content: JSON.stringify({
-            error: `Unknown tool: ${toolName}`
-          })
-        });
-        continue;
-      }
-
-      let args = toolCall.function.arguments;
-
-      if (typeof args === 'string') {
-        try {
-          args = JSON.parse(args);
-        } catch {
-          throw new Error(
-            `Invalid JSON arguments for tool ${toolName}.`
-          );
-        }
-      }
-
-      if (!args || typeof args.prompt !== 'string' || !args.prompt.trim()) {
-        currentMessages.push({
-          role: 'tool',
-          tool_name: toolName,
-          content: JSON.stringify({
-            error: 'A non-empty prompt is required.'
-          })
-        });
-        continue;
-      }
-
       let result;
 
       try {
-        const {task_assigner} = await getTaskAssigner();
-        result = await task_assigner({ prompt: args.prompt });
+        if (toolName !== 'create_research_task') {
+          throw new Error(`Unknown tool: ${toolName}`);
+        }
+
+        let args = toolCall.function.arguments;
+
+        if (typeof args === 'string') {
+          args = JSON.parse(args);
+        }
+
+        if (!args || typeof args !== 'object' || Array.isArray(args)) {
+          throw new Error('Tool arguments must be a JSON object.');
+        }
+
+        // Match the task_creator invocation in researcher.js.
+        const prompt =
+          typeof args.search_prompt === 'string' &&
+          args.search_prompt.trim()
+            ? args.search_prompt
+            : JSON.stringify(args);
+
+        // result = await taskCreator({ prompt });
+        result = await task_creator({ prompt });
       } catch (error) {
-        console.error('[Orchestrator] Task assignment failed:', error);
+        console.error('[Orchestrator] Tool failed:', error);
 
         result = {
           success: false,
-          message: 'Task assignment failed.',
-          error: error.message
+          message: error.message
         };
       }
 
@@ -224,8 +213,8 @@ async function chatWithOrchestrator(payload = {}) {
   }
 
   throw new Error(
-    'Maximum tool-calling iterations reached. Try again with a simpler request.'
+    'Maximum tool-calling iterations reached.'
   );
 }
 
-module.exports = { chatWithOrchestrator };
+// module.exports = { chatWithOrchestrator };

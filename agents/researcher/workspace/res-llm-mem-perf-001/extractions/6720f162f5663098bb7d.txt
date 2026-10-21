@@ -1,0 +1,13 @@
+Link: http://arxiv.org/abs/2402.10517v4
+
+HTTP Status: 200
+
+Title: [2402.10517v4] Any-Precision LLM: Low-Cost Deployment of Multiple, Different-Sized LLMs
+
+Content:
+
+**Any-Precision LLM (Research Summary)**
+
+*   **Quantization Approach:** Proposes a lightweight post-training quantization (PTQ) framework to create "any-precision LLMs."
+*   **Memory Efficiency:** Enables the deployment of multiple LLMs of varying bit-widths (e.g., 3, 4, ..., $n$ bits) by overlaying them into a memory footprint comparable to a single $n$-bit LLM.
+*   **Performance Claims:** The method aims to maintain state-of-the-art model quality and inference throughput while reducing the deployment costs associated with hosting multiple different-sized models.

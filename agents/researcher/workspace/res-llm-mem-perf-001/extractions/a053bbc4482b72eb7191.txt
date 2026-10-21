@@ -1,0 +1,13 @@
+Link: http://arxiv.org/abs/2410.03129v3
+
+HTTP Status: 200
+
+Title: [2410.03129v3] ARB-LLM: Alternating Refined Binarizations for Large Language Models
+
+Content:
+
+**LLM Quantization Effects on Output Quality and Precision**
+* **Binarization (1-bit Quantization):** A compression technique that shrinks model weights to 1 bit to reduce memory and computational demands.
+* **Challenges in Binarization:** Current methods often struggle with the distribution gap between binarized weights and full-precision weights, as well as column deviation in LLM weight distribution.
+* **ARB-LLM Technique:** A post-training quantization (PTQ) method using an "alternating refined binarization" (ARB) algorithm to progressively update binarization parameters and reduce quantization error.
+* **Performance Claim:** The ARB-LLM$_{RC}$ variant is reported as the first binary PTQ method to surpass FP16 models of the same size.

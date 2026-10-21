@@ -1,0 +1,26 @@
+Link: https://doi.org/10.21203/rs.3.rs-10297225/v1
+
+HTTP Status: 200
+
+Title: Tamarin (HSQ): Reversible Hierarchical KV-Cache Compression for LLM Inference | Research Square
+
+Content:
+
+**KV Cache Memory Requirements**
+*   **Memory Consumption:** The KV cache is the dominant GPU-memory consumer during long-context LLM inference.
+*   **Example Calculation (Qwen3-8B):** At a 32K token context, a Qwen3-8B model requires approximately 4.5 GiB of fp16 KV cache, compared to approximately 5 GiB for int4 weights.
+*   **Scaling:** KV cache memory requirements grow linearly with the context length.
+
+**KV Cache Compression and Memory Management**
+*   **Tamarin (HSQ) Architecture:** A three-tier reversible compression scheme designed to reduce GPU-resident KV cache:
+    *   **L1 (Focal Tier):** Non-summarized 4-bit precision.
+    *   **L2 (Summary Tier):** 3-bit learned group-summary vectors used as routing keys.
+    *   **L3 (Archive Tier):** CPU-RAM storage of all compressed originals at 4-bit precision.
+*   **Performance Impact:**
+    *   **Memory Reduction:** Reduces GPU-resident KV cache by 12–28×.
+    *   **Quality Trade-off:** Perplexity overhead of 0.1–0.4% on 4B–14B models; token-level agreement of 96–97% compared to uncompressed baselines.
+    *   **Retrieval:** Binary needle retrieval is statistically equivalent to the baseline (e.g., Qwen3-8B-int4 achieved 500/500 retrieval parity at 32K context).
+
+**Quantization Effects**
+*   **Weight Quantization Interaction:** 4-bit weight quantization composes with the Tamarin compression scheme with no measurable cost on models with at least 4B parameters.
+*   **Model Size Correlation:** The quality cost associated with this compression method decreases as model size increases.

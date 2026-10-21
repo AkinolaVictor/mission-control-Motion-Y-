@@ -1,0 +1,24 @@
+Link: https://www.glukhov.org/llm-performance/
+
+HTTP Status: 200
+
+Title: LLM Performance in 2026: Benchmarks, Bottlenecks & Optimization - Rost Glukhov | AI Systems & Infrastructure
+
+Content:
+
+**Bottlenecks and Constraints**
+*   **Constraint Hierarchy:** Performance bottlenecks typically occur in the following order: VRAM capacity $\rightarrow$ Memory bandwidth $\rightarrow$ Runtime scheduling $\rightarrow$ Context window size $\rightarrow$ CPU overhead.
+*   **VRAM vs. Compute:** VRAM capacity is the primary hard constraint; if the model does not fit in VRAM, other performance factors are irrelevant.
+*   **Latency Factors:** Inference speed and latency are often limited by memory bandwidth, context length, or runtime scheduling rather than raw GPU compute power.
+
+**Memory and VRAM**
+*   **VRAM Capacity:** Critical for determining model fit, KV cache size, and whether model layers can remain on the device.
+*   **KV Cache:** There is a specific VRAM budget equation for long context; cache-precision tuning is used in runtimes like llama.cpp, vLLM, and Ollama to manage memory.
+*   **Optimization Steps for Memory:** To make a model fit within memory constraints, the recommended steps are:
+    1. Reduce model size.
+    2. Use quantization.
+    3. Limit the context window.
+
+**Inference Performance**
+*   **Throughput vs. Latency:** Throughput is defined as tokens per second across multiple requests, while latency is the sum of time to first token and total response time.
+*   **Speculative Decoding:** Can result in 20-50% faster LLM inference (lossless acceleration), though it involves acceptance-rate tradeoffs.

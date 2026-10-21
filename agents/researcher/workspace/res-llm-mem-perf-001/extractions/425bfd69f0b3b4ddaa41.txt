@@ -1,0 +1,22 @@
+Link: http://arxiv.org/abs/2603.04428v1
+
+HTTP Status: 200
+
+Title: [2603.04428v1] Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices
+
+Content:
+
+**KV Cache Memory Requirements and Management**
+* **Memory Constraints:** On edge devices (e.g., Apple M4 Pro), limited RAM can restrict the number of concurrent agent contexts. Example: With a 10.2 GB cache budget, only 3 agents fit at 8K context using FP16.
+* **Quantization Impact on Capacity:** 4-bit (Q4) quantization of the KV cache allows 4x more agent contexts to fit into a fixed amount of device memory compared to FP16.
+* **Latency and Prefill:** Without KV cache persistence, evicting a cache requires a full re-prefill, which takes approximately 15.7 seconds per agent at 4K context. Direct restoration of a persisted Q4 KV cache eliminates this $O(n)$ prefill computation.
+* **Time-to-First-Token (TTFT) Reduction:** Cache restoration significantly reduces TTFT across different architectures:
+    * **Gemma 3 12B:** 22x to 136x reduction (at 4K–32K context).
+    * **DeepSeek-Coder-V2-Lite 16B:** 11x to 76x reduction (at 4K–32K context).
+    * **Llama 3.1 8B:** 24x to 111x reduction (at 4K–16K context) and 3x to 10x (at 1K context).
+
+**Quantization Effects on Output Quality**
+* **Perplexity Changes (Q4 KV Cache):**
+    * **Gemma:** -0.7% (improvement).
+    * **Llama:** +2.8% (degradation).
+    * **DeepSeek:** +3.0% (degradation).

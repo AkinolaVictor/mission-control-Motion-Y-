@@ -1,0 +1,16 @@
+Link: http://arxiv.org/abs/2508.13231v2
+
+HTTP Status: 200
+
+Title: [2508.13231v2] Accelerating LLM Inference via Dynamic KV Cache Placement in Heterogeneous Memory System
+
+Content:
+
+**Memory Bandwidth and LLM Inference**
+* LLM inference is increasingly constrained by memory bandwidth.
+* Data movement is dominated by frequent access to the key-value (KV) cache.
+* While attention sparsity can reduce some memory traffic, the varying relevance of past tokens requires the full KV cache to remain accessible, maintaining pressure on both memory capacity and bandwidth.
+
+**Heterogeneous Memory Systems**
+* Modern AI hardware integrates high-bandwidth memory (HBM) with high-speed off-package DRAM (e.g., via NVLink and LPDDR5X).
+* Dynamic KV cache placement across these heterogeneous memory systems is used to maximize aggregated bandwidth utilization under capacity constraints.
