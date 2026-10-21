@@ -43,10 +43,26 @@ export default function AgentSlug() {
   const [isEditingSystem, setIsEditingSystem] = useState(false);
   const [editedContent, setEditedContent] = useState('');
   const [all_agent_tasks, set_all_agent_tasks] = useState([
-    {name: "Ongoing Tasks", tasks: [1,2,3]}, 
-    {name: "Completed Tasks", tasks: [1,2,3]}, 
-    {name: "Awaiting Tasks", tasks: [1,2,3]}
+    {name: "Ongoing Tasks", tasks: []},
+    {name: "Completed Tasks", tasks: []},
+    {name: "Awaiting Tasks", tasks: []}
   ])
+
+  useEffect(() => {
+    async function fetchAgentTasks() {
+      if (!agentSlug) return;
+      try {
+        const response = await fetch(`/api/agent/single_agent_tasks?agent_id=${agentSlug}`);
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          set_all_agent_tasks(data);
+        }
+      } catch (error) {
+        console.error('Error fetching agent tasks:', error);
+      }
+    }
+    fetchAgentTasks();
+  }, [agentSlug]);
 
   useEffect(() => {
     if (agentSlug) {
@@ -350,6 +366,9 @@ export default function AgentSlug() {
                                   className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-between items-center p-3 py-2 mt-3'
                                 >
                                     <p>{cat.name}</p> {/* name of category */}
+                                    <div className='center w-6 h-6 rounded-full bg-layer3 text-[10px] ml-auto mr-2'>
+                                      {cat.tasks.length}
+                                    </div>
                                     {
                                       !task_categories[cat.name]?
                                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" backdrop-fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>:
@@ -365,14 +384,16 @@ export default function AgentSlug() {
                                           return (
                                             <div key={index} className='w-full bg-layer3 rounded-[12px] p-4 mb-3'>
                                                 <div className='flex justify-between items-center mb-3'>
-                                                    <h1 className='font-semibold text-[12px]'>Title of this task</h1> 
-                                                    <p className='font-semibold text-[9px] opacity-90'>9:39PM--12/03/2024</p> {/* time of creation */}
+                                                    <h1 className='font-semibold text-[12px]'>{item.task_id}</h1>
+                                                    <p className='font-semibold text-[9px] opacity-90'>
+                                                      {item.created_at ? new Date(item.created_at).toLocaleString() : 'N/A'}
+                                                    </p>
                                                 </div>
                                                 <p className='text-[12px] opacity-95'>
-                                                    {/* Task Description */}  Human-in-the-Loop (HITL) Intervention: Tracking how often a human had to correct the agent or provide approval.Tracking how often a human had to correct the agent or provide approval.
+                                                    {item.search_prompt || "No description available."}
                                                 </p>
-                                                <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-center items-center p-3 py-2 mt-3'>
-                                                    <p>Delete</p>
+                                                <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-center items-center p-3 py-2 mt-3 hover:bg-layer3 transition-colors'>
+                                                    <p className="text-sm">Delete Task</p>
                                                 </div>
                                             </div>
                                           )

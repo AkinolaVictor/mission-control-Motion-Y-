@@ -575,4 +575,12 @@ Frontend Implementation:
 after pulling the data from the backend, implement its content across line 343
 
 
+
+a user should be able to click the button in line 395 to delete a task
+it should call the /api/agent/delete_task api endpoint to perform this action for Awaiting Tasks
+hide the button for Ongoing task, ongoing task should not be deletable
+but for completed task, create an api endpoint /api/agent/delete_finished_task
+this api endpoint first checks where the particular (completed) tasks (either in .../workspace/, or in .../finished/) (meaning you'll have to update the /api/agent/single_agent_tasks route to identify the location of each completed task)
+after locating where the completed task is found, it deleted the @agents/[agent_name]/[finished_or_workspace]/[task_id]/ folder completely
+
 let me see your plan before starting
