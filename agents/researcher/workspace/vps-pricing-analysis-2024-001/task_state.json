@@ -1,0 +1,19 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 3,
+  "await_approval": false,
+  "created_at": "2024-05-22T10:00:00Z",
+  "created_by": "intake_specialist",
+  "description": "Perform a comparative analysis of VPS pricing for small businesses in 2024. Compare AWS Lightsail, DigitalOcean, Linode, and Hetzner specifically for mid-tier plans (2-4 vCPU, 4-8GB RAM). The analysis must include regional pricing for US and EU, a breakdown of managed vs unmanaged costs, and available scalability options.",
+  "expected_output": "A comprehensive Markdown article containing a comparative analysis and pricing tables, stored as a finalized post.",
+  "process_states": {
+    "article_generated": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2024-05-22T10:05:00Z",
+  "search_prompt": "2024 VPS pricing comparison small business AWS Lightsail vs DigitalOcean vs Linode vs Hetzner mid-tier plans 2-4 vCPU 4-8GB RAM US vs EU pricing managed vs unmanaged costs scalability options",
+  "status": "completed",
+  "task_id": "vps-pricing-analysis-2024-001",
+  "title": "Comparative Analysis of VPS Pricing for Small Businesses 2024"
+}

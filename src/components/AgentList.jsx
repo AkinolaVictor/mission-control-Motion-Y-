@@ -45,7 +45,7 @@ function AgentList({env, closeModal}) {
             }
 
             <div className='px-2 overflow-y-auto flex-1 custom-scrollbar'>
-              <div className='mb-2'>
+              {/* <div className='mb-2'>
                 <Link href={`/agents`} onClick={ifOnModal} className='w-full flex justify-start items-center gap-2'>
                     <div className={`w-full h-auto rounded-[7px] cursor-pointer hover:bg-layer3 ${path=="/agents"?"bg-layer3":""} px-3 py-2 my-1 transition-all duration-200`}>
                         <div className='w-full flex justify-start items-center gap-2'>
@@ -57,11 +57,11 @@ function AgentList({env, closeModal}) {
                         <p className='text-[11px] opacity-70 font-semibold text-text-secondary ml-9'>All agents activities overview</p>
                     </div>
                 </Link>
-              </div>
+              </div> */}
 
-                <div className='w-full h-[1px] flex justify-between items-center p-4'>
+                {/* <div className='w-full h-[1px] flex justify-between items-center p-4'>
                     <p className='text-xs opacity-60'>All Agents</p>
-                </div>
+                </div> */}
 
               {loading ? (
                 <div className='flex justify-center items-center p-4'>

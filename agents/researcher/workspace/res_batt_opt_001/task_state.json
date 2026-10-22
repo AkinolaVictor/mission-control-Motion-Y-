@@ -2,6 +2,7 @@
   "assigned_to": "researcher",
   "attempt": 0,
   "await_approval": true,
+  "scheduled": false,
   "created_at": "2023-10-27T10:00:00Z",
   "created_by": "task_intake_specialist",
   "description": "Comprehensive research on modern PC and laptop battery optimization. Must cover hardware-level power management (C-states, P-states, GPU undervolting), OS-level power plans for Windows and macOS, display technology impacts (OLED vs LCD), background process management, and the efficiency of ARM-based architectures like Apple Silicon and Snapdragon X Elite.",

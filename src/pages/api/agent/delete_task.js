@@ -6,14 +6,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { agent_id, task_id } = req.body;
+  const { agent_id, task_id, location="workspace" } = req.body;
 
   if (!agent_id || !task_id) {
     return res.status(400).json({ error: 'Missing agent_id or task_id' });
   }
 
   try {
-    const taskFolderPath = path.join(process.cwd(), 'agents', agent_id, 'workspace', task_id);
+    const taskFolderPath = path.join(process.cwd(), 'agents', agent_id, location, task_id);
 
     await fs.rm(taskFolderPath, { recursive: true, force: true });
 

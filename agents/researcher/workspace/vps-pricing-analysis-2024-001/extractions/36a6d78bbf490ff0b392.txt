@@ -1,0 +1,21 @@
+Link: https://cloudprice.app/
+
+HTTP Status: 200
+
+Title: Cloud Pricing Comparison — AWS, GCP, Azure, Hetzner, DigitalOcean, Vultr & Linode VM prices | cloudprice
+
+Content:
+
+General Pricing Trends:
+- Lean providers (Hetzner, DigitalOcean, Linode/Akamai, Vultr) are typically several times cheaper than hyperscalers (AWS, GCP, Azure) for equivalent vCPU and RAM.
+- AWS, GCP, and Azure generally have higher list prices but provide more regions, managed services, and compliance coverage.
+- Hetzner and DigitalOcean are noted for flat, predictable price/performance.
+
+Entry-Tier On-Demand Pricing (Hourly):
+- Vultr: $0.0030
+- AWS: $0.0042
+- Azure: $0.0052
+- DigitalOcean: $0.0060
+- Linode (Akamai): $0.0075
+- Hetzner Cloud: $0.0095
+- Google Cloud: $0.0385

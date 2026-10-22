@@ -4,16 +4,6 @@ import ContentCard from "../components/ContentCard";
 import AgentsCard from "../components/AgentsCard";
 import DashboardLayout from "@/components/DashboardLayout";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 const geistSans = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",

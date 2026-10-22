@@ -1,0 +1,27 @@
+Link: https://zerocloudbill.com/vps/
+
+HTTP Status: 200
+
+Title: Cloud VPS Price Comparison — DigitalOcean vs Linode vs Vultr vs Hetzner | CloudBill
+
+Content:
+
+**Hetzner**
+*   CX23: 2 vCPU, 4 GB RAM — $6.91/mo ($0.0071/hr)
+*   CX33: 4 vCPU, 8 GB RAM — $10.37/mo ($0.0111/hr)
+*   CX43: 8 vCPU, 16 GB RAM — $19.02/mo ($0.0198/hr)
+
+**Other Relevant Mid-Tier VPS (2-4 vCPU, 4-8GB RAM)**
+*   **Vultr Shared:** 4 vCPU, 8 GB RAM — $40.00/mo ($0.0548/hr)
+*   **OVH:**
+    *   VPS-1: 2 vCPU, 4 GB RAM — $5.85/mo ($0.0080/hr)
+    *   VPS-2: 4 vCPU, 8 GB RAM — $10.00/mo ($0.0137/hr)
+*   **Cloudways (DO-based):** DO8GB: 4 vCPU, 8 GB RAM — $88.00/mo ($0.1205/hr)
+*   **Oracle Cloud (VM.Standard.E4.Flex):** 4 vCPU, 8 GB RAM — $27.53/mo ($0.0377/hr)
+*   **UpCloud (Starter):** 4 vCPU, 8 GB RAM, 40 GB storage — $24.00/mo ($0.0329/hr)
+*   **TensorDock:**
+    *   2 vCPU, 4 GB RAM, 20 GB storage — $10.80/mo ($0.0148/hr)
+    *   4 vCPU, 8 GB RAM, 20 GB storage — $20.88/mo ($0.0286/hr)
+*   **Database Mart:**
+    *   2 vCPU, 4 GB RAM, 60 GB SSD — $6.99/mo ($0.0096/hr)
+    *   4 vCPU, 8 GB RAM, 140 GB SSD — $12.99/mo ($0.0178/hr)

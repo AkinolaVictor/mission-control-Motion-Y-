@@ -78,7 +78,7 @@ export default function AgentChatWindow({ onClose, agentId, agentName, endpointK
         console.error('Error loading recent chat:', error);
       }
     }
-    loadRecentChat();
+    // loadRecentChat();
   }, [agentId]);
 
   const saveChatToHistory = async (msgs, overrideChatId = null) => {

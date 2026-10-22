@@ -34,6 +34,7 @@ export default function AgentSlug() {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
   const [availableModels, setAvailableModels] = useState([]);
   const [isLoadingModels, setIsLoadingModels] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false)
 
   // System File state
   const [isSystemModalOpen, setIsSystemModalOpen] = useState(false);
@@ -42,6 +43,7 @@ export default function AgentSlug() {
   const [systemFileContent, setSystemFileContent] = useState('');
   const [isEditingSystem, setIsEditingSystem] = useState(false);
   const [editedContent, setEditedContent] = useState('');
+  const [deleteConfirmation, setDeleteConfirmation] = useState(null)
   const [all_agent_tasks, set_all_agent_tasks] = useState([
     {name: "Ongoing Tasks", tasks: []},
     {name: "Completed Tasks", tasks: []},
@@ -191,13 +193,42 @@ export default function AgentSlug() {
       alert('Failed to save system file.');
     }
   };
-  
-  function getRouteName(){
-    const pathSplit = path.split("/")
-    const currentPath = pathSplit[pathSplit.length - 1]
-    if(currentPath !== "agents") return currentPath
-    return "Agent Board"
-  }
+
+  const handleConfirmDelete = async () => {
+    if (!deleteConfirmation) return;
+    setIsDeleting(true);
+    try {
+      const { task_id, location, category } = deleteConfirmation;
+      const endpoint = category === "Awaiting Tasks"
+        ? '/api/agent/delete_task'
+        : '/api/agent/delete_finished_task';
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          agent_id: activeAgent.id,
+          task_id: task_id,
+          location: location
+        }),
+      });
+
+      if (response.ok) {
+        // Refresh tasks
+        const res = await fetch(`/api/agent/single_agent_tasks?agent_id=${activeAgent.id}`);
+        const data = await res.json();
+        set_all_agent_tasks(data);
+        setDeleteConfirmation(null);
+      } else {
+        alert('Failed to delete task.');
+      }
+    } catch (error) {
+      console.error('Delete error:', error);
+      alert('An error occurred while deleting the task.');
+    } finally {
+      setIsDeleting(false);
+    }
+  };
 
 
   if (!activeAgent) {
@@ -234,7 +265,8 @@ export default function AgentSlug() {
           >
             <div className='flex justify-center items-center gap-3'>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
-              <p>{getRouteName()}</p>
+              {/* <p>{getRouteName()}</p> */}
+              <p>{"getRouteName()"}</p>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down preview-icon"><path d="m6 9 6 6 6-6"/></svg>
           </div>
@@ -392,7 +424,19 @@ export default function AgentSlug() {
                                                 <p className='text-[12px] opacity-95'>
                                                     {item.search_prompt || "No description available."}
                                                 </p>
-                                                <div className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-center items-center p-3 py-2 mt-3 hover:bg-layer3 transition-colors'>
+                                                <div 
+                                                  onClick={()=>{
+                                                    const data = {
+                                                      location: item.location,
+                                                      task_id: item.task_id,
+                                                      category: cat.name
+                                                    }
+                                                    // console.log(data)
+                                                    // return
+                                                    setDeleteConfirmation(data)
+                                                  }} 
+                                                  className='cursor-pointer w-full bg-layer2 rounded-[7px] flex justify-center items-center p-3 py-2 mt-3 hover:bg-layer3 transition-colors'
+                                                >
                                                     <p className="text-sm">Delete Task</p>
                                                 </div>
                                             </div>
@@ -467,6 +511,38 @@ export default function AgentSlug() {
                   No models found on Ollama.
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {deleteConfirmation && (
+        <div className='fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4'>
+          <div className='bg-layer2 border border-border-subtle rounded-2xl w-full max-w-[350px] p-6 flex flex-col items-center text-center'>
+            <div className='w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 mb-4'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <h2 className='text-lg font-semibold text-white mb-2'>Confirm Deletion</h2>
+            <p className='text-sm text-text-secondary mb-6'>
+              Are you sure you want to delete task <span className='text-white font-medium'>{deleteConfirmation.task_id}</span>? This action cannot be undone.
+            </p>
+            <div className='flex gap-3 w-full'>
+              <div
+                onClick={() => setDeleteConfirmation(null)}
+                className='flex-1 py-2 cursor-pointer bg-surface rounded-full text-sm font-medium hover:bg-layer3 transition-colors'
+              >
+                No
+              </div>
+              <div
+                onClick={handleConfirmDelete}
+                className='flex-1 py-2 cursor-pointer bg-red-500 rounded-full text-sm font-medium text-white hover:bg-red-600 transition-colors flex justify-center items-center gap-2'
+              >
+                {isDeleting ? (
+                  <div className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
+                ) : (
+                  "Yes, Delete"
+                )}
+              </div>
             </div>
           </div>
         </div>

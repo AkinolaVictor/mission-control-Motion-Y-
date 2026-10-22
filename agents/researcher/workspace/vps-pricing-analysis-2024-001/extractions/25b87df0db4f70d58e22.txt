@@ -1,0 +1,44 @@
+Link: https://stackplan.dev/tools/vps
+
+HTTP Status: 200
+
+Title: Where to host your web app: how to choose
+
+Content:
+
+**VPS Providers & General Pricing**
+*   **Providers listed:** Hetzner, DigitalOcean (Droplets), Akamai Cloud (formerly Linode), Vultr, OVHcloud, Netcup, Contabo, AWS Lightsail.
+*   **General Costing:** Entry-level VPS typically range from $5–10/month.
+*   **Billing Notes:** Vultr, AWS Lightsail, Hetzner, and DigitalOcean continue to bill for stopped instances; instances must be deleted to stop compute charges.
+
+**Provider-Specific Details**
+*   **DigitalOcean:** Entry-level pricing starts at $4/month.
+*   **Hetzner:** 
+    *   **EU (Germany/Finland):** Cheapest plan (CX23) is €5.49/month (excluding VAT and IPv4). Includes at least 20 TB outgoing traffic.
+    *   **US/Singapore:** Plans start higher, at €15–17/month. Lower traffic allowances than EU.
+    *   **Additional Costs:** Primary IPv4 is billed separately at €0.50/month (excluding VAT).
+*   **AWS Lightsail:** Categorized as a "plain VPS" for solo projects.
+
+**Managed vs. Unmanaged Costs**
+*   **Unmanaged (VPS):** User is responsible for installing Docker, reverse proxies, apps, databases, backups, updates, and monitoring. Running a database (e.g., Postgres) on the same VPS avoids separate service fees but consumes server CPU, memory, and storage.
+*   **Managed (PaaS/Managed DB):** 
+    *   Providers like Render, Fly.io, DigitalOcean, Heroku, and Laravel Cloud sell managed Postgres as a separate billed service.
+    *   Railway offers a Postgres template classified as "unmanaged," meaning the user is responsible for backups, tuning, and maintenance, though it uses the same metered project resources as the app.
+
+**Scalability & Resource Trade-offs**
+*   **VPS vs. PaaS:** VPS generally provides more raw CPU and memory for the price compared to PaaS. PaaS adds costs for convenience (deployment, routing, TLS, logs, and restart management).
+*   **Scale-to-Zero:** Options like Cloudflare Workers and Google Cloud Run allow APIs to scale to zero to reduce costs, whereas VPS instances usually bill regardless of traffic.
+
+DigitalOcean:
+- Basic Droplets start at $4/month.
+- 1 GiB RAM plan costs $6/month.
+
+Hetzner:
+- CX23 plan: €5.49/month (plus €0.50 for IPv4, before VAT).
+- Locations: Germany and Finland.
+- No general permanent free tier.
+
+General VPS Notes:
+- Entry-level plans typically range from $4–7/month before VAT.
+- Unmanaged nature: User is responsible for backups, web server, PHP, MySQL/MariaDB, updates, and maintenance.
+- Use case: Cost-effective for small budgets or running multiple small projects, but requires more operational time.

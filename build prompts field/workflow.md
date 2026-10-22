@@ -584,3 +584,60 @@ this api endpoint first checks where the particular (completed) tasks (either in
 after locating where the completed task is found, it deleted the @agents/[agent_name]/[finished_or_workspace]/[task_id]/ folder completely
 
 let me see your plan before starting
+
+
+
+
+
+
+create an api endpoint /api/agent/get_all_tasks,
+it's a bigger version of the /api/agent/single_agent_tasks api, it loops through all agents workspace/finished (not just one agent), and is able to deliver it in categories based on the requested option (either ongoing, completed, scheduled or all)
+check the /api/agent/single_agent_tasks api endpoint as an example
+
+so if a request asks for: 
+completed: it should return completed task
+ongoing: it should return ongoing task
+scheduled: it should return scheduled task
+all: it should return all tasks (uncategorized)
+
+a scheduled task is a task that has its task_state[scheduled] set to true, however if a task is already completed (task_state[status] is "completed"), it cannot be classified as scheduled anymore, it is completed
+
+ask any question for clarity
+let me see your plan before starting
+
+
+implement this api route in the /task, /tasks/completed, /tasks/scheduled url pages and in the to feed them tasks as needed.
+-> /task url page (ongoing tasks): instead of using the approval task, use the new .../get_all_tasks api route to pull in the ongoing tasks
+-> /tasks/completed (completed tasks): use the new api end point to pull in the completed tasks
+-> /tasks/scheduled (scheduled tasks): use the new api end point to pull in the completed tasks
+
+ask any question for clarity
+let me see your plan before starting
+
+
+
+
+i want you to read the file at @agents/researcher/workspace/res_batt_opt_001/task_state.json, this is the prototype of an ideal task_state, learn from it, 
+
+also you are not looking at the @agents/registry file to loop throu all agents you are looping through @agents/[each_agent]/[finished or workspace]/[each_task]/task_state.json to get data
+
+you must check the ...src/api/agent/getApproval.js file to know how to implement this new feature (for better understanding)
+
+
+
+
+
+
+using the /api/agent/get_all_tasks api endpoint, i want you to provide the necessary analytics for the TaskCard.js component
+
+get the value (count) for the completed Task, to be implemented in line 29 of the TaskCard.js file
+get the value (count) for the ongoing Task, to be implemented in line 29 of the TaskCard.js file
+get the value (count) for the scheduled Task, to be implemented in line 29 of the TaskCard.js file
+get the value (count) for the awaiting approval, to be implemented in line 29 of the TaskCard.js file
+
+select any ongoing task get: the title (shorten it to less than 10 words), and the agent the task is assigned to, to be implemented in line 49 and 52 respectively
+
+select any awaiting approval task get: the title (shorten it to less than 10 words), and the agent the task is assigned to, to be implemented in line 85 and 88 respectively
+
+ask me any question where necessary
+let me see your plan now

@@ -42,12 +42,31 @@ function HomeNav({
         label: 'Ongoing', 
         path: '/tasks', 
         icon:  (
-            <svg xmlns="http://www.w3.org/2000/svg" width="15.722" height="14.168" viewBox="0 0 15.722 14.168">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15.722 14.168">
               <g id="Group_87" data-name="Group 87" transform="translate(-2.35 -3.326)">
                 <path id="Path_56" data-name="Path 56" d="M9.427,4.228A1.6,1.6,0,0,0,7,5.6v9.615a1.6,1.6,0,0,0,2.427,1.374l8.01-4.806a1.6,1.6,0,0,0,0-2.75Z" transform="translate(-0.795)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
                 <path id="Path_57" data-name="Path 57" d="M3,4V16.82" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
               </g>
             </svg>
+        )
+      },
+      { 
+        label: 'Completed', 
+        path: '/tasks/completed', 
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 18.3 18.3">
+            <g id="Group_84" data-name="Group 84" transform="translate(-1.35 -1.35)">
+              <circle id="Ellipse_10" data-name="Ellipse 10" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
+              <path id="Path_51" data-name="Path 51" d="M14.868,9l-4.722,4.722L8,11.576" transform="translate(-0.849 -0.99)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
+            </g>
+          </svg>
+        )
+      },
+      { 
+        label: 'Approvals', 
+        path: '/agents/approvals', 
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stamp preview-icon"><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/></svg>
         )
       },
       { 
@@ -65,24 +84,12 @@ function HomeNav({
           </svg>
         )
       },
-      { 
-        label: 'Completed', 
-        path: '/tasks/completed', 
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" width="18.3" height="18.3" viewBox="0 0 18.3 18.3">
-            <g id="Group_84" data-name="Group 84" transform="translate(-1.35 -1.35)">
-              <circle id="Ellipse_10" data-name="Ellipse 10" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
-              <path id="Path_51" data-name="Path 51" d="M14.868,9l-4.722,4.722L8,11.576" transform="translate(-0.849 -0.99)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
-            </g>
-          </svg>
-        )
-      }
     ];
 
     const agents = [
       { 
         label: 'Agents', 
-        path: '/agents', 
+        path: '/agents/orchestrator', 
         icon:  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hat-glasses preview-icon"><path d="M14 18a2 2 0 0 0-4 0"/><path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11"/><path d="M2 11h20"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/></svg>
       },
       // { 
@@ -103,11 +110,12 @@ function HomeNav({
     ];
 
     const data = {
-      Home: pills,
+      // Home: pills,
       Contents: content,
       Tasks: tasks,
       Agents: agents
-    }[where] || pills;
+    }[where] || [];
+    // }[where] || pills;
 
     return (
         <div className="homenav w-full flex items-center gap-3">

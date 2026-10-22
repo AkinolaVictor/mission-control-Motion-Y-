@@ -27,7 +27,8 @@ export default async function handler(req, res) {
         try {
           const statePath = path.join(finishedDir, folder, 'task_state.json');
           const content = await fs.readFile(statePath, 'utf8');
-          completedTasks.push(JSON.parse(content));
+          const state = JSON.parse(content);
+          completedTasks.push({ ...state, location: 'finished' });
         } catch (e) {
           continue;
         }
@@ -50,11 +51,11 @@ export default async function handler(req, res) {
           const isAwaiting = state.await_approval === true || state.await_approval === 'true';
 
           if (isAwaiting) {
-            awaitingTasks.push(state);
+            awaitingTasks.push({ ...state, location: 'workspace' });
           } else if (state.status === 'ongoing') {
-            ongoingTasks.push(state);
+            ongoingTasks.push({ ...state, location: 'workspace' });
           } else if (state.status === 'completed') {
-            completedTasks.push(state);
+            completedTasks.push({ ...state, location: 'workspace' });
           }
         } catch (e) {
           continue;
