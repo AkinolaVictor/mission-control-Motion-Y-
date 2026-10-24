@@ -1,0 +1,36 @@
+Research Question: What are the specific API or protocol interfaces that allow OpenClaw and Claude Code to communicate?
+
+Category: What are the specific API or protocol interfaces that allow OpenClaw and Claude Code to communicate?
+
+URL: https://open-claw.bot/docs/providers/anthropic/
+
+Title: Connect Anthropic Claude to OpenClaw: API Setup Guide | OpenClaw
+
+HTTP Status: 200
+
+Main Content:
+
+OpenClaw communicates with Claude/Anthropic through three distinct interfaces:
+
+**1. Direct Anthropic API (REST/HTTP)**
+*   **Endpoint:** `api.anthropic.com`
+*   **Authentication:** API key or setup-token.
+*   **Protocol Details:**
+    *   **Service Tiers:** OpenClaw maps the `/fast` toggle to the `service_tier` parameter (`"auto"` for on, `"standard_only"` for off).
+    *   **Prompt Caching:** Uses the `cacheRetention` parameter (values: `none`, `short` [5 min], `long` [1 hour]).
+    *   **Beta Features:** 
+        *   1M context window is enabled via the `anthropic-beta: context-1m-2025-08-07` header (triggered by `params.context1m: true`).
+        *   Includes the `extended-cache-ttl-2025-04-11` beta flag for API requests.
+
+**2. Claude CLI Backend (Local Process)**
+*   **Interface:** Local binary execution on the gateway host.
+*   **Mechanism:** OpenClaw launches the `claude` binary as a subprocess.
+*   **Command Structure:** 
+    *   Execution: `claude -p --output-format json ...`
+    *   Session Management: Initial turns use `--session-id <uuid>`; subsequent turns use `--resume <sessionId>`.
+*   **Limitations:** This is a "text in, text out" interface; it does not support streaming handoff or OpenClaw-side tools.
+
+**3. Claude Code Setup-Token (OAuth/Subscription)**
+*   **Interface:** A token-based authentication bridge.
+*   **Mechanism:** Tokens are generated via the Claude Code CLI command `claude setup-token` and then passed to OpenClaw.
+*   **Constraint:** Subscription setup-tokens (`sk-ant-oat-*`) are rejected by Anthropic when attempting to use the `context-1m-*` beta header.

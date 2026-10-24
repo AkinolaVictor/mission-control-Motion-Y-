@@ -1,0 +1,36 @@
+Research Question: OpenClaw Hermes vs n8n workflow automation technical comparison pricing self-hosting AI integration scalability feature list documentation
+
+Category: OpenClaw Hermes vs n8n workflow automation technical comparison pricing self-hosting AI integration scalability feature list documentation
+
+URL: https://doi.org/10.59431/jda.v5i1.822
+
+Title: Design and Performance Evaluation of an OpenClaw-Based Desktop AI Assistant Deployed on Virtual Private Server: A Comparative Study with N8N Workflow Automation
+					| Journal Dekstop Application (JDA)
+
+HTTP Status: 200
+
+Main Content:
+
+**Technical Comparison: OpenClaw vs. n8n**
+
+**Performance Metrics**
+*   **Response Time:** OpenClaw is 75.5% faster than n8n (Average: 16.294 ms vs. 66.534 ms).
+*   **Consistency:** OpenClaw demonstrated significantly lower variance (Standard deviation of 1.024 ms in Scenario 2 vs. n8n's 116.228 ms).
+*   **Memory Usage:** OpenClaw averaged 27.7% lower usage (573 MB vs. 793 MB).
+*   **CPU Utilization:** OpenClaw averaged 34.5% lower utilization (28.1% vs. 42.9%).
+*   **Task Completion Accuracy:** OpenClaw scored 5.6% higher (90.0% vs. 84.4%).
+
+**AI Integration & Architecture**
+*   **OpenClaw:** Defined as an LLM-based autonomous agent system.
+*   **n8n:** Defined as a rule-based open-source workflow automation platform.
+*   **Deployment:** The study specifically evaluated OpenClaw deployed on a Virtual Private Server (VPS).
+
+**Usability & Setup**
+*   **Setup Complexity:** n8n has a clear advantage in initial configuration due to its visual node-based interface (Likert scale score: 2.18 for n8n vs. 3.25 for OpenClaw, where lower is better).
+*   **User Satisfaction:** OpenClaw scored higher on the System Usability Scale (SUS) at 78.4 compared to n8n's 72.6.
+
+**Evaluation Scenarios**
+The comparison was based on three workflow complexity levels:
+1. Message management
+2. Task scheduling
+3. Multi-service integration

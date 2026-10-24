@@ -1,0 +1,31 @@
+Research Question: Which specific OpenClaw technical features provide the highest contrast/advantage over existing orchestration tools?
+
+Category: Which specific OpenClaw technical features provide the highest contrast/advantage over existing orchestration tools?
+
+URL: http://arxiv.org/abs/2603.10165v2
+
+Title: [2603.10165v2] OpenClaw-RL: Train Any Agent Simply by Talking
+
+HTTP Status: 200
+
+Main Content:
+
+**Technical Features and Advantages of OpenClaw-RL**
+
+**Infrastructure Innovations**
+*   **Server-Client Architecture:** Unlike existing systems, OpenClaw-RL utilizes a server-client model where an RL server hosts the policy via an inference API, while user terminals stream interaction data back over HTTP.
+*   **Asynchronous Signal Extraction:** Employs a separate asynchronous server to extract training signals (evaluative and directive) from observed next states. This prevents signal extraction and optimization processes from blocking inference.
+*   **Unified Environment Support:** It is described as the first RL framework to unify diverse real-world agent settings, including terminal, GUI, Software Engineering (SWE), and tool-call environments.
+
+**Methodological Innovations**
+*   **Next-State Signal Recovery:** Recovers "next-state signals" (user replies, tool outputs, terminal/GUI state changes) as live, online learning sources, a capability the authors claim is missing in existing agentic RL systems.
+*   **Hybrid RL Objective:** Unifies two types of training signals in a single update:
+    *   **Directive signals:** Provide rich, token-level supervision (though they are sparser).
+    *   **Evaluative signals:** More broadly available.
+*   **Stability Mechanisms for Distillation:**
+    *   **Overlap-guided hint selection:** Selects hints where the teacher distribution maximally overlaps with the student's top-k tokens to mitigate teacher-student mismatch.
+    *   **Log-probability-difference clip:** Bounds per-token advantages to stabilize training.
+
+**Functional Advantages**
+*   **Online Optimization:** Enables personal agents to improve continuously through use by recovering conversational signals from user corrections, re-queries, and explicit feedback.
+*   **Long-Horizon Utility:** Demonstrates specific utility in long-horizon settings through the use of next-state signals.

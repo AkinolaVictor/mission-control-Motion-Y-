@@ -1,0 +1,44 @@
+Research Question: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+Category: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+URL: https://docs.openclaw.ai/
+
+Title: OpenClaw Docs
+
+HTTP Status: 200
+
+Main Content:
+
+**Technical Specifications**
+*   **Architecture:** Self-hosted gateway acting as a bridge between messaging apps and AI coding agents.
+*   **Core Components:** 
+    *   **Gateway:** Single source of truth for sessions, routing, and channel connections.
+    *   **Control UI:** Browser-based dashboard (default: http://127.0.0.1:18789/) for chat, configuration, and session management.
+    *   **Nodes:** Mobile nodes (iOS/Android) providing camera, screen, and voice-enabled workflows.
+*   **Requirements:** Node 26 (recommended), or Node 24.16+ / 26.1+. Requires an API key from an AI provider.
+*   **Deployment Options:** macOS, Linux, WSL2, Windows (PowerShell), Docker, npm, pnpm, bun, Nix, or from source.
+*   **Configuration:** Managed via `~/.openclaw/openclaw.json`.
+*   **License:** MIT licensed; open source.
+
+**Enterprise & Deployment Patterns**
+*   **Deployment Scales:** Can be deployed as a personal assistant on a single laptop or as a shared team deployment.
+*   **Remote Access:** Supports web surfaces and Tailscale/tailnet access patterns.
+*   **Security & Governance:** 
+    *   Self-hosted (no hosted service in the middle).
+    *   Policy enforcement via code.
+    *   Access controls: `allowFrom` lists for specific users and `requireMention` rules for group chats.
+    *   No telemetry by default (except optional version checks).
+
+**OpenClaw vs. Traditional AI Orchestration**
+*   **Multi-Channel Integration:** Unlike single-interface tools, one Gateway serves multiple plugins simultaneously (Discord, iMessage, Signal, Slack, Telegram, WhatsApp, Google Chat, Microsoft Teams, etc.).
+*   **Agent-Native Design:** Specifically built for coding agents with integrated tool use, sessions, memory, and multi-agent routing.
+*   **Execution Model:** Utilizes a "trusted gateway, untrusted execution" architecture.
+
+**Business Use Cases & Capabilities**
+*   **Multi-Agent Routing:** Isolated sessions per agent, workspace, or sender to separate responsibilities.
+*   **Automation:** Recurring jobs via cron jobs, hooks, and webhooks.
+*   **Extensibility:** Plugin SDK for creating custom channel, provider, and tool plugins.
+*   **Skills:** Ability to teach agents repeatable procedures loaded on demand.
+*   **Media Handling:** Support for sending/receiving images, audio, and documents.
+*   **Agent Tooling:** Ability to assign dedicated browsers to agents.

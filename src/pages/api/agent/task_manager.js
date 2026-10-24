@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { task_runner } from '../../../../agents/researcher/task_runner'
+// import { task_runner } from '../../../../agents/researcher/task_runner'
 import chokidar from 'chokidar';
 import { task_creator } from '../../../../agents/researcher/functions/task_creator';
 // import { task_manager } from '../../../../agents/researcher/task_manager';
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
           }
         }
       } catch (e) {
-        // console.log("didnt find", agent)
+        console.log("didnt find", agent)
         continue
       }
     }
@@ -50,9 +50,15 @@ export default async function handler(req, res) {
       if(i==tasks.length-1) console.log("done running...")
       try {
         // await task_runner(task);
+        // const {task_runner} = require(`../../../../agents/${task.assigned_to}/task_runner`)
+        const { task_runner } = await import(
+          `../../../../agents/${task.assigned_to}/task_runner.js`
+        );
+        console.log("assigned", task.assigned_to)
         task_runner(task);
         results.push({ task_id: task.task_id, status: 'processed' });
       } catch (err) {
+        console.log("Task Manager Error", err)
         results.push({ task_id: task.task_id, status: 'error', error: err.message });
       }
     }
@@ -79,6 +85,7 @@ export default async function handler(req, res) {
 
 
 function stay_awake(){
+  console.log("fhk")
   // const workspaceDir = path.join(process.cwd(), 'agents', 'researcher', 'workspace');
   const workspaceDir = path.join(process.cwd(), 'agents');
   const watcher = chokidar.watch(workspaceDir, {
@@ -101,9 +108,9 @@ function stay_awake(){
 }
 
 async function task_monitor(filePath, monitor){
-
+    console.log("monitoring...")
     const names = filePath.split('\\')
-
+    
     // if(names.length < 8) return
 
     const len = names.length-1
@@ -119,6 +126,7 @@ async function task_monitor(filePath, monitor){
       }
       monitor[`${task_id}_active`]=true
       
+      console.log("callingxxx...")
       const filePath = path.join(process.cwd(), "agents", agent, "workspace", task_id, "task_state.json")
       const file = await fs.readFile(filePath, "utf8")
       const task_state = JSON.parse(file)
@@ -127,6 +135,10 @@ async function task_monitor(filePath, monitor){
         task_id,
         monitor,
         func: async ()=>{
+          // const {task_runner} = require(`../../../../agents/${agent}/task_runner`)
+          const { task_runner } = await import(
+            `../../../../agents/${agent}/task_runner.js`
+          );
           console.log("Eventually called")
           monitor[`${task_id}_active`]=false
           await task_runner(task_state)

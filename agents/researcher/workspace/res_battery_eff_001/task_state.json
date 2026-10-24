@@ -1,0 +1,19 @@
+{
+  "assigned_to": "researcher",
+  "attempt": 0,
+  "await_approval": true,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "intake_specialist",
+  "description": "Perform a detailed technical analysis of PC battery efficiency, covering ACPI states, CPU power scaling (P-states, C-states), OS-level energy management (Windows and macOS), and the impact of AI on predictive power optimization.",
+  "expected_output": "A comprehensive technical Markdown article on PC battery efficiency and power management.",
+  "process_states": {
+    "article_generated": "awaiting...",
+    "url_collection": "awaiting...",
+    "url_scrapping": "awaiting..."
+  },
+  "scheduled_time": "2023-10-27T10:05:00Z",
+  "search_prompt": "detailed technical analysis PC battery efficiency ACPI states CPU P-states C-states Windows Power Plans macOS Energy Saver AI predictive power optimization",
+  "status": "pending",
+  "task_id": "res_battery_eff_001",
+  "title": "Technical Analysis of PC Battery Efficiency and Power Management"
+}

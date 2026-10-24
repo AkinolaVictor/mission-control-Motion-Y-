@@ -1,0 +1,29 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: https://doi.org/10.59350/pd8be-12c44
+
+Title: Bringing Claude Code Into My R Workflow – Solomon Eshun
+
+HTTP Status: 200
+
+Main Content:
+
+**Claude Code Technical Integration & Workflow**
+
+**Technical Nature and Integration**
+* **Architecture:** Claude Code is a standalone terminal-based program, not an IDE add-in or language-specific package.
+* **IDE Integration:** It integrates into RStudio via the built-in terminal pane (Tools → Terminal), allowing it to run alongside scripts without requiring RStudio-specific installations.
+* **Installation (macOS/Linux):** Installed via `curl -fsSL https://claude.ai/install.sh | bash` into `~/.local/bin`. Requires adding this directory to the system PATH.
+* **Authentication:** Requires a paid Anthropic account (Pro, Max, Team, Enterprise, or API credits).
+
+**Workflow Benefits**
+* **Direct File Access:** Unlike browser-based AI, Claude Code reads and edits project files in place, eliminating the need to copy-paste code between a chat window and the IDE.
+* **Project Awareness:** It can see folder structures and understand relationships between multiple files, which is beneficial for multi-file analyses.
+* **Context Persistence:** The `/init` command generates a `CLAUDE.md` file. This file stores project structure, conventions (e.g., preference for base R pipes, output folder locations), and entry points, which the tool reads automatically upon every launch to maintain context.
+* **Iterative Development:** Users can describe tasks in plain language; the tool inspects existing code and proposes modifications.
+
+**Control and Limitations**
+* **Review Mechanism:** The tool provides a "diff" view of proposed changes, allowing the user to review additions, removals, or modifications before they are applied to the script.
+* **Security Warning:** Users are cautioned against placing personally identifiable information (PII), protected health information (PHI), or confidential institutional data into projects accessed by the tool.

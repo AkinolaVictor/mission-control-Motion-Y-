@@ -1,0 +1,27 @@
+Research Question: Are there existing developer case studies or benchmarks showing the efficiency gains of using OpenClaw and Claude Code together versus individually?
+
+Category: Are there existing developer case studies or benchmarks showing the efficiency gains of using OpenClaw and Claude Code together versus individually?
+
+URL: https://markaicode.com/benchmarks/openclaw-agent-benchmark/
+
+Title: OpenClaw Benchmarks 2026: Harness & Model Cost Data | Markaicode
+
+HTTP Status: 200
+
+Main Content:
+
+The provided text does not contain any case studies or benchmarks showing the efficiency gains of using OpenClaw and Claude Code **together**. Instead, it treats them as competing "harnesses" (agent runtimes) to be used **individually** with a backend model.
+
+Relevant comparative data between the two as individual tools:
+
+**WildClawBench (Harness Comparison)**
+This benchmark isolated the harness's contribution by holding the backend model fixed across 60 real-environment tasks.
+*   **Speed:** OpenClaw was consistently faster per task than Claude Code across all tested models (OpenClaw: 5.83–9.18 min vs. Claude Code: 6.44–10.30 min).
+*   **Success Rate:** OpenClaw outperformed Claude Code on 3 of 4 tested backend models:
+    *   **GPT-5.4:** OpenClaw (50.3%) vs. Claude Code (48.4%)
+    *   **GLM 5:** OpenClaw (42.6%) vs. Claude Code (31.0%)
+    *   **MiMo V2 Pro:** OpenClaw (40.2%) vs. Claude Code (29.9%)
+    *   **MiniMax M2.7:** OpenClaw (33.8%) vs. Claude Code (32.0%)
+
+**General Findings on Harness Efficiency**
+*   **Claw-SWE-Bench:** Demonstrated that swapping the harness alone (using the same model and task set) can swing Pass@1 scores by 10.3 to 27.4 percentage points, indicating that scaffolding and tool-execution design significantly impact efficiency regardless of the model used.

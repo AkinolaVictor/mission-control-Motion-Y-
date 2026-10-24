@@ -1,0 +1,31 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: https://openclawconsult.com/lab/openclaw-with-claude-code
+
+Title: OpenClaw With Claude Code: Can You Use Them Together? (2026)
+
+HTTP Status: 200
+
+Main Content:
+
+**Tool Definitions**
+*   **Claude Code:** An agentic coding assistant (CLI and IDE integration) optimized for software development. Capabilities include reading codebases, running commands, writing files, debugging, refactoring, and executing multi-step coding tasks.
+*   **OpenClaw:** A general-purpose agentic AI framework for deploying persistent, autonomous agents for business workflows (e.g., customer support, lead qualification, operations management). It operates as a server process, connects to messaging channels (Telegram, iMessage, WhatsApp), and integrates with business tools (CRMs, email, databases).
+
+**Technical Integration & Workflow Benefits**
+The tools are complementary, occupying different phases of the workflow: Claude Code serves as the development tool, while OpenClaw serves as the production runtime.
+
+*   **Development Workflow (Claude Code $\rightarrow$ OpenClaw):**
+    *   **Skill Development:** Using Claude Code to write, test, and debug custom OpenClaw "Skills" for API integrations or business logic.
+    *   **Configuration:** Using Claude Code to structure OpenClaw configuration formats, including agent system prompts, Heartbeat schedules, and memory configurations.
+    *   **Maintenance:** Using Claude Code to analyze logs, trace execution paths, and debug unexpected agent behavior in OpenClaw.
+    *   **Integration:** Using Claude Code to write the code required for OpenClaw to integrate with custom internal systems.
+
+**LLM Provider Integration**
+OpenClaw can utilize Anthropic's Claude models as its underlying LLM provider (distinct from the Claude Code tool).
+*   **Configuration:** Managed via `config.yaml` by setting `default_provider: anthropic`.
+*   **Model Use Cases:**
+    *   **Claude Sonnet:** Preferred for nuanced business communication and customer-facing use cases due to instruction-following and tone.
+    *   **Claude Haiku:** Used for high-throughput, latency-sensitive routing tasks.

@@ -1,0 +1,47 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: https://www.betterclaw.io/blog/claude-code-openclaw-guide
+
+Title: Claude Code OpenClaw: Configuration Guide (2026)
+
+HTTP Status: 200
+
+Main Content:
+
+**Technical Integration: Claude Code and OpenClaw**
+
+**Tool Definitions & Relationship**
+*   **Claude Code:** A command-line coding agent (developer tool) used for reading project files, writing code, and executing terminal commands. It acts as the "contractor" that builds the agent's configuration.
+*   **OpenClaw:** An autonomous agent framework (deployment platform) that connects AI models to chat platforms (Telegram, Slack, WhatsApp) and operates continuously.
+*   **Claude (Model):** The underlying LLM (Sonnet, Opus, Haiku) that serves as the runtime dependency powering the OpenClaw agent.
+*   **Integration Logic:** Claude Code is used during the development phase to build the OpenClaw setup; Claude (the model) is used during the runtime phase to power the agent.
+
+**Workflow Benefits & Use Cases**
+*   **Configuration Generation:**
+    *   Automates the creation of nested JSON config files (model providers, API keys, chat settings, security parameters).
+    *   Reduces setup time from 20–40 minutes (manual) to approximately 2 minutes.
+    *   Ensures syntactic correctness and includes often-overlooked fields (e.g., `contextWindow`, `contextTokens`).
+*   **SOUL.md Development:**
+    *   Generates structured personality and behavior definitions.
+    *   Includes critical sections often missed manually: error state behavior, rate limit communication, and conversation boundary rules.
+*   **Custom Skill Building:**
+    *   Generates JavaScript/TypeScript packages for capabilities like web search, API integrations, and file operations.
+    *   Ensures correct function signatures, error handling, and project structure alignment.
+*   **Debugging:**
+    *   Analyzes config files to identify and fix cryptic errors (e.g., TypeErrors or logical provider errors).
+    *   Reported success rate: Correctly identifies/fixes config errors ~85% of the time on the first attempt.
+*   **Model Routing Optimization:**
+    *   Configures specific models for different tasks (e.g., Haiku for heartbeats, Sonnet for conversations, DeepSeek as fallback).
+    *   Can reduce heartbeat costs by $1–5/month.
+
+**Technical Limitations**
+*   **Runtime Execution:** Claude Code cannot run the OpenClaw agent; it requires a separate runtime environment (VPS, server, or managed platform).
+*   **Infrastructure:** It cannot handle Node.js installation, Docker setup, networking/ports, SSL management, or process persistence.
+*   **Operations:** It does not provide runtime monitoring, health checks, spending alerts, or log analysis.
+*   **Security Enforcement:** While it can write a secure config (e.g., loop detection), it cannot provide runtime security enforcement such as Docker sandboxing or encrypted credential storage.
+
+**Cost Structure**
+*   **Development Cost:** Claude Code requires a flat subscription (Claude Pro/Team) at ~$20/month.
+*   **Operational Cost:** Claude models used within OpenClaw are billed per token via API (e.g., Sonnet at $3/$15 per million tokens).

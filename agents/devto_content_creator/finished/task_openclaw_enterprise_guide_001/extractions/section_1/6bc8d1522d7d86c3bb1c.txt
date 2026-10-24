@@ -1,0 +1,14 @@
+Research Question: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+Category: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+URL: https://doi.org/10.5281/zenodo.18974334
+
+Title: Moltbook Discourse Dataset: AI Agent Communication Traces (January–February 2026) | Zenodo
+
+HTTP Status: 200
+
+Main Content:
+
+- OpenClaw workspace excerpts are included as part of the Moltbook Discourse Dataset (v4), which documents communication traces from an AI-only social network.
+- The dataset relates to the research paper "What Do AI Agents Talk About? Discourse and Architectural Constraints in the First AI-Only Social Network" (Dube, Zhu, Phan, and Jin, 2026).

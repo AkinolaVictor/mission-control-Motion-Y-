@@ -1,0 +1,26 @@
+Research Question: What are the specific architectural advantages of OpenClaw over industry-standard orchestration frameworks like LangChain or Semantic Kernel?
+
+Category: What are the specific architectural advantages of OpenClaw over industry-standard orchestration frameworks like LangChain or Semantic Kernel?
+
+URL: http://arxiv.org/abs/2603.10165v2
+
+Title: [2603.10165v2] OpenClaw-RL: Train Any Agent Simply by Talking
+
+HTTP Status: 200
+
+Main Content:
+
+OpenClaw-RL Architectural Features:
+
+*   **Online Learning Infrastructure**: Unlike standard orchestration frameworks, OpenClaw-RL is designed as an agentic RL system that recovers "next-state signals" (user replies, tool outputs, terminal/GUI state changes) as live, online learning sources to optimize agents during use.
+*   **Server-Client Architecture**: 
+    *   **RL Server**: Hosts the policy behind an inference API.
+    *   **User Terminals**: Stream interaction data back to the server via HTTP.
+    *   **Asynchronous Signal Server**: A separate server extracts evaluative and directive training signals from observed next states. This ensures that signal extraction and optimization do not block the inference process.
+*   **Hybrid RL Objective**: Unifies two types of training signals in a single update:
+    *   **Directive Signals**: Provide sparse but rich, token-level supervision.
+    *   **Evaluative Signals**: More broadly available signals.
+*   **Optimization Mechanisms**:
+    *   **Overlap-guided Hint Selection**: Selects hints where the teacher distribution maximally overlaps with the student's top-k tokens to stabilize distillation during teacher-student mismatch.
+    *   **Log-probability-difference Clip**: Bounds per-token advantages.
+*   **Environment Versatility**: Designed to unify real-world agent settings across terminal, GUI, Software Engineering (SWE), and tool-call environments.

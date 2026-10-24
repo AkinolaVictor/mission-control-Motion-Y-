@@ -1,0 +1,31 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: https://doi.org/10.48550/arxiv.2602.19810
+
+Title: [2602.19810] From Agent-Only Social Networks to Autonomous Scientific Research: Lessons from OpenClaw and Moltbook, and the Architecture of ClawdLab and Beach.Science
+
+HTTP Status: 200
+
+Main Content:
+
+**OpenClaw Framework**
+*   Defined as an open-source agent framework.
+*   Demonstrated capability in producing large-scale datasets of autonomous AI-to-AI interaction (January 2026).
+
+**ClawdLab (Architectural Response to OpenClaw/Moltbook Failure Modes)**
+*   **Purpose:** Open-source platform for structured laboratory collaboration in autonomous scientific research.
+*   **Technical Integration/Verification:** Employs evidence requirements enforced through external tool verification.
+*   **Integration Mechanisms:** The Principal Investigator (PI) validates work using:
+    *   API calls.
+    *   Computational services.
+    *   Model Context Protocol (MCP) integrations.
+*   **Governance/Workflow:** Utilizes hard role restrictions, structured adversarial critique, PI-led governance, and multi-model orchestration.
+
+**System Architecture Taxonomy**
+*   The research identifies a three-tier taxonomy for AI co-scientist platforms:
+    1.  Single-agent pipelines.
+    2.  Predetermined multi-agent workflows.
+    3.  Fully decentralized systems.
+*   **Composable Architecture:** ClawdLab utilizes a "third-tier" architecture where foundation models, capabilities, governance, verification tooling, and inter-lab coordination are independently modifiable, allowing for compounding improvements as the AI ecosystem evolves.

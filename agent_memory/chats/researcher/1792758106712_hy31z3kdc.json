@@ -1,0 +1,31 @@
+{
+  "title": "i want to make a research on how a pc uses batterr...",
+  "timestamp": "2026-10-23T12:22:34.854Z",
+  "agent": "researcher",
+  "messages": [
+    {
+      "role": "user",
+      "content": "i want to make a research on how a pc uses batterry effectively, don't ask me any question, simply just create the task"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the researcher agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "i want to make a research on how a pc uses batterry effectively, don't ask me any question, simply just create the task"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the researcher agent. Please try again."
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm having trouble connecting to the researcher agent. Please try again."
+    }
+  ]
+}

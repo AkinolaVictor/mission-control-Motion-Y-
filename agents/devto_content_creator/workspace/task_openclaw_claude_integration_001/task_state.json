@@ -1,0 +1,26 @@
+{
+  "assigned_to": "devto_content_creator",
+  "attempt": 2,
+  "await_approval": false,
+  "created_at": "2025-05-22T10:00:00Z",
+  "created_by": "task_intake_specialist",
+  "description": "Create a technical dev.to article explaining the integration between OpenClaw and Claude Code. The content should detail the technical workflow of how they operate together and highlight the complementary benefits for AI-driven development, targeting a developer audience to drive awareness and lead generation for Motion-Y.",
+  "expected_output": "A high-quality Markdown article published to dev.to or stored as a draft, optimized for lead generation.",
+  "process_states": {
+    "post_created": "completed",
+    "published": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2025-05-22T10:00:00Z",
+  "search_prompt": "technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools",
+  "status": "failed",
+  "sub_questions": [
+    "What are the specific API or protocol interfaces that allow OpenClaw and Claude Code to communicate?",
+    "Are there existing developer case studies or benchmarks showing the efficiency gains of using OpenClaw and Claude Code together versus individually?"
+  ],
+  "task_id": "task_openclaw_claude_integration_001",
+  "title": "Technical Integration: OpenClaw and Claude Code for AI Development",
+  "devto_post_writer_error": "Content Publisher Error for task",
+  "published_url": "https://dev.to/motion-y/building-agentic-workflows-integrating-claude-code-and-openclaw-4dko"
+}

@@ -1,0 +1,22 @@
+Research Question: What are the specific API or protocol interfaces that allow OpenClaw and Claude Code to communicate?
+
+Category: What are the specific API or protocol interfaces that allow OpenClaw and Claude Code to communicate?
+
+URL: https://openclawapi.org/en
+
+Title: OpenClaw API Documentation - Open Source AI Assistant Integration Guide
+
+HTTP Status: 200
+
+Main Content:
+
+- **Core Architecture**: OpenClaw uses a modular architecture that orchestrates LLMs and communication channels through standardized interfaces.
+- **Model Integration**:
+    - Supports native drivers for Anthropic Claude (specifically deep adaptation for Claude 3.5 Sonnet's long context).
+    - Utilizes Function Calling technology to allow agents to call external tools via the OpenClaw API.
+- **Communication Protocols**:
+    - **WebSocket-based Gateway**: Used for millisecond-level message synchronization between terminals and handling cross-device connections.
+    - **Webhook Protocols**: Used for omnichannel connectivity (e.g., Telegram, Discord, Slack) to support rich media and file transfers.
+- **Extension Interfaces**:
+    - **Plugin Mechanism**: Skills are extended by defining standard API calling logic following OpenAPI specifications.
+    - **Authentication**: Uses unified token authentication for the Gateway and mandates Environment Variables or encrypted JSON5 config files for credential security.

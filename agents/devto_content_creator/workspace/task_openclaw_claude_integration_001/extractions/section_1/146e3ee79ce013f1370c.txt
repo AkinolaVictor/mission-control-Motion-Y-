@@ -1,0 +1,16 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: http://arxiv.org/abs/2608.05201v1
+
+Title: [2608.05201v1] ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study
+
+HTTP Status: 200
+
+Main Content:
+
+OpenClaw Case Study (via ASTELD Framework):
+- OpenClaw is utilized as an in-depth case study for the ASTELD classification framework, which evaluates autonomous AI agents across six axes: Architecture pattern, Security posture, Tool integration model, Execution paradigm, Level of autonomy/human control, and Deployment topology.
+- Analysis of 50+ OpenClaw derivatives indicates that ecosystem innovation is primarily concentrated on the Security, Execution, and Deployment axes.
+- The case study provides a six-category vulnerability taxonomy and connects platform coordinates to observed risks based on five institutional assessments.

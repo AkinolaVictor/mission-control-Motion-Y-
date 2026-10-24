@@ -1,9 +1,9 @@
+import { chatWithDevto_content_creator } from './../../../../../agents/devto_content_creator/devto_content_creator';
 import { chatWithResearcher } from './../../../../../agents/researcher/researcher';
 import { chatWithOrchestrator } from './../../../../../agents/orchestrator/orchestrator';
-import { chatWithMotionDev } from './../../../../../agents/motion_dev/motion_dev';
 
 export const agentMappings = {
+  devto_content_creator: chatWithDevto_content_creator,
   researcher: chatWithResearcher,
   orchestrator: chatWithOrchestrator,
-  motion_dev: chatWithMotionDev,
 };

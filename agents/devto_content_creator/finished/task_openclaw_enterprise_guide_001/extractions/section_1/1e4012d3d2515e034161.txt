@@ -1,0 +1,36 @@
+Research Question: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+Category: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+URL: https://doi.org/10.21203/rs.3.rs-10596296/v1
+
+Title: The Rise of Autonomous AI Agents: A Comprehensive Survey of OpenClaw —Architecture, Security, Ecosystem, and Beyond | Research Square
+
+HTTP Status: 200
+
+Main Content:
+
+**OpenClaw AI Framework Overview**
+* **Nature:** An autonomous AI agent framework that utilizes Large Language Models (LLMs) as controllers to plan, invoke tools, and execute actions.
+* **Release Date:** November 2025.
+* **Adoption:** Rapid growth, reaching 360,000+ GitHub stars by late April 2026.
+
+**Technical & Classification Frameworks**
+* **ASTELD Classification Framework:** A six-axis taxonomy used to evaluate OpenClaw and similar frameworks:
+    * Architecture
+    * Security
+    * Tool integration
+    * Execution
+    * Level of autonomy
+    * Deployment
+
+**Security and Vulnerabilities**
+* **Security Debt:** The framework is cited as a case study in "security debt" due to rapid growth.
+* **Documented Issues:** 
+    * 100+ public advisories and 10+ published CVEs recorded between November 2025 and April 2026.
+    * **ClawHavoc Attack:** A coordinated supply chain attack that exposed 1,184 malicious marketplace skills.
+* **Structural Tensions:** The framework exhibits a trade-off between accessibility and security.
+
+**Ecosystem and Comparison**
+* **Derivative Projects:** There are 50+ derivative projects mapped across three tiers.
+* **Architectural Limitation:** The research suggests that no single architecture (including OpenClaw's) can satisfy all AI agent use cases.

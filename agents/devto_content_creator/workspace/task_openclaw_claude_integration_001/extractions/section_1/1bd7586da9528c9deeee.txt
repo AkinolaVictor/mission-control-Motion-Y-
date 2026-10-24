@@ -1,0 +1,31 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: http://arxiv.org/abs/2604.14228v3
+
+Title: [2604.14228v3] Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems
+
+HTTP Status: 200
+
+Main Content:
+
+**Claude Code Architecture**
+* **Core Mechanism:** A simple while-loop that calls the model, executes tools, and repeats.
+* **Key Components:**
+    * **Permission System:** Features seven modes and an ML-based classifier.
+    * **Context Management:** A five-layer compaction pipeline.
+    * **Extensibility:** Supports MCP (Model Context Protocol), plugins, skills, and hooks.
+    * **Orchestration:** Includes subagent delegation and orchestration mechanisms.
+    * **Storage:** Uses append-oriented session storage.
+* **Design Focus:** Emphasizes per-action safety and utilizes a single CLI loop at the runtime layer.
+
+**OpenClaw Architecture**
+* **Runtime Layer:** Embeds the runtime within a gateway control plane.
+* **Security Approach:** Emphasizes perimeter-level access.
+* **Extension Layer:** Registers gateway-wide capabilities.
+
+**Comparative Analysis (Claude Code vs. OpenClaw)**
+* **Safety/Access:** Claude Code focuses on granular per-action safety, whereas OpenClaw focuses on perimeter-level access.
+* **Runtime:** Claude Code operates via a CLI loop; OpenClaw operates via a gateway control plane.
+* **Context/Extensions:** Claude Code focuses on extending the context window, while OpenClaw focuses on gateway-wide capability registration.

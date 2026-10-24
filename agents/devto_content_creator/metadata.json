@@ -1,0 +1,46 @@
+{
+  "name": "devto_content_creator",
+  "description": "Motion-Y AI marketing content creator",
+  "role": "An AI agent specialized in: A content creator to create posts to promote Motion-Y on dev.to, these posts are fit for public consumption and help in getting leads, and in creating awareness on Motion-Y and their AI capabilities.",
+  "model": "gemma4:31b-cloud",
+  "id": "devto_content_creator",
+  "setup": false,
+  "status": "active",
+  "date_and_time": "2026-10-22T17:35:02.921Z",
+  "tools": [],
+  "functions": [
+    {
+      "title": "url_extractor",
+      "description": "Search the internet for urls that can be scrapped"
+    },
+    {
+      "title": "url_scrapper",
+      "description": "Scrape all the content in all the provided url"
+    },
+    {
+      "title": "article_writter",
+      "description": "Reads all the compressed urls and generate an comprehensive article"
+    }
+  ],
+  "task_state_prototype": {
+    "task_id": "task_id && REQUIRED",
+    "title": "title_of_task && REQUIRED",
+    "description": "description_of_task && REQUIRED",
+    "search_prompt": "",
+    "await_approval": "always set to false (boolean value, not string true not 'true', false not 'false')",
+    "status": "pending",
+    "scheduled_time": "timestamp",
+    "assigned_to": "devto_content_creator",
+    "created_at": "today's data and time",
+    "attempt": 0,
+    "expected_output": "store post created in a place, otherwise report error",
+    "created_by": "agent requesting this task to be created",
+    "process_states": {
+      "url_collection": "awaiting...",
+      "url_scrapping": "awaiting...",
+      "post_created": "awaiting...",
+      "published": "awaiting..."
+    },
+    "sub_questions": ["...generate 1 - 2 helpful research questions that could lead to better answer, store them in this array...HIGHLY REQUIRED"]
+  }
+}

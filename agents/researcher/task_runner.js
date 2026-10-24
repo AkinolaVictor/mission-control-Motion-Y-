@@ -38,7 +38,7 @@ export async function task_runner(data){
     ) return
     
     if(await_approval) {
-        console.log(task_state)
+        // console.log(task_state)
         // send_request_for_approval(task_state)
         // add to the approval list or simply bring it to the top
         return

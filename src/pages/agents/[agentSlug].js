@@ -9,7 +9,7 @@ import Link from 'next/link';
 import AgentList from '@/components/AgentList';
 import axios from 'axios';
 import { usePathname } from 'next/navigation';
-import OnboardingModal from "../../components/OnboardingModal";
+// import OnboardingModal from "../../components/OnboardingModal";
 
 export default function AgentSlug() {
   const router = useRouter();
@@ -673,7 +673,7 @@ export default function AgentSlug() {
                           agentId: activeAgent.id
                         });
                         if (response.data.success) {
-                          router.push('/agents');
+                          router.push('/agents/orchestrator');
                         }
                       } catch (error) {
                         console.error('Error deleting agent:', error);

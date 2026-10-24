@@ -1,0 +1,17 @@
+Research Question: OpenClaw Hermes vs n8n workflow automation technical comparison pricing self-hosting AI integration scalability feature list documentation
+
+Category: OpenClaw Hermes vs n8n workflow automation technical comparison pricing self-hosting AI integration scalability feature list documentation
+
+URL: http://arxiv.org/abs/2608.05201v1
+
+Title: [2608.05201v1] ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study
+
+HTTP Status: 200
+
+Main Content:
+
+OpenClaw:
+- Identified as an autonomous AI agent platform.
+- Used as an in-depth case study for the ASTELD classification framework, which evaluates platforms based on: Architecture pattern, Security posture, Tool integration model, Execution paradigm, Level of autonomy/human control, and Deployment topology.
+- Research indicates a large ecosystem of 50+ OpenClaw derivatives, with primary innovation occurring in Security, Execution, and Deployment.
+- Analysis of OpenClaw includes a six-category vulnerability taxonomy and institutional assessments regarding adoption, governance, and risks.

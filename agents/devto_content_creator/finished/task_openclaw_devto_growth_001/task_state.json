@@ -1,0 +1,24 @@
+{
+  "assigned_to": "devto_content_creator",
+  "attempt": 2,
+  "await_approval": false,
+  "created_at": "2023-10-27T10:00:00Z",
+  "created_by": "task_intake_specialist",
+  "expected_output": "A high-engagement dev.to post showcasing OpenClaw's technical value propositions, published and tracked for engagement.",
+  "process_states": {
+    "post_created": "completed",
+    "published": "completed",
+    "url_collection": "completed",
+    "url_scrapping": "completed"
+  },
+  "scheduled_time": "2023-10-27T12:00:00Z",
+  "search_prompt": "trending AI orchestration topics dev.to 2023, OpenClaw AI features Motion-Y, developer interest in AI agent frameworks and orchestration",
+  "status": "awaiting",
+  "sub_questions": [
+    "What are the most discussed pain points regarding AI orchestration currently trending on dev.to?",
+    "Which specific OpenClaw technical features provide the highest contrast/advantage over existing orchestration tools?"
+  ],
+  "task_id": "task_openclaw_devto_growth_001",
+  "title": "OpenClaw Technical Value Proposition & Dev.to Content Strategy",
+  "published_url": "https://dev.to/motion-y/trending-ai-orchestration-topics-devto-2023-openclaw-ai-features-motion-y-developer-interest-in-2d2b"
+}

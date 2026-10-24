@@ -1,0 +1,21 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: http://arxiv.org/abs/2602.14690v5
+
+Title: [2602.14690v5] Harness Engineering for Agentic AI Coding Tools: An Exploratory Study
+
+HTTP Status: 200
+
+Main Content:
+
+**Configuration Mechanisms for Agentic AI Coding Tools**
+* **Claude Code Usage:** Users of Claude Code employ the broadest range of configuration mechanisms compared to other analyzed tools (GitHub Copilot, Cursor, Gemini, and Codex).
+* **Interoperability Standard:** `AGENTS$.md` has emerged as an interoperable standard for context files across different agentic AI coding tools.
+* **Configuration Types:** Identified eight configuration mechanisms, categorized from static context to executable and external integrations.
+* **Key Mechanisms:**
+    * **Context Files:** The most dominant configuration mechanism; often the sole mechanism used in a repository.
+    * **Skills:** Predominantly rely on static instructions rather than executable scripts.
+    * **Subagents:** An advanced mechanism, though adoption rates remain low across analyzed repositories.
+* **Configuration Artifacts:** Tools are configured via versioned repository-level artifacts, specifically Markdown and JSON files.

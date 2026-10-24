@@ -1,0 +1,34 @@
+Research Question: OpenClaw AI technical architecture analysis, OpenClaw AI strengths and weaknesses 2026, OpenClaw AI vs competitors comparison, OpenClaw AI use cases and developer ecosystem
+
+Category: OpenClaw AI technical architecture analysis, OpenClaw AI strengths and weaknesses 2026, OpenClaw AI vs competitors comparison, OpenClaw AI use cases and developer ecosystem
+
+URL: https://doi.org/10.21203/rs.3.rs-10596296/v1
+
+Title: The Rise of Autonomous AI Agents: A Comprehensive Survey of OpenClaw —Architecture, Security, Ecosystem, and Beyond | Research Square
+
+HTTP Status: 200
+
+Main Content:
+
+**OpenClaw AI Overview**
+* **Release Date:** November 2025.
+* **Adoption/Popularity:** By late April 2026, it became the most-starred repository in GitHub history (360,000+ stars), surpassing the Linux kernel and React.
+* **Core Functionality:** Uses Large Language Models (LLMs) as controllers to plan, invoke tools, and perform autonomous actions.
+
+**Technical Architecture & Frameworks**
+* **ASTELD Classification Framework:** A six-axis taxonomy used to analyze OpenClaw and similar frameworks:
+    * Architecture
+    * Security
+    * Tool integration
+    * Execution
+    * Level of autonomy
+    * Deployment
+
+**Security Analysis (Weaknesses)**
+* **Vulnerability Record:** Between November 2025 and April 2026, public trackers recorded 100+ advisories and 10+ published CVEs.
+* **Supply Chain Risks:** The "ClawHavoc" attack exposed 1,184 malicious marketplace skills.
+* **Structural Tensions:** The project is cited as a case study in "security debt," highlighting a trade-off between accessibility and security.
+
+**Ecosystem & Market Position**
+* **Derivative Ecosystem:** There are 50+ derivative projects mapped across three tiers.
+* **Competitive Landscape:** The research identifies an "open-source speed paradox" and notes that no single architecture can satisfy all autonomous agent use cases.

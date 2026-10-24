@@ -1,0 +1,31 @@
+Research Question: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+Category: OpenClaw AI framework technical specifications, OpenClaw enterprise AI deployment patterns, OpenClaw vs traditional AI orchestration tools, OpenClaw business use cases for AI implementation, scaling AI with OpenClaw technical guide
+
+URL: https://doi.org/10.64628/aan.f7thfa37f
+
+Title: Openclaw: Pahami risiko ketika AI terlalu mengenal kita
+
+HTTP Status: 200
+
+Main Content:
+
+**OpenClaw Technical Specifications & Architecture**
+*   **Nature:** A personalized AI agent characterized by "deep memory" and high levels of personalization.
+*   **Core Functionality:** Designed to understand user context over time, including work habits, personal preferences, and communication patterns.
+*   **Capabilities:** Can access local documents, interact with various devices, and act as an integrated digital assistant.
+*   **Data Processing Model:** Decentralized; data is processed and stored locally on the user's device rather than on a centralized server.
+*   **Licensing:** Open-source.
+
+**Security Vulnerabilities & Technical Risks**
+*   **Configuration Risks:** Vulnerability to "misconfiguration," specifically the use of default factory settings that store passwords in plain text without encryption.
+*   **Attack Vectors:** Susceptible to "prompt injection," where third parties manipulate AI commands to extract sensitive information outside of the intended context.
+*   **Ecosystem Risks:** Security gaps often emerge not from the core framework but from supporting ecosystem platforms (e.g., social media, e-commerce) and third-party integrations.
+
+**Enterprise/Deployment Case Study: Moltbook**
+*   **Implementation:** Moltbook is an AI agent social media platform developed within the OpenClaw ecosystem.
+*   **Failure Pattern:** A security breach in Moltbook exposed sensitive user data, including:
+    *   Conversation emails.
+    *   Usernames and passwords.
+    *   Internal AI agent configurations.
+    *   Metadata.

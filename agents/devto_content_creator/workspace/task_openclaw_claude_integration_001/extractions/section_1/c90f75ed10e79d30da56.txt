@@ -1,0 +1,22 @@
+Research Question: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+Category: technical integration OpenClaw and Claude Code workflow benefits complementary AI coding tools
+
+URL: http://arxiv.org/abs/2603.20847v1
+
+Title: [2603.20847v1] Engineering Pitfalls in AI Coding Tools: An Empirical Study of Bugs in Claude Code, Codex, and Gemini CLI
+
+HTTP Status: 200
+
+Main Content:
+
+**Empirical Study of Bugs in AI Coding Tools (Claude Code, Codex, Gemini CLI)**
+
+**General Findings on AI Coding Tool Failures:**
+* **Functionality Issues:** Over 67% of bugs in these tools are related to functionality.
+* **Root Causes:** 36.9% of bugs stem from API, integration, or configuration errors.
+* **Common Symptoms:** 
+    * API errors (18.3%)
+    * Terminal problems (14%)
+    * Command failures (12.7%)
+* **Workflow Vulnerabilities:** Bugs predominantly affect the tool invocation stage (37.2%) and the command execution stage (24.7%).
